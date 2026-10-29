@@ -34,6 +34,9 @@ def main():
             body = {"kind": "blogger#post", "id": rec["post_id"], "title": title,
                     "content": content, "labels": labels}
             bb.http_json(url, data=body, headers={"Authorization": f"Bearer {token}"}, method="PUT")
+            obj = bb.read_post(name)
+            rec["images"] = [u for u, _ in bb.images_for(name, obj, state)]
+            bb.save_state(state)
             print(f"[수정] {title} → {rec.get('url')}")
         except Exception as e:  # noqa: BLE001
             failed += 1
