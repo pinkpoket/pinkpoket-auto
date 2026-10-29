@@ -1,0 +1,42 @@
+name: blog-pages
+
+on:
+  # pages/ 내용을 고치거나 직접 실행하면 소개·개인정보처리방침·문의 페이지를 만들거나 고침
+  push:
+    branches: [main]
+    paths: ["pages/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-post
+  cancel-in-progress: false
+
+jobs:
+  pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 블로그 페이지 만들기
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          BLOGGER_BLOG_ID: ${{ secrets.BLOGGER_BLOG_ID }}
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+        run: python -u pages_bot.py
+      - name: 페이지 기록 저장
+        if: always()
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          [ -f data/pages.json ] && git add data/pages.json
+          git diff --cached --quiet && exit 0
+          git commit -m "블로그 페이지 기록"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
