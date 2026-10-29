@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""핑크포켓 블로그 자동 발행 봇 (구글 블로거).
+"""핑포의 작은집 연구소(핑크포켓) 블로그 자동 발행 봇 (구글 블로거).
 
 GitHub Actions에서 실행된다.
 1) posts/ 폴더에서 아직 안 올린 글(JSON)을 이름순으로 찾는다.
@@ -292,7 +292,7 @@ def channel_box():
         rows.append(f'<p style="margin:0;font-size:15px"><a href="{html.escape(threads)}" target="_blank" rel="noopener">'
                     "🧵 스레드에서 핑크포켓 매일 만나기</a></p>")
     return (f'<div style="border:1px solid {PINK_LINE};border-radius:12px;padding:16px;margin:28px 0;background:{PINK_SOFT}">'
-            '<p style="margin:0 0 8px;font-weight:bold;font-size:15px">💗 핑크포켓을 다른 곳에서도 만나요</p>'
+            '<p style="margin:0 0 8px;font-weight:bold;font-size:15px">💗 핑포를 다른 곳에서도 만나요</p>'
             + "".join(rows) + "</div>")
 
 
@@ -317,7 +317,7 @@ def series_box(obj, name, state):
 
 AUTHOR_BOX = (
     '<div style="border-top:1px solid #eee;margin:32px 0 0;padding:16px 0 0;font-size:14px;line-height:1.7;color:#666">'
-    '<strong style="color:#333">✍️ 핑크포켓</strong> · 작은 집도 예쁘고 편하게, 인테리어와 살림 꿀팁을 정리해요. '
+    '<strong style="color:#333">✍️ 핑포의 작은집 연구소</strong> · 핑포(핑크포켓, Pink Pocket)가 작은 집도 예쁘고 편하게 가꾸는 인테리어·살림 방법을 정리해요. '
     '공식 자료와 확인된 정보를 바탕으로 AI 도구의 도움을 받아 쓰고 있어요.</div>')
 
 
@@ -341,7 +341,7 @@ def assemble(name, obj, state, links, images):
             f'<a href="{html.escape(l["url"])}" rel="sponsored nofollow noopener" target="_blank">쿠팡에서 보기 &rarr;</a></p>'
             for l in links)
         parts.append(f'<div style="border:1px solid {PINK_LINE};border-radius:12px;padding:16px;margin:28px 0;background:#fffafc">'
-                     '<p style="margin:0 0 10px;font-weight:bold;font-size:15px">🎀 핑크포켓이 골라 본 아이템</p>' + items + "</div>")
+                     '<p style="margin:0 0 10px;font-weight:bold;font-size:15px">🎀 핑포가 골라 본 아이템</p>' + items + "</div>")
     parts.append(series_box(obj, name, state))
     parts.append(channel_box())
     notice = str(obj.get("notice", "")).strip() or DEFAULT_NOTICE
@@ -494,7 +494,7 @@ def main():
             state["used_links"] = used
         save_state(state)
         refresh_series(token, name, obj, state)
-        msg = f"[핑크포켓 블로그] 새 글 발행 💗\n{title}\n{post_url}"
+        msg = f"[핑포의 작은집 연구소] 새 글 발행 💗\n{title}\n{post_url}"
         print(msg)
         notify(msg)
 
