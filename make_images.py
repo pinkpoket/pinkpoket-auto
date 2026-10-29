@@ -2,7 +2,7 @@
 """아직 발행 안 된 글(또는 수정 대기 글)의 이미지를 무료 AI로 만들어 images/ 에 저장한다.
 
 1순위: Cloudflare Workers AI (무료 하루 한도, GitHub 변수 CF_ACCOUNT_ID + 비밀값 CF_API_TOKEN 필요)
-2순위: pollinations (유료화되어 실패할 수 있음)
+(pollinations 는 유료화되어 쓰지 않음)
 
 글 JSON 의 "images": [{"prompt": "english prompt", "alt": "..."}] (최대 2개)를 읽는다.
 만든 파일은 워크플로가 커밋하고, blog_bot.py 가 jsDelivr 주소로 글에 넣는다.
@@ -45,11 +45,8 @@ def fetch_cloudflare(prompt, path, seed):
 
 
 def fetch(prompt, path, seed):
-    try:
-        return fetch_cloudflare(prompt, path, seed)
-    except Exception as e:  # noqa: BLE001
-        print(f"[이미지] Cloudflare 건너뜀: {e}")
-    return fetch_pollinations(prompt, path, seed)
+    # pollinations 는 유료화(402)되어 Cloudflare 만 쓴다.
+    return fetch_cloudflare(prompt, path, seed)
 
 
 def fetch_pollinations(prompt, path, seed):
@@ -73,6 +70,9 @@ def main():
     queued = []
     if os.path.exists(queue):
         queued = [l.strip() for l in open(queue, encoding="utf-8") if l.strip() and not l.startswith("#")]
+    if not (os.environ.get("CF_ACCOUNT_ID", "").strip() and os.environ.get("CF_API_TOKEN", "").strip()):
+        print("[이미지] Cloudflare 설정이 없어 이미지 없이 진행합니다.")
+        return 0
     for name in bb.pending_posts(state) + queued:
         try:
             obj = bb.read_post(name)
