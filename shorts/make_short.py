@@ -46,7 +46,7 @@ WORK = os.path.join(ROOT, "_work")
 OUT = os.path.join(ROOT, "_out")
 LOG_FILE = os.path.join(REPO, "data", "shorts_log.json")
 LINKS_FILE = os.path.join(REPO, "data", "coupang_links.txt")
-LOGO = os.path.join(REPO, "brand", "logo.png")
+LOGO = os.path.join(REPO, "brand", "icon.png")
 W, H, FPS = 1080, 1920, 30
 
 BLOG_HOME = "https://pinkpoket.blogspot.com"
