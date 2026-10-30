@@ -88,7 +88,7 @@ def duration(path):
 
 # ---------------------------------------------------------------- 음성
 
-TTS_RATE = os.environ.get("TTS_RATE", "+25%")
+TTS_RATE = os.environ.get("TTS_RATE", "+35%")
 
 
 async def _tts(text, voice, path):
@@ -321,7 +321,7 @@ def make_scene(i, scene, hook, audio, words, t0, total):
         gradient_bg(raw, i)
     prepare_image(raw, bg)
     base_png(hook, base, outro=scene.get("outro", False))
-    dur = duration(audio) + 0.12
+    dur = duration(audio) + 0.05
     tokens, starts = word_times(scene["text"], words, dur)
     caps = []
     for k, st in enumerate(starts):
@@ -380,7 +380,7 @@ def build_video(script, out_path):
     for i, sc in enumerate(scenes):
         audio = os.path.join(WORK, f"a{i}.mp3")
         words = tts(sc["text"], voice, audio)
-        voiced.append((audio, words, duration(audio) + 0.12))
+        voiced.append((audio, words, duration(audio) + 0.05))
     total = sum(v[2] for v in voiced)
     clips, t0 = [], 0.0
     for i, sc in enumerate(scenes):
