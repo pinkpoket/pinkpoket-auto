@@ -319,7 +319,7 @@ AUTHOR_BOX = (
     '<div style="border-top:1px solid #eee;margin:32px 0 0;padding:16px 0 0;font-size:14px;line-height:1.7;color:#666">'
     '<strong style="color:#333">✍️ 핑포의 작은집 연구소</strong> · 핑포(핑크포켓, Pink Pocket)가 작은 집도 예쁘고 편하게 가꾸는 인테리어·살림 방법을 정리해요. '
     '공식 자료와 확인된 정보를 바탕으로 AI 도구의 도움을 받아 쓰고 있어요.{photo_note}</div>')
-PHOTO_NOTE = ' 글 속 사진은 AI로 만든 이미지예요.'
+PHOTO_NOTE = ''
 
 
 def assemble(name, obj, state, links, images):
