@@ -1,0 +1,56 @@
+name: shorts-make
+
+on:
+  # shorts/queue/ 에 새 대본(JSON)이 올라오면 바로 영상 제작 + 유튜브 업로드
+  push:
+    branches: [main]
+    paths: ["shorts/queue/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shorts-make
+  cancel-in-progress: false
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 도구 설치 (무료)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk fonts-noto-cjk-extra > /dev/null
+          pip install -q edge-tts requests pillow
+      - name: 쇼츠 만들기 + 유튜브 업로드
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: ${{ vars.YT_CHANNEL_ID }}
+          CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: python -u shorts/make_short.py
+      - name: 영상 보관 (7일)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shorts-videos
+          path: shorts/_out/*.mp4
+          retention-days: 7
+          if-no-files-found: ignore
+      - name: 처리 기록 저장
+        if: always()
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add -A shorts/queue shorts/done data/shorts_log.json 2>/dev/null || git add -A shorts/queue shorts/done
+          git diff --cached --quiet && exit 0
+          git commit -m "쇼츠 제작 기록"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
