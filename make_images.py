@@ -13,6 +13,7 @@ import json
 import os
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -29,11 +30,14 @@ def fetch_cloudflare(prompt, path, seed):
     if not account or not token:
         raise RuntimeError("Cloudflare 설정 없음")
     url = f"https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/@cf/black-forest-labs/flux-1-schnell"
-    body = json.dumps({"prompt": f"{prompt}, {STYLE}", "steps": 6, "seed": seed}).encode()
+    body = json.dumps({"prompt": f"{prompt}, {STYLE}"[:1500], "steps": 6}).encode()
     req = urllib.request.Request(url, data=body, method="POST", headers={
         "Authorization": f"Bearer {token}", "Content-Type": "application/json", "User-Agent": bb.USER_AGENT})
-    with urllib.request.urlopen(req, timeout=120) as resp:
-        res = json.loads(resp.read().decode())
+    try:
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            res = json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        raise RuntimeError(f"HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:300]}") from None
     img = (res.get("result") or {}).get("image")
     if not img:
         raise RuntimeError(f"Cloudflare 응답에 이미지 없음: {str(res)[:200]}")
