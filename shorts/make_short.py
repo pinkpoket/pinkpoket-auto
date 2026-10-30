@@ -87,9 +87,12 @@ def duration(path):
 
 # ---------------------------------------------------------------- 음성
 
+TTS_RATE = os.environ.get("TTS_RATE", "+25%")
+
+
 async def _tts(text, voice, path):
     import edge_tts
-    await edge_tts.Communicate(text, voice, rate="+6%").save(path)
+    await edge_tts.Communicate(text, voice, rate=TTS_RATE).save(path)
 
 
 def tts(text, voice, path):
@@ -228,9 +231,9 @@ def make_scene(i, scene, voice, hook):
         gradient_bg(raw, i)
     prepare_image(raw, bg)
     overlay_png(hook, scene["text"], ov, outro=scene.get("outro", False))
-    dur = duration(audio) + 0.35
+    dur = duration(audio) + 0.12
     frames = int(dur * FPS) + 1
-    z = "min(1+0.0008*on,1.10)" if i % 2 == 0 else "max(1.10-0.0008*on,1.0)"
+    z = "min(1+0.0018*on,1.12)" if i % 2 == 0 else "max(1.12-0.0018*on,1.0)"
     vf = (f"[0:v]scale={int(W * 1.1)}:{int(H * 1.1)},"
           f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={W}x{H}:fps={FPS}[bg];"
           f"[bg][1:v]overlay=0:0,format=yuv420p[v]")
@@ -246,10 +249,12 @@ def build_video(script, out_path):
     shutil.rmtree(WORK, ignore_errors=True)
     os.makedirs(WORK, exist_ok=True)
     AI_COUNT[0] = 0
+    global TTS_RATE
+    TTS_RATE = script.get("rate") or TTS_RATE
     voice = script.get("voice") or "ko-KR-SunHiNeural"
     hook = script.get("hook") or clean_title(script["title"])
     scenes = list(script["scenes"])
-    outro = script.get("outro") or "오늘 꿀팁이 도움이 됐다면 구독과 좋아요 부탁드려요. 자세한 정리는 블로그에 있어요!"
+    outro = script.get("outro") or "자세한 건 블로그에! 구독하고 꿀팁 받아 가세요!"
     scenes.append({"text": outro, "bg": "cozy pink bedroom corner with soft lamp light", "outro": True})
     from concurrent.futures import ThreadPoolExecutor
 
