@@ -92,20 +92,64 @@ TTS_RATE = os.environ.get("TTS_RATE", "+25%")
 
 
 async def _tts(text, voice, path):
+    """음성을 저장하고, 단어마다 (시작초, 끝초, 글자) 를 돌려준다."""
     import edge_tts
-    await edge_tts.Communicate(text, voice, rate=TTS_RATE).save(path)
+    words = []
+    com = edge_tts.Communicate(text, voice, rate=TTS_RATE)
+    with open(path, "wb") as f:
+        async for chunk in com.stream():
+            if chunk["type"] == "audio":
+                f.write(chunk["data"])
+            elif chunk["type"] == "WordBoundary":
+                st = chunk["offset"] / 1e7
+                words.append((st, st + chunk["duration"] / 1e7, chunk["text"]))
+    return words
 
 
 def tts(text, voice, path):
     for attempt in range(3):
         try:
-            asyncio.run(_tts(text, voice, path))
+            words = asyncio.run(_tts(text, voice, path))
             if os.path.getsize(path) > 1000:
-                return
+                return words
         except Exception as e:  # noqa: BLE001
             print(f"[음성] 재시도 {attempt + 1}: {e}")
             time.sleep(3)
     raise RuntimeError("음성 생성 실패")
+
+
+def word_times(text, words, dur):
+    """자막 낱말(띄어쓰기 단위)마다 시작 시각을 구한다. 음성 단어 정보가 어긋나면 글자 수 비율로."""
+    tokens = text.split()
+    starts = []
+    wi = 0
+    for tok in tokens:
+        core = re.sub(r"[^\w]", "", tok)
+        found = None
+        while wi < len(words):
+            w = re.sub(r"[^\w]", "", words[wi][2])
+            wi += 1
+            if w and (w in core or core in w or core.startswith(w)):
+                found = words[wi - 1][0]
+                # 한 낱말이 음성 단어 여러 개로 쪼개진 경우 건너뛰기
+                while wi < len(words) and re.sub(r"[^\w]", "", words[wi][2]) and \
+                        re.sub(r"[^\w]", "", words[wi][2]) in core[len(w):]:
+                    wi += 1
+                break
+        starts.append(found)
+    if not words or sum(x is None for x in starts) > len(tokens) // 3:
+        total = sum(len(t) for t in tokens) or 1
+        acc, starts = 0, []
+        for t in tokens:
+            starts.append(dur * acc / total)
+            acc += len(t)
+        return tokens, starts
+    last = 0.0
+    for k, v in enumerate(starts):
+        if v is None:
+            starts[k] = last
+        last = starts[k]
+    return tokens, starts
 
 
 # ---------------------------------------------------------------- 그림
@@ -125,7 +169,7 @@ def cloudflare_image(prompt, path):
         r = requests.post(
             f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell",
             headers={"Authorization": f"Bearer {tok}"},
-            json={"prompt": f"{prompt}, {STYLE}"[:1500], "steps": 6}, timeout=90)
+            json={"prompt": f"{prompt}, {STYLE}"[:1500], "steps": 8}, timeout=90)
         img = (r.json().get("result") or {}).get("image") if r.ok else None
         if not img:
             print(f"[그림] Cloudflare 응답 {r.status_code}: {r.text[:200]}")
@@ -162,30 +206,41 @@ def prepare_image(src, dst):
 
 # ---------------------------------------------------------------- 자막
 
-def wrap_ko(text, width):
-    lines = []
-    for para in text.split("\n"):
-        lines += textwrap.wrap(para, width=width, break_long_words=True) or [""]
+YELLOW = (255, 228, 92)
+
+
+def wrap_tokens(d, tokens, f, max_w):
+    lines, cur = [], []
+    for k, t in enumerate(tokens):
+        trial = " ".join(tokens[j] for j in cur + [k])
+        if cur and d.textlength(trial, font=f) > max_w:
+            lines.append(cur)
+            cur = [k]
+        else:
+            cur.append(k)
+    if cur:
+        lines.append(cur)
     return lines
 
 
-def overlay_png(hook, subtitle, path, outro=False):
+def base_png(hook, path, outro=False):
+    """장면 내내 고정되는 부분: 위 제목 상자, 로고·채널 이름, 아래 그늘, (마지막 장면) 좋아요·구독 버튼."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    for y in range(H - 900, H):
-        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(150 * (y - (H - 900)) / 900)))
-    # 상단 제목 (분홍 상자)
-    f_hook = font(78)
+    for y in range(H - 1000, H):
+        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(170 * (y - (H - 1000)) / 1000)))
+    for y in range(0, 520):
+        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(90 * (1 - y / 520))))
+    f_hook = font(80)
     lines = wrap_ko(hook, 11)[:2]
-    box_h = 60 + len(lines) * 104
-    d.rounded_rectangle([60, 170, W - 60, 170 + box_h], radius=40, fill=PINK + (235,))
+    box_h = 60 + len(lines) * 106
+    d.rounded_rectangle([60, 170, W - 60, 170 + box_h], radius=44, fill=PINK + (240,))
     y = 200
     for line in lines:
         tw = d.textlength(line, font=f_hook)
         d.text(((W - tw) / 2, y), line, font=f_hook, fill=(255, 255, 255),
                stroke_width=3, stroke_fill=(150, 40, 95))
-        y += 104
-    # 채널 이름
+        y += 106
     f_tag = font(40)
     tag = "핑포의 작은집 연구소"
     tw = d.textlength(tag, font=f_tag)
@@ -199,28 +254,50 @@ def overlay_png(hook, subtitle, path, outro=False):
     else:
         tx = (W - tw) / 2
     d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=4, stroke_fill=(0, 0, 0))
-    # 하단 자막
-    f_sub = font(70)
-    lines = wrap_ko(subtitle, 13)[:4]
-    total = len(lines) * 98
-    top = H - 620 - total // 2
-    d.rounded_rectangle([60, top - 40, W - 60, top + total + 30], radius=32, fill=(0, 0, 0, 160))
-    y = top
-    for line in lines:
-        tw = d.textlength(line, font=f_sub)
-        d.text(((W - tw) / 2, y), line, font=f_sub, fill=(255, 255, 255),
-               stroke_width=4, stroke_fill=(0, 0, 0))
-        y += 98
     if outro:
-        f_b = font(68)
+        f_b = font(70)
         for k, label in enumerate(["좋아요", "구독"]):
             bx = W // 2 - 400 + k * 420
-            by = H // 2 - 130
+            by = H // 2 - 150
+            d.rounded_rectangle([bx + 6, by + 10, bx + 386, by + 150], radius=70, fill=(0, 0, 0, 90))
             d.rounded_rectangle([bx, by, bx + 380, by + 140], radius=70,
-                                fill=(230, 30, 40, 240) if k == 1 else PINK + (240,))
+                                fill=(230, 30, 40, 245) if k == 1 else PINK + (245,))
             tw = d.textlength(label, font=f_b)
-            d.text((bx + (380 - tw) / 2, by + 30), label, font=f_b, fill=(255, 255, 255))
+            d.text((bx + (380 - tw) / 2, by + 28), label, font=f_b, fill=(255, 255, 255))
     img.save(path)
+
+
+def caption_png(tokens, active, path, progress):
+    """아래 큰 자막. 지금 읽는 낱말은 노란색 + 분홍 밑바탕, 위쪽엔 전체 진행 막대."""
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    f = font(86)
+    lines = wrap_tokens(d, tokens, f, W - 200)[:3]
+    lh = 118
+    top = H - 640 - len(lines) * lh // 2
+    space = d.textlength(" ", font=f)
+    for li, line in enumerate(lines):
+        widths = [d.textlength(tokens[k], font=f) for k in line]
+        x = (W - (sum(widths) + space * (len(line) - 1))) / 2
+        y = top + li * lh
+        for k, w in zip(line, widths):
+            if k == active:
+                d.rounded_rectangle([x - 14, y - 6, x + w + 14, y + 104], radius=22, fill=PINK + (235,))
+                d.text((x, y), tokens[k], font=f, fill=YELLOW, stroke_width=6, stroke_fill=(90, 20, 55))
+            else:
+                d.text((x, y), tokens[k], font=f, fill=(255, 255, 255), stroke_width=7, stroke_fill=(0, 0, 0))
+            x += w + space
+    # 진행 막대
+    d.rectangle([0, 0, W, 14], fill=(255, 255, 255, 70))
+    d.rectangle([0, 0, int(W * max(0.0, min(1.0, progress))), 14], fill=PINK + (255,))
+    img.save(path)
+
+
+def wrap_ko(text, width):
+    lines = []
+    for para in text.split("\n"):
+        lines += textwrap.wrap(para, width=width, break_long_words=True) or [""]
+    return lines
 
 
 # ---------------------------------------------------------------- 영상
@@ -229,29 +306,54 @@ def clean_title(t):
     return re.sub(r"\s*#\S+", "", t or "").strip()
 
 
-def make_scene(i, scene, voice, hook):
-    audio = os.path.join(WORK, f"a{i}.mp3")
+def whoosh(path):
+    run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anoisesrc=d=0.4:c=pink:a=0.6",
+         "-af", "highpass=f=500,lowpass=f=5000,afade=t=in:d=0.12,afade=t=out:st=0.15:d=0.25,volume=0.22",
+         "-ar", "44100", "-ac", "2", path])
+
+
+def make_scene(i, scene, hook, audio, words, t0, total):
     raw = os.path.join(WORK, f"raw{i}.jpg")
     bg = os.path.join(WORK, f"bg{i}.jpg")
-    ov = os.path.join(WORK, f"ov{i}.png")
+    base = os.path.join(WORK, f"base{i}.png")
     clip = os.path.join(WORK, f"c{i:02d}.mp4")
-    tts(scene["text"], voice, audio)
     if not os.path.exists(raw):
         gradient_bg(raw, i)
     prepare_image(raw, bg)
-    overlay_png(hook, scene["text"], ov, outro=scene.get("outro", False))
+    base_png(hook, base, outro=scene.get("outro", False))
     dur = duration(audio) + 0.12
+    tokens, starts = word_times(scene["text"], words, dur)
+    caps = []
+    for k, st in enumerate(starts):
+        cp = os.path.join(WORK, f"cap{i}_{k}.png")
+        caption_png(tokens, k, cp, (t0 + st) / total)
+        end = starts[k + 1] if k + 1 < len(starts) else dur + 1
+        caps.append((cp, st if k else 0.0, end))
     frames = int(dur * FPS) + 1
-    z = "min(1+0.0018*on,1.12)" if i % 2 == 0 else "max(1.12-0.0018*on,1.0)"
-    vf = (f"[0:v]scale={int(W * 1.1)}:{int(H * 1.1)},"
+    # 처음 0.25초는 살짝 튀어나오듯 확대, 이후 천천히 줌
+    z = ("if(lt(on,8),1.14-0.004*on,min(1.11+0.0012*(on-8),1.18))" if i % 2 == 0
+         else "if(lt(on,8),1.0+0.004*on,max(1.03-0.0012*(on-8),1.0))")
+    inputs = ["-loop", "1", "-i", bg, "-i", base]
+    for cp, _, _ in caps:
+        inputs += ["-i", cp]
+    inputs += ["-i", audio, "-i", os.path.join(WORK, "whoosh.wav")]
+    n = len(caps)
+    a_idx, w_idx = 2 + n, 3 + n
+    fc = (f"[0:v]scale={int(W * 1.2)}:{int(H * 1.2)},"
           f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={W}x{H}:fps={FPS}[bg];"
-          f"[bg][1:v]overlay=0:0,format=yuv420p[v]")
-    run(["ffmpeg", "-y", "-loop", "1", "-i", bg, "-i", ov, "-i", audio,
-         "-filter_complex", vf, "-map", "[v]", "-map", "2:a",
-         "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+          f"[bg][1:v]overlay=0:0[v0]")
+    for k, (_, st, en) in enumerate(caps):
+        fc += f";[v{k}][{2 + k}:v]overlay=0:0:enable='between(t,{st:.3f},{en:.3f})'[v{k + 1}]"
+    fc += f";[v{n}]format=yuv420p[v]"
+    if i > 0:
+        fc += f";[{a_idx}:a]aformat=sample_rates=44100:channel_layouts=stereo[va];[{w_idx}:a][va]amix=inputs=2:duration=longest:normalize=0[a]"
+    else:
+        fc += f";[{a_idx}:a]aformat=sample_rates=44100:channel_layouts=stereo[a]"
+    run(["ffmpeg", "-y", *inputs, "-filter_complex", fc, "-map", "[v]", "-map", "[a]",
+         "-c:v", "libx264", "-preset", "veryfast", "-crf", "19",
          "-c:a", "aac", "-b:a", "160k", "-ar", "44100", "-ac", "2",
          "-t", f"{dur:.2f}", "-r", str(FPS), clip])
-    return clip
+    return clip, dur
 
 
 def build_video(script, out_path):
@@ -272,7 +374,20 @@ def build_video(script, out_path):
         cloudflare_image(sc.get("bg") or "cozy small apartment living room", os.path.join(WORK, f"raw{i}.jpg"))
     with ThreadPoolExecutor(max_workers=4) as ex:
         list(ex.map(_pre, enumerate(scenes)))
-    clips = [make_scene(i, s, voice, hook) for i, s in enumerate(scenes)]
+    whoosh(os.path.join(WORK, "whoosh.wav"))
+    # 음성을 먼저 모두 만들어 전체 길이를 알아 둔다 (진행 막대용)
+    voiced = []
+    for i, sc in enumerate(scenes):
+        audio = os.path.join(WORK, f"a{i}.mp3")
+        words = tts(sc["text"], voice, audio)
+        voiced.append((audio, words, duration(audio) + 0.12))
+    total = sum(v[2] for v in voiced)
+    clips, t0 = [], 0.0
+    for i, sc in enumerate(scenes):
+        audio, words, dur = voiced[i]
+        clip, _ = make_scene(i, sc, hook, audio, words, t0, total)
+        clips.append(clip)
+        t0 += dur
     listfile = os.path.join(WORK, "list.txt")
     with open(listfile, "w") as f:
         f.writelines(f"file '{c}'\n" for c in clips)
