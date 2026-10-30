@@ -36,6 +36,9 @@ jobs:
           YT_CHANNEL_ID: ${{ vars.YT_CHANNEL_ID }}
           CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+          COUPANG_SUB_ID: ${{ vars.COUPANG_SUB_ID }}
         run: python -u shorts/make_short.py
       - name: 영상 보관 (7일)
         if: always()

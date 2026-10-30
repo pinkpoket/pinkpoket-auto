@@ -49,6 +49,9 @@ jobs:
           YOUTUBE_CHANNEL_URL: ${{ vars.YOUTUBE_CHANNEL_URL }}
           THREADS_URL: ${{ vars.THREADS_URL }}
           IMAGES_SHA: ${{ steps.img.outputs.sha }}
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+          COUPANG_SUB_ID: ${{ vars.COUPANG_SUB_ID }}
         run: python -u update_posts.py
       - name: 큐 비우기
         if: always()

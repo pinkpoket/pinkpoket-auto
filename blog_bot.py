@@ -127,8 +127,13 @@ def read_links():
     return links
 
 
-def pick_links(obj, state):
-    """글에 직접 고른 상품이 있으면 그것을, 없으면 분류에 맞는 상품 1개."""
+def pick_links(obj, state, name=None):
+    """상품 고르기 순서: 이미 고른 상품(발행 기록) → 글에 직접 넣은 상품
+    → 쿠팡 API 키워드 검색(coupang_keywords) → coupang_links.txt 분류."""
+    if name:
+        for p in state["posted"]:
+            if p.get("file") == name and p.get("products"):
+                return p["products"]
     chosen = []
     for item in obj.get("coupang") or []:
         url = str(item.get("url", "")).strip()
@@ -137,6 +142,12 @@ def pick_links(obj, state):
             chosen.append({"url": url, "name": name})
     if chosen:
         return chosen[:MAX_LINKS]
+    keywords = [k for k in obj.get("coupang_keywords") or [] if str(k).strip()]
+    if keywords:
+        import coupang_api
+        found = coupang_api.pick(keywords, count=2, sub_id=os.environ.get("COUPANG_SUB_ID", "").strip())
+        if found:
+            return [{"url": f["url"], "name": f["name"]} for f in found]
     category = str(obj.get("category", "")).strip()
     if category in NO_LINK:
         return []
@@ -357,7 +368,7 @@ def build(name, state):
     if not title or not str(obj.get("html", "")).strip():
         raise ValueError("title 또는 html 이 비어 있습니다")
     labels = [str(x).strip() for x in obj.get("labels", []) if str(x).strip()][:8]
-    links = pick_links(obj, state)
+    links = pick_links(obj, state, name)
     images = images_for(name, obj, state)
     title, content = assemble(name, obj, state, links, images)
     return title, labels, content, links
@@ -485,7 +496,7 @@ def main():
 
         state["posted"].append({
             "file": name, "title": title, "url": post_url, "post_id": post_id,
-            "at": now.strftime("%Y-%m-%d %H:%M"), "links": [l["url"] for l in links],
+            "at": now.strftime("%Y-%m-%d %H:%M"), "links": [l["url"] for l in links], "products": links,
             "series": str(obj.get("series", "")).strip(), "series_no": obj.get("series_no"),
             "images": [u for u, _ in images_for(name, obj)],
         })

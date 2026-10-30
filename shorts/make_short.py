@@ -285,7 +285,17 @@ def build_video(script, out_path):
 
 def pick_coupang(script):
     keys = [k.strip() for k in script.get("coupang_keywords", []) if k.strip()]
-    if not keys or not os.path.exists(LINKS_FILE):
+    if not keys:
+        return None
+    try:
+        sys.path.insert(0, REPO)
+        import coupang_api
+        found = coupang_api.pick(keys, count=1, sub_id=os.environ.get("COUPANG_SUB_ID", "").strip())
+        if found:
+            return (found[0]["url"], found[0]["name"], found[0]["keyword"])
+    except Exception as e:  # noqa: BLE001
+        print(f"[쿠팡] API 사용 실패: {e}")
+    if not os.path.exists(LINKS_FILE):
         return None
     rows = []
     for line in open(LINKS_FILE, encoding="utf-8"):

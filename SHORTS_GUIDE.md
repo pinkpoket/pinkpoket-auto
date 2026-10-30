@@ -28,7 +28,7 @@
 - `description`: 2~3줄 요약 + 댓글 질문. 블로그 주소·AI 안내·쿠팡 문구는 봇이 붙인다.
 - `tags`: 8~10개, `#shorts` 와 `#핑포의작은집연구소` 포함
 - `blog_url`: 관련 블로그 글 주소
-- `coupang_keywords`: 어울리는 상품 키워드 1~3개 (data/coupang_links.txt 에 맞는 게 있을 때만 붙는다)
+- `coupang_keywords`: 영상 내용과 바로 이어지는 상품 검색어 1~2개 (봇이 쿠팡 API 로 찾아 설명란에 붙인다)
 
 ## 파일
 `shorts/queue/YYYYMMDD-HHMM.json` (한국 시간). 형식은 `shorts/make_short.py` 맨 위 설명 참고.
