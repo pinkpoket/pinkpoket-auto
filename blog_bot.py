@@ -262,7 +262,7 @@ def images_for(name, obj, state=None):
 
 def figure(url, alt):
     return ('<div style="text-align:center;margin:0 0 24px">'
-            f'<img src="{html.escape(url)}" alt="{html.escape(alt)}" width="1200" height="675" '
+            f'<img src="{html.escape(url)}" alt="{html.escape(alt)}" width="1024" height="1024" '
             'style="width:100%;height:auto;border-radius:12px" loading="lazy">'
             '<div style="font-size:12px;color:#999;margin-top:6px">AI로 만든 이미지예요</div></div>')
 
