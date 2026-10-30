@@ -46,6 +46,7 @@ WORK = os.path.join(ROOT, "_work")
 OUT = os.path.join(ROOT, "_out")
 LOG_FILE = os.path.join(REPO, "data", "shorts_log.json")
 LINKS_FILE = os.path.join(REPO, "data", "coupang_links.txt")
+LOGO = os.path.join(REPO, "brand", "logo.png")
 W, H, FPS = 1080, 1920, 30
 
 BLOG_HOME = "https://pinkpoket.blogspot.com"
@@ -188,8 +189,16 @@ def overlay_png(hook, subtitle, path, outro=False):
     f_tag = font(40)
     tag = "핑포의 작은집 연구소"
     tw = d.textlength(tag, font=f_tag)
-    d.text(((W - tw) / 2, 170 + box_h + 24), tag, font=f_tag, fill=(255, 255, 255),
-           stroke_width=4, stroke_fill=(0, 0, 0))
+    logo_s = 96
+    lx = int((W - tw - logo_s - 16) / 2)
+    ty = 170 + box_h + 22
+    if os.path.exists(LOGO):
+        logo = Image.open(LOGO).convert("RGBA").resize((logo_s, logo_s), Image.LANCZOS)
+        img.alpha_composite(logo, (lx, ty - 22))
+        tx = lx + logo_s + 16
+    else:
+        tx = (W - tw) / 2
+    d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=4, stroke_fill=(0, 0, 0))
     # 하단 자막
     f_sub = font(70)
     lines = wrap_ko(subtitle, 13)[:4]
