@@ -7,7 +7,10 @@
       "post_id": "6447403961434603755",
       "at": "2026-10-30 00:15",
       "links": [],
-      "images": []
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-01-1.jpg",
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-01-2.jpg"
+      ]
     },
     {
       "file": "20261030-0100.json",
@@ -18,7 +21,10 @@
       "links": [],
       "series": "전셋집 원상복구 걱정 없는 인테리어",
       "series_no": 1,
-      "images": []
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-0100-1.jpg",
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-0100-2.jpg"
+      ]
     },
     {
       "file": "20261030-0110.json",
@@ -29,7 +35,10 @@
       "links": [],
       "series": "전셋집 원상복구 걱정 없는 인테리어",
       "series_no": 2,
-      "images": []
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-0110-1.jpg",
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-0110-2.jpg"
+      ]
     },
     {
       "file": "20261030-0120.json",
@@ -40,7 +49,10 @@
       "links": [],
       "series": "전셋집 원상복구 걱정 없는 인테리어",
       "series_no": 3,
-      "images": []
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-0120-1.jpg",
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-0120-2.jpg"
+      ]
     },
     {
       "file": "20261030-0750.json",
@@ -51,7 +63,10 @@
       "links": [],
       "series": "전셋집 원상복구 걱정 없는 인테리어",
       "series_no": 4,
-      "images": []
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-0750-1.jpg",
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@30dabda175074c14fa4628bf1b4fb42193f87a2d/images/20261030-0750-2.jpg"
+      ]
     }
   ],
   "used_links": []
