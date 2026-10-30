@@ -264,7 +264,7 @@ def figure(url, alt):
     return ('<div style="text-align:center;margin:0 0 24px">'
             f'<img src="{html.escape(url)}" alt="{html.escape(alt)}" width="1024" height="1024" '
             'style="width:100%;height:auto;border-radius:12px" loading="lazy">'
-            '<div style="font-size:12px;color:#999;margin-top:6px">AI로 만든 이미지예요</div></div>')
+            '</div>')
 
 
 def insert_mid_image(body, fig):
@@ -318,7 +318,8 @@ def series_box(obj, name, state):
 AUTHOR_BOX = (
     '<div style="border-top:1px solid #eee;margin:32px 0 0;padding:16px 0 0;font-size:14px;line-height:1.7;color:#666">'
     '<strong style="color:#333">✍️ 핑포의 작은집 연구소</strong> · 핑포(핑크포켓, Pink Pocket)가 작은 집도 예쁘고 편하게 가꾸는 인테리어·살림 방법을 정리해요. '
-    '공식 자료와 확인된 정보를 바탕으로 AI 도구의 도움을 받아 쓰고 있어요.</div>')
+    '공식 자료와 확인된 정보를 바탕으로 AI 도구의 도움을 받아 쓰고 있어요.{photo_note}</div>')
+PHOTO_NOTE = ' 글 속 사진은 AI로 만든 이미지예요.'
 
 
 def assemble(name, obj, state, links, images):
@@ -346,7 +347,7 @@ def assemble(name, obj, state, links, images):
     parts.append(channel_box())
     notice = str(obj.get("notice", "")).strip() or DEFAULT_NOTICE
     parts.append(f'<p style="font-size:13px;color:#888;line-height:1.7">{html.escape(notice)}</p>')
-    parts.append(AUTHOR_BOX)
+    parts.append(AUTHOR_BOX.replace('{photo_note}', PHOTO_NOTE if images else ''))
     return title, "\n".join(p for p in parts if p)
 
 
