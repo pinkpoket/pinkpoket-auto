@@ -92,3 +92,20 @@ def pick(keywords, count=1, sub_id="", exclude=()):
             break
         time.sleep(1)
     return chosen
+
+
+def deeplink(urls, sub_id=""):
+    """쿠팡 주소(메인·기획전 등)를 내 파트너스 링크로 바꾼다. [(원래주소, 짧은링크)]"""
+    body = {"coupangUrls": list(urls)}
+    if sub_id:
+        body["subId"] = sub_id
+    data = _call("POST", f"{BASE}/deeplink", body) or []
+    return [(d.get("originalUrl"), d.get("shortenUrl")) for d in data]
+
+
+if __name__ == "__main__":
+    # 사용: python coupang_api.py https://www.coupang.com/ ...
+    import sys
+    for orig, short in deeplink(sys.argv[1:] or ["https://www.coupang.com/"],
+                                sub_id=os.environ.get("COUPANG_SUB_ID", "").strip()):
+        print(f"[파트너스 링크] {orig} → {short}")

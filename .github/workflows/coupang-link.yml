@@ -1,0 +1,25 @@
+name: coupang-link
+
+# 쿠팡 주소를 내 파트너스 링크로 바꿔서 로그에 보여 준다 (수동 실행)
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: "바꿀 쿠팡 주소 (여러 개는 띄어쓰기)"
+        default: "https://www.coupang.com/"
+
+jobs:
+  link:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+          COUPANG_SUB_ID: ${{ vars.COUPANG_SUB_ID }}
+          URLS: ${{ inputs.urls }}
+        run: python -u coupang_api.py $URLS
