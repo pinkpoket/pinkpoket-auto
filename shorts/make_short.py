@@ -426,14 +426,29 @@ def pick_coupang(script):
 
 
 def build_description(script):
-    desc = script.get("description", "").strip()
-    desc += f"\n\n📖 자세한 정리는 블로그에서 👉 {script.get('blog_url') or BLOG_HOME}"
-    desc += "\n🏠 핑포의 작은집 연구소 · 핑포(핑크포켓, Pink Pocket)"
-    desc += "\n※ 이 영상은 AI 음성과 AI 이미지를 사용해 만들었어요."
+    """링크를 맨 위쪽에 둔다 (쇼츠 설명란은 접혀 있어서 위쪽만 바로 보임)."""
+    blog = script.get("blog_url") or BLOG_HOME
     product = pick_coupang(script)
+    lines = []
     if product:
-        desc = f"{DISCLOSURE}\n\n{desc}\n\n🛒 {product[1]}\n{product[0]}"
-    return desc, product
+        lines += [DISCLOSURE, ""]
+    lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
+    if product:
+        lines.append(f"🛒 {product[1]} 👉 {product[0]}")
+    lines += ["", script.get("description", "").strip(), "",
+              "🏠 핑포의 작은집 연구소 · 핑포(핑크포켓, Pink Pocket)",
+              "※ 이 영상은 AI 음성과 AI 이미지를 사용해 만들었어요."]
+    return "\n".join(lines).strip(), product
+
+
+def build_comment(script, product):
+    """영상에 남길 링크 바로가기 댓글."""
+    blog = script.get("blog_url") or BLOG_HOME
+    lines = ["💗 링크 바로가기", f"📖 블로그 자세히 보기 👉 {blog}"]
+    if product:
+        lines.append(f"🛒 {product[1]} 👉 {product[0]}")
+        lines += ["", DISCLOSURE]
+    return "\n".join(lines)
 
 
 # ---------------------------------------------------------------- 유튜브
@@ -505,6 +520,19 @@ def yt_upload(video, title, desc, tags):
     return info.get("id"), info.get("status", {}).get("privacyStatus", "")
 
 
+def yt_comment(video_id, text):
+    """채널 이름으로 댓글을 단다. 토큰에 youtube.force-ssl 권한이 없으면 실패하고 영상은 그대로 둔다."""
+    tok = yt_access_token()
+    body = {"snippet": {"videoId": video_id,
+                        "topLevelComment": {"snippet": {"textOriginal": yt_clean(text)[:9000]}}}}
+    r = requests.post("https://www.googleapis.com/youtube/v3/commentThreads?part=snippet",
+                      headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8"},
+                      data=json.dumps(body), timeout=30)
+    if r.status_code >= 300:
+        raise RuntimeError(f"댓글 실패 {r.status_code}: {r.text[:200]}")
+    return r.json().get("id")
+
+
 # ---------------------------------------------------------------- 기록
 
 def log(entry):
@@ -539,13 +567,20 @@ def main():
             print(f"[완성] {name}: {secs:.1f}초, AI 그림 {AI_COUNT[0]}장")
             desc, product = build_description(script)
             if os.environ.get("DRY_RUN") == "1":
-                print("[시험] 업로드 건너뜀\n" + desc)
+                print("[시험] 업로드 건너뜀\n" + desc + "\n--- 댓글 ---\n" + build_comment(script, product))
                 continue
             yt = yt_upload(video, script["title"], desc, script.get("tags", []))
             if yt:
                 vid, privacy = yt
                 entry.update(video_id=vid, url=f"https://youtube.com/shorts/{vid}", privacy=privacy)
                 print(f"[유튜브] 업로드 완료 ({privacy}): https://youtube.com/shorts/{vid}")
+                try:
+                    cid = yt_comment(vid, build_comment(script, product))
+                    entry["comment"] = "ok"
+                    print(f"[댓글] 링크 댓글 완료: {cid}")
+                except Exception as ce:  # noqa: BLE001
+                    entry["comment_error"] = str(ce)[:300]
+                    print(f"[댓글] {ce}")
             else:
                 entry["error"] = "YOUTUBE_REFRESH_TOKEN 없음 — 영상은 Actions 보관함에만 있음"
                 print(entry["error"])
