@@ -7,7 +7,8 @@
   "ai_images": 7,
   "video_id": "0WZmQ7HjYsY",
   "url": "https://youtube.com/shorts/0WZmQ7HjYsY",
-  "privacy": "public"
+  "privacy": "public",
+  "comment_error": "댓글 실패 403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\n    \"errors\": [\n      {\n       "
  },
  {
   "file": "20261030-2100.json",
@@ -17,7 +18,8 @@
   "ai_images": 6,
   "video_id": "Yvu2ljVlBak",
   "url": "https://youtube.com/shorts/Yvu2ljVlBak",
-  "privacy": "public"
+  "privacy": "public",
+  "comment": "ok"
  },
  {
   "file": "20261031-1238.json",
@@ -33,7 +35,8 @@
   "ai_images": 6,
   "video_id": "6zaRU5WzEbs",
   "url": "https://youtube.com/shorts/6zaRU5WzEbs",
-  "privacy": "public"
+  "privacy": "public",
+  "comment": "ok"
  },
  {
   "file": "20261031-2039.json",
@@ -43,6 +46,7 @@
   "ai_images": 6,
   "video_id": "pZjAom9fXt0",
   "url": "https://youtube.com/shorts/pZjAom9fXt0",
-  "privacy": "public"
+  "privacy": "public",
+  "comment": "ok"
  }
 ]
