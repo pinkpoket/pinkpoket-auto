@@ -1,0 +1,17 @@
+{
+  "title": "원룸 외풍 차단, 바람 새는 틈 찾고 막는 법",
+  "hook": "외풍 틈 찾는 법",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {"text": "원룸 외풍, 어디서 들어올까요?", "bg": "cozy small studio apartment window on a cold winter evening, frost on glass, centered"},
+    {"text": "휴지를 대 보세요. 흔들리면 틈이에요!", "bg": "close up of a thin tissue paper fluttering near a sliding window frame gap, centered"},
+    {"text": "창문 틈엔 모헤어 틈막이를 붙여요.", "bg": "close up of white mohair weather stripping tape on a sliding window frame, centered"},
+    {"text": "현관문 아래엔 쿠션형 틈막이!", "bg": "close up of a soft fabric draft stopper at the bottom of an apartment front door, wood floor, centered"},
+    {"text": "가스 환기구는 막지 말고, 하루 두 번 환기!", "bg": "slightly open window letting fresh air into a warm cozy room, sheer curtain moving, centered"}
+  ],
+  "outro": "자세한 건 블로그에! 구독하고 꿀팁 받아 가세요!",
+  "description": "원룸 외풍, 휴지 한 장으로 바람 새는 틈부터 찾아보세요!\n창문엔 모헤어 틈막이, 현관문 아래엔 쿠션형 틈막이로 막고, 가스 환기구는 꼭 비워 두세요 💗\n여러분 집은 어디서 찬바람이 제일 많이 들어오나요? 댓글로 알려 주세요.",
+  "tags": ["#shorts", "#외풍차단", "#원룸외풍", "#문풍지", "#틈막이", "#겨울나기", "#난방비절약", "#살림꿀팁", "#핑포의작은집연구소"],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/10/studio-apartment-draft-blocking-winter.html",
+  "coupang_keywords": ["창문 외풍차단 문풍지", "현관문 하단 틈막이"]
+}
