@@ -234,29 +234,34 @@ def base_png(hook, path, outro=False):
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(120 * a ** 0.8)))
     for y in range(0, 520):
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(90 * (1 - y / 520))))
-    f_hook = font(80)
-    lines = wrap_ko(hook, 11)[:2]
-    box_h = 60 + len(lines) * 106
-    d.rounded_rectangle([60, 170, W - 60, 170 + box_h], radius=44, fill=PINK + (240,))
-    y = 200
+    # 위 제목: 노란 바탕 알약 상자, 글씨 크기에 맞춰 가운데
+    f_hook = font(44)
+    lines = wrap_ko(hook, 20)[:2]
+    lh, pad_x, pad_y = 58, 40, 20
+    tw_max = max(d.textlength(ln, font=f_hook) for ln in lines)
+    box_w, box_h = tw_max + pad_x * 2, len(lines) * lh + pad_y * 2
+    bx0, by0 = (W - box_w) / 2, 180
+    d.rounded_rectangle([bx0 + 4, by0 + 6, bx0 + box_w + 4, by0 + box_h + 6], radius=box_h / 2, fill=(0, 0, 0, 70))
+    d.rounded_rectangle([bx0, by0, bx0 + box_w, by0 + box_h], radius=box_h / 2, fill=YELLOW + (250,))
+    y = by0 + pad_y - 4
     for line in lines:
         tw = d.textlength(line, font=f_hook)
-        d.text(((W - tw) / 2, y), line, font=f_hook, fill=(255, 255, 255),
-               stroke_width=3, stroke_fill=(150, 40, 95))
-        y += 106
-    f_tag = font(40)
+        d.text(((W - tw) / 2, y), line, font=f_hook, fill=(70, 30, 45))
+        y += lh
+    # 채널 이름 + 로고 (작게)
+    f_tag = font(26)
     tag = "핑포의 작은집 연구소"
     tw = d.textlength(tag, font=f_tag)
-    logo_s = 96
-    lx = int((W - tw - logo_s - 16) / 2)
-    ty = 170 + box_h + 22
+    logo_s = 44
+    lx = int((W - tw - logo_s - 10) / 2)
+    ty = by0 + box_h + 20
     if os.path.exists(LOGO):
         logo = Image.open(LOGO).convert("RGBA").resize((logo_s, logo_s), Image.LANCZOS)
-        img.alpha_composite(logo, (lx, ty - 22))
-        tx = lx + logo_s + 16
+        img.alpha_composite(logo, (lx, ty - 7))
+        tx = lx + logo_s + 10
     else:
         tx = (W - tw) / 2
-    d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=4, stroke_fill=(0, 0, 0))
+    d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=3, stroke_fill=(0, 0, 0))
     if outro:
         f_b = font(70)
         for k, label in enumerate(["좋아요", "구독"]):
@@ -416,7 +421,7 @@ def build_video(script, out_path):
         song = random.Random(script.get("title", "")).choice(bgm)
         d = duration(joined)
         run(["ffmpeg", "-y", "-i", joined, "-stream_loop", "-1", "-i", song, "-filter_complex",
-             f"[1:a]volume=0.13,afade=t=out:st={max(0.0, d - 0.8):.2f}:d=0.8[b];"
+             f"[1:a]volume=0.16,afade=t=out:st={max(0.0, d - 0.8):.2f}:d=0.8[b];"
              "[0:a][b]amix=inputs=2:duration=first:normalize=0[a]",
              "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
              "-movflags", "+faststart", out_path])
