@@ -223,7 +223,7 @@ def wrap_tokens(d, tokens, f, max_w):
     return lines
 
 
-def base_png(hook, path, outro=False):
+def base_png(hook, path, outro=False, badge=""):
     """장면 내내 고정되는 부분: 위 제목 상자, 로고·채널 이름, 아래 그늘, (마지막 장면) 좋아요·구독 버튼."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
@@ -254,6 +254,14 @@ def base_png(hook, path, outro=False):
     else:
         tx = (W - tw) / 2
     d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=4, stroke_fill=(0, 0, 0))
+    if badge:
+        # 순서 번호 큰 동그라미 (첫째·둘째… 장면)
+        r, cx, cy = 100, 190, ty + 230
+        d.ellipse([cx - r + 8, cy - r + 12, cx + r + 8, cy + r + 12], fill=(0, 0, 0, 90))
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=YELLOW + (255,), outline=(255, 255, 255, 255), width=10)
+        f_n = font(128)
+        bw = d.textlength(badge, font=f_n)
+        d.text((cx - bw / 2, cy - 92), badge, font=f_n, fill=PINK, stroke_width=4, stroke_fill=(255, 255, 255))
     if outro:
         f_b = font(70)
         for k, label in enumerate(["좋아요", "구독"]):
@@ -267,25 +275,29 @@ def base_png(hook, path, outro=False):
     img.save(path)
 
 
-def caption_png(tokens, active, path, progress):
-    """아래 큰 자막. 지금 읽는 낱말은 노란색 + 분홍 밑바탕, 위쪽엔 전체 진행 막대."""
+def caption_png(tokens, active, path, progress, center=False):
+    """큰 자막. 지금 읽는 줄만 크게 보여 주고, 읽는 낱말은 노란색 + 분홍 밑바탕. 위쪽엔 진행 막대.
+    center=True(첫 장면)면 화면 한가운데에 더 크게 — 3초 안에 멈추게."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    f = font(86)
-    lines = wrap_tokens(d, tokens, f, W - 200)[:3]
-    lh = 118
-    top = H - 640 - len(lines) * lh // 2
+    f = font(118 if center else 100)
+    lines = wrap_tokens(d, tokens, f, W - 150)
+    cur = next((ln for ln in lines if active in ln), lines[0] if lines else [])
+    lh = 150 if center else 132
+    # 첫 장면은 문장 전체(최대 2줄), 나머지는 지금 읽는 줄만
+    show = lines[:2] if center else [cur]
+    top = (H // 2 + 60 if center else H - 610) - len(show) * lh // 2
     space = d.textlength(" ", font=f)
-    for li, line in enumerate(lines):
+    for li, line in enumerate(show):
         widths = [d.textlength(tokens[k], font=f) for k in line]
         x = (W - (sum(widths) + space * (len(line) - 1))) / 2
         y = top + li * lh
         for k, w in zip(line, widths):
             if k == active:
-                d.rounded_rectangle([x - 14, y - 6, x + w + 14, y + 104], radius=22, fill=PINK + (235,))
-                d.text((x, y), tokens[k], font=f, fill=YELLOW, stroke_width=6, stroke_fill=(90, 20, 55))
+                d.rounded_rectangle([x - 16, y - 4, x + w + 16, y + lh - 10], radius=26, fill=PINK + (240,))
+                d.text((x, y), tokens[k], font=f, fill=YELLOW, stroke_width=7, stroke_fill=(90, 20, 55))
             else:
-                d.text((x, y), tokens[k], font=f, fill=(255, 255, 255), stroke_width=7, stroke_fill=(0, 0, 0))
+                d.text((x, y), tokens[k], font=f, fill=(255, 255, 255), stroke_width=9, stroke_fill=(0, 0, 0))
             x += w + space
     # 진행 막대
     d.rectangle([0, 0, W, 14], fill=(255, 255, 255, 70))
@@ -312,6 +324,18 @@ def whoosh(path):
          "-ar", "44100", "-ac", "2", path])
 
 
+ORDINALS = {"첫째": "1", "둘째": "2", "셋째": "3", "넷째": "4", "다섯째": "5"}
+
+
+def scene_badge(text):
+    t = text.strip()
+    for k, v in ORDINALS.items():
+        if t.startswith(k):
+            return v
+    m_ = re.match(r"^([1-9])[.)번]", t)
+    return m_.group(1) if m_ else ""
+
+
 def make_scene(i, scene, hook, audio, words, t0, total):
     raw = os.path.join(WORK, f"raw{i}.jpg")
     bg = os.path.join(WORK, f"bg{i}.jpg")
@@ -320,13 +344,13 @@ def make_scene(i, scene, hook, audio, words, t0, total):
     if not os.path.exists(raw):
         gradient_bg(raw, i)
     prepare_image(raw, bg)
-    base_png(hook, base, outro=scene.get("outro", False))
+    base_png(hook, base, outro=scene.get("outro", False), badge=scene_badge(scene["text"]))
     dur = duration(audio) + 0.05
     tokens, starts = word_times(scene["text"], words, dur)
     caps = []
     for k, st in enumerate(starts):
         cp = os.path.join(WORK, f"cap{i}_{k}.png")
-        caption_png(tokens, k, cp, (t0 + st) / total)
+        caption_png(tokens, k, cp, (t0 + st) / total, center=(i == 0))
         end = starts[k + 1] if k + 1 < len(starts) else dur + 1
         caps.append((cp, st if k else 0.0, end))
     frames = int(dur * FPS) + 1
@@ -365,8 +389,11 @@ def build_video(script, out_path):
     voice = script.get("voice") or "ko-KR-SunHiNeural"
     hook = script.get("hook") or clean_title(script["title"])
     scenes = list(script["scenes"])
-    outro = script.get("outro") or "자세한 건 블로그에! 구독하고 꿀팁 받아 가세요!"
-    scenes.append({"text": outro, "bg": "cozy pink bedroom corner with soft lamp light", "outro": True})
+    # 좋아요·구독 마지막 화면은 시청 지속률을 떨어뜨려서 기본은 뺀다 (링크·구독 안내는 설명란·댓글로).
+    # 대본에 "end_card": true 가 있을 때만 붙인다.
+    if script.get("end_card"):
+        outro = script.get("outro") or "자세한 건 블로그에! 구독하고 꿀팁 받아 가세요!"
+        scenes.append({"text": outro, "bg": "cozy pink bedroom corner with soft lamp light", "outro": True})
     from concurrent.futures import ThreadPoolExecutor
 
     def _pre(i_s):
@@ -391,8 +418,20 @@ def build_video(script, out_path):
     listfile = os.path.join(WORK, "list.txt")
     with open(listfile, "w") as f:
         f.writelines(f"file '{c}'\n" for c in clips)
+    bgm = sorted(glob.glob(os.path.join(REPO, "brand", "bgm", "*.mp3")))
+    joined = out_path if not bgm else os.path.join(WORK, "joined.mp4")
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", listfile,
-         "-c", "copy", "-movflags", "+faststart", out_path])
+         "-c", "copy", "-movflags", "+faststart", joined])
+    if bgm:
+        # brand/bgm/ 에 넣어 둔 저작권 걱정 없는 음악(유튜브 오디오 보관함 등)을 작게 깔아 준다
+        song = random.Random(script.get("title", "")).choice(bgm)
+        d = duration(joined)
+        run(["ffmpeg", "-y", "-i", joined, "-stream_loop", "-1", "-i", song, "-filter_complex",
+             f"[1:a]volume=0.13,afade=t=out:st={max(0.0, d - 0.8):.2f}:d=0.8[b];"
+             "[0:a][b]amix=inputs=2:duration=first:normalize=0[a]",
+             "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+             "-movflags", "+faststart", out_path])
+        print(f"[음악] {os.path.basename(song)}")
     return duration(out_path)
 
 
