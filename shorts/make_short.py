@@ -374,6 +374,19 @@ def make_scene(i, scene, hook, audio, words, t0, total):
     return clip, dur
 
 
+def blog_images(url):
+    """posted.json 에서 블로그 글의 사진(저장소 images/ 안 파일)을 찾는다."""
+    try:
+        posted = json.load(open(os.path.join(REPO, "data", "posted.json"), encoding="utf-8")).get("posted", [])
+    except Exception:  # noqa: BLE001
+        return []
+    for p in posted:
+        if url and p.get("url") == url:
+            files = [os.path.join(REPO, "images", u.rsplit("/", 1)[-1]) for u in p.get("images", [])]
+            return [f for f in files if os.path.exists(f)]
+    return []
+
+
 def build_video(script, out_path):
     shutil.rmtree(WORK, ignore_errors=True)
     os.makedirs(WORK, exist_ok=True)
@@ -395,6 +408,17 @@ def build_video(script, out_path):
         cloudflare_image(sc.get("bg") or "cozy small apartment living room", os.path.join(WORK, f"raw{i}.jpg"))
     with ThreadPoolExecutor(max_workers=4) as ex:
         list(ex.map(_pre, enumerate(scenes)))
+    missing = [i for i in range(len(scenes)) if not os.path.exists(os.path.join(WORK, f"raw{i}.jpg"))]
+    if missing:
+        # AI 그림이 모자라면(무료 한도 초과 등) 같은 블로그 글의 사진으로 채운다
+        blog_imgs = blog_images(script.get("blog_url"))
+        for n, i in enumerate(missing):
+            if blog_imgs:
+                shutil.copy(blog_imgs[n % len(blog_imgs)], os.path.join(WORK, f"raw{i}.jpg"))
+        if not blog_imgs and len(missing) == len(scenes):
+            raise RuntimeError("그림을 하나도 못 만들었어요 (Cloudflare 무료 한도 초과일 수 있음). "
+                               "분홍 배경 영상은 올리지 않고 대본은 대기열에 남겨 둘게요")
+        print(f"[그림] AI 그림 {len(scenes) - len(missing)}장 + 블로그 사진으로 {len(missing) if blog_imgs else 0}장 채움")
     whoosh(os.path.join(WORK, "whoosh.wav"))
     # 음성을 먼저 모두 만들어 전체 길이를 알아 둔다 (진행 막대용)
     voiced = []

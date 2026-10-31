@@ -7,6 +7,9 @@ on:
       hide:
         description: "비공개로 돌릴 영상 ID (여러 개는 띄어쓰기, 비워 두면 안 함)"
         default: ""
+      show:
+        description: "다시 공개할 영상 ID (여러 개는 띄어쓰기)"
+        default: ""
 
 permissions:
   contents: write
@@ -32,6 +35,7 @@ jobs:
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           YT_CHANNEL_ID: ${{ vars.YT_CHANNEL_ID }}
           HIDE_VIDEO_IDS: ${{ inputs.hide }}
+          SHOW_VIDEO_IDS: ${{ inputs.show }}
         run: python -u shorts/yt_fix.py
       - name: 기록 저장
         if: always()
