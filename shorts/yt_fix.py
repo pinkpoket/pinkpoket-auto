@@ -76,6 +76,21 @@ def main():
         with open(m.LOG_FILE, "w", encoding="utf-8") as f:
             json.dump(log, f, ensure_ascii=False, indent=1)
 
+    # 2-1) 다시 만든 영상의 예전 버전은 비공개로 (지우지 않음 — 스튜디오에서 언제든 되돌릴 수 있게)
+    for vid in os.environ.get("HIDE_VIDEO_IDS", "").split():
+        u = requests.put(f"{API}/videos", params={"part": "status"},
+                         headers={"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8"},
+                         data=json.dumps({"id": vid, "status": {"privacyStatus": "private",
+                                                                "selfDeclaredMadeForKids": False}}), timeout=30)
+        print(f"[비공개] {vid} " + ("완료" if u.ok else f"실패 {u.status_code}: {u.text[:200]}"))
+        for e in log:
+            if e.get("video_id") == vid and u.ok:
+                e["privacy"] = "private"
+                changed = True
+    if changed:
+        with open(m.LOG_FILE, "w", encoding="utf-8") as f:
+            json.dump(log, f, ensure_ascii=False, indent=1)
+
     # 3) 채널 소개글에 블로그 주소
     h = {"Authorization": f"Bearer {tok}", "Content-Type": "application/json; charset=UTF-8"}
     r = requests.get(f"{API}/channels", params={"part": "brandingSettings", "mine": "true"}, headers=h, timeout=30)

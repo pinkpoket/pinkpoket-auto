@@ -2,7 +2,11 @@ name: yt-fix
 
 # 이미 올라간 쇼츠에 링크 댓글 달기 + 채널 소개글에 블로그 주소 넣기 (수동 실행)
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      hide:
+        description: "비공개로 돌릴 영상 ID (여러 개는 띄어쓰기, 비워 두면 안 함)"
+        default: ""
 
 permissions:
   contents: write
@@ -27,6 +31,7 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
           YT_CHANNEL_ID: ${{ vars.YT_CHANNEL_ID }}
+          HIDE_VIDEO_IDS: ${{ inputs.hide }}
         run: python -u shorts/yt_fix.py
       - name: 기록 저장
         if: always()

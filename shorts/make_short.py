@@ -223,12 +223,15 @@ def wrap_tokens(d, tokens, f, max_w):
     return lines
 
 
-def base_png(hook, path, outro=False, badge=""):
+def base_png(hook, path, outro=False):
     """장면 내내 고정되는 부분: 위 제목 상자, 로고·채널 이름, 아래 그늘, (마지막 장면) 좋아요·구독 버튼."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    for y in range(H - 1000, H):
-        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(170 * (y - (H - 1000)) / 1000)))
+    # 가운데 자막 뒤를 부드럽게 어둡게 (위아래로 옅어지는 띠)
+    mid, half = H // 2 + 120, 420
+    for y in range(mid - half, mid + half):
+        a = 1 - abs(y - mid) / half
+        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(120 * a ** 0.8)))
     for y in range(0, 520):
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(90 * (1 - y / 520))))
     f_hook = font(80)
@@ -254,14 +257,6 @@ def base_png(hook, path, outro=False, badge=""):
     else:
         tx = (W - tw) / 2
     d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=4, stroke_fill=(0, 0, 0))
-    if badge:
-        # 순서 번호 큰 동그라미 (첫째·둘째… 장면)
-        r, cx, cy = 100, 190, ty + 230
-        d.ellipse([cx - r + 8, cy - r + 12, cx + r + 8, cy + r + 12], fill=(0, 0, 0, 90))
-        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=YELLOW + (255,), outline=(255, 255, 255, 255), width=10)
-        f_n = font(128)
-        bw = d.textlength(badge, font=f_n)
-        d.text((cx - bw / 2, cy - 92), badge, font=f_n, fill=PINK, stroke_width=4, stroke_fill=(255, 255, 255))
     if outro:
         f_b = font(70)
         for k, label in enumerate(["좋아요", "구독"]):
@@ -275,26 +270,33 @@ def base_png(hook, path, outro=False, badge=""):
     img.save(path)
 
 
-def caption_png(tokens, active, path, progress, center=False):
-    """큰 자막. 지금 읽는 줄만 크게 보여 주고, 읽는 낱말은 노란색 + 분홍 밑바탕. 위쪽엔 진행 막대.
-    center=True(첫 장면)면 화면 한가운데에 더 크게 — 3초 안에 멈추게."""
+CAP_SIZE, CAP_LH = 100, 136
+CAP_MID = H // 2 + 120   # 자막 가운데 높이 (모든 장면 같음)
+
+
+def caption_png(tokens, active, path, progress):
+    """자막: 모든 장면에서 같은 크기·같은 위치(화면 가운데). 문장 전체를 보여 주고 읽는 낱말만 노란색."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
-    f = font(118 if center else 100)
+    f = font(CAP_SIZE)
     lines = wrap_tokens(d, tokens, f, W - 150)
-    cur = next((ln for ln in lines if active in ln), lines[0] if lines else [])
-    lh = 150 if center else 132
-    # 첫 장면은 문장 전체(최대 2줄), 나머지는 지금 읽는 줄만
-    show = lines[:2] if center else [cur]
-    top = (H // 2 + 60 if center else H - 610) - len(show) * lh // 2
+    if len(lines) > 1:  # 줄 길이를 고르게 (마지막 줄에 한 낱말만 남지 않게)
+        n, full = len(lines), d.textlength(" ".join(tokens), font=f)
+        for mw in range(int(full / n), W - 149, 20):
+            trial = wrap_tokens(d, tokens, f, mw)
+            if len(trial) <= n:
+                lines = trial
+                break
+    lines = lines[:3]
+    top = CAP_MID - len(lines) * CAP_LH // 2
     space = d.textlength(" ", font=f)
-    for li, line in enumerate(show):
+    for li, line in enumerate(lines):
         widths = [d.textlength(tokens[k], font=f) for k in line]
         x = (W - (sum(widths) + space * (len(line) - 1))) / 2
-        y = top + li * lh
+        y = top + li * CAP_LH
         for k, w in zip(line, widths):
             if k == active:
-                d.rounded_rectangle([x - 16, y - 4, x + w + 16, y + lh - 10], radius=26, fill=PINK + (240,))
+                d.rounded_rectangle([x - 14, y - 2, x + w + 14, y + CAP_LH - 14], radius=24, fill=PINK + (240,))
                 d.text((x, y), tokens[k], font=f, fill=YELLOW, stroke_width=7, stroke_fill=(90, 20, 55))
             else:
                 d.text((x, y), tokens[k], font=f, fill=(255, 255, 255), stroke_width=9, stroke_fill=(0, 0, 0))
@@ -324,18 +326,6 @@ def whoosh(path):
          "-ar", "44100", "-ac", "2", path])
 
 
-ORDINALS = {"첫째": "1", "둘째": "2", "셋째": "3", "넷째": "4", "다섯째": "5"}
-
-
-def scene_badge(text):
-    t = text.strip()
-    for k, v in ORDINALS.items():
-        if t.startswith(k):
-            return v
-    m_ = re.match(r"^([1-9])[.)번]", t)
-    return m_.group(1) if m_ else ""
-
-
 def make_scene(i, scene, hook, audio, words, t0, total):
     raw = os.path.join(WORK, f"raw{i}.jpg")
     bg = os.path.join(WORK, f"bg{i}.jpg")
@@ -344,19 +334,18 @@ def make_scene(i, scene, hook, audio, words, t0, total):
     if not os.path.exists(raw):
         gradient_bg(raw, i)
     prepare_image(raw, bg)
-    base_png(hook, base, outro=scene.get("outro", False), badge=scene_badge(scene["text"]))
+    base_png(hook, base, outro=scene.get("outro", False))
     dur = duration(audio) + 0.05
     tokens, starts = word_times(scene["text"], words, dur)
     caps = []
     for k, st in enumerate(starts):
         cp = os.path.join(WORK, f"cap{i}_{k}.png")
-        caption_png(tokens, k, cp, (t0 + st) / total, center=(i == 0))
+        caption_png(tokens, k, cp, (t0 + st) / total)
         end = starts[k + 1] if k + 1 < len(starts) else dur + 1
         caps.append((cp, st if k else 0.0, end))
     frames = int(dur * FPS) + 1
-    # 처음 0.25초는 살짝 튀어나오듯 확대, 이후 천천히 줌
-    z = ("if(lt(on,8),1.14-0.004*on,min(1.11+0.0012*(on-8),1.18))" if i % 2 == 0
-         else "if(lt(on,8),1.0+0.004*on,max(1.03-0.0012*(on-8),1.0))")
+    # 모든 장면 같은 움직임: 천천히 확대
+    z = "min(1.0+0.0015*on,1.12)"
     inputs = ["-loop", "1", "-i", bg, "-i", base]
     for cp, _, _ in caps:
         inputs += ["-i", cp]
