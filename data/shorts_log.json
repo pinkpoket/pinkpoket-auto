@@ -68,7 +68,7 @@
   "ai_images": 5,
   "video_id": "8spCGTs9ZDM",
   "url": "https://youtube.com/shorts/8spCGTs9ZDM",
-  "privacy": "private",
+  "privacy": "public",
   "comment": "ok"
  },
  {
@@ -79,7 +79,7 @@
   "ai_images": 0,
   "video_id": "--8R_W0CGQI",
   "url": "https://youtube.com/shorts/--8R_W0CGQI",
-  "privacy": "public",
+  "privacy": "private",
   "comment": "ok"
  }
 ]
