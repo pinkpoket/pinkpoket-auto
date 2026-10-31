@@ -168,10 +168,39 @@
         "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@7fe9b3b56bacd90115a347ecead5d0a07170b228/images/20261031-0745-1.jpg",
         "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@7fe9b3b56bacd90115a347ecead5d0a07170b228/images/20261031-0745-2.jpg"
       ]
+    },
+    {
+      "file": "20261031-1846.json",
+      "title": "방한 커튼 고르는 법, 작은 집 체감온도 올리는 커튼·러그 배치 5가지",
+      "url": "https://pinkpoket.blogspot.com/2026/10/winter-thermal-curtain-rug-small-home.html",
+      "post_id": "4368080374716874230",
+      "at": "2026-10-31 18:47",
+      "links": [
+        "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=8729454920&itemId=25363114712&vendorItemId=92357370321&traceid=V0-153-b73ce73b194683a2&requestid=20261031184727540037242827&token=31850C%7CGM&pt=0&slot=1",
+        "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9585583571&itemId=28613953704&vendorItemId=95557318429&traceid=V0-153-965408da8398f21f&clickBeacon=161c6a30-d510-11f1-8909-d5f0a6f09e7d%7E3&requestid=20261031184729169268493483&token=31850C%7CMIXED&pt=1&slot=1"
+      ],
+      "products": [
+        {
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=8729454920&itemId=25363114712&vendorItemId=92357370321&traceid=V0-153-b73ce73b194683a2&requestid=20261031184727540037242827&token=31850C%7CGM&pt=0&slot=1",
+          "name": "1+1 HOMEY NEST 완벽 빛차단 3중직 단열…"
+        },
+        {
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9585583571&itemId=28613953704&vendorItemId=95557318429&traceid=V0-153-965408da8398f21f&clickBeacon=161c6a30-d510-11f1-8909-d5f0a6f09e7d%7E3&requestid=20261031184729169268493483&token=31850C%7CMIXED&pt=1&slot=1",
+          "name": "리븐웰 밀림제로 미끄럼 방지 카페트 러그 패드, 1…"
+        }
+      ],
+      "series": "작은 집 따뜻한 겨울나기",
+      "series_no": 2,
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@b84b3cd55d7f8319c180347585e191bcb4d10d51/images/20261031-1846-1.jpg",
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@b84b3cd55d7f8319c180347585e191bcb4d10d51/images/20261031-1846-2.jpg"
+      ]
     }
   ],
   "used_links": [
     "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9781017993&itemId=29282167713&vendorItemId=96198774445&traceid=V0-153-c2b4a8a5c39d7fda&requestid=20261031074657265001394230&token=31850C%7CMIXED&pt=0&slot=1",
-    "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9483462810&itemId=28238096079&vendorItemId=95191714518&traceid=V0-153-5ffea1b00da07013&clickBeacon=d08f1af0-d4b3-11f1-ab81-6d319da49c12%7E3&requestid=20261031074658758060734786&token=31850C%7CMIXED&pt=1&slot=2"
+    "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9483462810&itemId=28238096079&vendorItemId=95191714518&traceid=V0-153-5ffea1b00da07013&clickBeacon=d08f1af0-d4b3-11f1-ab81-6d319da49c12%7E3&requestid=20261031074658758060734786&token=31850C%7CMIXED&pt=1&slot=2",
+    "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=8729454920&itemId=25363114712&vendorItemId=92357370321&traceid=V0-153-b73ce73b194683a2&requestid=20261031184727540037242827&token=31850C%7CGM&pt=0&slot=1",
+    "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9585583571&itemId=28613953704&vendorItemId=95557318429&traceid=V0-153-965408da8398f21f&clickBeacon=161c6a30-d510-11f1-8909-d5f0a6f09e7d%7E3&requestid=20261031184729169268493483&token=31850C%7CMIXED&pt=1&slot=1"
   ]
 }
