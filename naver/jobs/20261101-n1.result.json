@@ -1,0 +1,21 @@
+{
+ "images": [
+  "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@08107f7098f8fa55a971d0403c62e090b64bffac/images/naver/20261101-n1-1.jpg",
+  "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@08107f7098f8fa55a971d0403c62e090b64bffac/images/naver/20261101-n1-2.jpg",
+  "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@08107f7098f8fa55a971d0403c62e090b64bffac/images/naver/20261101-n1-3.jpg",
+  "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@08107f7098f8fa55a971d0403c62e090b64bffac/images/naver/20261101-n1-4.jpg",
+  "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@08107f7098f8fa55a971d0403c62e090b64bffac/images/naver/20261101-n1-5.jpg"
+ ],
+ "products": [
+  {
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=8528634399&itemId=931666080&vendorItemId=5310232335&traceid=V0-153-2ec90f2715908cad&clickBeacon=0cbbabe0-d5ec-11f1-b1b0-8749b04b9a0f%7E3&requestid=20261101210202719037244607&token=31850C%7CMIXED&pt=1&slot=1",
+   "name": "뽁순이 물없이 붙이는 더블 단열뽁뽁이 민무늬, 1개",
+   "keyword": "창문 단열 뽁뽁이"
+  },
+  {
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=7707999407&itemId=20654812421&vendorItemId=88446133594&traceid=V0-153-cb879471d4783c41&clickBeacon=0d8675f0-d5ec-11f1-a3da-e10b094f6a52%7E3&requestid=20261101210204064147137556&token=31850C%7CMIXED&pt=1&slot=1",
+   "name": "스코라 물흡수 테이프 10cm x 5m, 1개",
+   "keyword": "결로방지 테이프"
+  }
+ ]
+}
