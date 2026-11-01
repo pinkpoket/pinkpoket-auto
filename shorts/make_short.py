@@ -235,24 +235,24 @@ def base_png(hook, path, outro=False):
     for y in range(0, 520):
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(90 * (1 - y / 520))))
     # 위 제목: 노란 바탕 알약 상자, 글씨 크기에 맞춰 가운데
-    f_hook = font(44)
-    lines = wrap_ko(hook, 20)[:2]
-    lh, pad_x, pad_y = 58, 40, 20
+    f_hook = font(88)
+    lines = wrap_ko(hook, 11)[:2]
+    lh, pad_x, pad_y = 112, 56, 26
     tw_max = max(d.textlength(ln, font=f_hook) for ln in lines)
     box_w, box_h = tw_max + pad_x * 2, len(lines) * lh + pad_y * 2
     bx0, by0 = (W - box_w) / 2, 180
     d.rounded_rectangle([bx0 + 4, by0 + 6, bx0 + box_w + 4, by0 + box_h + 6], radius=box_h / 2, fill=(0, 0, 0, 70))
     d.rounded_rectangle([bx0, by0, bx0 + box_w, by0 + box_h], radius=box_h / 2, fill=YELLOW + (250,))
-    y = by0 + pad_y - 4
+    y = by0 + pad_y - 8
     for line in lines:
         tw = d.textlength(line, font=f_hook)
         d.text(((W - tw) / 2, y), line, font=f_hook, fill=(70, 30, 45))
         y += lh
     # 채널 이름 + 로고 (작게)
-    f_tag = font(26)
+    f_tag = font(32)
     tag = "핑포의 작은집 연구소"
     tw = d.textlength(tag, font=f_tag)
-    logo_s = 44
+    logo_s = 54
     lx = int((W - tw - logo_s - 10) / 2)
     ty = by0 + box_h + 20
     if os.path.exists(LOGO):
@@ -275,7 +275,7 @@ def base_png(hook, path, outro=False):
     img.save(path)
 
 
-CAP_SIZE, CAP_LH = 100, 136
+CAP_SIZE, CAP_LH = 72, 100
 CAP_MID = H // 2 + 120   # 자막 가운데 높이 (모든 장면 같음)
 
 
