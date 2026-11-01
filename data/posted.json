@@ -219,6 +219,33 @@
       "series": "작은 집 따뜻한 겨울나기",
       "series_no": 3,
       "images": []
+    },
+    {
+      "file": "20261101-1846.json",
+      "title": "겨울 가습과 환기 균형 맞추는 법, 원룸 습도 40~60% 하루 루틴",
+      "url": "https://pinkpoket.blogspot.com/2026/11/winter-humidifier-ventilation-balance.html",
+      "post_id": "7716127383663878462",
+      "at": "2026-11-01 18:47",
+      "links": [
+        "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9642046260&itemId=28811321677&vendorItemId=95769228457&traceid=V0-153-62996bf038215e72&clickBeacon=3dbd6d40-d5d9-11f1-b36e-43b503f1acca%7E3&requestid=20261101184724483245672880&token=31850C%7CMIXED&pt=1&slot=1",
+        "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=8679817338&itemId=25197152920&vendorItemId=92283278006&traceid=V0-153-70ef69e010ab2cac&clickBeacon=3e8a0c10-d5d9-11f1-ac2b-173dbebad72f%7E3&requestid=20261101184725816060733697&token=31850C%7CMIXED&pt=1&slot=1"
+      ],
+      "products": [
+        {
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9642046260&itemId=28811321677&vendorItemId=95769228457&traceid=V0-153-62996bf038215e72&clickBeacon=3dbd6d40-d5d9-11f1-b36e-43b503f1acca%7E3&requestid=20261101184724483245672880&token=31850C%7CMIXED&pt=1&slot=1",
+          "name": "아이리버 디지털 미니 온습도계 ITH-100, 1개…"
+        },
+        {
+          "url": "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=8679817338&itemId=25197152920&vendorItemId=92283278006&traceid=V0-153-70ef69e010ab2cac&clickBeacon=3e8a0c10-d5d9-11f1-ac2b-173dbebad72f%7E3&requestid=20261101184725816060733697&token=31850C%7CMIXED&pt=1&slot=1",
+          "name": "플랜메이 페트병 좁고 긴 세척 스펀지 솔 1+1,…"
+        }
+      ],
+      "series": "작은 집 따뜻한 겨울나기",
+      "series_no": 4,
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@e1e19a339a827b6b4ee4dd3e4e6d612dbd787d36/images/20261101-1846-1.jpg",
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@e1e19a339a827b6b4ee4dd3e4e6d612dbd787d36/images/20261101-1846-2.jpg"
+      ]
     }
   ],
   "used_links": [
@@ -227,6 +254,8 @@
     "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=8729454920&itemId=25363114712&vendorItemId=92357370321&traceid=V0-153-b73ce73b194683a2&requestid=20261031184727540037242827&token=31850C%7CGM&pt=0&slot=1",
     "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9585583571&itemId=28613953704&vendorItemId=95557318429&traceid=V0-153-965408da8398f21f&clickBeacon=161c6a30-d510-11f1-8909-d5f0a6f09e7d%7E3&requestid=20261031184729169268493483&token=31850C%7CMIXED&pt=1&slot=1",
     "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9741397335&itemId=29157504394&vendorItemId=96034229603&traceid=V0-153-b358e9b5cc5ffbfe&clickBeacon=0e0f7b80-d57d-11f1-9bdb-5048cdc77b88%7E3&requestid=20261101074730818125873333&token=31850C%7CMIXED&pt=1&slot=1",
-    "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=66710105&itemId=24067961659&vendorItemId=3544139608&traceid=V0-153-c47a58505ff99bb3&clickBeacon=0ee73de0-d57d-11f1-b413-ce6929211a99%7E3&requestid=20261101074732180136193580&token=31850C%7CMIXED&pt=1&slot=1"
+    "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=66710105&itemId=24067961659&vendorItemId=3544139608&traceid=V0-153-c47a58505ff99bb3&clickBeacon=0ee73de0-d57d-11f1-b413-ce6929211a99%7E3&requestid=20261101074732180136193580&token=31850C%7CMIXED&pt=1&slot=1",
+    "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9642046260&itemId=28811321677&vendorItemId=95769228457&traceid=V0-153-62996bf038215e72&clickBeacon=3dbd6d40-d5d9-11f1-b36e-43b503f1acca%7E3&requestid=20261101184724483245672880&token=31850C%7CMIXED&pt=1&slot=1",
+    "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=8679817338&itemId=25197152920&vendorItemId=92283278006&traceid=V0-153-70ef69e010ab2cac&clickBeacon=3e8a0c10-d5d9-11f1-ac2b-173dbebad72f%7E3&requestid=20261101184725816060733697&token=31850C%7CMIXED&pt=1&slot=1"
   ]
 }
