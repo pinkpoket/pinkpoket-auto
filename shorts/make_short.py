@@ -499,13 +499,15 @@ def build_description(script):
 
 
 def build_comment(script, product):
-    """영상에 남길 링크 바로가기 댓글."""
-    blog = script.get("blog_url") or BLOG_HOME
-    lines = ["💗 링크 바로가기", f"📖 블로그 자세히 보기 👉 {blog}"]
-    if product:
-        lines.append(f"🛒 {product[1]} 👉 {product[0]}")
-        lines += ["", DISCLOSURE]
-    return "\n".join(lines)
+    """영상에 남길 감성 댓글 (링크 없음). 대본의 "comment"(그날 내용에 맞춘 2~3줄)를 쓰고,
+    없으면 훅으로 짧게 만든다. 끝에는 더보기·구독·좋아요 안내."""
+    body = (script.get("comment") or "").strip()
+    if not body:
+        hook = (script.get("hook") or script.get("title") or "").strip()
+        body = f"오늘은 '{hook}' 이야기였어요 🏠\n작은 집도 조금만 손보면 훨씬 포근해지더라고요 💛"
+    tail = ["", "더 궁금하신 분은 영상 아래 ‘더보기’를 눌러 봐 주세요 👀",
+            "도움이 되셨다면 구독과 좋아요 꾹 부탁드려요 🙏💗"]
+    return body + "\n" + "\n".join(tail)
 
 
 # ---------------------------------------------------------------- 유튜브
@@ -634,7 +636,7 @@ def main():
                 try:
                     cid = yt_comment(vid, build_comment(script, product))
                     entry["comment"] = "ok"
-                    print(f"[댓글] 링크 댓글 완료: {cid}")
+                    print(f"[댓글] 감성 댓글 완료: {cid}")
                 except Exception as ce:  # noqa: BLE001
                     entry["comment_error"] = str(ce)[:300]
                     print(f"[댓글] {ce}")
