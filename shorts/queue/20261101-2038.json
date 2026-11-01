@@ -1,0 +1,16 @@
+{
+  "title": "가습기 위치, 바닥에 두면 소용없어요",
+  "hook": "가습기 명당 찾기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {"text": "가습기, 바닥에 두면 안 돼요.", "bg": "close up of a small white humidifier sitting on a wooden floor in a small room, mist sinking low, centered"},
+    {"text": "수증기가 아래로 깔려 방이 덜 촉촉해요.", "bg": "close up of humidifier mist spreading low along a floor near a bed, soft winter light, centered"},
+    {"text": "허리 높이 협탁 위에 올려 주세요.", "bg": "close up of a compact humidifier on a waist-high bedside table, gentle mist rising, cozy studio apartment, centered"},
+    {"text": "창문 앞, 콘센트 근처는 꼭 피하세요.", "bg": "close up of a humidifier placed away from a cold window and a power strip, small bright room, centered"},
+    {"text": "그럼 오늘 밤, 가습기부터 올려 보세요.", "bg": "cozy small bedroom at night with a humidifier on a nightstand, warm lamp light, soft mist, centered"}
+  ],
+  "description": "가습기를 바닥에 두면 수증기가 아래로 깔려 방 전체 습도가 잘 안 올라요.\n허리 높이, 공기가 도는 곳에 두고 창문 앞·콘센트 근처는 피해 주세요 💗 실내 습도는 40~60%가 기준이에요.\n여러분 집 가습기는 어디에 있나요? 댓글로 알려 주세요.",
+  "tags": ["#shorts", "#가습기", "#가습기위치", "#겨울습도", "#원룸꿀팁", "#살림꿀팁", "#자취꿀팁", "#겨울나기", "#핑포의작은집연구소"],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/11/winter-humidifier-ventilation-balance.html",
+  "coupang_keywords": ["원룸 가습기", "디지털 온습도계"]
+}
