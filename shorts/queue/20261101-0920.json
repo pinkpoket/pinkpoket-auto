@@ -1,0 +1,16 @@
+{
+  "title": "겨울 곰팡이, 옷장 뒤 벽부터 확인하세요",
+  "hook": "겨울 곰팡이 막는 법",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {"text": "옷장 뒤 벽, 지금 한번 확인해 보세요.", "bg": "close up of a dark corner gap between a white wardrobe and a cold wall, small black mold spots on wallpaper, centered"},
+    {"text": "외벽에 딱 붙으면 습기가 갇혀 곰팡이가 펴요.", "bg": "close up of condensation droplets on a cold white wall behind furniture, centered"},
+    {"text": "첫째, 가구를 벽에서 한 뼘 띄우세요.", "bg": "white wardrobe placed with a small gap from the wall in a bright tidy bedroom, centered"},
+    {"text": "둘째, 아침마다 창틀 물기를 닦아요.", "bg": "close up of a window squeegee wiping condensation off a window glass, morning light, centered"},
+    {"text": "셋째, 하루 두 번 10분 맞바람 환기!", "bg": "two windows opened wide in a cozy small apartment with sheer curtains blowing, centered"}
+  ],
+  "description": "겨울 곰팡이, 창문보다 옷장 뒤 벽에서 먼저 시작돼요!\n가구 한 뼘 띄우기, 창틀 물기 닦기, 하루 두 번 맞바람 환기만 챙겨 보세요 💗\n여러분 집은 어디에 결로가 제일 많이 생기나요? 댓글로 알려 주세요.",
+  "tags": ["#shorts", "#곰팡이", "#결로", "#겨울곰팡이", "#결로방지", "#살림꿀팁", "#자취꿀팁", "#환기", "#핑포의작은집연구소"],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/10/6.html",
+  "coupang_keywords": ["창문 스퀴지", "결로 방지 단열 뽁뽁이"]
+}
