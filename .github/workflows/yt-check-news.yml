@@ -1,0 +1,25 @@
+name: yt-check-news
+
+on:
+  # 직접 실행: 오늘뉴스 유튜브 토큰이 맞는 채널인지 확인만 함 (업로드 없음)
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      CHANNEL: news
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pillow
+      - name: 토큰·채널 확인
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.NEWS_YOUTUBE_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: "UC3QKRPjjKXiPWVKxfi5vSTQ"
+        run: python -u shorts/check_channel.py
