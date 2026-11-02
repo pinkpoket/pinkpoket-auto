@@ -94,13 +94,14 @@ def duration(path):
 # ---------------------------------------------------------------- 음성
 
 TTS_RATE = os.environ.get("TTS_RATE") or ch.P.get("tts_rate", "+35%")
+TTS_PITCH = ch.P.get("tts_pitch", "+0Hz")
 
 
 async def _tts(text, voice, path):
     """음성을 저장하고, 단어마다 (시작초, 끝초, 글자) 를 돌려준다."""
     import edge_tts
     words = []
-    com = edge_tts.Communicate(text, voice, rate=TTS_RATE, pitch=ch.P.get("tts_pitch", "+0Hz"))
+    com = edge_tts.Communicate(text, voice, rate=TTS_RATE, pitch=TTS_PITCH)
     with open(path, "wb") as f:
         async for chunk in com.stream():
             if chunk["type"] == "audio":
@@ -394,8 +395,9 @@ def build_video(script, out_path):
     shutil.rmtree(WORK, ignore_errors=True)
     os.makedirs(WORK, exist_ok=True)
     AI_COUNT[0] = 0
-    global TTS_RATE
+    global TTS_RATE, TTS_PITCH
     TTS_RATE = script.get("rate") or TTS_RATE
+    TTS_PITCH = script.get("pitch") or ch.P.get("tts_pitch", "+0Hz")
     voice = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
     hook = script.get("hook") or clean_title(script["title"])
     scenes = list(script["scenes"])
