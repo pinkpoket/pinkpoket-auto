@@ -51,7 +51,7 @@ for row, y in enumerate([440, 1020]):
         d.ellipse([x - 20, y - 20, x + 20, y + 20], fill=tuple(int(v * 0.35 + 255 * 0.65) for v in c))
 cy = H // 2
 ft, fs, fp = F(BLACK, 112), F(BOLD, 56), F(BOLD, 48)
-title, sub, pill = "핑포의 오늘뉴스", "바쁜 하루, 꼭 알아야 할 소식만 쏙쏙", "출근길 3분 뉴스 · 생활 꿀뉴스 · 오늘의 화제"
+title, sub, pill = "핑포의 오늘뉴스", "바쁜 하루, 꼭 알아야 할 소식만 쏙쏙", "출근길 1분 뉴스 · 생활 꿀뉴스 · 오늘의 화제"
 textw = max(d.textlength(title, font=ft), d.textlength(sub, font=fs), d.textlength(pill, font=fp) + 70)
 R, gap = 150, 60
 total = 2 * R + gap + textw
