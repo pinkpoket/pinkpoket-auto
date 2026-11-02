@@ -1,0 +1,17 @@
+{
+ "1-about.json": {
+  "id": "3574997579145962804",
+  "url": "https://pinkpoket-news.blogspot.com/p/blog-page.html",
+  "title": "블로그 소개"
+ },
+ "2-privacy.json": {
+  "id": "5492100940057392053",
+  "url": "https://pinkpoket-news.blogspot.com/p/blog-page_01.html",
+  "title": "개인정보처리방침"
+ },
+ "3-contact.json": {
+  "id": "8741618177433024790",
+  "url": "https://pinkpoket-news.blogspot.com/p/blog-page_892.html",
+  "title": "문의"
+ }
+}
