@@ -27,7 +27,7 @@ def main():
         jid = os.path.basename(job)[:-5]
         obj = json.load(open(job, encoding="utf-8"))
         files = []
-        for i, it in enumerate((obj.get("images") or [])[:6], 1):
+        for i, it in enumerate((obj.get("images") or [])[:3], 1):
             path = os.path.join(OUT, f"{jid}-{i}.jpg")
             for attempt in range(2):
                 try:
