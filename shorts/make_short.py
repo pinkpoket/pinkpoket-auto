@@ -54,7 +54,9 @@ W, H, FPS = 1080, 1920, 30
 
 BLOG_HOME = ch.P["blog_home"]
 DISCLOSURE = "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
-PINK = (224, 85, 154)
+C = ch.P["colors"]
+PINK = tuple(C["accent"])
+BAR = tuple(C["bar"])
 
 FONT_CANDIDATES = [
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc",
@@ -187,8 +189,7 @@ def cloudflare_image(prompt, path):
 
 def gradient_bg(path, seed):
     rnd = random.Random(seed)
-    a, b = rnd.choice([((255, 236, 244), (246, 201, 220)), ((255, 245, 236), (240, 210, 222)),
-                       ((250, 240, 248), (226, 196, 214))])
+    a, b = rnd.choice([tuple(map(tuple, g)) for g in C["gradients"]])
     img = Image.new("RGB", (W, H))
     d = ImageDraw.Draw(img)
     for y in range(H):
@@ -207,7 +208,8 @@ def prepare_image(src, dst):
 
 # ---------------------------------------------------------------- 자막
 
-YELLOW = (255, 228, 92)
+YELLOW = tuple(C["hi_text"])
+HOOK_BG = tuple(C["hook_bg"])
 
 
 def wrap_tokens(d, tokens, f, max_w):
@@ -243,11 +245,11 @@ def base_png(hook, path, outro=False):
     box_w, box_h = tw_max + pad_x * 2, len(lines) * lh + pad_y * 2
     bx0, by0 = (W - box_w) / 2, 180
     d.rounded_rectangle([bx0 + 4, by0 + 6, bx0 + box_w + 4, by0 + box_h + 6], radius=box_h / 2, fill=(0, 0, 0, 70))
-    d.rounded_rectangle([bx0, by0, bx0 + box_w, by0 + box_h], radius=box_h / 2, fill=YELLOW + (250,))
+    d.rounded_rectangle([bx0, by0, bx0 + box_w, by0 + box_h], radius=box_h / 2, fill=HOOK_BG + (250,))
     y = by0 + pad_y - 8
     for line in lines:
         tw = d.textlength(line, font=f_hook)
-        d.text(((W - tw) / 2, y), line, font=f_hook, fill=(70, 30, 45))
+        d.text(((W - tw) / 2, y), line, font=f_hook, fill=tuple(C["hook_text"]))
         y += lh
     # 채널 이름 + 로고 (작게)
     f_tag = font(32)
@@ -303,13 +305,13 @@ def caption_png(tokens, active, path, progress):
         for k, w in zip(line, widths):
             if k == active:
                 d.rounded_rectangle([x - 14, y - 2, x + w + 14, y + CAP_LH - 14], radius=24, fill=PINK + (240,))
-                d.text((x, y), tokens[k], font=f, fill=YELLOW, stroke_width=7, stroke_fill=(90, 20, 55))
+                d.text((x, y), tokens[k], font=f, fill=YELLOW, stroke_width=7, stroke_fill=tuple(C["hi_stroke"]))
             else:
                 d.text((x, y), tokens[k], font=f, fill=(255, 255, 255), stroke_width=9, stroke_fill=(0, 0, 0))
             x += w + space
     # 진행 막대
     d.rectangle([0, 0, W, 14], fill=(255, 255, 255, 70))
-    d.rectangle([0, 0, int(W * max(0.0, min(1.0, progress))), 14], fill=PINK + (255,))
+    d.rectangle([0, 0, int(W * max(0.0, min(1.0, progress))), 14], fill=BAR + (255,))
     img.save(path)
 
 

@@ -32,6 +32,10 @@ PROFILES = {
         "shorts_outro_bg": "cozy pink bedroom corner with soft lamp light",
         "comment_fallback": "오늘은 '{hook}' 이야기였어요 🏠\n작은 집도 조금만 손보면 훨씬 포근해지더라고요 💛",
         "yt_category": "26",
+        "colors": {"accent": (224, 85, 154), "bar": (224, 85, 154), "hook_bg": (255, 228, 92),
+                   "hook_text": (70, 30, 45), "hi_text": (255, 228, 92), "hi_stroke": (90, 20, 55),
+                   "gradients": [((255, 236, 244), (246, 201, 220)), ((255, 245, 236), (240, 210, 222)),
+                                 ((250, 240, 248), (226, 196, 214))]},
     },
     "news": {
         "name": "핑포의 오늘뉴스",
@@ -53,6 +57,11 @@ PROFILES = {
         "shorts_outro_bg": "sunrise over a quiet city skyline, soft pink sky",
         "comment_fallback": "오늘은 '{hook}' 소식이었어요 📰\n바쁜 하루, 핑포가 대신 챙겨 드릴게요 💛",
         "yt_category": "25",
+        # 파랑 + 초록: 제목 상자 초록, 강조 자막 파란 상자에 연두 글씨, 진행 막대 초록
+        "colors": {"accent": (25, 110, 235), "bar": (40, 200, 120), "hook_bg": (60, 214, 140),
+                   "hook_text": (8, 36, 84), "hi_text": (170, 255, 200), "hi_stroke": (8, 30, 80),
+                   "gradients": [((232, 244, 255), (196, 222, 250)), ((232, 252, 242), (190, 236, 214)),
+                                 ((236, 248, 255), (200, 236, 228))]},
     },
 }
 
