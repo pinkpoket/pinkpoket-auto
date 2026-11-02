@@ -32,7 +32,7 @@ PROFILES = {
         "shorts_outro_bg": "cozy pink bedroom corner with soft lamp light",
         "comment_fallback": "오늘은 '{hook}' 이야기였어요 🏠\n작은 집도 조금만 손보면 훨씬 포근해지더라고요 💛",
         "yt_category": "26",
-        "voice_gain": 1.0, "bgm_volume": 0.16,
+        "voice_gain": 1.8, "bgm_volume": 0.07,
         "colors": {"accent": (224, 85, 154), "bar": (224, 85, 154), "hook_bg": (255, 228, 92),
                    "hook_text": (70, 30, 45), "hi_text": (255, 228, 92), "hi_stroke": (90, 20, 55),
                    "gradients": [((255, 236, 244), (246, 201, 220)), ((255, 245, 236), (240, 210, 222)),
