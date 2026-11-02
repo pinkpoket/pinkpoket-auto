@@ -36,6 +36,15 @@ def main():
     if WANT and item.get("id") != WANT:
         raise SystemExit(f"[분석] 연결된 채널({item.get('id')})이 인생ON({WANT})이 아니에요")
     print(f"[분석] 채널 확인: {item['snippet']['title']} / 구독자 {item['statistics'].get('subscriberCount')}")
+    try:  # 채널 프로필 사진을 쇼츠 화면 로고로 쓰기 위해 저장
+        th = item["snippet"]["thumbnails"]
+        url = (th.get("high") or th.get("medium") or th.get("default"))["url"].replace("=s88", "=s800").replace("=s240", "=s800")
+        img = requests.get(url, timeout=30).content
+        os.makedirs(os.path.join(ROOT, "life", "brand"), exist_ok=True)
+        open(os.path.join(ROOT, "life", "brand", "channel.jpg"), "wb").write(img)
+        print(f"[분석] 채널 프로필 사진 저장 ({len(img)} bytes)")
+    except Exception as e:  # noqa: BLE001
+        print(f"[분석] 프로필 사진 저장 실패: {e}")
     uploads = item["contentDetails"]["relatedPlaylists"]["uploads"]
     ids, page = [], None
     while len(ids) < 400:
