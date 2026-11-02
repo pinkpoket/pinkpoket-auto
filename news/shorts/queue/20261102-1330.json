@@ -1,0 +1,45 @@
+{
+ "title": "바쁜 하루, 뉴스는 핑포가 대신 챙겨 드려요 | 핑포의 오늘뉴스 시작",
+ "hook": "하루 3번 뉴스 요약",
+ "scenes": [
+  {
+   "text": "뉴스 볼 시간, 오늘도 없으셨죠?",
+   "bg": "morning coffee cup and folded newspaper on a bright wooden table, centered"
+  },
+  {
+   "text": "이제 핑포가 하루 세 번, 꼭 알아야 할 소식만 정리해 드려요.",
+   "bg": "alarm clock showing early morning next to a window with soft sunrise light"
+  },
+  {
+   "text": "아침에는 출근길 3분 뉴스로 오늘 주요 소식을 한눈에 보여 드려요.",
+   "bg": "empty subway platform in the morning with soft warm light, no people"
+  },
+  {
+   "text": "점심에는 생활 꿀뉴스, 물가와 지원금처럼 내 지갑에 닿는 소식이에요.",
+   "bg": "shopping basket with fresh vegetables on a supermarket shelf, centered"
+  },
+  {
+   "text": "저녁에는 오늘의 화제, 사람들이 가장 많이 이야기한 소식을 골라요.",
+   "bg": "city skyline at dusk with glowing windows, soft pink sky"
+  },
+  {
+   "text": "내일 아침 첫 소식부터 같이 시작해요. 핑포의 오늘뉴스였어요.",
+   "bg": "sunrise over quiet city rooftops, soft pink and gold sky"
+  }
+ ],
+ "description": "바빠서 뉴스 챙기기 어려우셨죠? 핑포의 오늘뉴스는 하루 세 번(출근길 3분 뉴스·생활 꿀뉴스·오늘의 화제) 꼭 알아야 할 소식만 짧게 정리해 드려요.\n여러분은 어떤 뉴스가 제일 궁금하세요? 댓글로 알려 주세요 💬",
+ "tags": [
+  "#shorts",
+  "#핑포의오늘뉴스",
+  "#오늘뉴스",
+  "#뉴스요약",
+  "#출근길뉴스",
+  "#생활꿀뉴스",
+  "#오늘의화제",
+  "#데일리뉴스",
+  "#핑크포켓"
+ ],
+ "blog_url": "",
+ "comment": "바쁜 하루, 뉴스까지 챙기기 버거우셨죠? 📰\n이제 아침·점심·저녁, 핑포가 꼭 필요한 소식만 쏙쏙 골라 올게요 💛\n가장 궁금한 뉴스 분야가 있다면 댓글로 알려 주세요!",
+ "coupang_keywords": []
+}
