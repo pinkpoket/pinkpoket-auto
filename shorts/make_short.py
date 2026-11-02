@@ -448,8 +448,10 @@ def build_video(script, out_path):
         song = random.Random(script.get("title", "")).choice(bgm)
         d = duration(joined)
         run(["ffmpeg", "-y", "-i", joined, "-stream_loop", "-1", "-i", song, "-filter_complex",
-             f"[1:a]volume=0.16,afade=t=out:st={max(0.0, d - 0.8):.2f}:d=0.8[b];"
-             "[0:a][b]amix=inputs=2:duration=first:normalize=0[a]",
+             f"[1:a]volume={ch.P['bgm_volume']},afade=t=out:st={max(0.0, d - 0.8):.2f}:d=0.8[b];"
+             + ("[0:a][b]amix=inputs=2:duration=first:normalize=0[a]" if ch.P["voice_gain"] == 1.0 else
+                f"[0:a]volume={ch.P['voice_gain']}[v];[v][b]amix=inputs=2:duration=first:normalize=0,"
+                "alimiter=limit=0.95:level=disabled[a]"),
              "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
              "-movflags", "+faststart", out_path])
         print(f"[음악] {os.path.basename(song)}")
