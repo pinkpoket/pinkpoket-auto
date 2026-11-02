@@ -1,0 +1,18 @@
+{
+  "title": "줄어든 니트, 버리기 전에 린스 물에 담가 보세요",
+  "hook": "줄어든 니트 살리기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {"text": "줄어든 니트, 버리기 전에 이것부터!", "bg": "close up of a small shrunken wool knit sweater laid flat on a wooden table, cozy winter room, centered"},
+    {"text": "답은 헤어 린스예요. 미지근한 물에 조금 풀어 니트를 담가요.", "bg": "close up of a knit sweater soaking in a basin of lukewarm water with a hair conditioner bottle beside it, centered"},
+    {"text": "첫째, 엉킨 섬유가 매끄러워져요. 잠시 뒤 가볍게만 헹궈요.", "bg": "extreme close up of soft wet wool knit fibers in water, gentle light, centered"},
+    {"text": "둘째, 비틀어 짜지 말고 수건에 돌돌 말아 꾹 눌러요.", "bg": "close up of a wet knit sweater rolled up inside a dry white towel on a table, centered"},
+    {"text": "셋째, 평평하게 펴고 원래 크기대로 사방으로 살살 늘려요.", "bg": "close up of a knit sweater laid flat on a towel being reshaped, sleeves stretched out evenly, centered"},
+    {"text": "히터 앞은 피해 그늘에 눕혀 말리고, 다음엔 찬물에 빨아요.", "bg": "close up of a knit sweater drying flat on a mesh drying rack in a shaded bright room, centered"}
+  ],
+  "description": "줄어든 니트는 미지근한 린스 물에 담갔다가 수건으로 물기를 빼고, 사방으로 살살 늘려 눕혀 말려 보세요 💗\n섬유가 완전히 엉겨 붙었다면 되돌리기 어려우니, 아끼는 옷은 세탁 전문점에 상담해 주세요. 세탁 전엔 라벨부터 꼭 확인해요.\n여러분은 니트 보풀과 줄어듦 중 어느 쪽이 더 고민이세요? 댓글로 알려 주세요.",
+  "tags": ["#shorts", "#니트세탁", "#줄어든니트", "#니트복원", "#니트관리", "#겨울옷관리", "#살림꿀팁", "#세탁꿀팁", "#핑포의작은집연구소"],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/11/knit-sweater-pilling-shrinking-wash-care.html",
+  "comment": "아끼던 니트가 한 치수 작아졌을 때, 그 속상함 정말 커요 🧶\n버리기 전에 린스 물에 한 번만 담가 보세요. 포근한 니트가 다시 돌아와 주길 바랄게요 💛",
+  "coupang_keywords": ["니트 건조망", "울 중성세제"]
+}
