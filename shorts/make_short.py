@@ -253,7 +253,7 @@ def base_png(hook, path, outro=False):
         y += lh
     # 채널 이름 + 로고 (작게)
     f_tag = font(32)
-    tag = ch.P["name"]
+    tag = ch.P.get("tag") or ch.P["name"]
     tw = d.textlength(tag, font=f_tag)
     logo_s = 54
     lx = int((W - tw - logo_s - 10) / 2)
@@ -406,11 +406,20 @@ def build_video(script, out_path):
         scenes.append({"text": outro, "bg": ch.P["shorts_outro_bg"], "outro": True})
     from concurrent.futures import ThreadPoolExecutor
 
+    # 채널 설정 max_images 가 있으면 그림 수를 줄이고, 이어지는 장면끼리 같은 그림을 나눠 쓴다
+    n_img = min(len(scenes), ch.P.get("max_images") or len(scenes))
+    group = [i * n_img // len(scenes) for i in range(len(scenes))]
+    leaders = {g: group.index(g) for g in range(n_img)}
+
     def _pre(i_s):
         i, sc = i_s
         cloudflare_image(sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg"))
     with ThreadPoolExecutor(max_workers=4) as ex:
-        list(ex.map(_pre, enumerate(scenes)))
+        list(ex.map(_pre, [(i, scenes[i]) for i in leaders.values()]))
+    for i, g in enumerate(group):
+        src = os.path.join(WORK, f"raw{leaders[g]}.jpg")
+        if i != leaders[g] and os.path.exists(src):
+            shutil.copy(src, os.path.join(WORK, f"raw{i}.jpg"))
     missing = [i for i in range(len(scenes)) if not os.path.exists(os.path.join(WORK, f"raw{i}.jpg"))]
     if missing:
         # AI 그림이 모자라면(무료 한도 초과 등) 같은 블로그 글의 사진으로 채운다

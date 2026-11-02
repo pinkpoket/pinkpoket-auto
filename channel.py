@@ -84,7 +84,8 @@ PROFILES = {
         "comment_fallback": "오늘 '{hook}' 이야기, 마음에 닿으셨나요? 🔥\n소중한 분께 카톡으로 나눠 주시면 큰 힘이 돼요 💛",
         "yt_category": "22",
         "voice_gain": 1.8, "bgm_volume": 0.07,
-        "tts_rate": "+15%", "image_steps": 4,
+        # 시니어 시청자용: 말은 천천히(기본 속도), 그림은 4장만 만들어 장면끼리 나눠 씀, 화면 이름은 "인생온"
+        "tts_rate": "+0%", "image_steps": 4, "max_images": 4, "tag": "인생온",
         # 따뜻한 주황·갈색 (마음의 불): 제목 상자 주황, 강조 자막 진한 주황 상자에 크림 글씨
         "colors": {"accent": (214, 96, 32), "bar": (240, 150, 40), "hook_bg": (255, 196, 92),
                    "hook_text": (70, 30, 10), "hi_text": (255, 240, 200), "hi_stroke": (70, 30, 10),
