@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+"""채널 설정 모음. 한 저장소에서 여러 채널을 돌리기 위한 파일이다.
+
+GitHub Actions 워크플로에서 환경변수 CHANNEL 로 고른다.
+  CHANNEL 없음 / "salim" → 핑포의 작은집 연구소 (기존 그대로)
+  CHANNEL = "news"       → 핑포의 오늘뉴스 (news/ 폴더)
+"""
+import os
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+
+PROFILES = {
+    "salim": {
+        "name": "핑포의 작은집 연구소",
+        "base": "",
+        "blog_home": "https://pinkpoket.blogspot.com",
+        "yt_link_text": "▶ 유튜브에서 살림 꿀팁 쇼츠 보기 &amp; 구독하기",
+        "author_box": ("<strong style=\"color:#333\">✍️ 핑포의 작은집 연구소</strong> · 핑포(핑크포켓, Pink Pocket)가 "
+                       "작은 집도 예쁘고 편하게 가꾸는 인테리어·살림 방법을 정리해요. "
+                       "공식 자료와 확인된 정보를 바탕으로 AI 도구의 도움을 받아 쓰고 있어요."),
+        "default_notice": "제품 가격·구성은 판매처 사정에 따라 바뀔 수 있어요. 구매 전 상세 페이지를 꼭 확인해 주세요 💗",
+        "items_title": "🎀 핑포가 골라 본 아이템",
+        "image_style": ("bright cozy minimalist Korean apartment interior, soft natural daylight, "
+                        "pastel pink and warm white tones, clean, photorealistic, lifestyle magazine photo, "
+                        "no people, no text, no watermark"),
+        "shorts_style": ("bright cozy minimalist Korean apartment interior, soft natural daylight, pastel pink and "
+                         "warm white tones, photorealistic lifestyle photo, subject centered, vertical composition, "
+                         "no people, no text, no watermark"),
+        "shorts_default_bg": "cozy small apartment living room",
+        "shorts_signature": "🏠 핑포의 작은집 연구소 · 핑포(핑크포켓, Pink Pocket)",
+        "shorts_outro": "자세한 건 블로그에! 구독하고 꿀팁 받아 가세요!",
+        "shorts_outro_bg": "cozy pink bedroom corner with soft lamp light",
+        "comment_fallback": "오늘은 '{hook}' 이야기였어요 🏠\n작은 집도 조금만 손보면 훨씬 포근해지더라고요 💛",
+        "yt_category": "26",
+    },
+    "news": {
+        "name": "핑포의 오늘뉴스",
+        "base": "news",
+        "blog_home": "https://pinkpoket-news.blogspot.com",
+        "yt_link_text": "▶ 유튜브에서 오늘 뉴스 1분 요약 쇼츠 보기 &amp; 구독하기",
+        "author_box": ("<strong style=\"color:#333\">✍️ 핑포의 오늘뉴스</strong> · 핑포(핑크포켓, Pink Pocket)가 "
+                       "매일 꼭 알아야 할 뉴스와 생활 정보를 쉽게 풀어 정리해요. "
+                       "여러 언론 보도와 정부·기관 공식 발표를 확인해 AI 도구의 도움을 받아 새로 쓰고 있어요."),
+        "default_notice": "뉴스 내용은 이후 보도·발표에 따라 바뀔 수 있어요. 신청 기간·금액처럼 중요한 정보는 공식 누리집에서 꼭 다시 확인해 주세요 📰",
+        "items_title": "🛒 오늘 뉴스와 함께 보면 좋은 아이템",
+        "image_style": ("clean editorial news illustration photo, soft natural light, calm pastel pink and white tones, "
+                        "photorealistic, magazine style, no people, no faces, no text, no letters, no logo, no watermark"),
+        "shorts_style": ("clean editorial photo, soft natural light, calm pastel pink and white tones, photorealistic, "
+                         "subject centered, vertical composition, no people, no faces, no text, no letters, no logo, no watermark"),
+        "shorts_default_bg": "morning newspaper and coffee cup on a bright table",
+        "shorts_signature": "📰 핑포의 오늘뉴스 · 핑포(핑크포켓, Pink Pocket)",
+        "shorts_outro": "내일도 오늘뉴스로 만나요! 구독하고 매일 받아 보세요!",
+        "shorts_outro_bg": "sunrise over a quiet city skyline, soft pink sky",
+        "comment_fallback": "오늘은 '{hook}' 소식이었어요 📰\n바쁜 하루, 핑포가 대신 챙겨 드릴게요 💛",
+        "yt_category": "25",
+    },
+}
+
+CHANNEL = os.environ.get("CHANNEL", "").strip() or "salim"
+if CHANNEL not in PROFILES:
+    raise SystemExit(f"[설정 오류] 모르는 채널 이름: {CHANNEL}")
+P = PROFILES[CHANNEL]
+
+
+def path(*parts):
+    """채널 폴더 기준 경로. salim 은 저장소 맨 위, news 는 news/ 아래."""
+    return os.path.join(ROOT, P["base"], *parts) if P["base"] else os.path.join(ROOT, *parts)
+
+
+def logo():
+    own = path("brand", "icon.png")
+    return own if os.path.exists(own) else os.path.join(ROOT, "brand", "icon.png")

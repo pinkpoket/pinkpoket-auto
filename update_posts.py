@@ -9,7 +9,8 @@ import sys
 
 import blog_bot as bb
 
-QUEUE = os.path.join(bb.ROOT, "data", "update_queue.txt")
+import channel as ch  # noqa: E402
+QUEUE = ch.path("data", "update_queue.txt")
 
 
 def main():

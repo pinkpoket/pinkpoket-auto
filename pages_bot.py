@@ -10,9 +10,10 @@ import os
 import sys
 
 import blog_bot as bb
+import channel as ch
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-STATE = os.path.join(ROOT, "data", "pages.json")
+STATE = ch.path("data", "pages.json")
 
 
 def main():
@@ -21,7 +22,7 @@ def main():
     done = json.load(open(STATE, encoding="utf-8")) if os.path.exists(STATE) else {}
     token = bb.google_access_token()
     headers = {"Authorization": f"Bearer {token}"}
-    for path in sorted(glob.glob(os.path.join(ROOT, "pages", "*.json"))):
+    for path in sorted(glob.glob(ch.path("pages", "*.json"))):
         name = os.path.basename(path)
         obj = json.load(open(path, encoding="utf-8"))
         body = {"kind": "blogger#page", "title": obj["title"],

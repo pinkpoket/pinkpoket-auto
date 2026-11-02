@@ -18,10 +18,9 @@ import urllib.parse
 import urllib.request
 
 import blog_bot as bb
+import channel as ch
 
-STYLE = ("bright cozy minimalist Korean apartment interior, soft natural daylight, "
-         "pastel pink and warm white tones, clean, photorealistic, lifestyle magazine photo, "
-         "no people, no text, no watermark")
+STYLE = ch.P["image_style"]
 
 
 def fetch_cloudflare(prompt, path, seed):
@@ -70,7 +69,7 @@ def main():
     os.makedirs(bb.IMAGES_DIR, exist_ok=True)
     state = bb.load_state()
     made = 0
-    queue = os.path.join(bb.ROOT, "data", "update_queue.txt")
+    queue = ch.path("data", "update_queue.txt")
     queued = []
     if os.path.exists(queue):
         queued = [l.strip() for l in open(queue, encoding="utf-8") if l.strip() and not l.startswith("#")]

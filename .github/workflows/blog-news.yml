@@ -1,0 +1,67 @@
+name: blog-news-post
+
+on:
+  # news/posts/ 에 새 뉴스 글(JSON)이 올라오면 바로 발행
+  push:
+    branches: [main]
+    paths: ["news/posts/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-news
+  cancel-in-progress: false
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    env:
+      CHANNEL: news
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: git 설정
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+      - name: 대표 이미지 만들기 (무료 AI)
+        env:
+          CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: python -u make_images.py
+      - name: 이미지 올리기
+        id: img
+        run: |
+          git add news/images 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -q -m "뉴스 블로그 이미지 추가"
+            for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: 핑포의 오늘뉴스 블로그 발행
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+          BLOGGER_BLOG_ID: "5147989058215304792"
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          YOUTUBE_CHANNEL_URL: "https://www.youtube.com/channel/UC3QKRPjjKXiPWVKxfi5vSTQ"
+          THREADS_URL: ${{ vars.THREADS_URL }}
+          IMAGES_SHA: ${{ steps.img.outputs.sha }}
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+          COUPANG_SUB_ID: ${{ vars.COUPANG_SUB_ID }}
+        run: python -u blog_bot.py
+      - name: 발행 기록 저장
+        if: always()
+        run: |
+          [ -f news/data/posted.json ] && git add news/data/posted.json
+          git diff --cached --quiet && exit 0
+          git commit -m "뉴스 블로그 발행 기록"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done

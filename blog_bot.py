@@ -38,17 +38,20 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+import channel as ch
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
-POSTS_DIR = os.path.join(ROOT, "posts")
-IMAGES_DIR = os.path.join(ROOT, "images")
-LINKS_FILE = os.path.join(ROOT, "data", "coupang_links.txt")
-STATE_FILE = os.path.join(ROOT, "data", "posted.json")
+POSTS_DIR = ch.path("posts")
+IMAGES_DIR = ch.path("images")
+LINKS_FILE = ch.path("data", "coupang_links.txt")
+STATE_FILE = ch.path("data", "posted.json")
+IMAGES_REL = os.path.relpath(IMAGES_DIR, ROOT).replace(os.sep, "/")
 
 KST = dt.timezone(dt.timedelta(hours=9))
 DISCLOSURE = "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
 USER_AGENT = "pinkpoket-blog-bot/1.1 (personal blog; github actions)"
 NO_LINK = ("없음", "")
-DEFAULT_NOTICE = "제품 가격·구성은 판매처 사정에 따라 바뀔 수 있어요. 구매 전 상세 페이지를 꼭 확인해 주세요 💗"
+DEFAULT_NOTICE = ch.P["default_notice"]
 MAX_LINKS = 3
 REPO = os.environ.get("GITHUB_REPOSITORY", "pinkpoket/pinkpoket-auto")
 
@@ -251,7 +254,7 @@ def image_file(name, idx):
 
 def image_url(fname):
     sha = os.environ.get("IMAGES_SHA", "").strip() or "main"
-    return f"https://cdn.jsdelivr.net/gh/{REPO}@{sha}/images/{fname}"
+    return f"https://cdn.jsdelivr.net/gh/{REPO}@{sha}/{IMAGES_REL}/{fname}"
 
 
 def images_for(name, obj, state=None):
@@ -298,7 +301,7 @@ def channel_box():
     if youtube:
         sub = youtube + ("&" if "?" in youtube else "?") + "sub_confirmation=1"
         rows.append(f'<p style="margin:0 0 8px;font-size:15px"><a href="{html.escape(sub)}" target="_blank" rel="noopener">'
-                    "▶ 유튜브에서 살림 꿀팁 쇼츠 보기 &amp; 구독하기</a></p>")
+                    + ch.P["yt_link_text"] + "</a></p>")
     if threads:
         rows.append(f'<p style="margin:0;font-size:15px"><a href="{html.escape(threads)}" target="_blank" rel="noopener">'
                     "🧵 스레드에서 핑크포켓 매일 만나기</a></p>")
@@ -328,8 +331,7 @@ def series_box(obj, name, state):
 
 AUTHOR_BOX = (
     '<div style="border-top:1px solid #eee;margin:32px 0 0;padding:16px 0 0;font-size:14px;line-height:1.7;color:#666">'
-    '<strong style="color:#333">✍️ 핑포의 작은집 연구소</strong> · 핑포(핑크포켓, Pink Pocket)가 작은 집도 예쁘고 편하게 가꾸는 인테리어·살림 방법을 정리해요. '
-    '공식 자료와 확인된 정보를 바탕으로 AI 도구의 도움을 받아 쓰고 있어요.{photo_note}</div>')
+    + ch.P["author_box"] + '{photo_note}</div>')
 PHOTO_NOTE = ''
 
 
@@ -353,7 +355,7 @@ def assemble(name, obj, state, links, images):
             f'<a href="{html.escape(l["url"])}" rel="sponsored nofollow noopener" target="_blank">쿠팡에서 보기 &rarr;</a></p>'
             for l in links)
         parts.append(f'<div style="border:1px solid {PINK_LINE};border-radius:12px;padding:16px;margin:28px 0;background:#fffafc">'
-                     '<p style="margin:0 0 10px;font-weight:bold;font-size:15px">🎀 핑포가 골라 본 아이템</p>' + items + "</div>")
+                     '<p style="margin:0 0 10px;font-weight:bold;font-size:15px">' + ch.P["items_title"] + '</p>' + items + "</div>")
     parts.append(series_box(obj, name, state))
     parts.append(channel_box())
     notice = str(obj.get("notice", "")).strip() or DEFAULT_NOTICE
@@ -506,7 +508,7 @@ def main():
             state["used_links"] = used
         save_state(state)
         refresh_series(token, name, obj, state)
-        msg = f"[핑포의 작은집 연구소] 새 글 발행 💗\n{title}\n{post_url}"
+        msg = f"[{ch.P['name']}] 새 글 발행 💗\n{title}\n{post_url}"
         print(msg)
         notify(msg)
 

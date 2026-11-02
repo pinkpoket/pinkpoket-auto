@@ -43,3 +43,24 @@
 ## 애드센스 신청 시기
 
 글이 20~30편 쌓이고, 소개·개인정보처리방침·문의 페이지가 있는 상태에서 신청하는 게 좋아요.
+
+---
+
+# 📰 두 번째 채널: 핑포의 오늘뉴스 (`news/` 폴더)
+
+살림 채널과 **같은 코드**를 쓰고, 워크플로에서 `CHANNEL: news` 로 폴더·문구만 바꿔요. 살림 채널 파일은 건드리지 않아요.
+
+| 무엇 | 살림 (그대로) | 뉴스 |
+|---|---|---|
+| 블로그 | pinkpoket.blogspot.com | pinkpoket-news.blogspot.com (blogID 5147989058215304792) |
+| 유튜브 | 핑포의 작은집 연구소 | @핑포의오늘뉴스 (UC3QKRPjjKXiPWVKxfi5vSTQ) |
+| 글 폴더 | `posts/` | `news/posts/` |
+| 쇼츠 대본 | `shorts/queue/` | `news/shorts/queue/` |
+| 페이지 | `pages/` | `news/pages/` |
+| 기록 | `data/` | `news/data/` |
+| 워크플로 | blog-post · shorts-make · blog-pages | blog-news-post · shorts-news-make · blog-news-pages |
+| 규칙 | WRITING_GUIDE.md · SHORTS_GUIDE.md | news/WRITING_GUIDE.md · news/SHORTS_GUIDE.md |
+
+뉴스 채널에 새로 필요한 비밀값은 하나예요: **`NEWS_YOUTUBE_REFRESH_TOKEN`** (오늘뉴스 채널을 골라 받은 유튜브 토큰).
+구글 클라이언트·블로그 토큰·Cloudflare·텔레그램·쿠팡 키는 살림 채널 것을 같이 써요.
+업로드 전에 채널 ID를 확인하니, 토큰을 잘못 넣어도 살림 채널에 뉴스가 올라가지 않아요.

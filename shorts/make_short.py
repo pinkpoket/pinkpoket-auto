@@ -40,16 +40,19 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(ROOT)
-QUEUE = os.path.join(ROOT, "queue")
-DONE = os.path.join(ROOT, "done")
+sys.path.insert(0, REPO)
+import channel as ch  # noqa: E402
+
+QUEUE = ch.path("shorts", "queue")
+DONE = ch.path("shorts", "done")
 WORK = os.path.join(ROOT, "_work")
 OUT = os.path.join(ROOT, "_out")
-LOG_FILE = os.path.join(REPO, "data", "shorts_log.json")
-LINKS_FILE = os.path.join(REPO, "data", "coupang_links.txt")
-LOGO = os.path.join(REPO, "brand", "icon.png")
+LOG_FILE = ch.path("data", "shorts_log.json")
+LINKS_FILE = ch.path("data", "coupang_links.txt")
+LOGO = ch.logo()
 W, H, FPS = 1080, 1920, 30
 
-BLOG_HOME = "https://pinkpoket.blogspot.com"
+BLOG_HOME = ch.P["blog_home"]
 DISCLOSURE = "이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다."
 PINK = (224, 85, 154)
 
@@ -154,9 +157,7 @@ def word_times(text, words, dur):
 
 # ---------------------------------------------------------------- 그림
 
-STYLE = ("bright cozy minimalist Korean apartment interior, soft natural daylight, pastel pink and "
-         "warm white tones, photorealistic lifestyle photo, subject centered, vertical composition, "
-         "no people, no text, no watermark")
+STYLE = ch.P["shorts_style"]
 AI_COUNT = [0]
 
 
@@ -250,7 +251,7 @@ def base_png(hook, path, outro=False):
         y += lh
     # 채널 이름 + 로고 (작게)
     f_tag = font(32)
-    tag = "핑포의 작은집 연구소"
+    tag = ch.P["name"]
     tw = d.textlength(tag, font=f_tag)
     logo_s = 54
     lx = int((W - tw - logo_s - 10) / 2)
@@ -377,12 +378,12 @@ def make_scene(i, scene, hook, audio, words, t0, total):
 def blog_images(url):
     """posted.json 에서 블로그 글의 사진(저장소 images/ 안 파일)을 찾는다."""
     try:
-        posted = json.load(open(os.path.join(REPO, "data", "posted.json"), encoding="utf-8")).get("posted", [])
+        posted = json.load(open(ch.path("data", "posted.json"), encoding="utf-8")).get("posted", [])
     except Exception:  # noqa: BLE001
         return []
     for p in posted:
         if url and p.get("url") == url:
-            files = [os.path.join(REPO, "images", u.rsplit("/", 1)[-1]) for u in p.get("images", [])]
+            files = [os.path.join(ch.path("images"), u.rsplit("/", 1)[-1]) for u in p.get("images", [])]
             return [f for f in files if os.path.exists(f)]
     return []
 
@@ -399,13 +400,13 @@ def build_video(script, out_path):
     # 좋아요·구독 마지막 화면은 시청 지속률을 떨어뜨려서 기본은 뺀다 (링크·구독 안내는 설명란·댓글로).
     # 대본에 "end_card": true 가 있을 때만 붙인다.
     if script.get("end_card"):
-        outro = script.get("outro") or "자세한 건 블로그에! 구독하고 꿀팁 받아 가세요!"
-        scenes.append({"text": outro, "bg": "cozy pink bedroom corner with soft lamp light", "outro": True})
+        outro = script.get("outro") or ch.P["shorts_outro"]
+        scenes.append({"text": outro, "bg": ch.P["shorts_outro_bg"], "outro": True})
     from concurrent.futures import ThreadPoolExecutor
 
     def _pre(i_s):
         i, sc = i_s
-        cloudflare_image(sc.get("bg") or "cozy small apartment living room", os.path.join(WORK, f"raw{i}.jpg"))
+        cloudflare_image(sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg"))
     with ThreadPoolExecutor(max_workers=4) as ex:
         list(ex.map(_pre, enumerate(scenes)))
     missing = [i for i in range(len(scenes)) if not os.path.exists(os.path.join(WORK, f"raw{i}.jpg"))]
@@ -493,7 +494,7 @@ def build_description(script):
     if product:
         lines.append(f"🛒 {product[1]} 👉 {product[0]}")
     lines += ["", script.get("description", "").strip(), "",
-              "🏠 핑포의 작은집 연구소 · 핑포(핑크포켓, Pink Pocket)",
+              ch.P["shorts_signature"],
               "※ 이 영상은 AI 음성과 AI 이미지를 사용해 만들었어요."]
     return "\n".join(lines).strip(), product
 
@@ -504,7 +505,7 @@ def build_comment(script, product):
     body = (script.get("comment") or "").strip()
     if not body:
         hook = (script.get("hook") or script.get("title") or "").strip()
-        body = f"오늘은 '{hook}' 이야기였어요 🏠\n작은 집도 조금만 손보면 훨씬 포근해지더라고요 💛"
+        body = ch.P["comment_fallback"].format(hook=hook)
     tail = ["", "더 궁금하신 분은 영상 아래 ‘더보기’를 눌러 봐 주세요 👀",
             "도움이 되셨다면 구독과 좋아요 꾹 부탁드려요 🙏💗"]
     return body + "\n" + "\n".join(tail)
@@ -538,7 +539,7 @@ def check_channel(tok):
     items = r.json().get("items", []) if r.ok else []
     got = items[0]["id"] if items else ""
     if want and got != want:
-        raise RuntimeError(f"연결된 채널({got})이 핑포 채널({want})이 아니라서 업로드를 멈췄어요")
+        raise RuntimeError(f"연결된 채널({got})이 {ch.P['name']} 채널({want})이 아니라서 업로드를 멈췄어요")
     return got
 
 
@@ -558,7 +559,7 @@ def yt_upload(video, title, desc, tags):
             total += len(t) + 2
     meta = {
         "snippet": {"title": title[:100], "description": yt_clean(desc)[:4900], "tags": clean_tags,
-                    "categoryId": "26", "defaultLanguage": "ko", "defaultAudioLanguage": "ko"},
+                    "categoryId": ch.P["yt_category"], "defaultLanguage": "ko", "defaultAudioLanguage": "ko"},
         "status": {"privacyStatus": os.environ.get("YT_PRIVACY", "public"),
                    "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True},
     }
