@@ -31,7 +31,8 @@ jobs:
         run: |
           mkdir -p "analysis/$NAME"
           for tab in videos shorts streams; do
-            yt-dlp --flat-playlist -J --extractor-args "youtubetab:approximate_date" "$URL/$tab" > "analysis/$NAME/$tab.json" 2>/dev/null || echo "{}" > "analysis/$NAME/$tab.json"
+            yt-dlp --flat-playlist -J --extractor-args "youtubetab:approximate_date" "$URL/$tab" > "analysis/$NAME/$tab.json" 2> "analysis/$NAME/$tab.err" || echo "{}" > "analysis/$NAME/$tab.json"
+            echo "$tab: $(python -c "import json;print(len((json.load(open('analysis/$NAME/$tab.json')) or {}).get('entries') or []))" 2>/dev/null) 개"; tail -2 "analysis/$NAME/$tab.err"
           done
           python - <<'PY'
           import json, os, subprocess
@@ -39,7 +40,7 @@ jobs:
           ids = []
           for tab in ("videos", "shorts", "streams"):
               try:
-                  d = json.load(open(f"{base}/{tab}.json"))
+                  d = json.load(open(f"{base}/{tab}.json")) or {}
               except Exception:
                   continue
               for e in d.get("entries") or []:
@@ -50,7 +51,9 @@ jobs:
               try:
                   r = subprocess.run(["yt-dlp", "-J", "--skip-download", f"https://www.youtube.com/watch?v={vid}"],
                                      capture_output=True, text=True, timeout=90)
-                  j = json.loads(r.stdout)
+                  j = json.loads(r.stdout or "null")
+                  if not j:
+                      raise RuntimeError((r.stderr or "")[-200:])
               except Exception as e:
                   out.append({"id": vid, "tab": tab, "error": str(e)[:200]}); continue
               out.append({k: j.get(k) for k in ("id", "title", "description", "duration", "view_count", "like_count",
