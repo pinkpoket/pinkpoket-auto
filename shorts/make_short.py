@@ -418,6 +418,19 @@ def build_video(script, out_path):
         cloudflare_image(sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg"))
     with ThreadPoolExecutor(max_workers=4) as ex:
         list(ex.map(_pre, [(i, scenes[i]) for i in leaders.values()]))
+    cache_dir = ch.path("data", "bg_cache") if ch.P.get("bg_cache") else ""
+    if cache_dir:
+        os.makedirs(cache_dir, exist_ok=True)
+        stamp = time.strftime("%Y%m%d%H%M")
+        for i in leaders.values():
+            src = os.path.join(WORK, f"raw{i}.jpg")
+            if os.path.exists(src):
+                small = Image.open(src).convert("RGB")
+                small.thumbnail((768, 1365))
+                small.save(os.path.join(cache_dir, f"{stamp}-{i}.jpg"), quality=82)
+        old = sorted(glob.glob(os.path.join(cache_dir, "*.jpg")))[:-ch.P["bg_cache"]]
+        for f in old:
+            os.remove(f)
     for i, g in enumerate(group):
         src = os.path.join(WORK, f"raw{leaders[g]}.jpg")
         if i != leaders[g] and os.path.exists(src):
@@ -426,6 +439,16 @@ def build_video(script, out_path):
     if missing:
         # AI 그림이 모자라면(무료 한도 초과 등) 같은 블로그 글의 사진으로 채운다
         blog_imgs = blog_images(script.get("blog_url"))
+        if not blog_imgs and cache_dir:
+            # 무료 한도 초과일 때: 예전에 만든 같은 채널 그림 중에서 골라 쓴다 (장면 묶음끼리는 같은 그림)
+            pool = sorted(glob.glob(os.path.join(cache_dir, "*.jpg")))
+            if pool:
+                rnd = random.Random(script.get("title", ""))
+                pick = {g: rnd.choice(pool) for g in set(group)}
+                for i in missing:
+                    shutil.copy(pick[group[i]], os.path.join(WORK, f"raw{i}.jpg"))
+                print(f"[그림] AI 한도 초과 → 예전 그림 {len(pick)}장으로 채움")
+                missing = []
         for n, i in enumerate(missing):
             if blog_imgs:
                 shutil.copy(blog_imgs[n % len(blog_imgs)], os.path.join(WORK, f"raw{i}.jpg"))

@@ -85,7 +85,7 @@ PROFILES = {
         "yt_category": "22",
         "voice_gain": 1.8, "bgm_volume": 0.07,
         # 시니어 시청자용: 말은 천천히(기본 속도), 그림은 4장만 만들어 장면끼리 나눠 씀, 화면 이름은 "인생온"
-        "tts_rate": "+0%", "image_steps": 4, "max_images": 4, "tag": "인생온",
+        "tts_rate": "+0%", "image_steps": 4, "max_images": 4, "tag": "인생온", "bg_cache": 80,
         # 채널 로고(노란 원 + 검정 글씨)와 통일: 제목 상자 노랑+검정 글씨, 강조 자막은 검정 상자에 노란 글씨, 진행 막대 노랑
         "colors": {"accent": (20, 20, 20), "bar": (255, 230, 0), "hook_bg": (255, 236, 0),
                    "hook_text": (15, 15, 15), "hi_text": (255, 236, 0), "hi_stroke": (0, 0, 0),
