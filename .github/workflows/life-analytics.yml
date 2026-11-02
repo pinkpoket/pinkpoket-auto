@@ -1,0 +1,34 @@
+name: life-analytics
+
+on:
+  # 직접 실행(주간 분석 예약 작업이 실행): 인생ON 채널 성적을 life/data/analytics.json 에 저장
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: 성적 모으기
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.LIFE_YOUTUBE_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
+        run: python -u life/analytics.py
+      - name: 저장
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add life/data/analytics.json
+          git diff --cached --quiet && exit 0
+          git commit -m "인생ON 성적 수집"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done

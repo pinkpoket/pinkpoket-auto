@@ -64,3 +64,13 @@
 뉴스 채널에 새로 필요한 비밀값은 하나예요: **`NEWS_YOUTUBE_REFRESH_TOKEN`** (오늘뉴스 채널을 골라 받은 유튜브 토큰).
 구글 클라이언트·블로그 토큰·Cloudflare·텔레그램·쿠팡 키는 살림 채널 것을 같이 써요.
 업로드 전에 채널 ID를 확인하니, 토큰을 잘못 넣어도 살림 채널에 뉴스가 올라가지 않아요.
+
+---
+
+# 🔥 세 번째 채널: 인생ON : 마음의 불을 켜다 (`life/` 폴더, 쇼츠만)
+
+- 유튜브: @인생ON (UCkN5Ws9cI_B8fyE71-dl__Q), 하루 2편
+- 대본: `life/shorts/queue/` → 워크플로 `shorts-life-make`
+- 규칙: `life/SHORTS_GUIDE.md` (근거: `life/ANALYSIS.md`)
+- 주간 분석: 워크플로 `life-analytics` → `life/data/analytics.json`
+- 비밀값: `LIFE_YOUTUBE_REFRESH_TOKEN` (인생ON 채널로 받은 토큰, 분석 권한 포함). Cloudflare 는 뉴스 계정 키를 같이 씀 (`LIFE_CF_*` 를 넣으면 그걸 씀)

@@ -93,7 +93,7 @@ def duration(path):
 
 # ---------------------------------------------------------------- 음성
 
-TTS_RATE = os.environ.get("TTS_RATE", "+35%")
+TTS_RATE = os.environ.get("TTS_RATE") or ch.P.get("tts_rate", "+35%")
 
 
 async def _tts(text, voice, path):
@@ -172,7 +172,7 @@ def cloudflare_image(prompt, path):
         r = requests.post(
             f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell",
             headers={"Authorization": f"Bearer {tok}"},
-            json={"prompt": f"{prompt}, {STYLE}"[:1500], "steps": 8}, timeout=90)
+            json={"prompt": f"{prompt}, {STYLE}"[:1500], "steps": ch.P.get("image_steps", 8)}, timeout=90)
         img = (r.json().get("result") or {}).get("image") if r.ok else None
         if not img:
             print(f"[그림] Cloudflare 응답 {r.status_code}: {r.text[:200]}")
@@ -494,7 +494,8 @@ def build_description(script):
     lines = []
     if product:
         lines += [DISCLOSURE, ""]
-    lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
+    if blog:
+        lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
     if product:
         lines.append(f"🛒 {product[1]} 👉 {product[0]}")
     lines += ["", script.get("description", "").strip(), "",
