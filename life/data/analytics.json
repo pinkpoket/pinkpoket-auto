@@ -1,9 +1,18 @@
 {
- "at": "2026-11-02T12:03:20.545420Z",
+ "at": "2026-11-02T12:19:47.425970Z",
  "channel": "인생ON : 마음의 불을 켜다",
  "subscribers": "2930",
  "analytics": true,
  "videos": [
+  {
+   "id": "QCaL34OOhTc",
+   "title": "나이 들수록 반드시 줄여야 할 말버릇 3가지 #shorts",
+   "published": "2026-11-02T12:14:49Z",
+   "duration": "PT48S",
+   "views": 1,
+   "likes": 0,
+   "comments": 1
+  },
   {
    "id": "Z826mTrKNEE",
    "title": "80세 전 건강이 급격히 무너지는 진짜 이유 4가지 #반드시알아야할 #건강정보 #shorts",
@@ -12,11 +21,11 @@
    "views": 3688,
    "likes": 78,
    "comments": 1,
-   "avg_view_sec": 100,
-   "avg_view_pct": 120.5,
-   "shares": 39,
-   "subs_gained": 11,
-   "views_period": 3689
+   "avg_view_sec": 6,
+   "avg_view_pct": 7.51,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "r5drN6Xr75w",
@@ -26,11 +35,11 @@
    "views": 1624,
    "likes": 14,
    "comments": 0,
-   "avg_view_sec": 65,
-   "avg_view_pct": 133.34,
-   "shares": 11,
-   "subs_gained": 2,
-   "views_period": 1624
+   "avg_view_sec": 40,
+   "avg_view_pct": 81.63,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "cmbror11dgg",
@@ -40,11 +49,11 @@
    "views": 2718,
    "likes": 33,
    "comments": 0,
-   "avg_view_sec": 60,
-   "avg_view_pct": 100.25,
-   "shares": 14,
-   "subs_gained": 3,
-   "views_period": 2718
+   "avg_view_sec": 17,
+   "avg_view_pct": 28.67,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "QLTwztbD-sQ",
@@ -54,11 +63,11 @@
    "views": 8179,
    "likes": 180,
    "comments": 2,
-   "avg_view_sec": 104,
-   "avg_view_pct": 117.26,
-   "shares": 152,
-   "subs_gained": 24,
-   "views_period": 8179
+   "avg_view_sec": 65,
+   "avg_view_pct": 73.07,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "3Jmar1pgm74",
@@ -68,11 +77,11 @@
    "views": 2477,
    "likes": 33,
    "comments": 0,
-   "avg_view_sec": 59,
-   "avg_view_pct": 96.28,
-   "shares": 18,
-   "subs_gained": 6,
-   "views_period": 2477
+   "avg_view_sec": 24,
+   "avg_view_pct": 39.96,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 12
   },
   {
    "id": "F27wtstNdxo",
@@ -82,11 +91,11 @@
    "views": 8472,
    "likes": 231,
    "comments": 0,
-   "avg_view_sec": 100,
-   "avg_view_pct": 132.55,
-   "shares": 282,
-   "subs_gained": 24,
-   "views_period": 8472
+   "avg_view_sec": 44,
+   "avg_view_pct": 58.550000000000004,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "r8m4JZxLv2M",
@@ -96,11 +105,11 @@
    "views": 1871,
    "likes": 8,
    "comments": 1,
-   "avg_view_sec": 19,
-   "avg_view_pct": 122.68,
-   "shares": 12,
-   "subs_gained": 2,
-   "views_period": 1871
+   "avg_view_sec": 12,
+   "avg_view_pct": 75,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "kXlAOlYFOWU",
@@ -110,11 +119,11 @@
    "views": 2162,
    "likes": 31,
    "comments": 1,
-   "avg_view_sec": 71,
-   "avg_view_pct": 111.57999999999998,
-   "shares": 11,
-   "subs_gained": 5,
-   "views_period": 2162
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "sYQP0X46KAE",
@@ -124,11 +133,11 @@
    "views": 2076,
    "likes": 29,
    "comments": 0,
-   "avg_view_sec": 57,
-   "avg_view_pct": 88.47,
-   "shares": 9,
-   "subs_gained": 5,
-   "views_period": 2076
+   "avg_view_sec": 61,
+   "avg_view_pct": 94.92,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "eqn3dheh1aQ",
@@ -138,11 +147,11 @@
    "views": 1859,
    "likes": 12,
    "comments": 0,
-   "avg_view_sec": 74,
-   "avg_view_pct": 93.63,
-   "shares": 2,
-   "subs_gained": 5,
-   "views_period": 1859
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "mZCr5tFLvow",
@@ -152,11 +161,11 @@
    "views": 1764,
    "likes": 22,
    "comments": 3,
-   "avg_view_sec": 48,
-   "avg_view_pct": 100.22999999999999,
-   "shares": 10,
-   "subs_gained": 4,
-   "views_period": 1764
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "ooI5xytaaUQ",
@@ -166,11 +175,11 @@
    "views": 1618,
    "likes": 21,
    "comments": 3,
-   "avg_view_sec": 63,
-   "avg_view_pct": 120.59,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
-   "subs_gained": 5,
-   "views_period": 1618
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "YSdhidPdpv8",
@@ -180,11 +189,11 @@
    "views": 1304,
    "likes": 24,
    "comments": 0,
-   "avg_view_sec": 38,
-   "avg_view_pct": 84.03,
-   "shares": 3,
-   "subs_gained": 4,
-   "views_period": 1304
+   "avg_view_sec": 37,
+   "avg_view_pct": 81.67,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "ZMLwzbN8uUw",
@@ -194,11 +203,11 @@
    "views": 1210,
    "likes": 19,
    "comments": 1,
-   "avg_view_sec": 43,
-   "avg_view_pct": 71.53,
-   "shares": 8,
-   "subs_gained": 3,
-   "views_period": 1210
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "a8GF9GvCrMs",
@@ -208,11 +217,11 @@
    "views": 1351,
    "likes": 17,
    "comments": 1,
-   "avg_view_sec": 40,
-   "avg_view_pct": 115.84,
-   "shares": 2,
-   "subs_gained": 1,
-   "views_period": 1351
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "M4VOTkEV30I",
@@ -222,11 +231,11 @@
    "views": 1456,
    "likes": 17,
    "comments": 1,
-   "avg_view_sec": 43,
-   "avg_view_pct": 114.55,
-   "shares": 7,
-   "subs_gained": 1,
-   "views_period": 1456
+   "avg_view_sec": 9,
+   "avg_view_pct": 23.95,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "yKil6nsSFpw",
@@ -236,11 +245,11 @@
    "views": 1537,
    "likes": 42,
    "comments": 1,
-   "avg_view_sec": 111,
-   "avg_view_pct": 141.68,
-   "shares": 31,
-   "subs_gained": 12,
-   "views_period": 1537
+   "avg_view_sec": 84,
+   "avg_view_pct": 107.15,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "G3_2D3oba2I",
@@ -249,7 +258,12 @@
    "duration": "PT59S",
    "views": 961,
    "likes": 22,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 24,
+   "avg_view_pct": 40.85,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "3m51-OwaKw0",
@@ -259,11 +273,11 @@
    "views": 1274,
    "likes": 35,
    "comments": 1,
-   "avg_view_sec": 131,
-   "avg_view_pct": 138.67,
-   "shares": 17,
-   "subs_gained": 5,
-   "views_period": 1274
+   "avg_view_sec": 18,
+   "avg_view_pct": 18.95,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "P4c2oyetmRo",
@@ -273,11 +287,11 @@
    "views": 2502,
    "likes": 62,
    "comments": 1,
-   "avg_view_sec": 95,
-   "avg_view_pct": 158.41,
-   "shares": 19,
-   "subs_gained": 9,
-   "views_period": 2502
+   "avg_view_sec": 8,
+   "avg_view_pct": 13.33,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "zPpWAF8DKao",
@@ -287,11 +301,11 @@
    "views": 1269,
    "likes": 36,
    "comments": 1,
-   "avg_view_sec": 76,
-   "avg_view_pct": 121.87,
-   "shares": 7,
-   "subs_gained": 5,
-   "views_period": 1269
+   "avg_view_sec": 9,
+   "avg_view_pct": 15.71,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "kKnxMHwLOf0",
@@ -301,11 +315,11 @@
    "views": 2358,
    "likes": 36,
    "comments": 2,
-   "avg_view_sec": 100,
-   "avg_view_pct": 189.68,
-   "shares": 32,
-   "subs_gained": 8,
-   "views_period": 2358
+   "avg_view_sec": 90,
+   "avg_view_pct": 170.57,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "WZGzQcpk0fk",
@@ -315,11 +329,11 @@
    "views": 1719,
    "likes": 52,
    "comments": 2,
-   "avg_view_sec": 88,
-   "avg_view_pct": 118.53,
-   "shares": 34,
-   "subs_gained": 6,
-   "views_period": 1719
+   "avg_view_sec": 43,
+   "avg_view_pct": 58.599999999999994,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "S4bsA5IuOLI",
@@ -329,11 +343,11 @@
    "views": 1891,
    "likes": 21,
    "comments": 1,
-   "avg_view_sec": 80,
-   "avg_view_pct": 104.17,
-   "shares": 8,
-   "subs_gained": 1,
-   "views_period": 1891
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "Fuh6PKXToaQ",
@@ -343,11 +357,11 @@
    "views": 7467,
    "likes": 120,
    "comments": 1,
-   "avg_view_sec": 88,
-   "avg_view_pct": 143.47,
-   "shares": 38,
-   "subs_gained": 26,
-   "views_period": 7467
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "Z3F7qt-xmVI",
@@ -356,7 +370,12 @@
    "duration": "PT3M58S",
    "views": 95,
    "likes": 0,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 140,
+   "avg_view_pct": 58.89,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 28
   },
   {
    "id": "L_h8pTuMm5g",
@@ -366,11 +385,11 @@
    "views": 2317,
    "likes": 63,
    "comments": 3,
-   "avg_view_sec": 115,
-   "avg_view_pct": 158.75,
-   "shares": 12,
-   "subs_gained": 10,
-   "views_period": 2317
+   "avg_view_sec": 18,
+   "avg_view_pct": 25.89,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "jNQYGnLZ41Y",
@@ -379,7 +398,12 @@
    "duration": "PT1M23S",
    "views": 933,
    "likes": 5,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 6,
+   "avg_view_pct": 7.470000000000001,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "7XIPB8THclM",
@@ -389,11 +413,11 @@
    "views": 1581,
    "likes": 49,
    "comments": 1,
-   "avg_view_sec": 62,
-   "avg_view_pct": 83.92,
-   "shares": 20,
-   "subs_gained": 21,
-   "views_period": 1581
+   "avg_view_sec": 2,
+   "avg_view_pct": 3.93,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "SZ4HsuBlQVw",
@@ -403,11 +427,11 @@
    "views": 2007,
    "likes": 93,
    "comments": 1,
-   "avg_view_sec": 99,
-   "avg_view_pct": 138.31,
-   "shares": 71,
-   "subs_gained": 14,
-   "views_period": 2007
+   "avg_view_sec": 109,
+   "avg_view_pct": 151.57,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "JIJPE3ZniQI",
@@ -417,11 +441,11 @@
    "views": 1303,
    "likes": 29,
    "comments": 1,
-   "avg_view_sec": 115,
-   "avg_view_pct": 125.09000000000002,
-   "shares": 14,
-   "subs_gained": 6,
-   "views_period": 1303
+   "avg_view_sec": 75,
+   "avg_view_pct": 82.39,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 12
   },
   {
    "id": "M0FJvcnx9W8",
@@ -431,11 +455,11 @@
    "views": 9019,
    "likes": 291,
    "comments": 3,
-   "avg_view_sec": 134,
-   "avg_view_pct": 177.54,
-   "shares": 151,
-   "subs_gained": 58,
-   "views_period": 9019
+   "avg_view_sec": 46,
+   "avg_view_pct": 61.07,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "WzZ6kyb5ykY",
@@ -444,7 +468,12 @@
    "duration": "PT56S",
    "views": 1076,
    "likes": 33,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 28,
+   "avg_view_pct": 50.27,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "pp9gEfb6MZE",
@@ -453,7 +482,12 @@
    "duration": "PT1M6S",
    "views": 1045,
    "likes": 29,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "dkaTPdH1Y0o",
@@ -463,11 +497,11 @@
    "views": 1183,
    "likes": 20,
    "comments": 1,
-   "avg_view_sec": 61,
-   "avg_view_pct": 153.42,
-   "shares": 5,
-   "subs_gained": 3,
-   "views_period": 1183
+   "avg_view_sec": 20,
+   "avg_view_pct": 51.5,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "bY7RrFdsE2c",
@@ -477,11 +511,11 @@
    "views": 1251,
    "likes": 67,
    "comments": 61,
-   "avg_view_sec": 77,
-   "avg_view_pct": 112.38999999999999,
-   "shares": 3,
-   "subs_gained": 10,
-   "views_period": 1251
+   "avg_view_sec": 4,
+   "avg_view_pct": 6.52,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "dQ63rPU9bis",
@@ -491,11 +525,11 @@
    "views": 4345,
    "likes": 129,
    "comments": 29,
-   "avg_view_sec": 88,
-   "avg_view_pct": 176.64,
-   "shares": 63,
-   "subs_gained": 19,
-   "views_period": 4345
+   "avg_view_sec": 1661,
+   "avg_view_pct": 3322.45,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 9
   },
   {
    "id": "fdc7NEWXqwE",
@@ -505,11 +539,11 @@
    "views": 2110,
    "likes": 41,
    "comments": 1,
-   "avg_view_sec": 52,
-   "avg_view_pct": 135.18,
-   "shares": 7,
-   "subs_gained": 6,
-   "views_period": 2110
+   "avg_view_sec": 55,
+   "avg_view_pct": 143.46,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "dY2AXYpDxnc",
@@ -519,11 +553,11 @@
    "views": 3497,
    "likes": 81,
    "comments": 11,
-   "avg_view_sec": 61,
-   "avg_view_pct": 103.32999999999998,
-   "shares": 22,
-   "subs_gained": 16,
-   "views_period": 3497
+   "avg_view_sec": 18,
+   "avg_view_pct": 30.579999999999995,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "l7Apv8juqrU",
@@ -533,11 +567,11 @@
    "views": 6857,
    "likes": 113,
    "comments": 1,
-   "avg_view_sec": 77,
-   "avg_view_pct": 190.17,
-   "shares": 36,
-   "subs_gained": 9,
-   "views_period": 6857
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "sKbXzBqUMY8",
@@ -547,11 +581,11 @@
    "views": 4678,
    "likes": 103,
    "comments": 1,
-   "avg_view_sec": 78,
-   "avg_view_pct": 140.35,
-   "shares": 60,
-   "subs_gained": 19,
-   "views_period": 4678
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "mquSSzVh6IQ",
@@ -561,11 +595,11 @@
    "views": 8060,
    "likes": 231,
    "comments": 1,
-   "avg_view_sec": 87,
-   "avg_view_pct": 175.94,
-   "shares": 82,
-   "subs_gained": 52,
-   "views_period": 8060
+   "avg_view_sec": 35,
+   "avg_view_pct": 70.21,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "yU-KRzQz4v4",
@@ -575,11 +609,11 @@
    "views": 10236,
    "likes": 240,
    "comments": 2,
-   "avg_view_sec": 96,
-   "avg_view_pct": 146.87,
-   "shares": 66,
-   "subs_gained": 41,
-   "views_period": 10236
+   "avg_view_sec": 177,
+   "avg_view_pct": 269.5,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 8
   },
   {
    "id": "Yi3tP1gEERY",
@@ -589,11 +623,11 @@
    "views": 1814,
    "likes": 38,
    "comments": 1,
-   "avg_view_sec": 45,
-   "avg_view_pct": 70.57,
-   "shares": 2,
-   "subs_gained": 5,
-   "views_period": 1814
+   "avg_view_sec": 1,
+   "avg_view_pct": 1.56,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "kOVsqbnoHrQ",
@@ -603,11 +637,11 @@
    "views": 1255,
    "likes": 28,
    "comments": 1,
-   "avg_view_sec": 48,
-   "avg_view_pct": 76.64,
-   "shares": 3,
-   "subs_gained": 5,
-   "views_period": 1255
+   "avg_view_sec": 63,
+   "avg_view_pct": 100.79,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "AnEYI8nPZBQ",
@@ -617,11 +651,11 @@
    "views": 4671,
    "likes": 116,
    "comments": 1,
-   "avg_view_sec": 90,
-   "avg_view_pct": 135.72,
-   "shares": 35,
-   "subs_gained": 12,
-   "views_period": 4671
+   "avg_view_sec": 15,
+   "avg_view_pct": 22.99,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 9
   },
   {
    "id": "9m_dTtve9Zk",
@@ -630,12 +664,7 @@
    "duration": "PT50S",
    "views": 2331,
    "likes": 52,
-   "comments": 3,
-   "avg_view_sec": 77,
-   "avg_view_pct": 155.45,
-   "shares": 25,
-   "subs_gained": 8,
-   "views_period": 2331
+   "comments": 3
   },
   {
    "id": "kwA8fK8UuWc",
@@ -645,11 +674,11 @@
    "views": 2720,
    "likes": 86,
    "comments": 11,
-   "avg_view_sec": 66,
-   "avg_view_pct": 99.52,
-   "shares": 22,
-   "subs_gained": 10,
-   "views_period": 2718
+   "avg_view_sec": 30,
+   "avg_view_pct": 45.19,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 13
   },
   {
    "id": "d7WMjRfk0Zc",
@@ -659,11 +688,11 @@
    "views": 9971,
    "likes": 200,
    "comments": 15,
-   "avg_view_sec": 94,
-   "avg_view_pct": 174.77,
-   "shares": 137,
-   "subs_gained": 33,
-   "views_period": 9970
+   "avg_view_sec": 57,
+   "avg_view_pct": 107.30999999999999,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 8
   },
   {
    "id": "9Vm2VkSy_o8",
@@ -673,11 +702,11 @@
    "views": 4039,
    "likes": 128,
    "comments": 9,
-   "avg_view_sec": 94,
-   "avg_view_pct": 143.03,
-   "shares": 33,
-   "subs_gained": 16,
-   "views_period": 4039
+   "avg_view_sec": 61,
+   "avg_view_pct": 93.33,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "dOy4O69_aDI",
@@ -687,11 +716,11 @@
    "views": 19577,
    "likes": 499,
    "comments": 5,
-   "avg_view_sec": 123,
-   "avg_view_pct": 170.91,
-   "shares": 211,
-   "subs_gained": 84,
-   "views_period": 19577
+   "avg_view_sec": 260,
+   "avg_view_pct": 362.48,
+   "shares": 1,
+   "subs_gained": 0,
+   "views_period": 8
   },
   {
    "id": "ozVSRNVwxS4",
@@ -709,12 +738,7 @@
    "duration": "PT54S",
    "views": 1400,
    "likes": 29,
-   "comments": 0,
-   "avg_view_sec": 78,
-   "avg_view_pct": 144.9,
-   "shares": 9,
-   "subs_gained": 7,
-   "views_period": 1400
+   "comments": 0
   },
   {
    "id": "hbRHB-0x_IY",
@@ -724,11 +748,11 @@
    "views": 6233,
    "likes": 176,
    "comments": 1,
-   "avg_view_sec": 75,
-   "avg_view_pct": 143.29,
-   "shares": 58,
-   "subs_gained": 21,
-   "views_period": 6232
+   "avg_view_sec": 32,
+   "avg_view_pct": 60.38,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "S9Tnbu3RpDk",
@@ -738,11 +762,11 @@
    "views": 1227,
    "likes": 43,
    "comments": 3,
-   "avg_view_sec": 67,
-   "avg_view_pct": 118.31,
-   "shares": 10,
-   "subs_gained": 5,
-   "views_period": 1227
+   "avg_view_sec": 19,
+   "avg_view_pct": 34.3,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "DRTrZUFHrNw",
@@ -752,11 +776,11 @@
    "views": 1084,
    "likes": 23,
    "comments": 0,
-   "avg_view_sec": 60,
-   "avg_view_pct": 123.93,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
-   "subs_gained": 2,
-   "views_period": 1084
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "7ru1zEEL0jw",
@@ -766,11 +790,11 @@
    "views": 1522,
    "likes": 17,
    "comments": 1,
-   "avg_view_sec": 48,
-   "avg_view_pct": 87.35,
+   "avg_view_sec": 43,
+   "avg_view_pct": 78.52,
    "shares": 0,
-   "subs_gained": 2,
-   "views_period": 1522
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "9wQg32kVgOA",
@@ -779,12 +803,7 @@
    "duration": "PT1M11S",
    "views": 1466,
    "likes": 49,
-   "comments": 9,
-   "avg_view_sec": 77,
-   "avg_view_pct": 109.7,
-   "shares": 6,
-   "subs_gained": 6,
-   "views_period": 1466
+   "comments": 9
   },
   {
    "id": "_bMa5gXARuo",
@@ -793,12 +812,7 @@
    "duration": "PT1M3S",
    "views": 1299,
    "likes": 26,
-   "comments": 1,
-   "avg_view_sec": 59,
-   "avg_view_pct": 94.58,
-   "shares": 4,
-   "subs_gained": 1,
-   "views_period": 1299
+   "comments": 1
   },
   {
    "id": "GBYLK_O_GiQ",
@@ -807,12 +821,7 @@
    "duration": "PT1M7S",
    "views": 13204,
    "likes": 792,
-   "comments": 111,
-   "avg_view_sec": 103,
-   "avg_view_pct": 154.16,
-   "shares": 494,
-   "subs_gained": 152,
-   "views_period": 13204
+   "comments": 111
   },
   {
    "id": "7doSYUH6JNQ",
@@ -821,12 +830,7 @@
    "duration": "PT59S",
    "views": 1143,
    "likes": 52,
-   "comments": 1,
-   "avg_view_sec": 72,
-   "avg_view_pct": 122.28000000000002,
-   "shares": 22,
-   "subs_gained": 7,
-   "views_period": 1143
+   "comments": 1
   },
   {
    "id": "Uy_VlokTjhY",
@@ -835,7 +839,12 @@
    "duration": "PT1M16S",
    "views": 1083,
    "likes": 34,
-   "comments": 9
+   "comments": 9,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "gZ7SbdEG6pc",
@@ -845,11 +854,11 @@
    "views": 1097,
    "likes": 34,
    "comments": 1,
-   "avg_view_sec": 57,
-   "avg_view_pct": 78.03,
-   "shares": 5,
-   "subs_gained": 6,
-   "views_period": 1097
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "1GzzSxXamLM",
@@ -859,11 +868,11 @@
    "views": 39189,
    "likes": 1059,
    "comments": 158,
-   "avg_view_sec": 88,
-   "avg_view_pct": 147.64,
-   "shares": 474,
-   "subs_gained": 359,
-   "views_period": 39189
+   "avg_view_sec": 177,
+   "avg_view_pct": 295.01,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 7
   },
   {
    "id": "C7f2OGfA7GE",
@@ -872,12 +881,7 @@
    "duration": "PT1M",
    "views": 2459,
    "likes": 73,
-   "comments": 0,
-   "avg_view_sec": 71,
-   "avg_view_pct": 119.06000000000002,
-   "shares": 13,
-   "subs_gained": 11,
-   "views_period": 2459
+   "comments": 0
   },
   {
    "id": "lh5BjJVVRt4",
@@ -896,11 +900,11 @@
    "views": 1722,
    "likes": 39,
    "comments": 1,
-   "avg_view_sec": 72,
-   "avg_view_pct": 134.68,
-   "shares": 7,
-   "subs_gained": 8,
-   "views_period": 1722
+   "avg_view_sec": 28,
+   "avg_view_pct": 52.22,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "h4sFsD7yQGY",
@@ -910,11 +914,11 @@
    "views": 22078,
    "likes": 410,
    "comments": 3,
-   "avg_view_sec": 109,
-   "avg_view_pct": 178.94,
-   "shares": 295,
-   "subs_gained": 103,
-   "views_period": 22078
+   "avg_view_sec": 63,
+   "avg_view_pct": 103.90000000000002,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "HC0rmcJJj7I",
@@ -923,12 +927,7 @@
    "duration": "PT1M9S",
    "views": 1434,
    "likes": 36,
-   "comments": 1,
-   "avg_view_sec": 70,
-   "avg_view_pct": 101.77000000000001,
-   "shares": 8,
-   "subs_gained": 0,
-   "views_period": 1434
+   "comments": 1
   },
   {
    "id": "I8I7euEOe90",
@@ -946,7 +945,12 @@
    "duration": "PT1M12S",
    "views": 804,
    "likes": 21,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "rXxoyzPLRS8",
@@ -964,12 +968,7 @@
    "duration": "PT1M2S",
    "views": 1551,
    "likes": 35,
-   "comments": 3,
-   "avg_view_sec": 68,
-   "avg_view_pct": 109.92,
-   "shares": 10,
-   "subs_gained": 8,
-   "views_period": 1551
+   "comments": 3
   },
   {
    "id": "LbN4RgzRq9s",
@@ -978,12 +977,7 @@
    "duration": "PT1M2S",
    "views": 1395,
    "likes": 50,
-   "comments": 1,
-   "avg_view_sec": 67,
-   "avg_view_pct": 108.62,
-   "shares": 20,
-   "subs_gained": 6,
-   "views_period": 1395
+   "comments": 1
   },
   {
    "id": "Oimquvi1INw",
@@ -1001,12 +995,7 @@
    "duration": "PT53S",
    "views": 1557,
    "likes": 57,
-   "comments": 3,
-   "avg_view_sec": 100,
-   "avg_view_pct": 190.11,
-   "shares": 50,
-   "subs_gained": 16,
-   "views_period": 1557
+   "comments": 3
   },
   {
    "id": "5PBKgmomCck",
@@ -1015,12 +1004,7 @@
    "duration": "PT48S",
    "views": 2508,
    "likes": 56,
-   "comments": 1,
-   "avg_view_sec": 59,
-   "avg_view_pct": 123.51999999999998,
-   "shares": 13,
-   "subs_gained": 13,
-   "views_period": 2508
+   "comments": 1
   },
   {
    "id": "K6PaDdbmThU",
@@ -1029,12 +1013,7 @@
    "duration": "PT48S",
    "views": 1266,
    "likes": 43,
-   "comments": 1,
-   "avg_view_sec": 72,
-   "avg_view_pct": 150.86,
-   "shares": 9,
-   "subs_gained": 12,
-   "views_period": 1266
+   "comments": 1
   },
   {
    "id": "qz8eWfFaSsM",
@@ -1043,7 +1022,12 @@
    "duration": "PT1M26S",
    "views": 1022,
    "likes": 42,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 33,
+   "avg_view_pct": 38.69,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 31
   },
   {
    "id": "sGY5jIhH94g",
@@ -1062,11 +1046,11 @@
    "views": 1127,
    "likes": 34,
    "comments": 1,
-   "avg_view_sec": 46,
-   "avg_view_pct": 93.3,
-   "shares": 2,
-   "subs_gained": 5,
-   "views_period": 1127
+   "avg_view_sec": 19,
+   "avg_view_pct": 39.8,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "3p9fQ-MW__Q",
@@ -1076,11 +1060,11 @@
    "views": 1189,
    "likes": 13,
    "comments": 1,
-   "avg_view_sec": 45,
-   "avg_view_pct": 70.58,
-   "shares": 2,
-   "subs_gained": 3,
-   "views_period": 1189
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "p6YuCUFn2cU",
@@ -1090,11 +1074,11 @@
    "views": 2224,
    "likes": 97,
    "comments": 5,
-   "avg_view_sec": 70,
-   "avg_view_pct": 114.97,
-   "shares": 35,
-   "subs_gained": 9,
-   "views_period": 2224
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "wxnMMNuR7nU",
@@ -1103,12 +1087,7 @@
    "duration": "PT59S",
    "views": 2680,
    "likes": 58,
-   "comments": 1,
-   "avg_view_sec": 79,
-   "avg_view_pct": 135.13,
-   "shares": 20,
-   "subs_gained": 14,
-   "views_period": 2680
+   "comments": 1
   },
   {
    "id": "6nDt54uzWmg",
@@ -1117,12 +1096,7 @@
    "duration": "PT1M1S",
    "views": 1541,
    "likes": 40,
-   "comments": 1,
-   "avg_view_sec": 79,
-   "avg_view_pct": 130.97,
-   "shares": 9,
-   "subs_gained": 5,
-   "views_period": 1541
+   "comments": 1
   },
   {
    "id": "0h88bFFUd3w",
@@ -1132,11 +1106,11 @@
    "views": 1189,
    "likes": 45,
    "comments": 1,
-   "avg_view_sec": 67,
-   "avg_view_pct": 108.93000000000002,
-   "shares": 5,
-   "subs_gained": 13,
-   "views_period": 1189
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "c9LYIMq1h4s",
@@ -1145,12 +1119,7 @@
    "duration": "PT1M15S",
    "views": 2477,
    "likes": 126,
-   "comments": 72,
-   "avg_view_sec": 76,
-   "avg_view_pct": 102.18,
-   "shares": 21,
-   "subs_gained": 27,
-   "views_period": 2477
+   "comments": 72
   },
   {
    "id": "wtqeNXY5nBU",
@@ -1159,12 +1128,7 @@
    "duration": "PT42S",
    "views": 1084,
    "likes": 13,
-   "comments": 1,
-   "avg_view_sec": 32,
-   "avg_view_pct": 77.84,
-   "shares": 0,
-   "subs_gained": 3,
-   "views_period": 1084
+   "comments": 1
   },
   {
    "id": "XvmSrMVCugg",
@@ -1174,11 +1138,11 @@
    "views": 1562,
    "likes": 34,
    "comments": 5,
-   "avg_view_sec": 109,
-   "avg_view_pct": 184.79,
-   "shares": 7,
-   "subs_gained": 8,
-   "views_period": 1562
+   "avg_view_sec": 73,
+   "avg_view_pct": 124.49,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "-iEWbh80pes",
@@ -1188,11 +1152,11 @@
    "views": 1370,
    "likes": 39,
    "comments": 1,
-   "avg_view_sec": 66,
-   "avg_view_pct": 102.90000000000002,
-   "shares": 17,
-   "subs_gained": 3,
-   "views_period": 1370
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "YKOKJymUe0s",
@@ -1201,7 +1165,12 @@
    "duration": "PT57S",
    "views": 820,
    "likes": 27,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "YpDlr3c3Hsw",
@@ -1210,12 +1179,7 @@
    "duration": "PT55S",
    "views": 1573,
    "likes": 54,
-   "comments": 1,
-   "avg_view_sec": 71,
-   "avg_view_pct": 130.69,
-   "shares": 9,
-   "subs_gained": 16,
-   "views_period": 1573
+   "comments": 1
   },
   {
    "id": "bF90H3Pew3Q",
@@ -1224,12 +1188,7 @@
    "duration": "PT30S",
    "views": 3526,
    "likes": 53,
-   "comments": 1,
-   "avg_view_sec": 43,
-   "avg_view_pct": 145.53,
-   "shares": 14,
-   "subs_gained": 5,
-   "views_period": 3526
+   "comments": 1
   },
   {
    "id": "Q2CNmBLeATY",
@@ -1239,11 +1198,11 @@
    "views": 2010,
    "likes": 62,
    "comments": 27,
-   "avg_view_sec": 58,
-   "avg_view_pct": 105.49,
-   "shares": 8,
-   "subs_gained": 10,
-   "views_period": 2010
+   "avg_view_sec": 29,
+   "avg_view_pct": 54.05,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 11
   },
   {
    "id": "Y3tkISmGPWI",
@@ -1252,12 +1211,7 @@
    "duration": "PT1M15S",
    "views": 2235,
    "likes": 46,
-   "comments": 0,
-   "avg_view_sec": 97,
-   "avg_view_pct": 130.21,
-   "shares": 12,
-   "subs_gained": 7,
-   "views_period": 2235
+   "comments": 0
   },
   {
    "id": "vy7KCxajqY4",
@@ -1266,12 +1220,7 @@
    "duration": "PT1M10S",
    "views": 1522,
    "likes": 27,
-   "comments": 3,
-   "avg_view_sec": 67,
-   "avg_view_pct": 96.47,
-   "shares": 6,
-   "subs_gained": 6,
-   "views_period": 1522
+   "comments": 3
   },
   {
    "id": "RhJzrzQ2DZ4",
@@ -1281,11 +1230,11 @@
    "views": 1881,
    "likes": 39,
    "comments": 2,
-   "avg_view_sec": 88,
-   "avg_view_pct": 160.06,
-   "shares": 6,
-   "subs_gained": 6,
-   "views_period": 1881
+   "avg_view_sec": 2,
+   "avg_view_pct": 5.27,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "N3-DUSa7MqQ",
@@ -1294,12 +1243,7 @@
    "duration": "PT1M6S",
    "views": 1379,
    "likes": 15,
-   "comments": 3,
-   "avg_view_sec": 45,
-   "avg_view_pct": 68.86,
-   "shares": 7,
-   "subs_gained": 3,
-   "views_period": 1379
+   "comments": 3
   },
   {
    "id": "HrdV65w_RKg",
@@ -1311,15 +1255,6 @@
    "comments": 3
   },
   {
-   "id": "CWEjMonD5NI",
-   "title": "인생의 황혼, 99%가 후회하며 마주하는 세 가지 진실",
-   "published": "2026-03-23T22:30:00Z",
-   "duration": "PT1M2S",
-   "views": 1076,
-   "likes": 44,
-   "comments": 1
-  },
-  {
    "id": "rXcdV1H2I80",
    "title": "남 부럽지 않게 살려다 내 몸 다 망쳤습니다 (남들만큼 살고 싶다는 말의 함정)",
    "published": "2026-03-23T10:21:30Z",
@@ -1327,11 +1262,11 @@
    "views": 1251,
    "likes": 18,
    "comments": 1,
-   "avg_view_sec": 42,
-   "avg_view_pct": 108.02000000000001,
-   "shares": 8,
-   "subs_gained": 2,
-   "views_period": 1251
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "DOq3Qa0Jc-Y",
@@ -1341,11 +1276,11 @@
    "views": 1274,
    "likes": 18,
    "comments": 1,
-   "avg_view_sec": 41,
-   "avg_view_pct": 81.16,
-   "shares": 3,
-   "subs_gained": 2,
-   "views_period": 1274
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "mx1YaOHuDLc",
@@ -1354,12 +1289,7 @@
    "duration": "PT1M9S",
    "views": 1600,
    "likes": 25,
-   "comments": 0,
-   "avg_view_sec": 87,
-   "avg_view_pct": 126.98,
-   "shares": 12,
-   "subs_gained": 0,
-   "views_period": 1600
+   "comments": 0
   },
   {
    "id": "yQHLvvLHHNE",
@@ -1369,11 +1299,11 @@
    "views": 7267,
    "likes": 224,
    "comments": 3,
-   "avg_view_sec": 64,
-   "avg_view_pct": 113.25,
-   "shares": 139,
-   "subs_gained": 36,
-   "views_period": 7267
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "heTnoa6_1WU",
@@ -1383,11 +1313,11 @@
    "views": 5700,
    "likes": 188,
    "comments": 5,
-   "avg_view_sec": 103,
-   "avg_view_pct": 140.33,
-   "shares": 150,
-   "subs_gained": 28,
-   "views_period": 5700
+   "avg_view_sec": 8,
+   "avg_view_pct": 11.49,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "SNNOxKv3Yus",
@@ -1397,11 +1327,11 @@
    "views": 16758,
    "likes": 618,
    "comments": 3,
-   "avg_view_sec": 113,
-   "avg_view_pct": 124.58,
-   "shares": 172,
-   "subs_gained": 140,
-   "views_period": 16758
+   "avg_view_sec": 67,
+   "avg_view_pct": 73.92,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "3v2szbB6pJk",
@@ -1410,12 +1340,7 @@
    "duration": "PT1M30S",
    "views": 1632,
    "likes": 54,
-   "comments": 1,
-   "avg_view_sec": 86,
-   "avg_view_pct": 96.05,
-   "shares": 27,
-   "subs_gained": 12,
-   "views_period": 1632
+   "comments": 1
   },
   {
    "id": "gizZoLmoI-A",
@@ -1424,12 +1349,7 @@
    "duration": "PT1M4S",
    "views": 1690,
    "likes": 44,
-   "comments": 5,
-   "avg_view_sec": 91,
-   "avg_view_pct": 143.22,
-   "shares": 34,
-   "subs_gained": 10,
-   "views_period": 1690
+   "comments": 5
   },
   {
    "id": "Ccyu-U57hNc",
@@ -1438,12 +1358,7 @@
    "duration": "PT1M58S",
    "views": 3445,
    "likes": 139,
-   "comments": 7,
-   "avg_view_sec": 146,
-   "avg_view_pct": 124.4,
-   "shares": 224,
-   "subs_gained": 25,
-   "views_period": 3445
+   "comments": 7
   },
   {
    "id": "hcamTf1_65k",
@@ -1453,11 +1368,11 @@
    "views": 5143,
    "likes": 164,
    "comments": 4,
-   "avg_view_sec": 95,
-   "avg_view_pct": 98.66,
-   "shares": 101,
-   "subs_gained": 20,
-   "views_period": 5143
+   "avg_view_sec": 51,
+   "avg_view_pct": 53.14,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "g_JG4qSYRk4",
@@ -1467,11 +1382,11 @@
    "views": 1150,
    "likes": 31,
    "comments": 5,
-   "avg_view_sec": 76,
-   "avg_view_pct": 102.36000000000001,
-   "shares": 10,
-   "subs_gained": 5,
-   "views_period": 1150
+   "avg_view_sec": 603,
+   "avg_view_pct": 805.07,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "ZYEdaIf-CUQ",
@@ -1489,12 +1404,7 @@
    "duration": "PT1M1S",
    "views": 5282,
    "likes": 152,
-   "comments": 3,
-   "avg_view_sec": 95,
-   "avg_view_pct": 156.27,
-   "shares": 86,
-   "subs_gained": 36,
-   "views_period": 5282
+   "comments": 3
   },
   {
    "id": "8wiRqFzwpeY",
@@ -1503,12 +1413,7 @@
    "duration": "PT1M10S",
    "views": 2516,
    "likes": 67,
-   "comments": 1,
-   "avg_view_sec": 83,
-   "avg_view_pct": 119.48999999999998,
-   "shares": 19,
-   "subs_gained": 9,
-   "views_period": 2516
+   "comments": 1
   },
   {
    "id": "iE2Dv8yXGDE",
@@ -1517,12 +1422,7 @@
    "duration": "PT1M12S",
    "views": 1915,
    "likes": 53,
-   "comments": 1,
-   "avg_view_sec": 95,
-   "avg_view_pct": 132.14,
-   "shares": 14,
-   "subs_gained": 10,
-   "views_period": 1915
+   "comments": 1
   },
   {
    "id": "y5gZTxbeV8g",
@@ -1532,11 +1432,11 @@
    "views": 1571,
    "likes": 31,
    "comments": 1,
-   "avg_view_sec": 58,
-   "avg_view_pct": 122.14,
-   "shares": 9,
-   "subs_gained": 9,
-   "views_period": 1571
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "nuof0pQWMKo",
@@ -1554,12 +1454,7 @@
    "duration": "PT56S",
    "views": 1364,
    "likes": 28,
-   "comments": 1,
-   "avg_view_sec": 63,
-   "avg_view_pct": 113.77999999999999,
-   "shares": 16,
-   "subs_gained": 7,
-   "views_period": 1364
+   "comments": 1
   },
   {
    "id": "HYkBxAkLVaY",
@@ -1578,11 +1473,11 @@
    "views": 2937,
    "likes": 47,
    "comments": 1,
-   "avg_view_sec": 102,
-   "avg_view_pct": 152.32,
-   "shares": 15,
-   "subs_gained": 6,
-   "views_period": 2937
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "FpWaTySYLLc",
@@ -1591,12 +1486,7 @@
    "duration": "PT58S",
    "views": 1189,
    "likes": 21,
-   "comments": 1,
-   "avg_view_sec": 53,
-   "avg_view_pct": 92.1,
-   "shares": 18,
-   "subs_gained": 7,
-   "views_period": 1189
+   "comments": 1
   },
   {
    "id": "DKYxpU-VmfY",
@@ -1605,12 +1495,7 @@
    "duration": "PT1M",
    "views": 3661,
    "likes": 142,
-   "comments": 5,
-   "avg_view_sec": 82,
-   "avg_view_pct": 137.45,
-   "shares": 143,
-   "subs_gained": 30,
-   "views_period": 3661
+   "comments": 5
   },
   {
    "id": "Eo45fzPOJvo",
@@ -1619,12 +1504,7 @@
    "duration": "PT57S",
    "views": 1504,
    "likes": 70,
-   "comments": 5,
-   "avg_view_sec": 53,
-   "avg_view_pct": 93.66,
-   "shares": 28,
-   "subs_gained": 8,
-   "views_period": 1504
+   "comments": 5
   },
   {
    "id": "vaqEgbDz3l4",
@@ -1643,11 +1523,11 @@
    "views": 2036,
    "likes": 7,
    "comments": 1,
-   "avg_view_sec": 22,
-   "avg_view_pct": 200.96000000000004,
-   "shares": 6,
-   "subs_gained": 1,
-   "views_period": 2036
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "fBs14eSaVpo",
@@ -1657,11 +1537,11 @@
    "views": 4279,
    "likes": 80,
    "comments": 5,
-   "avg_view_sec": 82,
-   "avg_view_pct": 132.8,
-   "shares": 7,
-   "subs_gained": 14,
-   "views_period": 4279
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "QT6XsfAGGcA",
@@ -1670,12 +1550,7 @@
    "duration": "PT47S",
    "views": 1953,
    "likes": 27,
-   "comments": 0,
-   "avg_view_sec": 107,
-   "avg_view_pct": 228.23,
-   "shares": 7,
-   "subs_gained": 2,
-   "views_period": 1953
+   "comments": 0
   },
   {
    "id": "b8ssNI-0uYY",
@@ -1685,11 +1560,11 @@
    "views": 1087,
    "likes": 24,
    "comments": 1,
-   "avg_view_sec": 57,
-   "avg_view_pct": 103.51000000000002,
-   "shares": 6,
-   "subs_gained": 5,
-   "views_period": 1086
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "O3s4rvIEjJc",
@@ -1699,11 +1574,11 @@
    "views": 12973,
    "likes": 515,
    "comments": 9,
-   "avg_view_sec": 92,
-   "avg_view_pct": 156.39,
-   "shares": 315,
-   "subs_gained": 118,
-   "views_period": 12973
+   "avg_view_sec": 168,
+   "avg_view_pct": 285.94,
+   "shares": 2,
+   "subs_gained": 0,
+   "views_period": 19
   },
   {
    "id": "_NgkMEf1u20",
@@ -1712,12 +1587,7 @@
    "duration": "PT46S",
    "views": 1254,
    "likes": 27,
-   "comments": 0,
-   "avg_view_sec": 49,
-   "avg_view_pct": 108.63000000000001,
-   "shares": 13,
-   "subs_gained": 2,
-   "views_period": 1254
+   "comments": 0
   },
   {
    "id": "ktmQCehvqv0",
@@ -1735,7 +1605,12 @@
    "duration": "PT56S",
    "views": 878,
    "likes": 19,
-   "comments": 6
+   "comments": 6,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "CGA_qMaONBM",
@@ -1744,12 +1619,7 @@
    "duration": "PT51S",
    "views": 1834,
    "likes": 98,
-   "comments": 3,
-   "avg_view_sec": 62,
-   "avg_view_pct": 122.72000000000001,
-   "shares": 43,
-   "subs_gained": 9,
-   "views_period": 1834
+   "comments": 3
   },
   {
    "id": "EZe2ngYmQpw",
@@ -1759,11 +1629,11 @@
    "views": 1313,
    "likes": 21,
    "comments": 1,
-   "avg_view_sec": 69,
-   "avg_view_pct": 96.09,
-   "shares": 9,
-   "subs_gained": 3,
-   "views_period": 1313
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "iSmFIJ7FWvc",
@@ -1782,11 +1652,11 @@
    "views": 3474,
    "likes": 81,
    "comments": 1,
-   "avg_view_sec": 107,
-   "avg_view_pct": 122.61,
-   "shares": 49,
-   "subs_gained": 15,
-   "views_period": 3474
+   "avg_view_sec": 18,
+   "avg_view_pct": 20.45,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "RPtNscwYcco",
@@ -1795,12 +1665,7 @@
    "duration": "PT1M39S",
    "views": 2923,
    "likes": 101,
-   "comments": 1,
-   "avg_view_sec": 110,
-   "avg_view_pct": 111.72,
-   "shares": 28,
-   "subs_gained": 17,
-   "views_period": 2923
+   "comments": 1
   },
   {
    "id": "bBTOJZRmgzk",
@@ -1810,11 +1675,11 @@
    "views": 6311,
    "likes": 137,
    "comments": 1,
-   "avg_view_sec": 121,
-   "avg_view_pct": 117.65999999999998,
-   "shares": 84,
-   "subs_gained": 33,
-   "views_period": 6310
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "OSoIncjts9Y",
@@ -1823,12 +1688,7 @@
    "duration": "PT1M31S",
    "views": 1920,
    "likes": 58,
-   "comments": 3,
-   "avg_view_sec": 117,
-   "avg_view_pct": 129.51,
-   "shares": 6,
-   "subs_gained": 6,
-   "views_period": 1920
+   "comments": 3
   },
   {
    "id": "_rQAMYg1FM0",
@@ -1837,12 +1697,7 @@
    "duration": "PT1M12S",
    "views": 1195,
    "likes": 27,
-   "comments": 1,
-   "avg_view_sec": 90,
-   "avg_view_pct": 125.12,
-   "shares": 24,
-   "subs_gained": 4,
-   "views_period": 1195
+   "comments": 1
   },
   {
    "id": "iK5bcAfjdYY",
@@ -1852,11 +1707,11 @@
    "views": 1439,
    "likes": 32,
    "comments": 1,
-   "avg_view_sec": 91,
-   "avg_view_pct": 130.86,
-   "shares": 17,
-   "subs_gained": 5,
-   "views_period": 1439
+   "avg_view_sec": 5,
+   "avg_view_pct": 7.86,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "yjPACmK1YOU",
@@ -1875,11 +1730,11 @@
    "views": 1231,
    "likes": 21,
    "comments": 2,
-   "avg_view_sec": 46,
-   "avg_view_pct": 99.61,
-   "shares": 3,
-   "subs_gained": 4,
-   "views_period": 1231
+   "avg_view_sec": 39,
+   "avg_view_pct": 84.68,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "T589tlb0jEM",
@@ -1889,11 +1744,11 @@
    "views": 1111,
    "likes": 19,
    "comments": 1,
-   "avg_view_sec": 49,
-   "avg_view_pct": 73.24,
-   "shares": 10,
-   "subs_gained": 4,
-   "views_period": 1111
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "7iKrZpoj704",
@@ -1902,12 +1757,7 @@
    "duration": "PT1M18S",
    "views": 1413,
    "likes": 61,
-   "comments": 3,
-   "avg_view_sec": 92,
-   "avg_view_pct": 118.80999999999999,
-   "shares": 52,
-   "subs_gained": 15,
-   "views_period": 1413
+   "comments": 3
   },
   {
    "id": "4RneGNTzcwY",
@@ -1917,11 +1767,11 @@
    "views": 2240,
    "likes": 70,
    "comments": 1,
-   "avg_view_sec": 105,
-   "avg_view_pct": 157.29,
-   "shares": 22,
-   "subs_gained": 8,
-   "views_period": 2240
+   "avg_view_sec": 51,
+   "avg_view_pct": 76.42,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 11
   },
   {
    "id": "BiQrVrjL2XY",
@@ -1939,12 +1789,7 @@
    "duration": "PT1M30S",
    "views": 1133,
    "likes": 64,
-   "comments": 15,
-   "avg_view_sec": 96,
-   "avg_view_pct": 106.84,
-   "shares": 22,
-   "subs_gained": 9,
-   "views_period": 1133
+   "comments": 15
   },
   {
    "id": "OlU3YdzlYLQ",
@@ -1953,12 +1798,7 @@
    "duration": "PT59S",
    "views": 1890,
    "likes": 33,
-   "comments": 1,
-   "avg_view_sec": 72,
-   "avg_view_pct": 122.57000000000001,
-   "shares": 11,
-   "subs_gained": 7,
-   "views_period": 1890
+   "comments": 1
   },
   {
    "id": "TqIef8nzBgM",
@@ -1967,7 +1807,12 @@
    "duration": "PT1M1S",
    "views": 1028,
    "likes": 15,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "mXZYmbuRwAs",
@@ -1976,12 +1821,7 @@
    "duration": "PT57S",
    "views": 1091,
    "likes": 23,
-   "comments": 1,
-   "avg_view_sec": 56,
-   "avg_view_pct": 99.64,
-   "shares": 11,
-   "subs_gained": 3,
-   "views_period": 1091
+   "comments": 1
   },
   {
    "id": "Nrai-VJKcQE",
@@ -1990,12 +1830,7 @@
    "duration": "PT40S",
    "views": 1328,
    "likes": 27,
-   "comments": 1,
-   "avg_view_sec": 42,
-   "avg_view_pct": 105.73000000000002,
-   "shares": 12,
-   "subs_gained": 2,
-   "views_period": 1328
+   "comments": 1
   },
   {
    "id": "nUvgVr0TNUk",
@@ -2031,7 +1866,12 @@
    "duration": "PT1M1S",
    "views": 1060,
    "likes": 20,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 60,
+   "avg_view_pct": 99.67,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "H2b4guw2wdw",
@@ -2040,7 +1880,12 @@
    "duration": "PT1M11S",
    "views": 1067,
    "likes": 32,
-   "comments": 11
+   "comments": 11,
+   "avg_view_sec": 26,
+   "avg_view_pct": 37.54,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "BEWs4zjmnU4",
@@ -2058,7 +1903,12 @@
    "duration": "PT53S",
    "views": 50,
    "likes": 2,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "eZsGDNgcetU",
@@ -2067,12 +1917,7 @@
    "duration": "PT57S",
    "views": 1530,
    "likes": 31,
-   "comments": 1,
-   "avg_view_sec": 81,
-   "avg_view_pct": 143.3,
-   "shares": 14,
-   "subs_gained": 2,
-   "views_period": 1530
+   "comments": 1
   },
   {
    "id": "T1k-hYiYVXw",
@@ -2081,7 +1926,12 @@
    "duration": "PT57S",
    "views": 160,
    "likes": 4,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 56,
+   "avg_view_pct": 99.12,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 7
   },
   {
    "id": "Sd9P4DZEXis",
@@ -2090,7 +1940,12 @@
    "duration": "PT1M2S",
    "views": 37,
    "likes": 2,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "3Fc_Lg2nZiE",
@@ -2100,11 +1955,11 @@
    "views": 1119,
    "likes": 21,
    "comments": 1,
-   "avg_view_sec": 80,
-   "avg_view_pct": 143.55,
-   "shares": 7,
-   "subs_gained": 3,
-   "views_period": 1119
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "zQ2k5g7iAQ4",
@@ -2113,12 +1968,7 @@
    "duration": "PT1M",
    "views": 1311,
    "likes": 27,
-   "comments": 1,
-   "avg_view_sec": 71,
-   "avg_view_pct": 118.39,
-   "shares": 11,
-   "subs_gained": 5,
-   "views_period": 1311
+   "comments": 1
   },
   {
    "id": "oP_VBJm2mTE",
@@ -2127,7 +1977,12 @@
    "duration": "PT55S",
    "views": 876,
    "likes": 10,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 23,
+   "avg_view_pct": 43.25,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "fcnvzImNbTM",
@@ -2137,11 +1992,11 @@
    "views": 1307,
    "likes": 28,
    "comments": 1,
-   "avg_view_sec": 53,
-   "avg_view_pct": 111.40999999999998,
-   "shares": 23,
-   "subs_gained": 5,
-   "views_period": 1307
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "Vl7zjrGxAwk",
@@ -2150,12 +2005,7 @@
    "duration": "PT50S",
    "views": 1102,
    "likes": 17,
-   "comments": 1,
-   "avg_view_sec": 38,
-   "avg_view_pct": 77.16,
-   "shares": 1,
-   "subs_gained": 3,
-   "views_period": 1102
+   "comments": 1
   },
   {
    "id": "bA2Cs_E7LQg",
@@ -2165,11 +2015,11 @@
    "views": 1432,
    "likes": 42,
    "comments": 1,
-   "avg_view_sec": 83,
-   "avg_view_pct": 174.23,
-   "shares": 11,
-   "subs_gained": 3,
-   "views_period": 1432
+   "avg_view_sec": 2,
+   "avg_view_pct": 6.04,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "v22OJA55o6M",
@@ -2196,12 +2046,7 @@
    "duration": "PT53S",
    "views": 1653,
    "likes": 71,
-   "comments": 33,
-   "avg_view_sec": 61,
-   "avg_view_pct": 115.89,
-   "shares": 23,
-   "subs_gained": 13,
-   "views_period": 1653
+   "comments": 33
   },
   {
    "id": "biFBvfSEk2U",
@@ -2219,12 +2064,7 @@
    "duration": "PT56S",
    "views": 1530,
    "likes": 32,
-   "comments": 1,
-   "avg_view_sec": 85,
-   "avg_view_pct": 152.24,
-   "shares": 10,
-   "subs_gained": 4,
-   "views_period": 1530
+   "comments": 1
   },
   {
    "id": "aUtFTpd1_FM",
@@ -2234,11 +2074,11 @@
    "views": 1554,
    "likes": 9,
    "comments": 1,
-   "avg_view_sec": 43,
-   "avg_view_pct": 76.42,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
-   "subs_gained": 3,
-   "views_period": 1554
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "9eeQttl6Dj4",
@@ -2247,7 +2087,12 @@
    "duration": "PT1M6S",
    "views": 43,
    "likes": 3,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "vBSVpmn83zw",
@@ -2257,11 +2102,11 @@
    "views": 1429,
    "likes": 20,
    "comments": 0,
-   "avg_view_sec": 62,
-   "avg_view_pct": 120.68,
-   "shares": 8,
-   "subs_gained": 3,
-   "views_period": 1429
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "YG7uAFX5uWA",
@@ -2271,11 +2116,11 @@
    "views": 9116,
    "likes": 247,
    "comments": 142,
-   "avg_view_sec": 65,
-   "avg_view_pct": 120.46999999999998,
-   "shares": 7,
-   "subs_gained": 61,
-   "views_period": 9116
+   "avg_view_sec": 54,
+   "avg_view_pct": 101.66999999999999,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "AXJXuvw2yaw",
@@ -2284,12 +2129,7 @@
    "duration": "PT49S",
    "views": 1649,
    "likes": 14,
-   "comments": 1,
-   "avg_view_sec": 45,
-   "avg_view_pct": 91.93,
-   "shares": 5,
-   "subs_gained": 2,
-   "views_period": 1649
+   "comments": 1
   },
   {
    "id": "QbccNHkKqoU",
@@ -2308,11 +2148,11 @@
    "views": 6679,
    "likes": 150,
    "comments": 3,
-   "avg_view_sec": 78,
-   "avg_view_pct": 111.04,
-   "shares": 66,
-   "subs_gained": 27,
-   "views_period": 6679
+   "avg_view_sec": 53,
+   "avg_view_pct": 74.75,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "Vp-n94Ab3Lg",
@@ -2321,12 +2161,7 @@
    "duration": "PT59S",
    "views": 1084,
    "likes": 14,
-   "comments": 1,
-   "avg_view_sec": 50,
-   "avg_view_pct": 85.15,
-   "shares": 5,
-   "subs_gained": 3,
-   "views_period": 1084
+   "comments": 1
   },
   {
    "id": "9ZiqZwn3MsA",
@@ -2335,12 +2170,7 @@
    "duration": "PT55S",
    "views": 1274,
    "likes": 17,
-   "comments": 1,
-   "avg_view_sec": 54,
-   "avg_view_pct": 98.7,
-   "shares": 6,
-   "subs_gained": 4,
-   "views_period": 1274
+   "comments": 1
   },
   {
    "id": "HPX_mNmxwkQ",
@@ -2358,12 +2188,7 @@
    "duration": "PT1M",
    "views": 1525,
    "likes": 15,
-   "comments": 1,
-   "avg_view_sec": 67,
-   "avg_view_pct": 111.74,
-   "shares": 9,
-   "subs_gained": 0,
-   "views_period": 1525
+   "comments": 1
   },
   {
    "id": "3KZbzSjF3ME",
@@ -2372,12 +2197,7 @@
    "duration": "PT1M11S",
    "views": 7681,
    "likes": 134,
-   "comments": 3,
-   "avg_view_sec": 104,
-   "avg_view_pct": 147.65,
-   "shares": 62,
-   "subs_gained": 32,
-   "views_period": 7681
+   "comments": 3
   },
   {
    "id": "GlCVPLoW9s4",
@@ -2387,11 +2207,11 @@
    "views": 1555,
    "likes": 36,
    "comments": 1,
-   "avg_view_sec": 69,
-   "avg_view_pct": 147.37,
-   "shares": 8,
-   "subs_gained": 12,
-   "views_period": 1554
+   "avg_view_sec": 66,
+   "avg_view_pct": 141.92,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 7
   },
   {
    "id": "QsNpa83ZLto",
@@ -2401,11 +2221,11 @@
    "views": 14449,
    "likes": 310,
    "comments": 7,
-   "avg_view_sec": 81,
-   "avg_view_pct": 154.03,
-   "shares": 136,
-   "subs_gained": 69,
-   "views_period": 14449
+   "avg_view_sec": 68,
+   "avg_view_pct": 129.76,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "_W5hSKzMWME",
@@ -2414,12 +2234,7 @@
    "duration": "PT56S",
    "views": 2407,
    "likes": 41,
-   "comments": 1,
-   "avg_view_sec": 115,
-   "avg_view_pct": 206.79,
-   "shares": 22,
-   "subs_gained": 9,
-   "views_period": 2407
+   "comments": 1
   },
   {
    "id": "BRFRiLoBQvI",
@@ -2429,11 +2244,11 @@
    "views": 4850,
    "likes": 38,
    "comments": 5,
-   "avg_view_sec": 56,
-   "avg_view_pct": 130.86,
-   "shares": 17,
-   "subs_gained": 6,
-   "views_period": 4850
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "1EU7yHS4S-w",
@@ -2442,7 +2257,12 @@
    "duration": "PT47S",
    "views": 1057,
    "likes": 25,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "zwiuTGeug2M",
@@ -2451,12 +2271,7 @@
    "duration": "PT41S",
    "views": 1381,
    "likes": 6,
-   "comments": 1,
-   "avg_view_sec": 37,
-   "avg_view_pct": 92.52,
-   "shares": 4,
-   "subs_gained": 1,
-   "views_period": 1381
+   "comments": 1
   },
   {
    "id": "62JN_NlMhZI",
@@ -2466,11 +2281,11 @@
    "views": 5921,
    "likes": 86,
    "comments": 4,
-   "avg_view_sec": 85,
-   "avg_view_pct": 203.09,
-   "shares": 39,
-   "subs_gained": 14,
-   "views_period": 5921
+   "avg_view_sec": 23,
+   "avg_view_pct": 55.48,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "fBc5T0q-d50",
@@ -2479,12 +2294,7 @@
    "duration": "PT39S",
    "views": 1432,
    "likes": 8,
-   "comments": 1,
-   "avg_view_sec": 37,
-   "avg_view_pct": 96.05,
-   "shares": 6,
-   "subs_gained": 1,
-   "views_period": 1432
+   "comments": 1
   },
   {
    "id": "K72g41znKUc",
@@ -2493,12 +2303,7 @@
    "duration": "PT38S",
    "views": 5940,
    "likes": 76,
-   "comments": 3,
-   "avg_view_sec": 85,
-   "avg_view_pct": 223.78999999999996,
-   "shares": 32,
-   "subs_gained": 10,
-   "views_period": 5940
+   "comments": 3
   },
   {
    "id": "5dRAyBBzm9E",
@@ -2507,12 +2312,7 @@
    "duration": "PT58S",
    "views": 2206,
    "likes": 14,
-   "comments": 3,
-   "avg_view_sec": 51,
-   "avg_view_pct": 89.06,
-   "shares": 5,
-   "subs_gained": 2,
-   "views_period": 2206
+   "comments": 3
   },
   {
    "id": "aLBujGY-rnU",
@@ -2530,12 +2330,7 @@
    "duration": "PT36S",
    "views": 1178,
    "likes": 22,
-   "comments": 1,
-   "avg_view_sec": 57,
-   "avg_view_pct": 159.18,
-   "shares": 2,
-   "subs_gained": 1,
-   "views_period": 1178
+   "comments": 1
   },
   {
    "id": "z5xvjV8rdA4",
@@ -2554,11 +2349,11 @@
    "views": 1698,
    "likes": 37,
    "comments": 1,
-   "avg_view_sec": 58,
-   "avg_view_pct": 101.25,
-   "shares": 9,
-   "subs_gained": 3,
-   "views_period": 1698
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "HCQIKN7TCXU",
@@ -2577,11 +2372,11 @@
    "views": 1106,
    "likes": 15,
    "comments": 1,
-   "avg_view_sec": 40,
-   "avg_view_pct": 75.22,
-   "shares": 4,
-   "subs_gained": 2,
-   "views_period": 1105
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "9KXqEuiSqPo",
@@ -2590,12 +2385,7 @@
    "duration": "PT51S",
    "views": 1181,
    "likes": 13,
-   "comments": 1,
-   "avg_view_sec": 45,
-   "avg_view_pct": 88.74,
-   "shares": 1,
-   "subs_gained": 3,
-   "views_period": 1181
+   "comments": 1
   },
   {
    "id": "xkiaSnCCxHo",
@@ -2604,12 +2394,7 @@
    "duration": "PT1M4S",
    "views": 1269,
    "likes": 16,
-   "comments": 1,
-   "avg_view_sec": 66,
-   "avg_view_pct": 103.75000000000001,
-   "shares": 16,
-   "subs_gained": 1,
-   "views_period": 1269
+   "comments": 1
   },
   {
    "id": "oX0JME4mfMI",
@@ -2618,12 +2403,7 @@
    "duration": "PT1M",
    "views": 1307,
    "likes": 19,
-   "comments": 3,
-   "avg_view_sec": 66,
-   "avg_view_pct": 110.78000000000002,
-   "shares": 12,
-   "subs_gained": 6,
-   "views_period": 1307
+   "comments": 3
   },
   {
    "id": "frKI6iePDEQ",
@@ -2632,12 +2412,7 @@
    "duration": "PT51S",
    "views": 1944,
    "likes": 22,
-   "comments": 3,
-   "avg_view_sec": 70,
-   "avg_view_pct": 137.33,
-   "shares": 22,
-   "subs_gained": 7,
-   "views_period": 1944
+   "comments": 3
   },
   {
    "id": "smxinXJqZ3w",
@@ -2646,7 +2421,12 @@
    "duration": "PT1M",
    "views": 959,
    "likes": 20,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "c53QZHlJ9DA",
@@ -2673,12 +2453,7 @@
    "duration": "PT55S",
    "views": 1315,
    "likes": 19,
-   "comments": 3,
-   "avg_view_sec": 67,
-   "avg_view_pct": 122.77,
-   "shares": 11,
-   "subs_gained": 1,
-   "views_period": 1315
+   "comments": 3
   },
   {
    "id": "luySD4WF9XM",
@@ -2714,12 +2489,7 @@
    "duration": "PT55S",
    "views": 1123,
    "likes": 17,
-   "comments": 1,
-   "avg_view_sec": 63,
-   "avg_view_pct": 114.99999999999999,
-   "shares": 5,
-   "subs_gained": 2,
-   "views_period": 1123
+   "comments": 1
   },
   {
    "id": "iKNHdka_ex8",
@@ -2746,7 +2516,12 @@
    "duration": "PT1M4S",
    "views": 957,
    "likes": 25,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "5kGnavEX2Os",
@@ -2756,11 +2531,11 @@
    "views": 1184,
    "likes": 19,
    "comments": 1,
-   "avg_view_sec": 76,
-   "avg_view_pct": 125.46,
-   "shares": 13,
-   "subs_gained": 1,
-   "views_period": 1184
+   "avg_view_sec": 51,
+   "avg_view_pct": 84.51,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "BoPP12-hHeE",
@@ -2769,12 +2544,7 @@
    "duration": "PT54S",
    "views": 1200,
    "likes": 18,
-   "comments": 1,
-   "avg_view_sec": 52,
-   "avg_view_pct": 96.56,
-   "shares": 3,
-   "subs_gained": 1,
-   "views_period": 1200
+   "comments": 1
   },
   {
    "id": "57xvMbMiKI8",
@@ -2784,11 +2554,11 @@
    "views": 1209,
    "likes": 30,
    "comments": 1,
-   "avg_view_sec": 67,
-   "avg_view_pct": 104.01,
-   "shares": 28,
-   "subs_gained": 9,
-   "views_period": 1209
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "oUIn9ozs6yk",
@@ -2797,7 +2567,12 @@
    "duration": "PT1M8S",
    "views": 1027,
    "likes": 8,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 5,
+   "avg_view_pct": 7.780000000000001,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "Z-heiAL0bIQ",
@@ -2806,7 +2581,12 @@
    "duration": "PT1M7S",
    "views": 1011,
    "likes": 27,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 3,
+   "avg_view_pct": 5.52,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "Xqiqhn1RvKY",
@@ -2815,12 +2595,7 @@
    "duration": "PT1M20S",
    "views": 1520,
    "likes": 36,
-   "comments": 1,
-   "avg_view_sec": 86,
-   "avg_view_pct": 108.66,
-   "shares": 11,
-   "subs_gained": 3,
-   "views_period": 1520
+   "comments": 1
   },
   {
    "id": "eyrzkO8NAdQ",
@@ -2829,7 +2604,12 @@
    "duration": "PT1M20S",
    "views": 862,
    "likes": 6,
-   "comments": 2
+   "comments": 2,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "116numYB6-0",
@@ -2838,12 +2618,7 @@
    "duration": "PT1M13S",
    "views": 1412,
    "likes": 27,
-   "comments": 1,
-   "avg_view_sec": 87,
-   "avg_view_pct": 119.5,
-   "shares": 10,
-   "subs_gained": 6,
-   "views_period": 1412
+   "comments": 1
   },
   {
    "id": "FAJWaDu_RBE",
@@ -2852,12 +2627,7 @@
    "duration": "PT50S",
    "views": 1163,
    "likes": 12,
-   "comments": 1,
-   "avg_view_sec": 34,
-   "avg_view_pct": 69.66,
-   "shares": 4,
-   "subs_gained": 1,
-   "views_period": 1163
+   "comments": 1
   },
   {
    "id": "LDDQBPWZ7dE",
@@ -2867,11 +2637,11 @@
    "views": 1298,
    "likes": 16,
    "comments": 0,
-   "avg_view_sec": 41,
-   "avg_view_pct": 73.84,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
-   "subs_gained": 1,
-   "views_period": 1298
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "vNSuYA8T4G8",
@@ -2889,12 +2659,7 @@
    "duration": "PT54S",
    "views": 1311,
    "likes": 25,
-   "comments": 1,
-   "avg_view_sec": 39,
-   "avg_view_pct": 73.95,
-   "shares": 7,
-   "subs_gained": 3,
-   "views_period": 1311
+   "comments": 1
   },
   {
    "id": "NR2nAM1rXeY",
@@ -2904,11 +2669,11 @@
    "views": 1153,
    "likes": 31,
    "comments": 1,
-   "avg_view_sec": 57,
-   "avg_view_pct": 91.77,
-   "shares": 20,
-   "subs_gained": 3,
-   "views_period": 1153
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "MH0pwwiL_98",
@@ -2918,11 +2683,11 @@
    "views": 7281,
    "likes": 142,
    "comments": 1,
-   "avg_view_sec": 99,
-   "avg_view_pct": 183.43,
-   "shares": 123,
-   "subs_gained": 25,
-   "views_period": 7280
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "tt0_PX6OIm4",
@@ -2931,12 +2696,7 @@
    "duration": "PT51S",
    "views": 1140,
    "likes": 10,
-   "comments": 1,
-   "avg_view_sec": 56,
-   "avg_view_pct": 110.62,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 1140
+   "comments": 1
   },
   {
    "id": "vbCQLLvIEX4",
@@ -2964,11 +2724,11 @@
    "views": 1778,
    "likes": 19,
    "comments": 1,
-   "avg_view_sec": 66,
-   "avg_view_pct": 130.31,
-   "shares": 4,
-   "subs_gained": 5,
-   "views_period": 1778
+   "avg_view_sec": 21,
+   "avg_view_pct": 41.86,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 7
   },
   {
    "id": "VXo4_zNlKBY",
@@ -2986,12 +2746,7 @@
    "duration": "PT40S",
    "views": 4264,
    "likes": 75,
-   "comments": 5,
-   "avg_view_sec": 57,
-   "avg_view_pct": 142.68,
-   "shares": 17,
-   "subs_gained": 6,
-   "views_period": 4264
+   "comments": 5
   },
   {
    "id": "UroxqxboFsM",
@@ -3009,12 +2764,7 @@
    "duration": "PT36S",
    "views": 2735,
    "likes": 46,
-   "comments": 1,
-   "avg_view_sec": 38,
-   "avg_view_pct": 108.08,
-   "shares": 3,
-   "subs_gained": 1,
-   "views_period": 2735
+   "comments": 1
   },
   {
    "id": "THwF08vwblI",
@@ -3023,12 +2773,7 @@
    "duration": "PT1M7S",
    "views": 1220,
    "likes": 16,
-   "comments": 1,
-   "avg_view_sec": 46,
-   "avg_view_pct": 69.08,
-   "shares": 0,
-   "subs_gained": 3,
-   "views_period": 1220
+   "comments": 1
   },
   {
    "id": "LG7ymZJKjRQ",
@@ -3037,7 +2782,12 @@
    "duration": "PT4M17S",
    "views": 12,
    "likes": 0,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "UaDJPj-OwMA",
@@ -3047,11 +2797,11 @@
    "views": 1672,
    "likes": 24,
    "comments": 1,
-   "avg_view_sec": 57,
-   "avg_view_pct": 108.89,
-   "shares": 3,
-   "subs_gained": 2,
-   "views_period": 1672
+   "avg_view_sec": 12,
+   "avg_view_pct": 22.64,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "6CvVI6_1P2w",
@@ -3060,12 +2810,7 @@
    "duration": "PT49S",
    "views": 1261,
    "likes": 11,
-   "comments": 1,
-   "avg_view_sec": 64,
-   "avg_view_pct": 132.14,
-   "shares": 2,
-   "subs_gained": 1,
-   "views_period": 1261
+   "comments": 1
   },
   {
    "id": "qUa3YteS2Mc",
@@ -3092,12 +2837,7 @@
    "duration": "PT56S",
    "views": 1361,
    "likes": 21,
-   "comments": 1,
-   "avg_view_sec": 40,
-   "avg_view_pct": 72.33,
-   "shares": 2,
-   "subs_gained": 3,
-   "views_period": 1361
+   "comments": 1
   },
   {
    "id": "Fw-IOFaBGOc",
@@ -3106,12 +2846,7 @@
    "duration": "PT52S",
    "views": 1377,
    "likes": 24,
-   "comments": 1,
-   "avg_view_sec": 60,
-   "avg_view_pct": 115.57,
-   "shares": 11,
-   "subs_gained": 3,
-   "views_period": 1377
+   "comments": 1
   },
   {
    "id": "0Sfl5HtJFw8",
@@ -3121,11 +2856,11 @@
    "views": 1121,
    "likes": 8,
    "comments": 1,
-   "avg_view_sec": 37,
-   "avg_view_pct": 50.54,
+   "avg_view_sec": 83,
+   "avg_view_pct": 111.89,
    "shares": 0,
-   "subs_gained": 2,
-   "views_period": 1121
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "SGj0BXE6MK8",
@@ -3134,7 +2869,12 @@
    "duration": "PT56S",
    "views": 364,
    "likes": 3,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "ILT1bokgrS8",
@@ -3143,12 +2883,7 @@
    "duration": "PT59S",
    "views": 1321,
    "likes": 29,
-   "comments": 2,
-   "avg_view_sec": 44,
-   "avg_view_pct": 74.67,
-   "shares": 6,
-   "subs_gained": 5,
-   "views_period": 1321
+   "comments": 2
   },
   {
    "id": "CJOgooGul8k",
@@ -3157,12 +2892,7 @@
    "duration": "PT1M15S",
    "views": 1483,
    "likes": 10,
-   "comments": 1,
-   "avg_view_sec": 92,
-   "avg_view_pct": 123.83,
-   "shares": 1,
-   "subs_gained": 3,
-   "views_period": 1483
+   "comments": 1
   },
   {
    "id": "jIiE5pbuhZc",
@@ -3171,12 +2901,7 @@
    "duration": "PT1M26S",
    "views": 1136,
    "likes": 10,
-   "comments": 1,
-   "avg_view_sec": 60,
-   "avg_view_pct": 70.51,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 1136
+   "comments": 1
   },
   {
    "id": "1dwjez0UfKg",
@@ -3186,11 +2911,11 @@
    "views": 1568,
    "likes": 7,
    "comments": 1,
-   "avg_view_sec": 52,
-   "avg_view_pct": 51.03,
-   "shares": 5,
-   "subs_gained": 1,
-   "views_period": 1568
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "o82ULRFfGqM",
@@ -3200,11 +2925,11 @@
    "views": 1397,
    "likes": 14,
    "comments": 1,
-   "avg_view_sec": 52,
-   "avg_view_pct": 92.72,
-   "shares": 10,
-   "subs_gained": 3,
-   "views_period": 1397
+   "avg_view_sec": 60,
+   "avg_view_pct": 105.90000000000002,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 7
   },
   {
    "id": "4aHiCNqtWSU",
@@ -3223,11 +2948,11 @@
    "views": 1350,
    "likes": 28,
    "comments": 1,
-   "avg_view_sec": 76,
-   "avg_view_pct": 149.71,
-   "shares": 13,
-   "subs_gained": 5,
-   "views_period": 1350
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "C4iBV75WQXM",
@@ -3245,12 +2970,7 @@
    "duration": "PT1M12S",
    "views": 1247,
    "likes": 8,
-   "comments": 0,
-   "avg_view_sec": 46,
-   "avg_view_pct": 63.92,
-   "shares": 4,
-   "subs_gained": 1,
-   "views_period": 1247
+   "comments": 0
   },
   {
    "id": "Or7FxxJXZGA",
@@ -3259,12 +2979,7 @@
    "duration": "PT35S",
    "views": 1930,
    "likes": 4,
-   "comments": 1,
-   "avg_view_sec": 32,
-   "avg_view_pct": 93.16,
-   "shares": 1,
-   "subs_gained": 0,
-   "views_period": 1930
+   "comments": 1
   },
   {
    "id": "0qiLbHx6GYc",
@@ -3273,12 +2988,7 @@
    "duration": "PT48S",
    "views": 1569,
    "likes": 19,
-   "comments": 1,
-   "avg_view_sec": 73,
-   "avg_view_pct": 154.06,
-   "shares": 6,
-   "subs_gained": 1,
-   "views_period": 1569
+   "comments": 1
   },
   {
    "id": "v47kIueDzec",
@@ -3287,12 +2997,7 @@
    "duration": "PT1M32S",
    "views": 1582,
    "likes": 30,
-   "comments": 1,
-   "avg_view_sec": 79,
-   "avg_view_pct": 86.45,
-   "shares": 22,
-   "subs_gained": 3,
-   "views_period": 1582
+   "comments": 1
   },
   {
    "id": "Tyo0m27ub74",
@@ -3320,11 +3025,11 @@
    "views": 1302,
    "likes": 0,
    "comments": 1,
-   "avg_view_sec": 35,
-   "avg_view_pct": 40.4,
-   "shares": 2,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
    "subs_gained": 0,
-   "views_period": 1302
+   "views_period": 2
   },
   {
    "id": "4FNvHxginyE",
@@ -3334,11 +3039,11 @@
    "views": 1535,
    "likes": 8,
    "comments": 1,
-   "avg_view_sec": 48,
-   "avg_view_pct": 93.38,
-   "shares": 5,
-   "subs_gained": 1,
-   "views_period": 1535
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "NJUONDJnCHQ",
@@ -3347,12 +3052,7 @@
    "duration": "PT1M13S",
    "views": 1815,
    "likes": 50,
-   "comments": 0,
-   "avg_view_sec": 76,
-   "avg_view_pct": 105.05,
-   "shares": 10,
-   "subs_gained": 5,
-   "views_period": 1815
+   "comments": 0
   },
   {
    "id": "iM-9bUEXyd8",
@@ -3361,7 +3061,12 @@
    "duration": "PT47S",
    "views": 485,
    "likes": 2,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 63,
+   "avg_view_pct": 135.78,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 9
   },
   {
    "id": "De5vOUGmKCk",
@@ -3371,11 +3076,11 @@
    "views": 3566,
    "likes": 47,
    "comments": 0,
-   "avg_view_sec": 69,
-   "avg_view_pct": 157.85,
-   "shares": 23,
-   "subs_gained": 3,
-   "views_period": 3565
+   "avg_view_sec": 20,
+   "avg_view_pct": 47.61,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "8OfG_dZCKHY",
@@ -3384,12 +3089,7 @@
    "duration": "PT56S",
    "views": 5665,
    "likes": 141,
-   "comments": 6,
-   "avg_view_sec": 70,
-   "avg_view_pct": 126.03,
-   "shares": 55,
-   "subs_gained": 9,
-   "views_period": 5665
+   "comments": 6
   },
   {
    "id": "qqOwjMVQLK8",
@@ -3399,11 +3099,11 @@
    "views": 1431,
    "likes": 38,
    "comments": 1,
-   "avg_view_sec": 60,
-   "avg_view_pct": 107.4,
-   "shares": 15,
-   "subs_gained": 2,
-   "views_period": 1431
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "1y0o8ueW6I8",
@@ -3412,12 +3112,7 @@
    "duration": "PT53S",
    "views": 1541,
    "likes": 25,
-   "comments": 3,
-   "avg_view_sec": 58,
-   "avg_view_pct": 111.28,
-   "shares": 6,
-   "subs_gained": 4,
-   "views_period": 1541
+   "comments": 3
   },
   {
    "id": "yGS70BVrP0E",
@@ -3435,12 +3130,7 @@
    "duration": "PT38S",
    "views": 2462,
    "likes": 23,
-   "comments": 0,
-   "avg_view_sec": 41,
-   "avg_view_pct": 110.22000000000001,
-   "shares": 27,
-   "subs_gained": 6,
-   "views_period": 2462
+   "comments": 0
   },
   {
    "id": "HAsWksFtwjA",
@@ -3458,7 +3148,12 @@
    "duration": "PT1M3S",
    "views": 806,
    "likes": 24,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 152,
+   "avg_view_pct": 241.27,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "eIov1Tv3vcE",
@@ -3467,12 +3162,7 @@
    "duration": "PT2M1S",
    "views": 1210,
    "likes": 21,
-   "comments": 0,
-   "avg_view_sec": 86,
-   "avg_view_pct": 71.32,
-   "shares": 14,
-   "subs_gained": 3,
-   "views_period": 1210
+   "comments": 0
   },
   {
    "id": "acYgv3UPrDg",
@@ -3500,11 +3190,11 @@
    "views": 2361,
    "likes": 23,
    "comments": 0,
-   "avg_view_sec": 44,
-   "avg_view_pct": 56.60000000000001,
-   "shares": 5,
-   "subs_gained": 7,
-   "views_period": 2361
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "ZWOApLT6TNc",
