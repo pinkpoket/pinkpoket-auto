@@ -279,8 +279,30 @@ def base_png(hook, path, outro=False):
     img.save(path)
 
 
-CAP_SIZE, CAP_LH = 72, 100
+CAP_SIZE, CAP_LH = ch.P.get("cap_size", 72), ch.P.get("cap_lh", 100)
+CAP_MAX_LINES = ch.P.get("cap_lines", 3)
 CAP_MID = H // 2 + 120   # 자막 가운데 높이 (모든 장면 같음)
+
+
+def split_long_scenes(scenes):
+    """자막이 CAP_MAX_LINES 줄을 넘는 장면은 문장 중간(문장부호 우선)에서 두 장면으로 나눈다 — 글자가 잘리지 않게."""
+    d = ImageDraw.Draw(Image.new("RGB", (10, 10)))
+    f = font(CAP_SIZE)
+    out = []
+    todo = list(scenes)
+    while todo:
+        sc = todo.pop(0)
+        toks = sc["text"].split()
+        if sc.get("outro") or len(toks) < 4 or len(wrap_tokens(d, toks, f, W - 150)) <= CAP_MAX_LINES:
+            out.append(sc)
+            continue
+        mid = len(toks) // 2
+        cut = min(range(1, len(toks)), key=lambda k: (0 if toks[k - 1][-1] in ".,!?" else 1, abs(k - mid)))
+        a, b = dict(sc), dict(sc)
+        a["text"], b["text"] = " ".join(toks[:cut]), " ".join(toks[cut:])
+        print(f"[자막] 긴 장면을 둘로 나눔: {sc['text'][:20]}…")
+        todo[0:0] = [a, b]
+    return out
 
 
 def caption_png(tokens, active, path, progress):
@@ -296,7 +318,7 @@ def caption_png(tokens, active, path, progress):
             if len(trial) <= n:
                 lines = trial
                 break
-    lines = lines[:3]
+    lines = lines[:CAP_MAX_LINES]
     top = CAP_MID - len(lines) * CAP_LH // 2
     space = d.textlength(" ", font=f)
     for li, line in enumerate(lines):
@@ -406,6 +428,8 @@ def build_video(script, out_path):
     if script.get("end_card"):
         outro = script.get("outro") or ch.P["shorts_outro"]
         scenes.append({"text": outro, "bg": ch.P["shorts_outro_bg"], "outro": True})
+    if ch.P.get("cap_lines"):
+        scenes = split_long_scenes(scenes)
     from concurrent.futures import ThreadPoolExecutor
 
     # 채널 설정 max_images 가 있으면 그림 수를 줄이고, 이어지는 장면끼리 같은 그림을 나눠 쓴다
