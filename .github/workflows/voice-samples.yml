@@ -1,0 +1,36 @@
+name: voice-samples
+
+on:
+  # 직접 실행: 한국어 AI 목소리 견본을 만들어 life/brand/voice/ 에 저장 (고르기용)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q edge-tts==7.3.1
+      - name: 견본 만들기
+        run: |
+          edge-tts --list-voices | grep -i "ko-KR" > life/brand/voice/list.txt || true
+          T="말투를 보면 그 사람의 노후가 보입니다. 나이 들수록 사람이 떠나는 이유, 대부분 돈이 아니라 말버릇 때문입니다."
+          edge-tts --voice ko-KR-InJoonNeural --rate=-5% --pitch=-6Hz --text "$T" --write-media life/brand/voice/A-injoon-deep.mp3
+          edge-tts --voice ko-KR-InJoonNeural --rate=+0% --pitch=+0Hz --text "$T" --write-media life/brand/voice/B-injoon.mp3
+          edge-tts --voice ko-KR-HyunsuMultilingualNeural --rate=-5% --pitch=-6Hz --text "$T" --write-media life/brand/voice/C-hyunsu-deep.mp3 || true
+          edge-tts --voice ko-KR-SunHiNeural --rate=-5% --pitch=-6Hz --text "$T" --write-media life/brand/voice/D-sunhi-calm.mp3
+          ls -la life/brand/voice
+      - name: 저장
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add life/brand/voice
+          git diff --cached --quiet && exit 0
+          git commit -m "목소리 견본"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done

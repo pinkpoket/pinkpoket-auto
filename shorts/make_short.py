@@ -100,7 +100,7 @@ async def _tts(text, voice, path):
     """음성을 저장하고, 단어마다 (시작초, 끝초, 글자) 를 돌려준다."""
     import edge_tts
     words = []
-    com = edge_tts.Communicate(text, voice, rate=TTS_RATE)
+    com = edge_tts.Communicate(text, voice, rate=TTS_RATE, pitch=ch.P.get("tts_pitch", "+0Hz"))
     with open(path, "wb") as f:
         async for chunk in com.stream():
             if chunk["type"] == "audio":
@@ -396,7 +396,7 @@ def build_video(script, out_path):
     AI_COUNT[0] = 0
     global TTS_RATE
     TTS_RATE = script.get("rate") or TTS_RATE
-    voice = script.get("voice") or "ko-KR-SunHiNeural"
+    voice = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
     hook = script.get("hook") or clean_title(script["title"])
     scenes = list(script["scenes"])
     # 좋아요·구독 마지막 화면은 시청 지속률을 떨어뜨려서 기본은 뺀다 (링크·구독 안내는 설명란·댓글로).
