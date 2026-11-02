@@ -130,9 +130,19 @@ def read_links():
     return links
 
 
+def adsense_approved():
+    """data/adsense.json 의 approved 가 true 일 때만 쿠팡 링크를 붙인다. 파일이 없으면 승인 전으로 본다."""
+    try:
+        return bool(json.load(open(ch.path("data", "adsense.json"), encoding="utf-8")).get("approved"))
+    except Exception:  # noqa: BLE001
+        return False
+
+
 def pick_links(obj, state, name=None):
     """상품 고르기 순서: 이미 고른 상품(발행 기록) → 글에 직접 넣은 상품
     → 쿠팡 API 키워드 검색(coupang_keywords) → coupang_links.txt 분류."""
+    if not adsense_approved():
+        return []  # 애드센스 승인 전에는 쿠팡 링크를 넣지 않는다 (data/adsense.json)
     if name:
         for p in state["posted"]:
             if p.get("file") == name and p.get("products"):
@@ -265,7 +275,8 @@ def images_for(name, obj, state=None):
             if p.get("file") == name and p.get("images"):
                 saved = {i: u for i, u in enumerate(p["images"])}
     out = []
-    for idx, item in enumerate((obj.get("images") or [])[:1]):
+    limit = max(1, len(saved))  # 새 글은 1장, 예전에 2장으로 올린 글은 그대로 유지
+    for idx, item in enumerate((obj.get("images") or [])[:limit]):
         alt = str(item.get("alt", "")).strip() or str(obj.get("title", ""))
         if idx in saved:
             out.append((saved[idx], alt))
@@ -358,8 +369,9 @@ def assemble(name, obj, state, links, images):
                      '<p style="margin:0 0 10px;font-weight:bold;font-size:15px">' + ch.P["items_title"] + '</p>' + items + "</div>")
     parts.append(series_box(obj, name, state))
     parts.append(channel_box())
-    notice = str(obj.get("notice", "")).strip() or DEFAULT_NOTICE
-    parts.append(f'<p style="font-size:13px;color:#888;line-height:1.7">{html.escape(notice)}</p>')
+    notice = str(obj.get("notice", "")).strip() or (DEFAULT_NOTICE if links else "")
+    if notice:
+        parts.append(f'<p style="font-size:13px;color:#888;line-height:1.7">{html.escape(notice)}</p>')
     parts.append(AUTHOR_BOX.replace('{photo_note}', PHOTO_NOTE if images else ''))
     return title, "\n".join(p for p in parts if p)
 
