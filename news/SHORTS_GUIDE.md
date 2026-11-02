@@ -24,6 +24,7 @@
 - 말투: 다정한 존댓말, 짧은 문장, 뉴스는 정확하게.
 
 ## 그림 (bg)
+- 그림은 3장만 만들어 이어지는 장면 2개가 한 그림을 같이 쓴다(1·2, 3·4, 5·6장면). 짝이 되는 두 장면은 같은 그림에 어울리게 쓰고, 앞 장면의 bg 가 대표 그림이 된다 (AI 무료 한도 아끼기).
 - 장면마다 영어로 **사물·풍경**을 묘사한다. 실제 사람·얼굴·정치인·연예인·글자·로고·국기 금지.
   예) "close up of a heating thermostat on a wall, centered", "busy subway platform without people, morning light"
 

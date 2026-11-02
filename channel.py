@@ -12,6 +12,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 PROFILES = {
     "salim": {
         "name": "핑포의 작은집 연구소",
+        "max_images": 3,  # 쇼츠 그림 3장을 장면 2개씩 나눠 쓴다 (AI 무료 한도 아끼기, 2026-11-02 핑포 결정)
         "base": "",
         "blog_home": "https://pinkpoket.blogspot.com",
         "yt_link_text": "▶ 유튜브에서 살림 꿀팁 쇼츠 보기 &amp; 구독하기",
@@ -40,6 +41,7 @@ PROFILES = {
     },
     "news": {
         "name": "핑포의 오늘뉴스",
+        "max_images": 3,  # 쇼츠 그림 3장을 장면 2개씩 나눠 쓴다 (AI 무료 한도 아끼기, 2026-11-02 핑포 결정)
         "base": "news",
         "blog_home": "https://pinkpoket-news.blogspot.com",
         "yt_link_text": "▶ 유튜브에서 오늘 뉴스 1분 요약 쇼츠 보기 &amp; 구독하기",
