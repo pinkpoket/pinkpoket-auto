@@ -1,0 +1,69 @@
+name: channel-analyze
+
+on:
+  # 직접 실행: 유튜브 채널의 공개 영상 목록(제목·조회수·길이·날짜)을 모아 analysis/ 에 저장
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "채널 주소 (예: https://www.youtube.com/@인생ON)"
+        required: true
+      name:
+        description: "저장 폴더 이름 (영어, 예: insaeng-on)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -U yt-dlp
+      - name: 영상 목록 모으기
+        env:
+          URL: ${{ inputs.url }}
+          NAME: ${{ inputs.name }}
+        run: |
+          mkdir -p "analysis/$NAME"
+          for tab in videos shorts streams; do
+            yt-dlp --flat-playlist -J --extractor-args "youtubetab:approximate_date" "$URL/$tab" > "analysis/$NAME/$tab.json" 2>/dev/null || echo "{}" > "analysis/$NAME/$tab.json"
+          done
+          python - <<'PY'
+          import json, os, subprocess
+          name = os.environ["NAME"]; base = f"analysis/{name}"
+          ids = []
+          for tab in ("videos", "shorts", "streams"):
+              try:
+                  d = json.load(open(f"{base}/{tab}.json"))
+              except Exception:
+                  continue
+              for e in d.get("entries") or []:
+                  if e.get("id"):
+                      ids.append((tab, e["id"]))
+          out = []
+          for tab, vid in ids[:150]:
+              try:
+                  r = subprocess.run(["yt-dlp", "-J", "--skip-download", f"https://www.youtube.com/watch?v={vid}"],
+                                     capture_output=True, text=True, timeout=90)
+                  j = json.loads(r.stdout)
+              except Exception as e:
+                  out.append({"id": vid, "tab": tab, "error": str(e)[:200]}); continue
+              out.append({k: j.get(k) for k in ("id", "title", "description", "duration", "view_count", "like_count",
+                                                "comment_count", "upload_date", "tags", "categories", "channel",
+                                                "channel_follower_count")} | {"tab": tab})
+          json.dump(out, open(f"{base}/details.json", "w"), ensure_ascii=False, indent=1)
+          print(f"영상 {len(out)}개 수집")
+          PY
+      - name: 저장
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add analysis
+          git diff --cached --quiet && exit 0
+          git commit -m "채널 분석 자료 수집: ${{ inputs.name }}"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
