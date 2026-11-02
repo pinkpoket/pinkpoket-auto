@@ -43,6 +43,8 @@ PROFILES = {
         "name": "핑포의 오늘뉴스",
         "max_images": 3,  # 쇼츠 그림 3장을 장면 2개씩 나눠 쓴다 (AI 무료 한도 아끼기, 2026-11-02 핑포 결정)
         "base": "news",
+        # 뉴스 쇼츠는 AI 그림 대신 고정 배경 한 장 (글 전달이 먼저, 무료 한도 걱정 없이 매일 업로드, 2026-11-03 핑포 결정)
+        "fixed_bg": "news/brand/shorts-bg.jpg",
         "blog_home": "https://pinkpoket-news.blogspot.com",
         "yt_link_text": "▶ 유튜브에서 오늘 뉴스 1분 요약 쇼츠 보기 &amp; 구독하기",
         "author_box": ("<strong style=\"color:#333\">✍️ 핑포의 오늘뉴스</strong> · 핑포(핑크포켓, Pink Pocket)가 "

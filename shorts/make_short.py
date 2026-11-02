@@ -440,6 +440,13 @@ def build_video(script, out_path):
     def _pre(i_s):
         i, sc = i_s
         cloudflare_image(sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg"))
+    fixed = os.path.join(REPO, ch.P["fixed_bg"]) if ch.P.get("fixed_bg") else ""
+    if fixed and os.path.exists(fixed):
+        # 고정 배경 채널(뉴스): AI 그림 없이 모든 장면에 같은 배경 한 장을 쓴다 → 무료 한도와 상관없이 매일 올라간다
+        for i in range(len(scenes)):
+            shutil.copy(fixed, os.path.join(WORK, f"raw{i}.jpg"))
+        print(f"[그림] 고정 배경 사용: {ch.P['fixed_bg']}")
+        leaders = {}
     with ThreadPoolExecutor(max_workers=4) as ex:
         list(ex.map(_pre, [(i, scenes[i]) for i in leaders.values()]))
     cache_dir = ch.path("data", "bg_cache") if ch.P.get("bg_cache") else ""
@@ -456,6 +463,8 @@ def build_video(script, out_path):
         for f in old:
             os.remove(f)
     for i, g in enumerate(group):
+        if g not in leaders:
+            continue
         src = os.path.join(WORK, f"raw{leaders[g]}.jpg")
         if i != leaders[g] and os.path.exists(src):
             shutil.copy(src, os.path.join(WORK, f"raw{i}.jpg"))

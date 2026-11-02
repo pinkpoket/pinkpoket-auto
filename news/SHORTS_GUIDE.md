@@ -24,9 +24,9 @@
 - 말투: 다정한 존댓말, 짧은 문장, 뉴스는 정확하게.
 
 ## 그림 (bg)
-- 그림은 3장만 만들어 이어지는 장면 2개가 한 그림을 같이 쓴다(1·2, 3·4, 5·6장면). 짝이 되는 두 장면은 같은 그림에 어울리게 쓰고, 앞 장면의 bg 가 대표 그림이 된다 (AI 무료 한도 아끼기).
-- 장면마다 영어로 **사물·풍경**을 묘사한다. 실제 사람·얼굴·정치인·연예인·글자·로고·국기 금지.
-  예) "close up of a heating thermostat on a wall, centered", "busy subway platform without people, morning light"
+- 뉴스 쇼츠는 **AI 그림을 만들지 않고 고정 배경 한 장**(`news/brand/shorts-bg.jpg`)을 모든 장면에 쓴다 (2026-11-03 핑포 결정: 뉴스는 사진보다 글 전달이 먼저, 무료 한도 때문에 업로드가 막히지 않게).
+- 그래서 scenes 의 `bg` 는 비워도 된다. 쓰더라도 영상에는 쓰이지 않는다.
+- 배경을 바꾸고 싶으면 `python3 news/brand/make_shorts_bg.py news/brand` 를 고쳐서 다시 만든다 (글자·로고·사람 없이).
 
 ## 글자
 - `title`: 핵심 검색어 앞에 + 궁금하게, 40자 이내 (`#shorts` 는 봇이 붙인다)
