@@ -1,0 +1,28 @@
+name: life-publish
+
+on:
+  # 직접 실행: 확인한 인생ON 쇼츠(일부공개)를 공개로 바꿈
+  workflow_dispatch:
+    inputs:
+      video_ids:
+        description: "영상 ID 또는 쇼츠 주소 (여러 개면 쉼표로)"
+        required: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: 공개로 바꾸기
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.LIFE_YOUTUBE_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
+          VIDEO_IDS: ${{ inputs.video_ids }}
+        run: python -u life/publish.py
