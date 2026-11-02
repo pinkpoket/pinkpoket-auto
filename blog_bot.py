@@ -16,7 +16,7 @@ GitHub Actions에서 실행된다.
   "description": "검색 결과용 요약 120자",       (선택)
   "labels": ["라벨", ...],
   "series": "시리즈 이름", "series_no": 1,        (선택)
-  "images": [{"prompt": "english prompt", "alt": "한글 설명"}],   (선택, 최대 2)
+  "images": [{"prompt": "english prompt", "alt": "한글 설명"}],   (선택, 최대 1)
   "faq": [{"q": "질문", "a": "답"}],              (선택)
   "category": "쿠팡 상품 분류" 또는 "없음",
   "coupang": [{"url": "https://link.coupang.com/a/...", "name": "상품명"}],   (선택)
@@ -265,7 +265,7 @@ def images_for(name, obj, state=None):
             if p.get("file") == name and p.get("images"):
                 saved = {i: u for i, u in enumerate(p["images"])}
     out = []
-    for idx, item in enumerate((obj.get("images") or [])[:2]):
+    for idx, item in enumerate((obj.get("images") or [])[:1]):
         alt = str(item.get("alt", "")).strip() or str(obj.get("title", ""))
         if idx in saved:
             out.append((saved[idx], alt))

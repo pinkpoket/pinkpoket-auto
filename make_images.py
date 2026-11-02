@@ -81,7 +81,7 @@ def main():
             obj = bb.read_post(name)
         except Exception:  # noqa: BLE001
             continue
-        for idx, item in enumerate((obj.get("images") or [])[:2]):
+        for idx, item in enumerate((obj.get("images") or [])[:1]):
             prompt = str(item.get("prompt", "")).strip()
             path = os.path.join(bb.IMAGES_DIR, bb.image_file(name, idx))
             if not prompt or os.path.exists(path):

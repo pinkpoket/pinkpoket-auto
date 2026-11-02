@@ -51,7 +51,7 @@
 - 목차·작성자 상자·유튜브 링크·모바일 스타일은 **봇이 자동으로** 넣는다.
 
 ## 이미지
-- `images` 에 영어 프롬프트 1~2개. 사물·풍경으로 상징만 표현한다.
+- `images` 에 영어 프롬프트 **1개만** (AI 사진 무료 한도 아끼기). 사물·풍경으로 상징만 표현한다.
   예) 물가 → `"shopping basket with vegetables on a supermarket shelf"`, 날씨 → `"frosty window with winter morning sunlight"`
 - `alt` 는 한글 설명 + 핵심어.
 
