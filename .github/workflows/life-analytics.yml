@@ -2,7 +2,12 @@ name: life-analytics
 
 on:
   # 직접 실행(주간 분석 예약 작업이 실행): 인생ON 채널 성적을 life/data/analytics.json 에 저장
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "며칠 치를 볼지 (기본 90)"
+        required: false
+        default: "90"
 
 permissions:
   contents: write
@@ -23,6 +28,7 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.LIFE_YOUTUBE_REFRESH_TOKEN }}
           YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
+          DAYS: ${{ inputs.days || '90' }}
         run: python -u life/analytics.py
       - name: 저장
         run: |

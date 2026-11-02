@@ -38,7 +38,7 @@ def main():
     print(f"[분석] 채널 확인: {item['snippet']['title']} / 구독자 {item['statistics'].get('subscriberCount')}")
     uploads = item["contentDetails"]["relatedPlaylists"]["uploads"]
     ids, page = [], None
-    while len(ids) < 100:
+    while len(ids) < 400:
         pl = requests.get("https://www.googleapis.com/youtube/v3/playlistItems", headers=h, timeout=30, params={
             "part": "contentDetails", "playlistId": uploads, "maxResults": 50, **({"pageToken": page} if page else {})}).json()
         ids += [x["contentDetails"]["videoId"] for x in pl.get("items", [])]
@@ -57,7 +57,7 @@ def main():
     analytics_ok = "yt-analytics" in scope
     if analytics_ok:
         end = dt.date.today()
-        start = end - dt.timedelta(days=90)
+        start = end - dt.timedelta(days=int(os.environ.get("DAYS", "90")))
         r = requests.get("https://youtubeanalytics.googleapis.com/v2/reports", headers=h, timeout=60, params={
             "ids": "channel==MINE", "startDate": start.isoformat(), "endDate": end.isoformat(),
             "metrics": "views,averageViewDuration,averageViewPercentage,likes,shares,subscribersGained",
@@ -67,7 +67,7 @@ def main():
             rec = dict(zip(cols, row))
             v = videos.setdefault(rec["video"], {"id": rec["video"]})
             v.update({"avg_view_sec": rec.get("averageViewDuration"), "avg_view_pct": rec.get("averageViewPercentage"),
-                      "shares": rec.get("shares"), "subs_gained": rec.get("subscribersGained"), "views_90d": rec.get("views")})
+                      "shares": rec.get("shares"), "subs_gained": rec.get("subscribersGained"), "views_period": rec.get("views")})
         if "error" in r:
             print(f"[분석] Analytics 오류: {str(r['error'])[:300]}")
     else:
