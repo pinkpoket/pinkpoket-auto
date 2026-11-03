@@ -98,5 +98,16 @@
   "url": "https://youtube.com/shorts/SvX8xKtQT1g",
   "privacy": "private",
   "comment_error": "댓글 실패 403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\n    \"errors\": [\n      {\n       "
+ },
+ {
+  "file": "20261103-1049.json",
+  "at": "2026-11-03 01:51",
+  "title": "나이 들수록 목마를 때만 물 마시면 절대 안 되는 이유와 3가지 습관",
+  "seconds": 60.5,
+  "ai_images": 4,
+  "video_id": "9zJPmIwCUbQ",
+  "url": "https://youtube.com/shorts/9zJPmIwCUbQ",
+  "privacy": "private",
+  "note": "run 41562233263 기록 push 충돌로 수동 기록"
  }
 ]
