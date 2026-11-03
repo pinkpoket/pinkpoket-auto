@@ -5,7 +5,12 @@ on:
   push:
     branches: [main]
     paths: ["life/long/queue/**"]
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_file:
+        description: "시험 제작만 할 done 대본 이름 (업로드 안 함)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -41,7 +46,13 @@ jobs:
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           CF_ACCOUNT_ID: ${{ vars.LIFE_CF_ACCOUNT_ID || vars.NEWS_CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.LIFE_CF_API_TOKEN || secrets.NEWS_CF_API_TOKEN }}
-        run: python -u life/make_long.py
+        run: |
+          if [ -n "${{ inputs.test_file }}" ]; then
+            mkdir -p /tmp/q && cp "life/long/done/${{ inputs.test_file }}" /tmp/q/
+            DRY_RUN=1 LONG_QUEUE=/tmp/q python -u life/make_long.py
+          else
+            python -u life/make_long.py
+          fi
       - name: 처리 기록 저장
         if: always()
         run: |

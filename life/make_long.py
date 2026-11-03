@@ -35,7 +35,7 @@ import channel as ch  # noqa: E402
 from PIL import Image, ImageDraw, ImageFilter  # noqa: E402
 
 W, H, FPS = 1920, 1080, 25
-QUEUE = os.path.join(HERE, "long", "queue")
+QUEUE = os.environ.get("LONG_QUEUE") or os.path.join(HERE, "long", "queue")
 DONE = os.path.join(HERE, "long", "done")
 WORK = os.path.join(HERE, "long", "_work")
 OUT = os.path.join(HERE, "long", "_out")
