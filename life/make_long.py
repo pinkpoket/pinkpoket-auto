@@ -280,7 +280,9 @@ def build(script, out_path):
     else:
         shutil.copy(joined, out_path)
     thumb = os.path.join(WORK, "thumb.jpg")
-    thumbnail(raw[0], thumb, script.get("thumbnail_text") or script["title"][:16])
+    import thumbs  # 왼쪽 글씨형(A) 썸네일
+    thumbs.make(raw[0], thumb, script.get("thumbnail_text") or script["title"][:16],
+                script.get("thumb_badge", ""), "left")
     return ms.duration(out_path), marks, thumb
 
 
