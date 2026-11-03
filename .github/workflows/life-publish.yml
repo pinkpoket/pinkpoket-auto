@@ -8,6 +8,9 @@ on:
         description: "영상 ID 또는 쇼츠 주소 (여러 개면 쉼표로)"
         required: true
 
+permissions:
+  contents: write
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -27,3 +30,12 @@ jobs:
           VIDEO_IDS: ${{ inputs.video_ids }}
           CHANNEL: life
         run: python -u life/publish.py
+      - name: 기록 저장
+        if: always()
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add life/data/long_log.json
+          git diff --cached --quiet && exit 0
+          git commit -m "인생ON 긴 영상 공개 기록"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done

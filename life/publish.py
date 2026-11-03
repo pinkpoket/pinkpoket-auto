@@ -27,6 +27,21 @@ for vid in ids:
             root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
             log = json.load(open(os.path.join(root, "life", "data", "shorts_log.json"), encoding="utf-8"))
             rec = next((x for x in log if x.get("video_id") == vid), None)
+            llog_p = os.path.join(root, "life", "data", "long_log.json")
+            llog = json.load(open(llog_p, encoding="utf-8")) if os.path.exists(llog_p) else []
+            lrec = next((x for x in llog if x.get("video_id") == vid), None)
+            if lrec:  # 긴 영상: 기록을 공개로 바꾸고(쇼츠 설명란 링크용) 대본의 댓글을 단다
+                lrec["privacy"] = "public"
+                json.dump(llog, open(llog_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                ls = json.load(open(os.path.join(root, "life", "long", "done", lrec["file"]), encoding="utf-8"))
+                if ls.get("comment") and lrec.get("comment") != "ok":
+                    sys.path.insert(0, os.path.join(root, "shorts"))
+                    os.environ.setdefault("CHANNEL", "life")
+                    import make_short as m
+                    m.yt_comment(vid, ls["comment"])
+                    lrec["comment"] = "ok"
+                    json.dump(llog, open(llog_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                    print(f"[공개] {vid}: 긴 영상 댓글 완료")
             if rec and rec.get("comment") != "ok":
                 os.environ.setdefault("CHANNEL", "life")
                 sys.path.insert(0, os.path.join(root, "shorts"))

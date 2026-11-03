@@ -645,6 +645,14 @@ def build_description(script):
         lines += [DISCLOSURE, ""]
     if blog:
         lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
+    long_log = ch.path("data", "long_log.json")
+    if ch.P.get("link_long") and os.path.exists(long_log):
+        try:  # 쇼츠 → 긴 영상으로 시청 시간 모으기: 가장 최근 공개 긴 영상 링크
+            pub = [x for x in json.load(open(long_log, encoding="utf-8")) if x.get("privacy") == "public" and x.get("url")]
+            if pub:
+                lines.append(f"📺 더 깊은 이야기(긴 영상) 👉 {pub[-1]['url']}")
+        except Exception:  # noqa: BLE001
+            pass
     if product:
         lines.append(f"🛒 {product[1]} 👉 {product[0]}")
     lines += ["", script.get("description", "").strip(), "",
