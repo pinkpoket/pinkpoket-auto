@@ -82,7 +82,7 @@ PROFILES = {
         "shorts_style": ("warm cinematic photo, soft golden hour light, calm hopeful mood, nature scenery or cozy everyday "
                          "objects, subject centered, vertical composition, no people, no faces, no text, no letters, no logo, no watermark"),
         "shorts_default_bg": "warm candle light by a window at dusk",
-        "shorts_signature": "🔥 인생ON : 마음의 불을 켜다\n사진: Pixabay",
+        "shorts_signature": "🔥 인생ON : 마음의 불을 켜다",
         "shorts_outro": "오늘 이야기가 도움 되셨다면 구독으로 함께해 주세요.",
         "shorts_outro_bg": "sunrise over calm mountains, warm golden light",
         "comment_fallback": "오늘 '{hook}' 이야기, 마음에 닿으셨나요? 🔥\n소중한 분께 카톡으로 나눠 주시면 큰 힘이 돼요 💛",
