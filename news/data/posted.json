@@ -24,7 +24,9 @@
       "products": [],
       "series": "",
       "series_no": null,
-      "images": []
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@06b4abe4be70f6f9478a763721635a266f4925d5/news/images/20261103-1150-1.jpg"
+      ]
     },
     {
       "file": "20261103-1825.json",
