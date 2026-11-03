@@ -21,5 +21,20 @@ for vid in ids:
     u = requests.put("https://www.googleapis.com/youtube/v3/videos?part=status", headers=h, timeout=30,
                      json={"id": vid, "status": {k: st[k] for k in ("privacyStatus", "selfDeclaredMadeForKids", "containsSyntheticMedia") if k in st}})
     print(f"[공개] {vid}: {'공개 완료 ✅' if u.ok else '실패 ' + u.text[:200]}")
+    if u.ok:  # 비공개일 때 못 단 감성 댓글을 공개하면서 단다
+        try:
+            import json, glob
+            root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            log = json.load(open(os.path.join(root, "life", "data", "shorts_log.json"), encoding="utf-8"))
+            rec = next((x for x in log if x.get("video_id") == vid), None)
+            if rec and rec.get("comment") != "ok":
+                os.environ.setdefault("CHANNEL", "life")
+                sys.path.insert(0, os.path.join(root, "shorts"))
+                import make_short as m
+                script = json.load(open(os.path.join(root, "life", "shorts", "done", rec["file"]), encoding="utf-8"))
+                m.yt_comment(vid, m.build_comment(script, None))
+                print(f"[공개] {vid}: 감성 댓글 완료")
+        except Exception as e:  # noqa: BLE001
+            print(f"[공개] {vid}: 댓글 실패 {e}")
     failed += 0 if u.ok else 1
 sys.exit(1 if failed else 0)
