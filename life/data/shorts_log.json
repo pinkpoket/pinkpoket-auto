@@ -87,5 +87,16 @@
   "url": "https://youtube.com/shorts/MOKs9t56gfg",
   "privacy": "unlisted",
   "comment": "ok"
+ },
+ {
+  "file": "20261103-1050.json",
+  "at": "2026-11-03 01:49",
+  "title": "나이 들수록 반드시 줄여야 할 말버릇 3가지",
+  "seconds": 54.1,
+  "ai_images": 4,
+  "video_id": "SvX8xKtQT1g",
+  "url": "https://youtube.com/shorts/SvX8xKtQT1g",
+  "privacy": "private",
+  "comment_error": "댓글 실패 403: {\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\n    \"errors\": [\n      {\n       "
  }
 ]
