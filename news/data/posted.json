@@ -10,7 +10,9 @@
       "products": [],
       "series": "",
       "series_no": null,
-      "images": []
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@49688ca95992f2074ef7a010005eeb06d86afe28/news/images/20261103-0624-1.jpg"
+      ]
     },
     {
       "file": "20261103-1150.json",
@@ -22,7 +24,9 @@
       "products": [],
       "series": "",
       "series_no": null,
-      "images": []
+      "images": [
+        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@49688ca95992f2074ef7a010005eeb06d86afe28/news/images/20261103-1150-1.jpg"
+      ]
     },
     {
       "file": "20261103-1825.json",
