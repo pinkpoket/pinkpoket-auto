@@ -43,8 +43,11 @@ LOG = os.path.join(HERE, "data", "long_log.json")
 VOICE = ch.P.get("voice") or "ko-KR-SunHiNeural"
 C = ch.P["colors"]
 BOX, YEL = tuple(C["hook_bg"]), tuple(C["hook_text"])
-CAP = 74          # 자막 글씨 크기 (시니어용, TV·휴대폰 모두 잘 보이게)
-CAP_LH = 102
+CAP = 88          # 자막 글씨 크기 (시니어용, 74 → 88)
+CAP_LH = 120
+VOICE_GAIN = 2.3  # 긴 영상 목소리 크게 (쇼츠 1.8)
+BGM_VOL = 0.05
+MOVES = ["zoom_in", "pan_right", "zoom_out", "pan_down", "pan_left", "pan_up"]
 PER_IMAGE = 4     # 문장 몇 개마다 사진을 바꿀지
 
 
@@ -75,14 +78,14 @@ def wrap(d, text, f, max_w):
 
 
 def frame(bg, out, sentence, chapter):
-    """사진 + 아래 자막 + 챕터 이름 + 로고 한 장."""
-    img = Image.open(bg).convert("RGBA")
+    """사진 위에 얹을 투명 그림: 아래 자막 + 챕터 이름 + 로고 (사진은 영상에서 움직인다)."""
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(ov)
-    for y in range(H - 380, H):  # 아래쪽을 부드럽게 어둡게
-        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(200 * ((y - (H - 380)) / 380) ** 1.2)))
+    for y in range(H - 440, H):  # 아래쪽을 부드럽게 어둡게
+        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(210 * ((y - (H - 440)) / 440) ** 1.2)))
     f = ms.font(CAP)
-    lines = [" ".join(l) for l in wrap(d, sentence, f, W - 260)][:3]
+    lines = [" ".join(l) for l in wrap(d, sentence, f, W - 200)][:3]
     y = H - 70 - len(lines) * CAP_LH
     for ln in lines:
         tw = d.textlength(ln, font=f)
@@ -99,7 +102,7 @@ def frame(bg, out, sentence, chapter):
         img.alpha_composite(logo, (W - 136, 26))
     except Exception:  # noqa: BLE001
         pass
-    img.convert("RGB").save(out, quality=92)
+    img.save(out)
 
 
 def title_card(bg, out, title, sub=""):
@@ -153,6 +156,31 @@ def thumbnail(bg, out, text):
 
 
 # ---------------------------------------------------------------- 영상
+
+def moving_segment(photo, overlay, audio, out, move, start, total, fade_in=False, pad=0.35):
+    """사진을 천천히 확대·이동시키며 그 위에 자막 그림을 얹는다.
+    같은 사진이 여러 문장에 걸치면 start/total(초)로 움직임을 이어 간다."""
+    dur = ms.duration(audio) + pad
+    n = max(1, int(round(dur * FPS)))
+    off, tot = int(start * FPS), max(1, int(round(total * FPS)))
+    p = f"(on+{off})/{tot}"
+    z, cx, cy = "1.12", "iw/2-(iw/zoom/2)", "ih/2-(ih/zoom/2)"
+    expr = {
+        "zoom_in": (f"1.0+0.12*{p}", cx, cy),
+        "zoom_out": (f"1.12-0.12*{p}", cx, cy),
+        "pan_right": (z, f"(iw-iw/zoom)*{p}", cy),
+        "pan_left": (z, f"(iw-iw/zoom)*(1-{p})", cy),
+        "pan_down": (z, cx, f"(ih-ih/zoom)*{p}"),
+        "pan_up": (z, cx, f"(ih-ih/zoom)*(1-{p})"),
+    }[move]
+    fade = ",fade=t=in:st=0:d=0.5" if fade_in else ""
+    fc = (f"[0:v]scale=2880:1620,zoompan=z='{expr[0]}':x='{expr[1]}':y='{expr[2]}':d={n}:s={W}x{H}:fps={FPS}[bg];"
+          f"[bg][1:v]overlay=0:0,format=yuv420p{fade}[v];[2:a]apad=pad_dur={pad},aresample=44100[a]")
+    ms.run(["ffmpeg", "-y", "-i", photo, "-i", overlay, "-i", audio, "-filter_complex", fc,
+            "-map", "[v]", "-map", "[a]", "-t", f"{dur:.2f}", "-c:v", "libx264", "-preset", "veryfast",
+            "-r", str(FPS), "-c:a", "aac", "-b:a", "160k", "-ar", "44100", "-ac", "2", out])
+    return dur
+
 
 def segment(png, audio, out, fade_in=False, pad=0.35):
     dur = ms.duration(audio) + pad
@@ -210,18 +238,29 @@ def build(script, out_path):
         return path
     with ThreadPoolExecutor(max_workers=4) as ex:
         audios = list(ex.map(speak, enumerate(items)))
-    # 4) 장면 영상 + 챕터 시간표
+    # 4) 장면 영상 + 챕터 시간표 (사진마다 움직임 하나: 확대·축소·좌우·상하 번갈아)
+    lens = [ms.duration(a) + 0.35 for a in audios]
+    photo_total, photo_start = {}, {}
+    for it, ln in zip(items, lens):
+        if not it.get("card"):
+            photo_total[it["photo"]] = photo_total.get(it["photo"], 0) + ln
     segs, t, marks = [], 0.0, []
     for i, it in enumerate(items):
-        png, seg = os.path.join(WORK, f"f{i}.jpg"), os.path.join(WORK, f"s{i:04d}.mp4")
+        seg = os.path.join(WORK, f"s{i:04d}.mp4")
         bg = raw[min(it["photo"], len(raw) - 1)]
         if it.get("card"):
+            png = os.path.join(WORK, f"f{i}.jpg")
             marks.append((t, it["card"]))
             title_card(bg, png, it["card"])
             t += segment(png, audios[i], seg, fade_in=True, pad=1.2)
         else:
+            png = os.path.join(WORK, f"f{i}.png")
             frame(bg, png, it["text"], it["chapter"])
-            t += segment(png, audios[i], seg, fade_in=it.get("new_photo", False))
+            ph = it["photo"]
+            start = photo_start.get(ph, 0.0)
+            t += moving_segment(bg, png, audios[i], seg, MOVES[ph % len(MOVES)], start, photo_total[ph],
+                                fade_in=it.get("new_photo", False))
+            photo_start[ph] = start + lens[i]
         segs.append(seg)
     lst = os.path.join(WORK, "list.txt")
     with open(lst, "w") as f:
@@ -233,8 +272,8 @@ def build(script, out_path):
     if bgm:
         song = random.Random(script["title"]).choice(bgm)
         ms.run(["ffmpeg", "-y", "-i", joined, "-stream_loop", "-1", "-i", song, "-filter_complex",
-                f"[1:a]volume={ch.P['bgm_volume']},afade=t=out:st={max(0.0, t - 2):.2f}:d=2[b];"
-                f"[0:a]volume={ch.P['voice_gain']}[v];[v][b]amix=inputs=2:duration=first:normalize=0,"
+                f"[1:a]volume={BGM_VOL},afade=t=out:st={max(0.0, t - 2):.2f}:d=2[b];"
+                f"[0:a]volume={VOICE_GAIN}[v];[v][b]amix=inputs=2:duration=first:normalize=0,"
                 "alimiter=limit=0.95:level=disabled[a]",
                 "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
                 "-movflags", "+faststart", out_path])
