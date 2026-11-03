@@ -1,0 +1,28 @@
+name: life-recomment
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_ids:
+        description: "긴 영상 ID (쉼표로)"
+        required: true
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      CHANNEL: life
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pillow edge-tts==7.3.1
+      - env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.LIFE_YOUTUBE_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
+          VIDEO_IDS: ${{ inputs.video_ids }}
+        run: python -u life/recomment.py
