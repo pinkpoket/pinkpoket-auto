@@ -1,0 +1,53 @@
+name: long-life-make
+
+on:
+  # life/long/queue/ 에 새 긴 영상 대본이 올라오면 제작 + 인생ON 채널 업로드
+  push:
+    branches: [main]
+    paths: ["life/long/queue/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: long-life
+  cancel-in-progress: false
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    env:
+      CHANNEL: life
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 도구 설치 (무료)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk fonts-noto-cjk-extra > /dev/null
+          pip install -q edge-tts==7.3.1 requests pillow
+      - name: 긴 영상 만들기 + 유튜브 업로드
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.LIFE_YOUTUBE_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
+          # 처음 몇 편은 핑크포켓님 확인용 비공개. 확인 후 public 으로 바꿈
+          YT_PRIVACY: private
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          CF_ACCOUNT_ID: ${{ vars.LIFE_CF_ACCOUNT_ID || vars.NEWS_CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.LIFE_CF_API_TOKEN || secrets.NEWS_CF_API_TOKEN }}
+        run: python -u life/make_long.py
+      - name: 처리 기록 저장
+        if: always()
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add -A life/long/queue life/long/done life/data/long_log.json
+          git diff --cached --quiet && exit 0
+          git commit -m "인생ON 긴 영상 제작 기록"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done

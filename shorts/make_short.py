@@ -211,7 +211,7 @@ def pexels_image(prompt, path):
     return False
 
 
-def pixabay_image(prompt, path):
+def pixabay_image(prompt, path, orientation="vertical"):
     """무료 사진 사이트 Pixabay 에서 세로 사진을 받아 저장한다 (사람이 나온 사진은 건너뜀)."""
     key = os.environ.get("PIXABAY_API_KEY", "").strip()
     if not key:
@@ -220,7 +220,7 @@ def pixabay_image(prompt, path):
     for q in (pexels_query(prompt), backup, "forest trees"):
         try:
             r = requests.get("https://pixabay.com/api/", timeout=30, params={
-                "key": key, "q": q, "image_type": "photo", "orientation": "vertical", "safesearch": "true",
+                "key": key, "q": q, "image_type": "photo", "orientation": orientation, "safesearch": "true",
                 "category": "nature", "per_page": 50, "order": "popular"})
             hits = r.json().get("hits", []) if r.ok else []
         except Exception as e:  # noqa: BLE001
@@ -697,13 +697,13 @@ def check_channel(tok):
     return got
 
 
-def yt_upload(video, title, desc, tags):
+def yt_upload(video, title, desc, tags, shorts=True):
     tok = yt_access_token()
     if not tok:
         return None
     check_channel(tok)
     title = yt_clean(title)
-    if "#shorts" not in title.lower() and len(title) + 8 <= 100:
+    if shorts and "#shorts" not in title.lower() and len(title) + 8 <= 100:
         title += " #shorts"
     clean_tags, total = [], 0
     for t in tags:
