@@ -50,7 +50,7 @@
 - `thumbnail_text`: 두 줄, 줄당 8자 안팎 (`\n` 으로 나눔). 예) "노후에 끊을\n인연 7가지"
 - `description`: 3~5줄 요약 + 해시태그 5개(#인생온 #노후준비 #인생조언 …). 목차·AI 안내는 봇이 붙인다.
 - `tags`: 15~25개.
-- `comment`: 2~3줄 감성 댓글 + 질문.
+- `comment`: 2~3줄 감성 댓글 + 질문 (목차·구독·좋아요·공유 안내는 봇이 붙인다).
 
 ## 파일
 `life/long/queue/YYYYMMDD-HHMM.json` (한국 시간). 형식은 `life/make_long.py` 맨 위 설명.

@@ -34,11 +34,13 @@ for vid in ids:
                 lrec["privacy"] = "public"
                 json.dump(llog, open(llog_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
                 ls = json.load(open(os.path.join(root, "life", "long", "done", lrec["file"]), encoding="utf-8"))
-                if ls.get("comment") and lrec.get("comment") != "ok":
+                if lrec.get("comment") != "ok":
                     sys.path.insert(0, os.path.join(root, "shorts"))
+                    sys.path.insert(0, os.path.join(root, "life"))
                     os.environ.setdefault("CHANNEL", "life")
                     import make_short as m
-                    m.yt_comment(vid, ls["comment"])
+                    import make_long as ml
+                    m.yt_comment(vid, ml.long_comment(ls))
                     lrec["comment"] = "ok"
                     json.dump(llog, open(llog_p, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
                     print(f"[공개] {vid}: 긴 영상 댓글 완료")

@@ -297,6 +297,15 @@ def description(script, marks):
     return "\n".join(lines).strip()
 
 
+def long_comment(script):
+    """긴 영상 고정 댓글: 대본의 감성 글 + 목차·구독·좋아요 안내."""
+    body = (script.get("comment") or "").strip() or f"오늘 '{script['title'].split('|')[0].strip()}' 이야기, 마음에 닿으셨나요? 🔥"
+    tail = ["", "📌 영상 아래 '더보기'를 누르시면 목차가 있어요. 다시 듣고 싶은 부분만 골라 보실 수 있어요.",
+            "도움이 되셨다면 구독과 좋아요 꾹 눌러 주세요 🙏💛",
+            "소중한 분께 카톡으로 나눠 주시면 인생ON에 큰 힘이 됩니다."]
+    return body + "\n" + "\n".join(tail)
+
+
 def set_thumbnail(vid, path):
     tok = ms.yt_access_token()
     with open(path, "rb") as f:
@@ -344,9 +353,9 @@ def main():
             except Exception as e:  # noqa: BLE001
                 entry["thumb_error"] = str(e)[:200]
                 print(f"[썸네일] {e}")
-            if privacy == "public" and script.get("comment"):
+            if privacy == "public":
                 try:
-                    ms.yt_comment(vid, script["comment"])
+                    ms.yt_comment(vid, long_comment(script))
                     entry["comment"] = "ok"
                 except Exception as e:  # noqa: BLE001
                     print(f"[댓글] {e}")
