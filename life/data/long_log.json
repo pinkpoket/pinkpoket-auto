@@ -6,7 +6,8 @@
   "seconds": 474.9,
   "video_id": "OkiAM-u7gs8",
   "url": "https://youtu.be/OkiAM-u7gs8",
-  "privacy": "private"
+  "privacy": "public",
+  "comment": "ok"
  },
  {
   "file": "20261103-1825.json",
@@ -15,6 +16,7 @@
   "seconds": 593.3,
   "video_id": "AgtcQyHky58",
   "url": "https://youtu.be/AgtcQyHky58",
-  "privacy": "private"
+  "privacy": "public",
+  "comment": "ok"
  }
 ]
