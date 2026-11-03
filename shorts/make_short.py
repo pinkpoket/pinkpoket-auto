@@ -206,6 +206,37 @@ def pexels_image(prompt, path):
     return False
 
 
+def pixabay_image(prompt, path):
+    """무료 사진 사이트 Pixabay 에서 세로 사진을 받아 저장한다 (사람이 나온 사진은 건너뜀)."""
+    key = os.environ.get("PIXABAY_API_KEY", "").strip()
+    if not key:
+        return False
+    for q in (pexels_query(prompt), "calm nature landscape"):
+        try:
+            r = requests.get("https://pixabay.com/api/", timeout=30, params={
+                "key": key, "q": q, "image_type": "photo", "orientation": "vertical", "safesearch": "true",
+                "per_page": 30, "order": "popular"})
+            hits = r.json().get("hits", []) if r.ok else []
+        except Exception as e:  # noqa: BLE001
+            print(f"[사진] Pixabay 오류: {e}")
+            return False
+        for h in hits:
+            if h["id"] in PEXELS_USED or PEOPLE.search(h.get("tags") or ""):
+                continue
+            try:
+                img = requests.get(h.get("largeImageURL") or h["webformatURL"], timeout=60).content
+                with open(path, "wb") as f:
+                    f.write(img)
+                Image.open(path).verify()
+            except Exception:  # noqa: BLE001
+                continue
+            PEXELS_USED.add(h["id"])
+            AI_COUNT[0] += 1
+            print(f"[사진] Pixabay '{q}' → {h['id']}")
+            return True
+    return False
+
+
 def cloudflare_image(prompt, path):
     acc = os.environ.get("CF_ACCOUNT_ID", "").strip()
     tok = os.environ.get("CF_API_TOKEN", "").strip()
@@ -482,7 +513,7 @@ def build_video(script, out_path):
     def _pre(i_s):
         i, sc = i_s
         prompt, path = sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg")
-        if ch.P.get("image_source") == "pexels" and pexels_image(prompt, path):
+        if ch.P.get("image_source") == "stock" and (pixabay_image(prompt, path) or pexels_image(prompt, path)):
             return
         cloudflare_image(prompt, path)
     fixed = os.path.join(REPO, ch.P["fixed_bg"]) if ch.P.get("fixed_bg") else ""
