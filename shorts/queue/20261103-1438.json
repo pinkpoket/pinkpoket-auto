@@ -1,0 +1,49 @@
+{
+  "title": "전기장판 꺼내자마자 꽂으면 안 돼요, 5분 점검법",
+  "hook": "전기장판 화재 예방",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "text": "전기장판, 꺼내자마자 꽂으면 안 돼요.",
+      "bg": "close up of a folded electric heating pad with its controller and plug on a cozy bed, warm winter bedroom, centered"
+    },
+    {
+      "text": "접혀 있던 열선이 꺾였을 수 있어요. 꽂기 전 5분 점검부터요.",
+      "bg": "close up of a folded electric heating pad with its controller and plug on a cozy bed, warm winter bedroom, centered"
+    },
+    {
+      "text": "첫째, 플러그를 뽑고 전선을 손으로 훑어요. 벗겨진 곳을 찾아요.",
+      "bg": "close up of a power cord and plug of an electric blanket laid on a light wooden floor, centered"
+    },
+    {
+      "text": "둘째, 장판을 펼쳐 쓸어 봐요. 탄 자국이 있으면 교체해요.",
+      "bg": "close up of a power cord and plug of an electric blanket laid on a light wooden floor, centered"
+    },
+    {
+      "text": "셋째, 낮은 온도로 켜고 지켜봐요. 타는 냄새가 나면 바로 뽑아요.",
+      "bg": "close up of an electric blanket temperature controller with a soft glowing light on a neatly made bed, centered"
+    },
+    {
+      "text": "쓸 땐 접지 말고 이불은 겹겹이 덮지 마세요. 오늘은 전선부터요.",
+      "bg": "close up of an electric blanket temperature controller with a soft glowing light on a neatly made bed, centered"
+    }
+  ],
+  "description": "몇 달 접어 둔 전기장판, 꺼내자마자 꽂기 전에 5분만 점검해 주세요 🔌\n플러그를 뽑은 채 전선 훑기 → 열선 꺾임·탄 자국 확인 → 낮은 온도로 첫 작동 순서예요. 제품별 사용법은 꼭 설명서도 함께 확인해 주세요.\n여러분 집 전기장판은 어디에 보관해 두셨나요? 댓글로 알려 주세요.",
+  "tags": [
+    "#shorts",
+    "#전기장판",
+    "#전기장판점검",
+    "#화재예방",
+    "#겨울준비",
+    "#난방기기안전",
+    "#살림꿀팁",
+    "#작은집살림",
+    "#핑포의작은집연구소"
+  ],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/11/electric-blanket-safety-check-before-use.html",
+  "comment": "손끝이 시려지는 계절, 전기장판 생각나는 밤이죠 🌙\n꺼내는 날 5분만 천천히 살펴봐 주세요. 올겨울 내내 따뜻하고 마음 편한 잠자리가 되길 바랄게요 💛",
+  "coupang_keywords": [
+    "전기요 KC인증",
+    "타이머 콘센트"
+  ]
+}
