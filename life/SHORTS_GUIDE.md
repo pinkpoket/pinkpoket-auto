@@ -38,6 +38,7 @@
 - `end_card` 는 넣지 않는다.
 
 ## 그림 (bg)
+- 그림은 무료 사진 사이트 **Pexels 실제 풍경 사진**을 검색해서 쓴다 (안 되면 AI 그림). 그래서 bg 는 **검색이 잘 되는 짧은 영어 낱말 3~5개**로 쓴다. 예) "autumn park bench", "sunrise mountain lake", "tea cup window rain", "forest path morning".
 - 봇은 그림을 **4장만** 만들어 이어지는 장면끼리 나눠 쓴다. 그래서 1·3·5·7번째 장면 근처의 bg 가 실제로 쓰인다 — 장면 묶음의 분위기를 대표하는 그림으로 쓴다.
 - 장면마다 영어로 **자연 풍경·따뜻한 일상 사물**. 예) "old wooden bench in an autumn park, warm sunlight", "steaming tea cup by a window at dawn"
 - **사람·얼굴·실존 인물·글자·로고 금지.**

@@ -164,6 +164,48 @@ STYLE = ch.P["shorts_style"]
 AI_COUNT = [0]
 
 
+PEXELS_USED = set()
+PEOPLE = re.compile(r"\b(person|people|man|men|woman|women|girl|boy|child|children|kid|couple|face|portrait|hand|hands|selfie)\b", re.I)
+
+
+def pexels_query(prompt):
+    """영어 그림 설명에서 검색어만 남긴다 (no people 같은 말과 군더더기 빼기)."""
+    q = re.split(r",", prompt)[0]
+    q = re.sub(r"\b(no|without)\s+\w+", " ", q, flags=re.I)
+    q = re.sub(r"\b(close up of|photo of|a|an|the|in|on|at|by|of|with|facing|quiet|centered|vertical|composition|soft|warm|light|golden)\b", " ", q, flags=re.I)
+    return " ".join(q.split()[:5]) or "calm nature landscape"
+
+
+def pexels_image(prompt, path):
+    """무료 사진 사이트 Pexels 에서 세로 풍경 사진을 받는다 (사람 나온 사진은 건너뜀)."""
+    key = os.environ.get("PEXELS_API_KEY", "").strip()
+    if not key:
+        return False
+    for q in (pexels_query(prompt), "calm nature landscape"):
+        try:
+            r = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": key}, timeout=30,
+                             params={"query": q, "orientation": "portrait", "per_page": 30, "size": "large"})
+            photos = r.json().get("photos", []) if r.ok else []
+        except Exception as e:  # noqa: BLE001
+            print(f"[사진] Pexels 오류: {e}")
+            return False
+        for ph in photos:
+            if ph["id"] in PEXELS_USED or PEOPLE.search(ph.get("alt") or ""):
+                continue
+            try:
+                img = requests.get(ph["src"].get("portrait") or ph["src"]["large2x"], timeout=60).content
+                with open(path, "wb") as f:
+                    f.write(img)
+                Image.open(path).verify()
+            except Exception:  # noqa: BLE001
+                continue
+            PEXELS_USED.add(ph["id"])
+            AI_COUNT[0] += 1
+            print(f"[사진] Pexels '{q}' → {ph['id']}")
+            return True
+    return False
+
+
 def cloudflare_image(prompt, path):
     acc = os.environ.get("CF_ACCOUNT_ID", "").strip()
     tok = os.environ.get("CF_API_TOKEN", "").strip()
@@ -439,7 +481,10 @@ def build_video(script, out_path):
 
     def _pre(i_s):
         i, sc = i_s
-        cloudflare_image(sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg"))
+        prompt, path = sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg")
+        if ch.P.get("image_source") == "pexels" and pexels_image(prompt, path):
+            return
+        cloudflare_image(prompt, path)
     fixed = os.path.join(REPO, ch.P["fixed_bg"]) if ch.P.get("fixed_bg") else ""
     if fixed and os.path.exists(fixed):
         # 고정 배경 채널(뉴스): AI 그림 없이 모든 장면에 같은 배경 한 장을 쓴다 → 무료 한도와 상관없이 매일 올라간다

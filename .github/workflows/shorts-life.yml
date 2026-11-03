@@ -38,6 +38,7 @@ jobs:
           YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
           # 핑크포켓님이 먼저 확인하도록 일부공개(unlisted)로 올림. 확인 후 life-publish 로 공개 전환
           YT_PRIVACY: unlisted
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           CF_ACCOUNT_ID: ${{ vars.LIFE_CF_ACCOUNT_ID || vars.NEWS_CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.LIFE_CF_API_TOKEN || secrets.NEWS_CF_API_TOKEN }}
           COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
