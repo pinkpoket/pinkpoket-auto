@@ -44,7 +44,7 @@ PROFILES = {
         "max_images": 3,  # 쇼츠 그림 3장을 장면 2개씩 나눠 쓴다 (AI 무료 한도 아끼기, 2026-11-02 핑포 결정)
         "base": "news",
         # 뉴스 쇼츠는 AI 그림 대신 고정 배경 한 장 (글 전달이 먼저, 무료 한도 걱정 없이 매일 업로드, 2026-11-03 핑포 결정)
-        "fixed_bg": "news/brand/shorts-bg.jpg",
+        "fixed_bg": "news/brand/shorts-bg-blue_black.jpg",
         "blog_home": "https://pinkpoket-news.blogspot.com",
         "yt_link_text": "▶ 유튜브에서 오늘 뉴스 1분 요약 쇼츠 보기 &amp; 구독하기",
         "author_box": ("<strong style=\"color:#333\">✍️ 핑포의 오늘뉴스</strong> · 핑포(핑크포켓, Pink Pocket)가 "
@@ -64,9 +64,9 @@ PROFILES = {
         "yt_category": "25",
         # 목소리는 크게(+ 찢어지지 않게 리미터), 배경음악은 작게
         "voice_gain": 1.8, "bgm_volume": 0.07,
-        # 파랑 + 초록: 제목 상자 초록, 강조 자막 파란 상자에 연두 글씨, 진행 막대 초록
-        "colors": {"accent": (25, 110, 235), "bar": (40, 200, 120), "hook_bg": (60, 214, 140),
-                   "hook_text": (8, 36, 84), "hi_text": (170, 255, 200), "hi_stroke": (8, 30, 80),
+        # 파랑 + 검정 (2026-11-03 핑포 결정): 검정 배경, 제목 상자 파랑에 흰 글씨, 강조 자막 파란 상자, 진행 막대 파랑
+        "colors": {"accent": (30, 120, 255), "bar": (30, 120, 255), "hook_bg": (30, 120, 255),
+                   "hook_text": (255, 255, 255), "hi_text": (255, 255, 255), "hi_stroke": (0, 20, 70),
                    "gradients": [((232, 244, 255), (196, 222, 250)), ((232, 252, 242), (190, 236, 214)),
                                  ((236, 248, 255), (200, 236, 228))]},
     },
