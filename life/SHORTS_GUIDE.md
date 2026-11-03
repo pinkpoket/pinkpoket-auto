@@ -32,15 +32,15 @@
 - 시니어용 **큰 자막**(한 줄 약 10글자, 최대 4줄)이라 장면 하나에 **30~40자**, 장면 **9~11개**. 40자를 넘으면 봇이 장면을 둘로 나눈다 (두 줄 자막). 순서가 있으면 "첫째, / 둘째, / 셋째,".
 - 각 항목: 무엇을 → 왜 (한 줄 이유) → 대신 이렇게.
 - 마지막 장면: 오늘 바로 할 수 있는 한 가지 + "소중한 분께 꼭 나눠 주세요" 류의 공유 부탁 (이 채널 시청자는 카톡 공유가 많다).
-- 대본 전체(scenes text 합) **330~390자** (말 빠르기를 기본 속도로 늦춤: 1초에 약 6자 → 55~65초).
+- 대본 전체(scenes text 합) **340~400자** (목소리 D 여성 선희, 기본 속도: 333자 ≈ 54초 → 55~65초가 되려면 340~400자).
 - `hook`(화면 위 주황 상자, 영상 내내 보임): **12자 이내**, 결과·이득. 예) "노후 하체 지키는 법"
 - 화면 글자(hook, scenes text)에 **이모지 금지**.
 - `end_card` 는 넣지 않는다.
 
 ## 그림 (bg)
-- 그림은 무료 사진 사이트 **Pixabay 실제 풍경 사진**을 검색해서 쓴다 (안 되면 AI 그림). 그래서 bg 는 **검색이 잘 되는 짧은 영어 낱말 3~5개**로 쓴다. 예) "autumn park bench", "sunrise mountain lake", "tea cup window rain", "forest path morning".
+- 그림은 무료 사진 사이트 **Pixabay 자연 풍경 사진만** 쓴다 (나무·꽃·숲·계곡·산·호수·하늘). 동물·사람·건물·음식 사진은 봇이 걸러 낸다. bg 는 **자연 풍경 영어 낱말 2~4개**로 쓴다. 예) "autumn forest path", "mountain valley stream", "flower field sunrise", "misty lake trees". 물건·실내·동물 낱말은 쓰지 않는다.
 - 봇은 그림을 **4장만** 만들어 이어지는 장면끼리 나눠 쓴다. 그래서 1·3·5·7번째 장면 근처의 bg 가 실제로 쓰인다 — 장면 묶음의 분위기를 대표하는 그림으로 쓴다.
-- 장면마다 영어로 **자연 풍경·따뜻한 일상 사물**. 예) "old wooden bench in an autumn park, warm sunlight", "steaming tea cup by a window at dawn"
+- 장면마다 영어로 **자연 풍경만** (나무·꽃·계곡·산·호수). 예) "old wooden bench in an autumn park, warm sunlight", "steaming tea cup by a window at dawn"
 - **사람·얼굴·실존 인물·글자·로고 금지.**
 
 ## 꼭 지킬 것
@@ -77,4 +77,4 @@
 
 
 ## 업로드
-- 봇은 **일부공개(unlisted)** 로 올린다. 핑크포켓님이 확인한 뒤 공개로 바꾼다 (워크플로 `life-publish`).
+- 봇은 **비공개(private)** 로 올린다 — 핑크포켓님만 볼 수 있다. 확인한 뒤 공개로 바꾼다 (워크플로 `life-publish`).

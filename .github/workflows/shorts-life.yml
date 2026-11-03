@@ -36,8 +36,8 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.LIFE_YOUTUBE_REFRESH_TOKEN }}
           YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
-          # 핑크포켓님이 먼저 확인하도록 일부공개(unlisted)로 올림. 확인 후 life-publish 로 공개 전환
-          YT_PRIVACY: unlisted
+          # 핑크포켓님만 먼저 볼 수 있게 비공개(private)로 올림. 확인 후 life-publish 로 공개 전환
+          YT_PRIVACY: private
           PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           CF_ACCOUNT_ID: ${{ vars.LIFE_CF_ACCOUNT_ID || vars.NEWS_CF_ACCOUNT_ID }}

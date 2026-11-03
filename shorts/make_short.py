@@ -165,6 +165,11 @@ AI_COUNT = [0]
 
 
 PEXELS_USED = set()
+# 풍경만: 동물·건물·물건 사진은 건너뛴다
+NOT_SCENERY = re.compile(r"\b(cat|cats|kitten|dog|dogs|puppy|animal|animals|pet|bird|birds|insect|bee|butterfly|horse|cow|deer|"
+                         r"squirrel|fish|duck|swan|wildlife|food|car|building|city|street|house|room|interior|text)\b", re.I)
+NATURE_QUERIES = ["forest trees", "flower field", "mountain valley stream", "autumn leaves forest", "calm lake mountains",
+                  "waterfall valley", "cherry blossom tree", "green meadow", "misty mountains", "river stones forest"]
 PEOPLE = re.compile(r"\b(person|people|man|men|woman|women|girl|boy|child|children|kid|couple|face|portrait|hand|hands|selfie)\b", re.I)
 
 
@@ -211,17 +216,18 @@ def pixabay_image(prompt, path):
     key = os.environ.get("PIXABAY_API_KEY", "").strip()
     if not key:
         return False
-    for q in (pexels_query(prompt), "calm nature landscape"):
+    backup = random.choice(NATURE_QUERIES)
+    for q in (pexels_query(prompt), backup, "forest trees"):
         try:
             r = requests.get("https://pixabay.com/api/", timeout=30, params={
                 "key": key, "q": q, "image_type": "photo", "orientation": "vertical", "safesearch": "true",
-                "per_page": 30, "order": "popular"})
+                "category": "nature", "per_page": 50, "order": "popular"})
             hits = r.json().get("hits", []) if r.ok else []
         except Exception as e:  # noqa: BLE001
             print(f"[사진] Pixabay 오류: {e}")
             return False
         for h in hits:
-            if h["id"] in PEXELS_USED or PEOPLE.search(h.get("tags") or ""):
+            if h["id"] in PEXELS_USED or PEOPLE.search(h.get("tags") or "") or NOT_SCENERY.search(h.get("tags") or ""):
                 continue
             try:
                 img = requests.get(h.get("largeImageURL") or h["webformatURL"], timeout=60).content
