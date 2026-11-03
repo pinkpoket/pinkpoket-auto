@@ -33,6 +33,7 @@ jobs:
         env:
           CF_ACCOUNT_ID: ${{ vars.NEWS_CF_ACCOUNT_ID || vars.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.NEWS_CF_API_TOKEN || secrets.CF_API_TOKEN }}
+          SKIP_QUEUE: "1"
         run: python -u make_images.py
       - name: 이미지 올리기
         id: img

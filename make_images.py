@@ -71,7 +71,8 @@ def main():
     made = 0
     queue = ch.path("data", "update_queue.txt")
     queued = []
-    if os.path.exists(queue):
+    # 새 글 발행 워크플로는 SKIP_QUEUE=1 로 수정 큐 사진을 건드리지 않는다 (수정 워크플로와 같은 사진을 동시에 만들어 충돌 나는 것 막기)
+    if os.path.exists(queue) and os.environ.get("SKIP_QUEUE", "").strip() != "1":
         queued = [l.strip() for l in open(queue, encoding="utf-8") if l.strip() and not l.startswith("#")]
     if not (os.environ.get("CF_ACCOUNT_ID", "").strip() and os.environ.get("CF_API_TOKEN", "").strip()):
         print("[이미지] Cloudflare 설정이 없어 이미지 없이 진행합니다.")
