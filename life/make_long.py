@@ -291,8 +291,23 @@ def stamp(sec):
     return f"{sec // 3600}:{sec % 3600 // 60:02d}:{sec % 60:02d}" if sec >= 3600 else f"{sec // 60}:{sec % 60:02d}"
 
 
+def recent_long(n=2):
+    """이미 공개된 지난 긴 영상 (최근 것부터) — 설명란·고정 댓글에서 다음 영상으로 이어 보게."""
+    try:
+        data = json.load(open(LOG, encoding="utf-8")) if os.path.exists(LOG) else []
+    except Exception:  # noqa: BLE001
+        return []
+    pub = [x for x in data if x.get("privacy") == "public" and x.get("url") and x.get("title")]
+    return list(reversed(pub))[:n]
+
+
 def description(script, marks):
-    lines = [script.get("description", "").strip(), "", "📌 목차", "0:00 시작"]
+    lines = [script.get("description", "").strip()]
+    prev = recent_long(2)
+    if prev:
+        lines += ["", "📺 함께 들으면 좋은 이야기"]
+        lines += [f"▶ {x['title'].split('|')[0].strip()} 👉 {x['url']}" for x in prev]
+    lines += ["", "📌 목차", "0:00 시작"]
     lines += [f"{stamp(t)} {title}" for t, title in marks]
     lines += ["", "🔥 인생ON : 마음의 불을 켜다",
               "※ 이 영상은 AI 음성을 사용해 만들었어요. 건강 관련 내용은 일반 정보이며, 지병이 있으면 의사와 상의하세요."]
@@ -304,6 +319,7 @@ def long_comment(script):
     body = (script.get("comment") or "").strip() or f"오늘 '{script['title'].split('|')[0].strip()}' 이야기, 마음에 닿으셨나요? 🔥"
     tail = ["", "📌 영상 아래 '더보기'를 누르시면 목차가 있어요. 다시 듣고 싶은 부분만 골라 보실 수 있어요.",
             "도움이 되셨다면 구독과 좋아요 꾹 눌러 주세요 🙏💛",
+            *([f"📺 지난 이야기도 들어 보세요 👉 {p[0]['url']}"] if (p := recent_long(1)) else []),
             "소중한 분께 카톡으로 나눠 주시면 인생ON에 큰 힘이 됩니다."]
     return body + "\n" + "\n".join(tail)
 

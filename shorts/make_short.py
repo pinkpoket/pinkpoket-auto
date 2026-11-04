@@ -664,16 +664,19 @@ def build_description(script):
     # 쿠팡 대가성 문구·상품 링크는 넣지 않는다 (구독자 모으기 우선, 쇼츠 설명란 링크는 바로 안 열림)
     product = None
     lines = []
-    if blog:
-        lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
     long_log = ch.path("data", "long_log.json")
-    if ch.P.get("link_long") and os.path.exists(long_log):
-        try:  # 쇼츠 → 긴 영상으로 시청 시간 모으기: 가장 최근 공개 긴 영상 링크
+    if ch.P.get("link_long") and script.get("long_url"):
+        # 짝 쇼츠: 대본이 이어 줄 긴 영상을 직접 지정 (맨 첫 줄)
+        lines.append(f"📺 전체 이야기(긴 영상) 👉 {script['long_url']}")
+    elif ch.P.get("link_long") and os.path.exists(long_log):
+        try:  # 쇼츠 → 긴 영상으로 시청 시간 모으기: 가장 최근 공개 긴 영상 링크 (맨 첫 줄)
             pub = [x for x in json.load(open(long_log, encoding="utf-8")) if x.get("privacy") == "public" and x.get("url")]
             if pub:
                 lines.append(f"📺 더 깊은 이야기(긴 영상) 👉 {pub[-1]['url']}")
         except Exception:  # noqa: BLE001
             pass
+    if blog:
+        lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
     lines += ["", script.get("description", "").strip(), "",
               ch.P["shorts_signature"]]  # AI 안내 문구는 넣지 않음 (업로드 시 합성 콘텐츠 표시는 그대로)
     return "\n".join(lines).strip(), product
