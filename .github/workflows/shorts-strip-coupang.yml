@@ -1,0 +1,41 @@
+name: shorts-strip-coupang
+
+# 이미 올라간 쇼츠 설명란에서 쿠팡 대가성 문구·상품 링크 지우기 (수동 실행, 세 채널 모두)
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "1 이면 바꿀 내용만 보여 주고 실제로는 안 바꿈"
+        default: "0"
+
+jobs:
+  strip:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - channel: salim
+            token: YOUTUBE_REFRESH_TOKEN
+          - channel: news
+            token: NEWS_YOUTUBE_REFRESH_TOKEN
+            channel_id: "UC3QKRPjjKXiPWVKxfi5vSTQ"
+          - channel: life
+            token: LIFE_YOUTUBE_REFRESH_TOKEN
+            channel_id: "UCkN5Ws9cI_B8fyE71-dl__Q"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pillow
+      - name: 쿠팡 줄 지우기
+        env:
+          CHANNEL: ${{ matrix.channel }}
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets[matrix.token] }}
+          YT_CHANNEL_ID: ${{ matrix.channel_id || vars.YT_CHANNEL_ID }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: python -u shorts/strip_coupang.py
