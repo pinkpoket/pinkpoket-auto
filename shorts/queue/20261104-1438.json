@@ -1,0 +1,45 @@
+{
+  "title": "보일러 켜도 작은 방만 차갑다면, 에어빼기 순서",
+  "hook": "방마다 따뜻하게",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "text": "보일러 켜도 작은 방만 차갑나요?",
+      "bg": "close up of an open floor heating water distributor manifold with small brass valves inside a wall cabinet near an entryway, warm light, centered"
+    },
+    {
+      "text": "배관에 공기가 찬 거예요. 따뜻한 물이 끝까지 못 가요.",
+      "bg": "close up of an open floor heating water distributor manifold with small brass valves inside a wall cabinet near an entryway, warm light, centered"
+    },
+    {
+      "text": "첫째, 난방을 켜고 5~10분 기다린 뒤 분배기 덮개를 열어요.",
+      "bg": "close up of a hand in a rubber glove turning a small brass air vent valve on a heating manifold with a cup underneath, soft light, centered"
+    },
+    {
+      "text": "둘째, 밸브 아래 컵을 받치고 반 바퀴만 천천히 돌려요.",
+      "bg": "close up of a hand in a rubber glove turning a small brass air vent valve on a heating manifold with a cup underneath, soft light, centered"
+    },
+    {
+      "text": "물이 끊김 없이 나오면 잠가요. 뜨거운 물이 튀니 꼭 장갑을 껴요.",
+      "bg": "close up of a cozy small bedroom floor with warm wooden laminate and a soft blanket, gentle winter morning light, centered"
+    },
+    {
+      "text": "가까운 방부터 차례로 하고, 작은 방 바닥을 다시 만져 보세요.",
+      "bg": "close up of a cozy small bedroom floor with warm wooden laminate and a soft blanket, gentle winter morning light, centered"
+    }
+  ],
+  "description": "보일러를 켜도 한 방만 미지근하다면 배관 속 공기가 원인일 때가 많아요 🔥\n난방을 켜고 5~10분 뒤, 분배기 밸브를 반 바퀴만 열어 공기를 빼고 물이 끊김 없이 나오면 잠가 주세요. 밸브가 안 돌아가면 억지로 돌리지 말고 점검을 받으세요.\n여러분 집은 어느 방이 제일 늦게 따뜻해지나요? 댓글로 알려 주세요.",
+  "tags": [
+    "#shorts",
+    "#보일러에어빼기",
+    "#보일러점검",
+    "#난방분배기",
+    "#난방비절약",
+    "#겨울준비",
+    "#원룸살림",
+    "#살림꿀팁",
+    "#핑포의작은집연구소"
+  ],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/11/boiler-first-run-check-air-bleed-room.html",
+  "comment": "아침에 발끝이 시린 방, 하나쯤 있으시죠? 🧦\n오늘은 그 방 바닥에 손을 한 번 얹어 보세요. 작은 손길 하나로 겨울밤이 훨씬 포근해져요 💛"
+}
