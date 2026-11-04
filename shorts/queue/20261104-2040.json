@@ -1,0 +1,45 @@
+{
+  "title": "수도계량기 동파, 종이컵 하나로 막는 법",
+  "hook": "동파 막는 법",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "text": "계량기 동파 막는 종이컵 45초",
+      "bg": "close up of a white paper cup under a slowly dripping kitchen faucet in a cozy small apartment, cold winter night light, centered"
+    },
+    {
+      "text": "한파 밤엔 수도꼭지를 조금 열어요. 종이컵 한 컵이 45초에 차게요.",
+      "bg": "close up of a white paper cup under a slowly dripping kitchen faucet in a cozy small apartment, cold winter night light, centered"
+    },
+    {
+      "text": "영하 10도 아래면 33초에 한 컵으로 조금 더 열어 주세요.",
+      "bg": "close up of an open small metal water meter box beside an apartment front door, stuffed with folded old towels and clothes, centered"
+    },
+    {
+      "text": "계량기함 안은 마른 헌 옷으로 꽉 채우고 틈은 비닐로 덮어요.",
+      "bg": "close up of an open small metal water meter box beside an apartment front door, stuffed with folded old towels and clothes, centered"
+    },
+    {
+      "text": "이미 얼었다면 미지근한 물수건으로 감싸요. 뜨거운 물, 불은 금물이에요.",
+      "bg": "close up of a warm damp towel wrapped around a water pipe and meter, soft warm light, centered"
+    },
+    {
+      "text": "흘린 물은 받아서 청소에 쓰고, 오늘 밤 종이컵부터 꺼내 두세요.",
+      "bg": "close up of a warm damp towel wrapped around a water pipe and meter, soft warm light, centered"
+    }
+  ],
+  "description": "한파 예보가 있는 밤엔 수도꼭지를 조금 열어 두면 계량기 동파를 막는 데 도움이 돼요 💧\n종이컵 한 컵이 약 45초(영하 10도 아래는 33초)에 차는 정도가 서울시 안내 기준이에요. 계량기함은 마른 헌 옷으로 채우고, 얼었을 땐 뜨거운 물·불 대신 미지근한 물수건으로 천천히 녹여 주세요.\n여러분 집 계량기는 현관 안쪽인가요, 바깥인가요? 댓글로 알려 주세요.",
+  "tags": [
+    "#shorts",
+    "#수도계량기동파",
+    "#동파예방",
+    "#한파대비",
+    "#겨울준비",
+    "#원룸살림",
+    "#살림꿀팁",
+    "#자취꿀팁",
+    "#핑포의작은집연구소"
+  ],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/11/water-meter-freeze-prevention-thaw-guide.html",
+  "comment": "추운 아침, 수도꼭지에서 물이 안 나오면 정말 막막하죠 🧊\n오늘 밤엔 현관 옆 계량기함 한 번만 열어 봐 주세요. 헌 옷 한 벌이 이번 겨울을 지켜 줄 거예요 💛"
+}
