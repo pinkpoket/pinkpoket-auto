@@ -639,10 +639,9 @@ def pick_coupang(script):
 def build_description(script):
     """링크를 맨 위쪽에 둔다 (쇼츠 설명란은 접혀 있어서 위쪽만 바로 보임)."""
     blog = script.get("blog_url") or BLOG_HOME
-    product = pick_coupang(script)
+    # 쿠팡 대가성 문구·상품 링크는 넣지 않는다 (구독자 모으기 우선, 쇼츠 설명란 링크는 바로 안 열림)
+    product = None
     lines = []
-    if product:
-        lines += [DISCLOSURE, ""]
     if blog:
         lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
     long_log = ch.path("data", "long_log.json")
@@ -653,8 +652,6 @@ def build_description(script):
                 lines.append(f"📺 더 깊은 이야기(긴 영상) 👉 {pub[-1]['url']}")
         except Exception:  # noqa: BLE001
             pass
-    if product:
-        lines.append(f"🛒 {product[1]} 👉 {product[0]}")
     lines += ["", script.get("description", "").strip(), "",
               ch.P["shorts_signature"],
               "※ 이 영상은 AI 음성과 AI 이미지를 사용해 만들었어요."]
