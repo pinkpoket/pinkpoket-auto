@@ -23,13 +23,18 @@ import channel as ch
 STYLE = ch.P["image_style"]
 
 
+def style_for(seed):
+    styles = ch.P.get("image_styles") or [""]
+    return styles[seed % len(styles)]
+
+
 def fetch_cloudflare(prompt, path, seed):
     account = os.environ.get("CF_ACCOUNT_ID", "").strip()
     token = os.environ.get("CF_API_TOKEN", "").strip()
     if not account or not token:
         raise RuntimeError("Cloudflare 설정 없음")
     url = f"https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/@cf/black-forest-labs/flux-1-schnell"
-    body = json.dumps({"prompt": f"{prompt}, {STYLE}"[:1500], "steps": 6}).encode()
+    body = json.dumps({"prompt": f"{prompt}, {style_for(seed)}, {STYLE}"[:1500], "steps": 6}).encode()
     req = urllib.request.Request(url, data=body, method="POST", headers={
         "Authorization": f"Bearer {token}", "Content-Type": "application/json", "User-Agent": bb.USER_AGENT})
     try:

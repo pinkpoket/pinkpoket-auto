@@ -190,10 +190,7 @@
       "products": [],
       "series": "겨울옷 집에서 관리하기",
       "series_no": 2,
-      "images": [
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@fc7af7d61a600276b32b45657ad0cd5ae1ba7403/images/20261102-1244-1.jpg",
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@fc7af7d61a600276b32b45657ad0cd5ae1ba7403/images/20261102-1244-2.jpg"
-      ]
+      "images": []
     },
     {
       "file": "20261102-1846.json",
@@ -208,9 +205,7 @@
       "products": [],
       "series": "겨울옷 집에서 관리하기",
       "series_no": 3,
-      "images": [
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@bc09949c5716f9cfa9215f2ffbb7817d0d9af36e/images/20261102-1846-1.jpg"
-      ]
+      "images": []
     },
     {
       "file": "20261103-0950.json",
@@ -222,9 +217,7 @@
       "products": [],
       "series": "겨울옷 집에서 관리하기",
       "series_no": 4,
-      "images": [
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@d8aafb7cd1903b5f3dd8bda78f5de46844bc5f55/images/20261103-0950-1.jpg"
-      ]
+      "images": []
     },
     {
       "file": "20261103-1246.json",
@@ -236,9 +229,7 @@
       "products": [],
       "series": "작은 집 겨울 난방기기 안전하게 쓰기",
       "series_no": 1,
-      "images": [
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@ea7232c09a1bc9f763f6ee91b42746844f4d1c2e/images/20261103-1246-1.jpg"
-      ]
+      "images": []
     },
     {
       "file": "20261103-1846.json",
@@ -250,9 +241,7 @@
       "products": [],
       "series": "작은 집 겨울 난방기기 안전하게 쓰기",
       "series_no": 2,
-      "images": [
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@f885c96ffd7e7b8ec31dddb21d1a89c0f99a6e05/images/20261103-1846-1.jpg"
-      ]
+      "images": []
     },
     {
       "file": "20261104-0947.json",
@@ -264,9 +253,7 @@
       "products": [],
       "series": "작은 집 겨울 난방기기 안전하게 쓰기",
       "series_no": 3,
-      "images": [
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@e0f76034acb692a4f31fb818aedde8c6c6b14c1c/images/20261104-0947-1.jpg"
-      ]
+      "images": []
     },
     {
       "file": "20261104-1247.json",
@@ -278,9 +265,7 @@
       "products": [],
       "series": "작은 집 겨울 난방기기 안전하게 쓰기",
       "series_no": 4,
-      "images": [
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@c9699dc47a653dd2bbacba141007cfd629644189/images/20261104-1247-1.jpg"
-      ]
+      "images": []
     },
     {
       "file": "20261104-1846.json",
@@ -292,9 +277,7 @@
       "products": [],
       "series": "작은 집 겨울 물길 관리",
       "series_no": 1,
-      "images": [
-        "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@a246df98e5f483167aa802ae3ac7e823d3db128f/images/20261104-1846-1.jpg"
-      ]
+      "images": []
     }
   ],
   "used_links": [

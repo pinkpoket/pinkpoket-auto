@@ -21,9 +21,16 @@ PROFILES = {
                        "공식 자료와 확인된 정보를 바탕으로 AI 도구의 도움을 받아 쓰고 있어요."),
         "default_notice": "제품 가격·구성은 판매처 사정에 따라 바뀔 수 있어요. 구매 전 상세 페이지를 꼭 확인해 주세요 💗",
         "items_title": "🎀 핑포가 골라 본 아이템",
-        "image_style": ("bright cozy minimalist Korean apartment interior, soft natural daylight, "
-                        "pastel pink and warm white tones, clean, photorealistic, lifestyle magazine photo, "
-                        "no people, no text, no watermark"),
+        "image_style": ("photorealistic lifestyle magazine photo, no people, no text, no watermark"),
+        # 글마다 분위기·구도를 바꿔서 메인 사진이 다 비슷해 보이지 않게 (글 파일 이름으로 하나 고름)
+        "image_styles": [
+            "bright Scandinavian small apartment, white walls and light oak wood, clear natural daylight, wide angle interior",
+            "close-up detail shot of the main object, shallow depth of field, soft warm window light",
+            "top-down flat lay on a light wooden floor, neatly arranged, soft daylight, clean composition",
+            "modern Korean apartment, beige and sage green tones, morning sunlight, eye-level view",
+            "cozy winter evening mood, warm lamp light, soft shadows, calm atmosphere",
+            "minimal white studio-style scene, single object centered, soft even light, lots of empty space",
+        ],
         "shorts_style": ("bright cozy minimalist Korean apartment interior, soft natural daylight, pastel pink and "
                          "warm white tones, photorealistic lifestyle photo, subject centered, vertical composition, "
                          "no people, no text, no watermark"),
@@ -54,8 +61,14 @@ PROFILES = {
                        "여러 언론 보도와 정부·기관 공식 발표를 확인해 AI 도구의 도움을 받아 새로 쓰고 있어요."),
         "default_notice": "뉴스 내용은 이후 보도·발표에 따라 바뀔 수 있어요. 신청 기간·금액처럼 중요한 정보는 공식 누리집에서 꼭 다시 확인해 주세요 📰",
         "items_title": "🛒 오늘 뉴스와 함께 보면 좋은 아이템",
-        "image_style": ("clean editorial news illustration photo, soft natural light, calm pastel pink and white tones, "
-                        "photorealistic, magazine style, no people, no faces, no text, no letters, no logo, no watermark"),
+        "image_style": ("photorealistic editorial photo, no people, no faces, no text, no letters, no logo, no watermark"),
+        "image_styles": [
+            "clean editorial photo, soft natural light, calm blue and white tones, magazine style",
+            "wide shot, clear daylight, documentary style, natural colors",
+            "close-up detail, shallow depth of field, soft warm light",
+            "top-down flat lay, neutral background, even light",
+            "dusk city or nature mood, soft gradient sky, calm atmosphere",
+        ],
         "shorts_style": ("clean editorial photo, soft natural light, calm pastel pink and white tones, photorealistic, "
                          "subject centered, vertical composition, no people, no faces, no text, no letters, no logo, no watermark"),
         "shorts_default_bg": "morning newspaper and coffee cup on a bright table",
