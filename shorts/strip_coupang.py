@@ -2,7 +2,7 @@
 """이미 올라간 쇼츠 설명란에서 쿠팡 대가성 문구·상품 링크 줄을 지운다 (수동 실행: Actions → shorts-strip-coupang).
 
 CHANNEL 환경변수로 채널을 고르고, 그 채널 shorts_log.json 에 있는 영상만 손댄다.
-지우는 줄: '쿠팡 파트너스' 대가성 문구, link.coupang.com 링크가 든 줄(🛒 상품 줄).
+지우는 줄: '쿠팡 파트너스' 대가성 문구, link.coupang.com 링크가 든 줄(🛒 상품 줄), '※ 이 영상은 AI ...' 안내 줄.
 다른 줄(블로그 링크·요약·서명)은 그대로 둔다. DRY_RUN=1 이면 바꿀 내용만 보여 준다.
 """
 import json
@@ -21,7 +21,8 @@ DRY = os.environ.get("DRY_RUN", "").strip() in ("1", "true", "yes")
 
 def is_coupang(line):
     s = line.strip()
-    return ("쿠팡 파트너스" in s and "수수료" in s) or "link.coupang.com" in s or "coupang.com/" in s
+    return (("쿠팡 파트너스" in s and "수수료" in s) or "link.coupang.com" in s or "coupang.com/" in s
+            or (s.startswith("※ 이 영상은 AI") and "만들었어요" in s))
 
 
 def clean(desc):

@@ -1,6 +1,6 @@
 name: shorts-strip-coupang
 
-# 이미 올라간 쇼츠 설명란에서 쿠팡 대가성 문구·상품 링크 지우기 (수동 실행, 세 채널 모두)
+# 이미 올라간 쇼츠 설명란에서 쿠팡 대가성 문구·상품 링크·AI 안내 문구 지우기 (수동 실행, 세 채널 모두)
 on:
   workflow_dispatch:
     inputs:

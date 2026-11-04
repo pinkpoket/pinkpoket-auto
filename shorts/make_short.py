@@ -653,8 +653,7 @@ def build_description(script):
         except Exception:  # noqa: BLE001
             pass
     lines += ["", script.get("description", "").strip(), "",
-              ch.P["shorts_signature"],
-              "※ 이 영상은 AI 음성과 AI 이미지를 사용해 만들었어요."]
+              ch.P["shorts_signature"]]  # AI 안내 문구는 넣지 않음 (업로드 시 합성 콘텐츠 표시는 그대로)
     return "\n".join(lines).strip(), product
 
 
