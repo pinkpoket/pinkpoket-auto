@@ -33,4 +33,6 @@
   `data/shorts_log.json` 에서 주제가 맞는 **public** 쇼츠를 고른다. 맞는 게 없으면 이 칸은 뺀다.
 - **글 맨 마지막**(댓글 질문 다음, 태그 앞)에는 채널 링크만 한 줄 넣는다:
   `▶ 핑포의 작은집 연구소 유튜브` → https://www.youtube.com/channel/UCF2kFXxCID0pGH0l8RD0iKA
+- **서명 그림** (2026-11-04 핑포 요청): 채널 링크 바로 뒤, 태그 앞에 `<img src="https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@9ee65956345c94ddb8c5815029fa5e395467137a/brand/naver/naver-signature.png" style="width:100%">` 한 장을 넣는다 (AI 사진 3장과 별개, 한도 안 씀).
+- 블로그 꾸미기 그림: `brand/naver/` (타이틀 966×300, 프로필, 서명). 소제목 모양은 핑포가 붙여넣기 테스트 후 정하면 여기에 적는다.
 - 중간에 따로 '🎬 유튜브' 소제목 칸은 만들지 않는다. 쿠팡 '💛 핑포가 골라 본 아이템'은 (쿠팡 재개 후) 원래 자리(체크리스트·마무리 뒤) 그대로.
