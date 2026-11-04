@@ -90,8 +90,8 @@ PROFILES = {
         "comment_fallback": "오늘 '{hook}' 이야기, 마음에 닿으셨나요? 🔥\n소중한 분께 카톡으로 나눠 주시면 큰 힘이 돼요 💛",
         "yt_category": "22",
         "voice_gain": 1.8, "bgm_volume": 0.07,
-        # 시니어 시청자용: 목소리 D(여성 선희, 낮게, 기본 속도), 그림은 4장만 만들어 장면끼리 나눠 씀, 화면 이름은 "인생온"
-        "voice": "ko-KR-SunHiNeural", "tts_pitch": "-6Hz", "tts_rate": "+0%", "image_steps": 4, "max_images": 4, "tag": "인생온", "bg_cache": 80, "image_source": "stock", "link_long": True,
+        # 시니어 시청자용: 쇼츠 목소리 D(여성 선희, 낮게, 기본 속도), 긴 영상은 남성 인준(낮게, 기본 속도), 그림은 4장만 만들어 장면끼리 나눠 씀, 화면 이름은 "인생온"
+        "voice": "ko-KR-SunHiNeural", "long_voice": "ko-KR-InJoonNeural", "tts_pitch": "-6Hz", "tts_rate": "+0%", "image_steps": 4, "max_images": 4, "tag": "인생온", "bg_cache": 80, "image_source": "stock", "link_long": True,
         # 시니어용 큰 자막 (기본 72 → 92), 4줄까지
         "cap_size": 92, "cap_lh": 124, "cap_lines": 4,
         # 채널 로고(노란 원 + 검정 글씨)와 통일: 제목 상자 검정+노란 글씨, 강조 자막은 검정 상자에 노란 글씨, 진행 막대 노랑
