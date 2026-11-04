@@ -306,6 +306,28 @@ def wrap_tokens(d, tokens, f, max_w):
     return lines
 
 
+def hook_lines(d, hook, f, max_w):
+    """위 제목 상자 글줄. 한 줄에 들어가면 한 줄, 아니면 띄어쓰기 자리에서 두 줄 길이가 비슷하게 나눈다.
+    (예전처럼 11자에서 자르면 '흉보는 사람 거리 / 두기' 처럼 낱말 하나만 아래로 떨어진다.)
+    대본에 '\\n' 을 넣으면 그 자리에서 나눈다."""
+    hook = (hook or "").strip()
+    if "\n" in hook:
+        return [ln.strip() for ln in hook.split("\n") if ln.strip()][:2]
+    if d.textlength(hook, font=f) <= max_w:
+        return [hook]
+    words = hook.split()
+    if len(words) < 2:
+        return wrap_ko(hook, 11)[:2]
+    best = None
+    for k in range(1, len(words)):
+        a, b = " ".join(words[:k]), " ".join(words[k:])
+        wa, wb = d.textlength(a, font=f), d.textlength(b, font=f)
+        score = (max(wa, wb) > max_w, abs(wa - wb))
+        if best is None or score < best[0]:
+            best = (score, [a, b])
+    return best[1]
+
+
 def base_png(hook, path, outro=False):
     """장면 내내 고정되는 부분: 위 제목 상자, 로고·채널 이름, 아래 그늘, (마지막 장면) 좋아요·구독 버튼."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -319,8 +341,8 @@ def base_png(hook, path, outro=False):
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(C.get("top_shade", 90) * (1 - y / 520))))
     # 위 제목: 노란 바탕 알약 상자, 글씨 크기에 맞춰 가운데
     f_hook = font(88)
-    lines = wrap_ko(hook, 11)[:2]
     lh, pad_x, pad_y = 112, 56, 26
+    lines = hook_lines(d, hook, f_hook, W - 2 * pad_x - 80)
     tw_max = max(d.textlength(ln, font=f_hook) for ln in lines)
     box_w, box_h = tw_max + pad_x * 2, len(lines) * lh + pad_y * 2
     bx0, by0 = (W - box_w) / 2, 180
