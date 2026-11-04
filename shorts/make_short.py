@@ -316,7 +316,7 @@ def base_png(hook, path, outro=False):
         a = 1 - abs(y - mid) / half
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(120 * a ** 0.8)))
     for y in range(0, 520):
-        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(90 * (1 - y / 520))))
+        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(C.get("top_shade", 90) * (1 - y / 520))))
     # 위 제목: 노란 바탕 알약 상자, 글씨 크기에 맞춰 가운데
     f_hook = font(88)
     lines = wrap_ko(hook, 11)[:2]
@@ -780,6 +780,7 @@ def main():
         try:
             script = json.load(open(path, encoding="utf-8"))
             entry["title"] = script.get("title", "")
+            entry["voice"] = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
             video = os.path.join(OUT, f"{name}.mp4")
             secs = build_video(script, video)
             entry.update(seconds=round(secs, 1), ai_images=AI_COUNT[0])
