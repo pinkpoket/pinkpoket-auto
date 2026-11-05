@@ -5,7 +5,7 @@ life/long/queue/*.json 대본:
 {
   "title": "유튜브 제목",
   "thumbnail_text": "썸네일 큰 글씨 (두 줄은 \\n, 줄당 8자 안팎)",
-  "intro": ["시작 문장", ...],                         (첫 30초: 오늘 무엇을 알게 되는지)
+  "intro": ["시작 문장", ...],                         (2문장: 단정형 훅 + 바로 본론, LONG_GUIDE 3번)
   "chapters": [{"title": "1. 소제목", "bg": "nature words",
                 "sentences": ["한 문장씩", ...]}],
   "outro": ["마무리 문장", ...],
