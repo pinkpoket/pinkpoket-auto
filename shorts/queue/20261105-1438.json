@@ -1,0 +1,45 @@
+{
+  "title": "욕실 곰팡이, 샤워 후 환풍기 끄면 안 돼요",
+  "hook": "욕실 곰팡이 막기",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "text": "샤워 끝나면 환풍기 바로 끄시죠?",
+      "bg": "close up of a white bathroom ceiling exhaust fan with steam around it in a small cozy bathroom, centered"
+    },
+    {
+      "text": "그게 곰팡이 원인이에요. 샤워 후에도 최소 15분은 더 돌려 주세요.",
+      "bg": "close up of a white bathroom ceiling exhaust fan with steam around it in a small cozy bathroom, centered"
+    },
+    {
+      "text": "첫째, 마무리는 찬물 헹굼. 욕실 온도가 내려가 김이 덜 남아요.",
+      "bg": "close up of a squeegee on wet white bathroom tiles with water droplets, soft light, centered"
+    },
+    {
+      "text": "둘째, 스퀴지로 타일과 거울 물기를 위에서 아래로 밀어 내려요.",
+      "bg": "close up of a squeegee on wet white bathroom tiles with water droplets, soft light, centered"
+    },
+    {
+      "text": "셋째, 젖은 수건은 밖에서 말려요. 락스와 산성 세제는 섞지 마세요.",
+      "bg": "close up of a fluffy towel and bath mat drying on a rack outside a bright bathroom door, cozy home, centered"
+    },
+    {
+      "text": "오늘 샤워 후엔 환풍기 타이머 15분부터 맞춰 보세요.",
+      "bg": "close up of a fluffy towel and bath mat drying on a rack outside a bright bathroom door, cozy home, centered"
+    }
+  ],
+  "description": "겨울 욕실 곰팡이는 '얼마나 빨리 말리느냐'가 핵심이에요 🛁\n샤워 후 환풍기는 최소 15분 더, 찬물 헹굼과 스퀴지로 물기를 먼저 빼 주세요. 곰팡이 청소할 땐 염소계 표백제와 산성 세제를 절대 섞지 마세요.\n여러분 집 욕실은 어디에 곰팡이가 먼저 생기나요? 댓글로 알려 주세요.",
+  "tags": [
+    "#shorts",
+    "#욕실곰팡이",
+    "#욕실결로",
+    "#환풍기",
+    "#겨울살림",
+    "#원룸살림",
+    "#자취꿀팁",
+    "#살림꿀팁",
+    "#핑포의작은집연구소"
+  ],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/11/winter-bathroom-condensation-mold.html",
+  "comment": "따뜻한 샤워 뒤 천장에서 물방울 똑똑, 겨울이면 괜히 지치죠 🛁\n오늘은 환풍기 15분만 더 돌려 주세요. 내일 아침 거울이 한결 맑아져 있을 거예요 💛"
+}
