@@ -519,9 +519,10 @@ def build_video(script, out_path):
     os.makedirs(WORK, exist_ok=True)
     AI_COUNT[0] = 0
     global TTS_RATE, TTS_PITCH
-    TTS_RATE = script.get("rate") or TTS_RATE
-    TTS_PITCH = script.get("pitch") or ch.P.get("tts_pitch", "+0Hz")
     voice = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
+    TTS_RATE = (script.get("rate") or (ch.P.get("voice_rates") or {}).get(voice)
+                or os.environ.get("TTS_RATE") or ch.P.get("tts_rate", "+35%"))
+    TTS_PITCH = script.get("pitch") or ch.P.get("tts_pitch", "+0Hz")
     hook = script.get("hook") or clean_title(script["title"])
     scenes = list(script["scenes"])
     # 좋아요·구독 마지막 화면은 시청 지속률을 떨어뜨려서 기본은 뺀다 (링크·구독 안내는 설명란·댓글로).
