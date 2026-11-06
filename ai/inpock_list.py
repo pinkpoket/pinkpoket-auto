@@ -43,12 +43,17 @@ def main():
     for key, label, kw in MAP:
         st = next(((t, u) for t, u in shorts.items() if key in t), None)
         try:
-            items = coupang_api.search(kw, limit=5, sub_id=sub)
+            items = coupang_api.search(kw, limit=10, sub_id=sub)
         except Exception as e:  # noqa
             print("검색 실패", kw, e)
             continue
+        must = kw.split()[-1] if kw.split()[-1] not in ("대용량", "16A") else kw.split()[0]
+        if kw == "온수매트 전용수":
+            must = "온수매트"
+        items = [p for p in items if must in p["name"].replace(" ", "") and (p["price"] or 0) <= 50000]
         items.sort(key=lambda p: not p["rocket"])
         if not items:
+            print("맞는 상품 없음:", kw)
             continue
         p = items[0]
         rows.append({"label": label, "kw": kw, "name": p["name"], "url": p["url"], "price": p["price"],
