@@ -360,7 +360,7 @@ def salim_blog(models):
 """
 
     def check(d):
-        e = check_blog(d, 1800)
+        e = check_blog(d, 2000)  # WRITING_GUIDE: 2,000~3,000자
         if not cur and not (d.get("new_series") or {}).get("plan"):
             e.append("new_series 칸(name, plan)이 없음")
         return e
@@ -420,7 +420,7 @@ def news_blog(models):
     label = {"morning": "출근길뉴스", "life": "생활꿀뉴스", "money": "돈부동산뉴스"}[corner]
 
     def check(d):
-        e = check_blog(d, 1500 if corner != "morning" else 1300)
+        e = check_blog(d, 1800)  # news/WRITING_GUIDE: 1,800~2,800자 (모든 코너)
         if label not in (d.get("labels") or []):
             e.append(f'labels 에 "{label}" 이 없음')
         if "참고한 곳" not in d.get("html", ""):
@@ -470,7 +470,7 @@ def salim_shorts(models):
 [규칙]
 {guide}
 """
-    d = write_loop(models, prompt, lambda d: check_scenes(d, 5, 6, 160, 215))
+    d = write_loop(models, prompt, lambda d: check_scenes(d, 5, 6, 170, 200))  # SHORTS_GUIDE: 170~200자
     d["blog_url"] = pick["url"] if pick else ""
     d["voice"] = ex.get("voice", "ko-KR-SunHiNeural")
     d["coupang_keywords"] = []
