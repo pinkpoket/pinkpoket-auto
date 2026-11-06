@@ -1,0 +1,106 @@
+name: ai-write
+
+# 구글 Gemini(무료)가 글·대본을 쓰고 → 발행/영상 제작 워크플로를 부른다.
+# Claude 예약 작업 대신 (2026-11-06, 크레딧 아끼기). 인생ON 은 Claude 가 계속 씀.
+on:
+  schedule:
+    - cron: "23 21 * * *"   # 한국 06:23 오늘뉴스 블로그
+    - cron: "23 2 * * *"    # 한국 11:23 오늘뉴스 블로그
+    - cron: "23 9 * * *"    # 한국 18:23 오늘뉴스 블로그
+    - cron: "51 21 * * *"   # 한국 06:51 오늘뉴스 쇼츠
+    - cron: "51 2 * * *"    # 한국 11:51 오늘뉴스 쇼츠
+    - cron: "51 9 * * *"    # 한국 18:51 오늘뉴스 쇼츠
+    - cron: "44 0 * * *"    # 한국 09:44 살림 블로그
+    - cron: "44 3 * * *"    # 한국 12:44 살림 블로그
+    - cron: "44 9 * * *"    # 한국 18:44 살림 블로그
+    - cron: "37 23 * * *"   # 한국 08:37 살림 쇼츠
+    - cron: "37 5 * * *"    # 한국 14:37 살림 쇼츠
+    - cron: "37 11 * * *"   # 한국 20:37 살림 쇼츠
+    - cron: "13 1 * * *"    # 한국 10:13 네이버 원고
+    - cron: "13 10 * * *"   # 한국 19:13 네이버 원고
+  workflow_dispatch:
+    inputs:
+      job:
+        description: "salim-blog / news-blog / salim-shorts / news-shorts / naver / life-shorts"
+        required: true
+      dry_run:
+        description: "1 = 써서 보여 주기만 (올리지 않음)"
+        default: "0"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: ai-write-${{ github.event.inputs.job || github.event.schedule }}
+  cancel-in-progress: false
+
+jobs:
+  write:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pillow
+      - name: 할 일 정하기
+        id: job
+        run: |
+          J="${{ github.event.inputs.job }}"
+          case "${{ github.event.schedule }}" in
+            "23 21 * * *"|"23 2 * * *"|"23 9 * * *") J=news-blog ;;
+            "51 21 * * *"|"51 2 * * *"|"51 9 * * *") J=news-shorts ;;
+            "44 0 * * *"|"44 3 * * *"|"44 9 * * *") J=salim-blog ;;
+            "37 23 * * *"|"37 5 * * *"|"37 11 * * *") J=salim-shorts ;;
+            "13 1 * * *"|"13 10 * * *") J=naver ;;
+          esac
+          echo "job=$J" >> $GITHUB_OUTPUT
+          echo "할 일: $J"
+      - name: git 설정
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+      - name: Gemini로 쓰기
+        id: w
+        env:
+          JOB: ${{ steps.job.outputs.job }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -u ai/gemini_write.py
+      - name: 쓴 글 보기
+        run: |
+          for f in $(git status --porcelain | awk '{print $2}'); do echo "=== $f"; [ -f "$f" ] && head -c 6000 "$f"; echo; done
+          [ -f /tmp/naver_body.json ] && head -c 6000 /tmp/naver_body.json || true
+      - name: 네이버 사진 만들기
+        if: ${{ steps.job.outputs.job == 'naver' && github.event.inputs.dry_run != '1' }}
+        env:
+          CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+        run: |
+          git add naver
+          git commit -q -m "네이버 원고 사진 프롬프트 (Gemini)"
+          python -u naver_bot.py
+          git add naver images/naver 2>/dev/null || true
+          git diff --cached --quiet || git commit -q -m "네이버 원고 준비 결과"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
+          sleep 20
+      - name: 네이버 원고 텔레그램으로 보내기
+        if: ${{ steps.job.outputs.job == 'naver' && github.event.inputs.dry_run != '1' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python -u ai/naver_send.py
+      - name: 올리고 다음 작업 부르기
+        if: ${{ steps.job.outputs.job != 'naver' && github.event.inputs.dry_run != '1' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add -A posts news/posts shorts/queue news/shorts/queue life/shorts/queue data/series.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Gemini 글: ${{ steps.job.outputs.job }}"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
+          [ -n "${{ steps.w.outputs.next }}" ] && gh workflow run "${{ steps.w.outputs.next }}" --ref main
+          true
