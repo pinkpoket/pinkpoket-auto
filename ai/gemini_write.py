@@ -638,7 +638,9 @@ def naver(models):
     d = write_loop(models, prompt, check)
     n = 1 + len(glob.glob(str(ROOT / f"naver/jobs/{NOW:%Y%m%d}-n*[0-9].json")))
     jid = f"{NOW:%Y%m%d}-n{n}"
-    save(ROOT / f"naver/jobs/{jid}.json", {"images": d["images"][:3], "coupang_keywords": []})
+    q = ", realistic interior photography, natural window light, high detail, sharp focus, no people, no text, no logo"
+    imgs = [{"prompt": str(i.get("prompt", "")).rstrip(". ") + q} for i in d["images"][:3]]
+    save(ROOT / f"naver/jobs/{jid}.json", {"images": imgs, "coupang_keywords": []})
     d["id"] = jid
     d["log"] = (f"{NOW:%Y-%m-%d} | {d['category']} | {d['title']}"
                 + (f" | 쇼츠:{d['shorts_video_id']}" if d.get("shorts_video_id") else ""))
