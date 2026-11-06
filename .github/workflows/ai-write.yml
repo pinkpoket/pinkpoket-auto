@@ -64,7 +64,28 @@ jobs:
         run: |
           git config user.name "pinkpoket-bot"
           git config user.email "pinkpoket-bot@users.noreply.github.com"
+      - name: 텔레그램 시험
+        if: ${{ steps.job.outputs.job == 'tg-test' }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: |
+          python - <<'PY'
+          import os, requests
+          tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+          print("토큰:", "있음" if tok else "없음")
+          if tok:
+              me = requests.get(f"https://api.telegram.org/bot{tok}/getMe", timeout=20).json()
+              print("봇:", me.get("ok"), (me.get("result") or {}).get("username"))
+              ups = requests.get(f"https://api.telegram.org/bot{tok}/getUpdates", timeout=20).json().get("result", [])
+              chats = [u["message"]["chat"]["id"] for u in ups if "message" in u]
+              print("말 건 대화:", len(chats))
+              if chats:
+                  r = requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
+                                    data={"chat_id": chats[-1], "text": "✅ 핑포 알림봇 연결 완료! 네이버 원고가 여기로 와요."}, timeout=20)
+                  print("보내기:", r.status_code)
+          PY
       - name: Gemini로 쓰기
+        if: ${{ steps.job.outputs.job != 'tg-test' }}
         id: w
         env:
           JOB: ${{ steps.job.outputs.job }}
@@ -81,10 +102,12 @@ jobs:
         env:
           CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
           CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
         run: |
           git add naver
           git commit -q -m "네이버 원고 사진 프롬프트 (Gemini)"
           python -u naver_bot.py
+          python -u ai/naver_stock.py
           git add naver images/naver 2>/dev/null || true
           git diff --cached --quiet || git commit -q -m "네이버 원고 준비 결과"
           for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
@@ -94,9 +117,13 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python -u ai/naver_send.py
+        run: |
+          python -u ai/naver_send.py
+          git add naver/log.txt
+          git commit -q -m "네이버 원고 기록" || true
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
       - name: 올리고 다음 작업 부르기
-        if: ${{ steps.job.outputs.job != 'naver' && github.event.inputs.dry_run != '1' }}
+        if: ${{ steps.job.outputs.job != 'naver' && steps.job.outputs.job != 'tg-test' && github.event.inputs.dry_run != '1' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

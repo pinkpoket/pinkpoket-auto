@@ -640,10 +640,9 @@ def naver(models):
     jid = f"{NOW:%Y%m%d}-n{n}"
     save(ROOT / f"naver/jobs/{jid}.json", {"images": d["images"][:3], "coupang_keywords": []})
     d["id"] = jid
+    d["log"] = (f"{NOW:%Y-%m-%d} | {d['category']} | {d['title']}"
+                + (f" | 쇼츠:{d['shorts_video_id']}" if d.get("shorts_video_id") else ""))
     Path("/tmp/naver_body.json").write_text(json.dumps(d, ensure_ascii=False), encoding="utf-8")
-    with open(ROOT / "naver/log.txt", "a", encoding="utf-8") as f:
-        f.write(f"{NOW:%Y-%m-%d} | {d['category']} | {d['title']}"
-                + (f" | 쇼츠:{d['shorts_video_id']}" if d.get("shorts_video_id") else "") + "\n")
 
 
 # ================================================================ 인생ON 쇼츠 (시험용)

@@ -2,6 +2,7 @@
 """Gemini 가 쓴 네이버 원고(/tmp/naver_body.json) + 사진 주소(naver/jobs/ID.result.json)를
 휴대폰용 HTML(복사 버튼)로 만들어 텔레그램으로 보낸다. 본문은 저장소에 올리지 않는다."""
 import html
+import sys
 import json
 import os
 import re
@@ -13,6 +14,8 @@ ROOT = Path(__file__).resolve().parent.parent
 d = json.loads(Path("/tmp/naver_body.json").read_text(encoding="utf-8"))
 res = json.loads((ROOT / f"naver/jobs/{d['id']}.result.json").read_text(encoding="utf-8"))
 imgs = res.get("images", [])
+if not imgs:
+    sys.exit("사진이 0장이라 원고를 보내지 않아요 (사진 없는 원고는 발행할 수 없음)")
 
 photos = "".join(
     f'<div class="ph"><b>사진 {i}</b> (꾹 눌러 저장)<br><img src="{u}"></div>' for i, u in enumerate(imgs, 1))
@@ -63,3 +66,6 @@ with open(out, "rb") as f:
                       files={"document": (f"네이버원고-{d['id']}.html", f, "text/html")}, timeout=60)
 print("텔레그램:", r.status_code, r.text[:200])
 r.raise_for_status()
+# 보낸 뒤에만 기록 (못 보낸 원고 주제는 다음에 다시 쓸 수 있게)
+with open(ROOT / "naver/log.txt", "a", encoding="utf-8") as f:
+    f.write(d["log"] + "\n")
