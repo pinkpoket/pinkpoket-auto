@@ -26,9 +26,22 @@ jobs:
         with:
           python-version: "3.12"
       - name: 도구 설치 (무료)
+        timeout-minutes: 15
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk fonts-noto-cjk-extra > /dev/null
+          # apt 가 응답 없이 멈추는 일이 있어(2026-11-06) 시간 제한 + 재시도
+          APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 -o DPkg::Lock::Timeout=120"
+          export DEBIAN_FRONTEND=noninteractive
+          ok=0
+          for i in 1 2 3; do
+            echo "apt 시도 $i"
+            if timeout 240 sudo -E apt-get $APT update -q && \
+               timeout 400 sudo -E apt-get $APT install -y -q ffmpeg fonts-noto-cjk fonts-noto-cjk-extra > /tmp/apt.log 2>&1; then
+              ok=1; break
+            fi
+            tail -20 /tmp/apt.log || true
+            sleep 10
+          done
+          [ "$ok" = 1 ] || { echo "apt 설치 실패"; exit 1; }
           pip install -q edge-tts==7.3.1 requests pillow
       - name: 쇼츠 만들기 + 유튜브 업로드
         env:
