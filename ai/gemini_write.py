@@ -48,9 +48,9 @@ def pick_models(pref):
     stable = lambda n: ("preview" not in n and "exp" not in n, ver(n))
     flash = sorted([n for n in ok if "lite" not in n], key=stable, reverse=True)
     lite = sorted([n for n in ok if "lite" in n], key=stable, reverse=True)
-    order = (flash + lite) if pref == "flash" else (lite + flash)
-    print("쓸 수 있는 모델:", order[:6])
-    return order[:6]
+    order = (flash[:3] + lite[:3]) if pref == "flash" else (lite[:3] + flash[:3])
+    print("쓸 수 있는 모델:", order)
+    return order
 
 
 def generate(models, prompt, temperature=0.9):
@@ -61,8 +61,13 @@ def generate(models, prompt, temperature=0.9):
     last = ""
     for m in models:
         for attempt in range(2):
-            r = requests.post(f"{API}/models/{m}:generateContent", params={"key": KEY},
-                              json=body, timeout=180)
+            try:
+                r = requests.post(f"{API}/models/{m}:generateContent", params={"key": KEY},
+                                  json=body, timeout=240)
+            except requests.RequestException as e:
+                last = f"{m}: 응답 없음 ({type(e).__name__})"
+                print(last)
+                break  # 다음 모델로
             if r.status_code == 200:
                 try:
                     txt = "".join(p.get("text", "") for p in
