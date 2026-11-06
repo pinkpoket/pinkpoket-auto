@@ -83,8 +83,16 @@ jobs:
                                     data={"chat_id": chats[-1], "text": "✅ 핑포 알림봇 연결 완료! 네이버 원고가 여기로 와요."}, timeout=20)
                   print("보내기:", r.status_code)
           PY
+      - name: 인포크 상품 목록
+        if: ${{ steps.job.outputs.job == 'inpock' }}
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+          COUPANG_SUB_ID: ${{ vars.COUPANG_SUB_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python -u ai/inpock_list.py
       - name: Gemini로 쓰기
-        if: ${{ steps.job.outputs.job != 'tg-test' }}
+        if: ${{ steps.job.outputs.job != 'tg-test' && steps.job.outputs.job != 'inpock' }}
         id: w
         env:
           JOB: ${{ steps.job.outputs.job }}
@@ -122,7 +130,7 @@ jobs:
           git commit -q -m "네이버 원고 기록" || true
           for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
       - name: 올리고 다음 작업 부르기
-        if: ${{ steps.job.outputs.job != 'naver' && steps.job.outputs.job != 'tg-test' && github.event.inputs.dry_run != '1' }}
+        if: ${{ steps.job.outputs.job != 'naver' && steps.job.outputs.job != 'tg-test' && steps.job.outputs.job != 'inpock' && github.event.inputs.dry_run != '1' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
