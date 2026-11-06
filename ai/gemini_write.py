@@ -77,9 +77,9 @@ def generate(models, prompt, temperature=0.9):
                 except Exception as e:  # noqa
                     last = f"{m}: 응답 형식 오류 {e}"
                     break
-            last = f"{m}: {r.status_code} {r.text[:200]}"
-            print(last)
-            if r.status_code == 429 and attempt == 0:
+            last = f"{m}: {r.status_code} {r.text[:120]}"
+            print(f"{m}: {r.status_code}")
+            if r.status_code in (429, 500, 503) and attempt == 0:
                 time.sleep(20)
                 continue
             break  # 다음 모델로
@@ -132,7 +132,8 @@ def check_life_short(d):
     if not 9 <= len(sc) <= 12:
         errs.append(f"장면이 {len(sc)}개 — 9~11개로")
     if not 330 <= total <= 410:
-        errs.append(f"scenes text 합이 {total}자 — 340~400자로")
+        errs.append(f"scenes text 합이 {total}자로 너무 {'짧음' if total < 340 else '김'} — "
+                    f"장면마다 35자 안팎으로 써서 합계 340~400자로 (첫 장면만 8~15자)")
     if len(d["hook"].replace("\\n", "").replace("\n", "")) > 14:
         errs.append("hook 이 12자를 넘음")
     if not 20 <= len(d["title"]) <= 50:

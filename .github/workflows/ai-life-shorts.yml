@@ -3,10 +3,11 @@ name: ai-life-shorts-write
 # 구글 Gemini(무료)가 인생ON 쇼츠 대본을 쓰고 → 바로 영상 제작 워크플로를 부른다.
 # Claude 예약 작업 대신 (2026-11-06, 크레딧 아끼기)
 on:
-  schedule:
-    - cron: "47 21 * * *"   # 한국 06:47
-    - cron: "47 1 * * *"    # 한국 10:47
-    - cron: "47 8 * * *"    # 한국 17:47
+  # (핑크포켓님 확인 뒤 켬 — 그 전엔 Claude 예약 작업이 씀)
+  # schedule:
+  #   - cron: "47 21 * * *"   # 한국 06:47
+  #   - cron: "47 1 * * *"    # 한국 10:47
+  #   - cron: "47 8 * * *"    # 한국 17:47
   workflow_dispatch:
     inputs:
       dry_run:
