@@ -444,7 +444,7 @@ def salim_shorts(models):
 {chr(10).join('- ' + t for t in titles)}
 
 {NO_SEARCH}
-- 쇼츠는 30초 미만: 장면 5~6개, scenes text 합 150~240자 (첫 장면 15~25자).
+- 쇼츠는 22~28초 (30초 미만): 장면 5~6개, 장면당 30~40자(첫 장면 훅만 15~25자), scenes text 합 170~200자.
 - 블로그 글 내용에 있는 사실만 쓴다.
 
 [형식 예시 — 최근 대본 (키 이름·구조를 이대로, 내용은 새로)]
@@ -453,7 +453,7 @@ def salim_shorts(models):
 [규칙]
 {guide}
 """
-    d = write_loop(models, prompt, lambda d: check_scenes(d, 5, 7, 140, 250))
+    d = write_loop(models, prompt, lambda d: check_scenes(d, 5, 6, 160, 215))
     d["blog_url"] = pick["url"] if pick else ""
     d["voice"] = ex.get("voice", "ko-KR-SunHiNeural")
     d["coupang_keywords"] = []
@@ -492,11 +492,15 @@ def news_shorts(models):
         source = news_text(items)
     titles = titles_from("news/shorts/done/*.json", n=30)
     ex = latest_example("news/shorts/done/*.json")
+    LEN = {"morning": "장면 7개(훅 1장면 15~25자 + 첫째~다섯째 소식 한 장면씩 30~40자 + 마무리 1장면), scenes text 합 230~280자, 60초 미만.",
+           "life": "22~28초, 30초 미만. 장면 5~6개, 장면당 30~40자(첫 장면 훅만 15~25자), scenes text 합 170~200자.",
+           "money": "22~28초, 30초 미만. 장면 5~6개, 장면당 30~40자(첫 장면 훅만 15~25자), scenes text 합 170~200자. 마지막 장면이나 설명란에 \"투자 판단은 본인 몫\"."}
+    rng = (7, 7, 220, 290) if corner == "morning" else (5, 6, 160, 215)
     prompt = header("유튜브 쇼츠 채널 「핑포의 오늘뉴스」의 대본 작가") + f"""[할 일]
 {task}
 
 [사실 규칙] {facts} 지어내지 않는다. 투자 권유·예측 금지. 정치 중립.
-- 쇼츠는 30초 미만: 장면 5~7개, scenes text 합 150~260자.
+- 길이: {LEN[corner]}
 - coupang_keywords 는 빈 목록 [].
 
 [최근 쇼츠 제목 — 겹치지 않게]
@@ -509,7 +513,7 @@ def news_shorts(models):
 {guide}
 """
     def check(d):
-        e = check_scenes(d, 5, 7, 140, 270)
+        e = check_scenes(d, *rng)
         if not e:
             bad = unknown_numbers(" ".join(x["text"] for x in d["scenes"]) + " " + d["title"]
                                   + " " + d.get("description", ""), source)
@@ -521,6 +525,11 @@ def news_shorts(models):
     d["blog_url"] = post["url"] if post else ""
     d["voice"] = ex.get("voice", "ko-KR-SunHiNeural")
     d["coupang_keywords"] = []
+    d.pop("rate", None)
+    if corner == "morning":
+        d["rate"] = "+40%"
+    for s in d["scenes"]:
+        s["bg"] = ""  # 오늘뉴스는 고정 배경 한 장
     d["writer"] = "gemini"
     save(ROOT / f"news/shorts/queue/{NOW:%Y%m%d-%H%M}.json", d)
     dispatch("shorts-news.yml")
