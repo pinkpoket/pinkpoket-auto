@@ -235,6 +235,20 @@ def check_scenes(d, n_lo, n_hi, c_lo, c_hi, hook_max=14):
     return errs
 
 
+def unknown_numbers(text, source):
+    """글에 나온 숫자 중 자료(source)에 없는 것 — 지어낸 숫자 막기."""
+    src = re.sub(r"(?<=\d),(?=\d)", "", source)
+    skip = {str(NOW.year), f"{NOW.year % 100}"}
+    bad = []
+    for n in re.findall(r"\d[\d,.]*\d|\d", re.sub(r"(?<=\d),(?=\d)", "", plain(text))):
+        n = n.strip(".,")
+        if len(n.replace(".", "")) < 3 or n in skip:
+            continue
+        if n not in src and n not in bad:
+            bad.append(n)
+    return bad
+
+
 def dispatch(workflow):
     """GITHUB_TOKEN 으로 push 하면 다른 워크플로가 안 돌아서 직접 부른다 (워크플로 yml 에서)."""
     if OUT_FILE:
@@ -394,6 +408,10 @@ def news_blog(models):
             e.append(f'labels 에 "{label}" 이 없음')
         if "참고한 곳" not in d.get("html", ""):
             e.append("본문 끝 '참고한 곳' 문단이 없음")
+        bad = unknown_numbers(d.get("html", "") + " " + json.dumps(d.get("faq", []), ensure_ascii=False)
+                              + " " + d.get("title", ""), news_text(items))
+        if len(bad) > 1:
+            e.append(f"뉴스 목록에 없는 숫자를 썼음: {', '.join(bad[:8])} — 지우거나 목록에 있는 숫자로만")
         return e
 
     d = write_loop(models, prompt, check)
@@ -466,10 +484,12 @@ def news_shorts(models):
         task = (f"지금은 {name} 차례. 아래 방금 올린 블로그 글을 바탕으로 쓴다.\n"
                 f"글 제목: {post['title']}\n글 내용: {plain(src.get('html', ''), 3500)}")
         facts = "블로그 글 내용에 있는 사실·숫자만 쓴다."
+        source = plain(src.get("html", "")) + " " + post["title"]
     else:
         items = fetch_news(kind, 30)
         task = f"지금은 {name} 차례. 아래 오늘 뉴스 목록으로 쓴다.\n{news_text(items)}"
         facts = "위 뉴스 목록에 있는 사실·숫자만 쓴다."
+        source = news_text(items)
     titles = titles_from("news/shorts/done/*.json", n=30)
     ex = latest_example("news/shorts/done/*.json")
     prompt = header("유튜브 쇼츠 채널 「핑포의 오늘뉴스」의 대본 작가") + f"""[할 일]
@@ -488,7 +508,16 @@ def news_shorts(models):
 [규칙]
 {guide}
 """
-    d = write_loop(models, prompt, lambda d: check_scenes(d, 5, 7, 140, 270))
+    def check(d):
+        e = check_scenes(d, 5, 7, 140, 270)
+        if not e:
+            bad = unknown_numbers(" ".join(x["text"] for x in d["scenes"]) + " " + d["title"]
+                                  + " " + d.get("description", ""), source)
+            if len(bad) > 1:
+                e.append(f"자료에 없는 숫자를 썼음: {', '.join(bad[:8])} — 지우거나 자료의 숫자로만")
+        return e
+
+    d = write_loop(models, prompt, check)
     d["blog_url"] = post["url"] if post else ""
     d["voice"] = ex.get("voice", "ko-KR-SunHiNeural")
     d["coupang_keywords"] = []
