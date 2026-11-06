@@ -1,9 +1,5 @@
 {
- "images": [
-  "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@a3ef98bae1deac078872ef1fb8e0080772f5b38f/images/naver/20261102-n2-1.jpg",
-  "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@a3ef98bae1deac078872ef1fb8e0080772f5b38f/images/naver/20261102-n2-2.jpg",
-  "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@a3ef98bae1deac078872ef1fb8e0080772f5b38f/images/naver/20261102-n2-3.jpg"
- ],
+ "images": [],
  "products": [
   {
    "url": "https://link.coupang.com/re/AFFSDP?lptag=AF1080272&pageKey=9731835335&itemId=29122143590&vendorItemId=96046441240&traceid=V0-153-93aa2c24ae294427&requestid=20261102191737423074445883&token=31850C%7CGM&pt=0&slot=1",

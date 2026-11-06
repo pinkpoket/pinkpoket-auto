@@ -30,16 +30,22 @@ def search(words):
         r = requests.get("https://pixabay.com/api/", timeout=30, params={
             "key": KEY, "q": q, "image_type": "photo", "orientation": "horizontal",
             "safesearch": "true", "per_page": 20, "lang": "en"})
-        hits = [h for h in r.json().get("hits", []) if "people" not in h.get("tags", "")]
+        hits = [h for h in r.json().get("hits", [])
+                if not PEOPLE & {t.strip() for t in h.get("tags", "").split(",")}]
         if hits:
             return hits
     return []
 
 
+PEOPLE = {"woman", "women", "man", "men", "girl", "boy", "model", "portrait", "people", "person", "child",
+          "baby", "face", "female", "male", "fashion", "selfie", "couple", "family", "hand", "hands"}
+
+
 def main():
     if not KEY:
         return
-    for res_path in sorted(glob.glob(str(ROOT / "naver/jobs/*.result.json"))):
+    body = json.loads(Path("/tmp/naver_body.json").read_text(encoding="utf-8"))
+    for res_path in [str(ROOT / f"naver/jobs/{body['id']}.result.json")]:
         res = json.loads(Path(res_path).read_text(encoding="utf-8"))
         if res.get("images"):
             continue
