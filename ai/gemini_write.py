@@ -182,8 +182,25 @@ def ascii_slug(s):
     return re.sub(r"-{2,}", "-", s)[:70] or f"post-{NOW:%Y%m%d%H%M}"
 
 
+def tg_chat(tok):
+    """TELEGRAM_CHAT_ID 가 없으면 봇에게 말 건 사람(핑포)의 대화방을 찾는다."""
+    chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    if chat or not tok:
+        return chat
+    try:
+        ups = requests.get(f"https://api.telegram.org/bot{tok}/getUpdates", timeout=20).json().get("result", [])
+        for u in reversed(ups):
+            c = (u.get("message") or {}).get("chat") or {}
+            if c.get("type") == "private":
+                return str(c["id"])
+    except Exception:
+        pass
+    return ""
+
+
 def telegram(msg):
-    tok, chat = os.environ.get("TELEGRAM_BOT_TOKEN"), os.environ.get("TELEGRAM_CHAT_ID")
+    tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat = tg_chat(tok)
     if tok and chat:
         try:
             requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",

@@ -48,7 +48,14 @@ s.removeAllRanges();document.getElementById('msg').textContent=ok?'복사했어�
 
 out = Path(f"/tmp/naver-{d['id']}.html")
 out.write_text(page, encoding="utf-8")
-tok, chat = os.environ["TELEGRAM_BOT_TOKEN"], os.environ["TELEGRAM_CHAT_ID"]
+import sys
+sys.path.insert(0, str(ROOT / "ai"))
+os.environ.setdefault("GEMINI_API_KEY", "-")
+from gemini_write import tg_chat  # noqa: E402
+tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+chat = tg_chat(tok)
+if not (tok and chat):
+    sys.exit("텔레그램 봇 토큰(TELEGRAM_BOT_TOKEN)이 없거나, 봇에게 아직 말을 건 적이 없어요")
 cap = f"📝 네이버 원고 도착 ({cat})\n{d['title']}\n\n파일을 눌러 크롬(브라우저)으로 열고 '본문 복사' → 네이버 앱에 붙여 넣기"
 with open(out, "rb") as f:
     r = requests.post(f"https://api.telegram.org/bot{tok}/sendDocument",
