@@ -1,0 +1,45 @@
+{
+  "title": "김장 김치, 담그자마자 김치냉장고에 넣으면 손해예요",
+  "hook": "김장 김치 오래 보관",
+  "voice": "ko-KR-SunHiNeural",
+  "scenes": [
+    {
+      "text": "김장 김치, 바로 넣으면 맛이 덜 들어요",
+      "bg": "close up of a white kimchi storage container packed with fresh napa cabbage kimchi, lid beside it, on a cool entryway floor, soft winter light, centered"
+    },
+    {
+      "text": "먼저 서늘한 곳에서 맛을 들여요. 10도면 48시간이 기준이에요.",
+      "bg": "close up of a white kimchi storage container packed with fresh napa cabbage kimchi, lid beside it, on a cool entryway floor, soft winter light, centered"
+    },
+    {
+      "text": "첫째, 마른 도구로 꾹꾹 눌러 담아요. 젖은 손은 하얀 막을 불러요.",
+      "bg": "close up of kimchi pressed tightly in a storage container covered with outer napa cabbage leaves, clean kitchen counter, centered"
+    },
+    {
+      "text": "둘째, 국물에 살짝 잠기게 하고 우거지나 비닐로 표면을 덮어요.",
+      "bg": "close up of kimchi pressed tightly in a storage container covered with outer napa cabbage leaves, clean kitchen counter, centered"
+    },
+    {
+      "text": "셋째, 일반 김치는 표준 모드. 살얼음이 끼면 한 단계 약하게요.",
+      "bg": "close up of neatly stacked kimchi containers inside an open kimchi refrigerator drawer, cool white light, centered"
+    },
+    {
+      "text": "그럼 오늘, 김치통 하나 열어 국물에 잠겼나 확인해 보세요.",
+      "bg": "close up of neatly stacked kimchi containers inside an open kimchi refrigerator drawer, cool white light, centered"
+    }
+  ],
+  "description": "김장 김치, 담그자마자 김치냉장고에 넣고 계셨나요? 🥬\n서늘한 곳에서 맛을 먼저 들이고(10℃ 48시간·15℃ 36시간, 제조사 안내), 마른 도구로 눌러 담아 우거지로 덮어 주세요. 일반 김치는 표준 모드, 살얼음이 끼면 한 단계 약하게! 모드 이름은 제품 설명서를 확인해 주세요.\n여러분 집 김치냉장고는 어떤 모드로 쓰세요? 댓글로 알려 주세요.",
+  "tags": [
+    "#shorts",
+    "#핑포의작은집연구소",
+    "#김장김치보관",
+    "#김치냉장고온도",
+    "#김장",
+    "#김치보관법",
+    "#살림꿀팁",
+    "#주방살림",
+    "#김장철"
+  ],
+  "blog_url": "https://pinkpoket.blogspot.com/2026/11/kimjang-kimchi-fridge-storage.html",
+  "comment": "김장 끝내고 김치통 넣을 때, 이번엔 오래오래 맛있었으면 싶으시죠? 🥬\n하루 이틀만 서늘한 곳에서 기다려 주세요. 그 시간이 김치를 더 맛있게 만들어요 💛"
+}
