@@ -1,0 +1,44 @@
+name: life-benchmark
+
+on:
+  # 직접 실행: 시니어 쇼츠 벤치마킹 (최근 N일 조회수 상위 쇼츠를 analysis/benchmark/ 에 저장)
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "최근 며칠 (기본 60)"
+        required: false
+        default: "60"
+      queries:
+        description: "검색어 (쉼표로 구분, 비우면 기본 목록)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: 모으기
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          DAYS: ${{ inputs.days || '60' }}
+          QUERIES: ${{ inputs.queries }}
+        run: python -u life/benchmark.py
+      - name: 저장
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add analysis/benchmark
+          git diff --cached --quiet && exit 0
+          git commit -m "시니어 쇼츠 벤치마킹 자료 수집"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
