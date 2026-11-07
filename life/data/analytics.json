@@ -1,89 +1,230 @@
 {
- "at": "2026-11-04T12:02:41.578822Z",
+ "at": "2026-11-07T00:11:07.470551Z",
  "channel": "인생ON : 마음의 불을 켜다",
- "subscribers": "2940",
+ "subscribers": "2950",
  "analytics": true,
  "videos": [
+  {
+   "id": "sYrZ-x6oaPg",
+   "title": "남의 말에 자꾸 흔들린다면, 부처님이 법구경에 남긴 바위 이야기 #shorts",
+   "published": "2026-11-06T22:02:40Z",
+   "duration": "PT53S",
+   "views": 68,
+   "likes": 3,
+   "comments": 1
+  },
+  {
+   "id": "D8nlgroAgTg",
+   "title": "잠이 안 올 때 침대에서 버티면 오히려 더 못 자는 이유 #shorts",
+   "published": "2026-11-06T08:51:15Z",
+   "duration": "PT1M",
+   "views": 750,
+   "likes": 10,
+   "comments": 1
+  },
+  {
+   "id": "iL8eXi7GFPA",
+   "title": "그 사람이 묻는 말을 들어 보면 진짜 내 편인지 보입니다 #shorts",
+   "published": "2026-11-06T02:12:11Z",
+   "duration": "PT1M2S",
+   "views": 348,
+   "likes": 3,
+   "comments": 1
+  },
+  {
+   "id": "QirOdoVkoH4",
+   "title": "노후에 이 중 2개 이상이면 그 인연은 나 혼자 붙잡고 있는 겁니다 #shorts",
+   "published": "2026-11-06T01:49:31Z",
+   "duration": "PT1M10S",
+   "views": 226,
+   "likes": 5,
+   "comments": 1
+  },
+  {
+   "id": "6j84NRAahjA",
+   "title": "착해 보여도 이런 사람은 절대 내 편이 아닙니다",
+   "published": "2026-11-06T00:47:07Z",
+   "duration": "PT10M46S",
+   "views": 60,
+   "likes": 4,
+   "comments": 1
+  },
+  {
+   "id": "kQPP2wJodbQ",
+   "title": "나이 들수록 집에서 혈압 잴 때 절대 하면 안 되는 실수 3가지 #shorts",
+   "published": "2026-11-05T08:51:27Z",
+   "duration": "PT1M11S",
+   "views": 1313,
+   "likes": 12,
+   "comments": 1
+  },
+  {
+   "id": "VYcxvWQz2ss",
+   "title": "공자가 경고한, 나이 들수록 반드시 버려야 할 말버릇 1가지 #shorts",
+   "published": "2026-11-05T03:24:24Z",
+   "duration": "PT1M8S",
+   "views": 1295,
+   "likes": 11,
+   "comments": 1,
+   "avg_view_sec": 66,
+   "avg_view_pct": 98.09,
+   "shares": 1,
+   "subs_gained": 2,
+   "views_period": 1283
+  },
+  {
+   "id": "fR-QHqBldFk",
+   "title": "공자가 경고한, 나이 들수록 버려야 할 말버릇 5가지",
+   "published": "2026-11-05T00:47:16Z",
+   "duration": "PT10M55S",
+   "views": 28,
+   "likes": 1,
+   "comments": 1,
+   "avg_view_sec": 346,
+   "avg_view_pct": 52.86,
+   "shares": 2,
+   "subs_gained": 1,
+   "views_period": 18
+  },
+  {
+   "id": "5PBuK-q-ImU",
+   "title": "나이 들수록 진짜 내 편은 반드시 이 3가지 순간에 드러납니다 #shorts",
+   "published": "2026-11-04T21:51:13Z",
+   "duration": "PT1M5S",
+   "views": 1409,
+   "likes": 15,
+   "comments": 1,
+   "avg_view_sec": 47,
+   "avg_view_pct": 73.53,
+   "shares": 5,
+   "subs_gained": 0,
+   "views_period": 1355
+  },
   {
    "id": "cTEJTeUTrvE",
    "title": "나이 들수록 내 앞에서 남 흉보는 사람과 반드시 거리 둬야 할 3가지 이유 #shorts",
    "published": "2026-11-04T08:50:24Z",
    "duration": "PT1M7S",
-   "views": 874,
-   "likes": 22,
-   "comments": 1
+   "views": 1369,
+   "likes": 24,
+   "comments": 1,
+   "avg_view_sec": 35,
+   "avg_view_pct": 52.38,
+   "shares": 1,
+   "subs_gained": 8,
+   "views_period": 1313
   },
   {
    "id": "sTDnDHTbi6U",
    "title": "노후에 집 안에서 넘어지지 않으려면 반드시 바꿀 3가지 #shorts",
    "published": "2026-11-04T01:57:16Z",
    "duration": "PT1M3S",
-   "views": 1350,
+   "views": 1359,
    "likes": 24,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 59,
+   "avg_view_pct": 93.93,
+   "shares": 8,
+   "subs_gained": 2,
+   "views_period": 1365
   },
   {
    "id": "nAvnhmQykUk",
    "title": "나이 들수록 품격 있어 보이는 사람의 7가지 습관 | 나는 몇 개나 해당될까 점검해 보세요",
    "published": "2026-11-04T00:47:46Z",
    "duration": "PT10M27S",
-   "views": 4,
-   "likes": 0,
-   "comments": 1
+   "views": 86,
+   "likes": 2,
+   "comments": 1,
+   "avg_view_sec": 270,
+   "avg_view_pct": 43.07,
+   "shares": 0,
+   "subs_gained": 1,
+   "views_period": 57
   },
   {
    "id": "3T76dWPaQZM",
    "title": "나이 들수록 사람 떠나게 만드는 절대 묻지 말아야 할 질문 3가지 #shorts",
    "published": "2026-11-03T21:51:35Z",
    "duration": "PT59S",
-   "views": 1260,
-   "likes": 12,
-   "comments": 1
+   "views": 1309,
+   "likes": 14,
+   "comments": 1,
+   "avg_view_sec": 44,
+   "avg_view_pct": 76.05,
+   "shares": 6,
+   "subs_gained": 1,
+   "views_period": 1273
   },
   {
    "id": "AgtcQyHky58",
    "title": "자식에게 서운할 때 이렇게 해 보세요 | 부모라면 한 번쯤 하는 고민 6가지와 현명한 답",
    "published": "2026-11-03T11:22:18Z",
    "duration": "PT9M54S",
-   "views": 17,
+   "views": 14,
    "likes": 2,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 137,
+   "avg_view_pct": 23.2,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 19
   },
   {
    "id": "OkiAM-u7gs8",
    "title": "나이 들수록 반드시 끊어야 할 인연 7가지 | 노후가 편안해지는 사람 정리법",
    "published": "2026-11-03T11:22:15Z",
    "duration": "PT7M55S",
-   "views": 11,
+   "views": 8,
    "likes": 0,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 287,
+   "avg_view_pct": 60.62,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 11
   },
   {
    "id": "JcjdxNB_Iu4",
    "title": "나이 들수록 근육 빠지는 걸 막으려면 반드시 챙길 3가지 #shorts",
    "published": "2026-11-03T08:53:39Z",
    "duration": "PT1M5S",
-   "views": 1286,
-   "likes": 14,
-   "comments": 1
+   "views": 1302,
+   "likes": 15,
+   "comments": 1,
+   "avg_view_sec": 70,
+   "avg_view_pct": 108.46000000000001,
+   "shares": 7,
+   "subs_gained": 4,
+   "views_period": 1293
   },
   {
    "id": "9zJPmIwCUbQ",
    "title": "나이 들수록 목마를 때만 물 마시면 절대 안 되는 이유와 3가지 습관 #shorts",
    "published": "2026-11-03T02:29:31Z",
    "duration": "PT1M1S",
-   "views": 1226,
+   "views": 1262,
    "likes": 17,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 42,
+   "avg_view_pct": 70.05,
+   "shares": 4,
+   "subs_gained": 3,
+   "views_period": 1240
   },
   {
    "id": "SvX8xKtQT1g",
    "title": "나이 들수록 반드시 줄여야 할 말버릇 3가지 #shorts",
    "published": "2026-11-03T01:53:43Z",
    "duration": "PT55S",
-   "views": 1368,
+   "views": 1378,
    "likes": 12,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 49,
+   "avg_view_pct": 90.56,
+   "shares": 5,
+   "subs_gained": 1,
+   "views_period": 1375
   },
   {
    "id": "Z826mTrKNEE",
@@ -94,10 +235,10 @@
    "likes": 78,
    "comments": 1,
    "avg_view_sec": 6,
-   "avg_view_pct": 7.51,
+   "avg_view_pct": 7.519999999999999,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 2
   },
   {
    "id": "r5drN6Xr75w",
@@ -106,7 +247,12 @@
    "duration": "PT49S",
    "views": 1625,
    "likes": 14,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 32,
+   "avg_view_pct": 65.48,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 7
   },
   {
    "id": "cmbror11dgg",
@@ -115,7 +261,12 @@
    "duration": "PT1M",
    "views": 2718,
    "likes": 33,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 17,
+   "avg_view_pct": 28.67,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "QLTwztbD-sQ",
@@ -124,7 +275,12 @@
    "duration": "PT1M29S",
    "views": 8179,
    "likes": 180,
-   "comments": 2
+   "comments": 2,
+   "avg_view_sec": 54,
+   "avg_view_pct": 61.65999999999999,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "3Jmar1pgm74",
@@ -133,7 +289,12 @@
    "duration": "PT1M2S",
    "views": 2477,
    "likes": 33,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 24,
+   "avg_view_pct": 39.96,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 10
   },
   {
    "id": "F27wtstNdxo",
@@ -142,7 +303,12 @@
    "duration": "PT1M16S",
    "views": 8472,
    "likes": 231,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 32,
+   "avg_view_pct": 42.2,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "r8m4JZxLv2M",
@@ -151,7 +317,12 @@
    "duration": "PT16S",
    "views": 1871,
    "likes": 8,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 12,
+   "avg_view_pct": 75,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "kXlAOlYFOWU",
@@ -160,7 +331,12 @@
    "duration": "PT1M4S",
    "views": 2162,
    "likes": 31,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "sYQP0X46KAE",
@@ -169,7 +345,12 @@
    "duration": "PT1M5S",
    "views": 2076,
    "likes": 29,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 61,
+   "avg_view_pct": 94.92,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "eqn3dheh1aQ",
@@ -178,7 +359,12 @@
    "duration": "PT1M20S",
    "views": 1859,
    "likes": 12,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "mZCr5tFLvow",
@@ -187,16 +373,26 @@
    "duration": "PT48S",
    "views": 1764,
    "likes": 22,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "ooI5xytaaUQ",
    "title": "동창회에서 만난 친구가 10년 더 늙어 보이는 소름 끼치는 이유 #노화 #자기관리 #인간관계",
    "published": "2026-06-13T23:00:29Z",
    "duration": "PT53S",
-   "views": 1618,
+   "views": 1619,
    "likes": 21,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "YSdhidPdpv8",
@@ -205,7 +401,12 @@
    "duration": "PT46S",
    "views": 1304,
    "likes": 24,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 37,
+   "avg_view_pct": 81.67,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "ZMLwzbN8uUw",
@@ -214,7 +415,12 @@
    "duration": "PT1M1S",
    "views": 1210,
    "likes": 19,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "a8GF9GvCrMs",
@@ -223,7 +429,12 @@
    "duration": "PT35S",
    "views": 1351,
    "likes": 17,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "M4VOTkEV30I",
@@ -232,7 +443,12 @@
    "duration": "PT38S",
    "views": 1456,
    "likes": 17,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 9,
+   "avg_view_pct": 23.95,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "yKil6nsSFpw",
@@ -241,7 +457,12 @@
    "duration": "PT1M19S",
    "views": 1537,
    "likes": 42,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 84,
+   "avg_view_pct": 107.15,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "G3_2D3oba2I",
@@ -250,7 +471,12 @@
    "duration": "PT59S",
    "views": 961,
    "likes": 22,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 24,
+   "avg_view_pct": 40.85,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "3m51-OwaKw0",
@@ -259,7 +485,12 @@
    "duration": "PT1M35S",
    "views": 1274,
    "likes": 35,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 18,
+   "avg_view_pct": 18.95,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "P4c2oyetmRo",
@@ -268,7 +499,12 @@
    "duration": "PT1M",
    "views": 2502,
    "likes": 62,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 8,
+   "avg_view_pct": 13.33,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "zPpWAF8DKao",
@@ -277,7 +513,12 @@
    "duration": "PT1M3S",
    "views": 1269,
    "likes": 36,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 9,
+   "avg_view_pct": 15.71,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "kKnxMHwLOf0",
@@ -286,7 +527,12 @@
    "duration": "PT53S",
    "views": 2358,
    "likes": 36,
-   "comments": 2
+   "comments": 2,
+   "avg_view_sec": 90,
+   "avg_view_pct": 170.57,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "WZGzQcpk0fk",
@@ -295,7 +541,12 @@
    "duration": "PT1M15S",
    "views": 1719,
    "likes": 52,
-   "comments": 2
+   "comments": 2,
+   "avg_view_sec": 43,
+   "avg_view_pct": 58.599999999999994,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "S4bsA5IuOLI",
@@ -304,7 +555,12 @@
    "duration": "PT1M17S",
    "views": 1893,
    "likes": 21,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 141,
+   "avg_view_pct": 183.26,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "Fuh6PKXToaQ",
@@ -313,15 +569,6 @@
    "duration": "PT1M2S",
    "views": 7467,
    "likes": 120,
-   "comments": 1
-  },
-  {
-   "id": "Z3F7qt-xmVI",
-   "title": "인간관계에 지쳐 마음이 헛헛할 때, 반드시 명심해야 할 3가지 인생 지혜",
-   "published": "2026-05-22T07:32:59Z",
-   "duration": "PT3M58S",
-   "views": 96,
-   "likes": 0,
    "comments": 1,
    "avg_view_sec": 0,
    "avg_view_pct": 0,
@@ -330,13 +577,32 @@
    "views_period": 3
   },
   {
+   "id": "Z3F7qt-xmVI",
+   "title": "인간관계에 지쳐 마음이 헛헛할 때, 반드시 명심해야 할 3가지 인생 지혜",
+   "published": "2026-05-22T07:32:59Z",
+   "duration": "PT3M58S",
+   "views": 98,
+   "likes": 0,
+   "comments": 1,
+   "avg_view_sec": 140,
+   "avg_view_pct": 58.89,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 27
+  },
+  {
    "id": "L_h8pTuMm5g",
    "title": "나이 들어 이거 4가지 아끼면 나중에 땅을 치고 후회합니다",
    "published": "2026-05-21T23:00:04Z",
    "duration": "PT1M13S",
    "views": 2317,
    "likes": 63,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 18,
+   "avg_view_pct": 25.89,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "jNQYGnLZ41Y",
@@ -345,7 +611,12 @@
    "duration": "PT1M23S",
    "views": 933,
    "likes": 5,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 6,
+   "avg_view_pct": 7.470000000000001,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "7XIPB8THclM",
@@ -354,7 +625,12 @@
    "duration": "PT1M15S",
    "views": 1581,
    "likes": 49,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 2,
+   "avg_view_pct": 3.93,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "SZ4HsuBlQVw",
@@ -363,7 +639,12 @@
    "duration": "PT1M12S",
    "views": 2007,
    "likes": 93,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 109,
+   "avg_view_pct": 151.57,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "JIJPE3ZniQI",
@@ -372,7 +653,12 @@
    "duration": "PT1M32S",
    "views": 1303,
    "likes": 29,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 75,
+   "avg_view_pct": 82.39,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 11
   },
   {
    "id": "M0FJvcnx9W8",
@@ -381,7 +667,12 @@
    "duration": "PT1M16S",
    "views": 9019,
    "likes": 291,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 32,
+   "avg_view_pct": 42.63,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "WzZ6kyb5ykY",
@@ -390,7 +681,12 @@
    "duration": "PT56S",
    "views": 1076,
    "likes": 33,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 28,
+   "avg_view_pct": 50.27,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "pp9gEfb6MZE",
@@ -399,7 +695,12 @@
    "duration": "PT1M6S",
    "views": 1045,
    "likes": 29,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "dkaTPdH1Y0o",
@@ -408,16 +709,26 @@
    "duration": "PT40S",
    "views": 1183,
    "likes": 20,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 20,
+   "avg_view_pct": 51.5,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "bY7RrFdsE2c",
    "title": "지금 죽고 싶을 만큼 힘들다면, 당신은 곧 대박 날 징조입니다",
    "published": "2026-05-13T09:30:05Z",
    "duration": "PT1M9S",
-   "views": 1251,
+   "views": 1252,
    "likes": 67,
-   "comments": 61
+   "comments": 61,
+   "avg_view_sec": 4,
+   "avg_view_pct": 6.52,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "dQ63rPU9bis",
@@ -426,7 +737,12 @@
    "duration": "PT50S",
    "views": 4345,
    "likes": 129,
-   "comments": 29
+   "comments": 29,
+   "avg_view_sec": 1661,
+   "avg_view_pct": 3322.45,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 9
   },
   {
    "id": "fdc7NEWXqwE",
@@ -435,7 +751,12 @@
    "duration": "PT39S",
    "views": 2110,
    "likes": 41,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 55,
+   "avg_view_pct": 143.46,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "dY2AXYpDxnc",
@@ -444,7 +765,12 @@
    "duration": "PT1M",
    "views": 3497,
    "likes": 81,
-   "comments": 11
+   "comments": 11,
+   "avg_view_sec": 18,
+   "avg_view_pct": 30.579999999999995,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "l7Apv8juqrU",
@@ -453,7 +779,12 @@
    "duration": "PT41S",
    "views": 6857,
    "likes": 113,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "sKbXzBqUMY8",
@@ -462,7 +793,12 @@
    "duration": "PT56S",
    "views": 4678,
    "likes": 102,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "mquSSzVh6IQ",
@@ -472,11 +808,11 @@
    "views": 8060,
    "likes": 231,
    "comments": 1,
-   "avg_view_sec": 40,
-   "avg_view_pct": 80.55,
+   "avg_view_sec": 35,
+   "avg_view_pct": 70.21,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 4
+   "views_period": 6
   },
   {
    "id": "yU-KRzQz4v4",
@@ -486,11 +822,11 @@
    "views": 10236,
    "likes": 240,
    "comments": 2,
-   "avg_view_sec": 198,
-   "avg_view_pct": 300.37,
+   "avg_view_sec": 177,
+   "avg_view_pct": 269.5,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 4
+   "views_period": 7
   },
   {
    "id": "Yi3tP1gEERY",
@@ -499,7 +835,12 @@
    "duration": "PT1M4S",
    "views": 1815,
    "likes": 38,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 1,
+   "avg_view_pct": 1.56,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "kOVsqbnoHrQ",
@@ -508,7 +849,12 @@
    "duration": "PT1M3S",
    "views": 1255,
    "likes": 28,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 63,
+   "avg_view_pct": 100.79,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "AnEYI8nPZBQ",
@@ -517,7 +863,12 @@
    "duration": "PT1M7S",
    "views": 4671,
    "likes": 116,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 1,
+   "avg_view_pct": 1.6399999999999997,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 8
   },
   {
    "id": "9m_dTtve9Zk",
@@ -536,11 +887,11 @@
    "views": 2720,
    "likes": 86,
    "comments": 11,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 30,
+   "avg_view_pct": 45.19,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 14
   },
   {
    "id": "d7WMjRfk0Zc",
@@ -550,11 +901,11 @@
    "views": 9972,
    "likes": 199,
    "comments": 15,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 57,
+   "avg_view_pct": 107.30999999999999,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 10
   },
   {
    "id": "9Vm2VkSy_o8",
@@ -563,7 +914,12 @@
    "duration": "PT1M6S",
    "views": 4039,
    "likes": 128,
-   "comments": 9
+   "comments": 9,
+   "avg_view_sec": 61,
+   "avg_view_pct": 93.33,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "dOy4O69_aDI",
@@ -572,7 +928,12 @@
    "duration": "PT1M12S",
    "views": 19577,
    "likes": 499,
-   "comments": 5
+   "comments": 5,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 0
   },
   {
    "id": "ozVSRNVwxS4",
@@ -600,11 +961,11 @@
    "views": 6233,
    "likes": 176,
    "comments": 1,
-   "avg_view_sec": 46,
-   "avg_view_pct": 87.07,
+   "avg_view_sec": 39,
+   "avg_view_pct": 73.72,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 4
   },
   {
    "id": "S9Tnbu3RpDk",
@@ -613,7 +974,12 @@
    "duration": "PT57S",
    "views": 1227,
    "likes": 43,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 19,
+   "avg_view_pct": 34.3,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "DRTrZUFHrNw",
@@ -622,7 +988,12 @@
    "duration": "PT49S",
    "views": 1084,
    "likes": 23,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "7ru1zEEL0jw",
@@ -632,11 +1003,11 @@
    "views": 1522,
    "likes": 17,
    "comments": 1,
-   "avg_view_sec": 41,
-   "avg_view_pct": 75.78,
+   "avg_view_sec": 43,
+   "avg_view_pct": 78.52,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 2
   },
   {
    "id": "9wQg32kVgOA",
@@ -663,7 +1034,12 @@
    "duration": "PT1M7S",
    "views": 13206,
    "likes": 792,
-   "comments": 111
+   "comments": 111,
+   "avg_view_sec": 79,
+   "avg_view_pct": 117.97999999999999,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "7doSYUH6JNQ",
@@ -679,9 +1055,14 @@
    "title": "법정 스님이 들려주는 악연 정리하는 법  더 이상 참지 마세요",
    "published": "2026-04-20T03:00:00Z",
    "duration": "PT1M16S",
-   "views": 1083,
+   "views": 1084,
    "likes": 34,
-   "comments": 9
+   "comments": 9,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "gZ7SbdEG6pc",
@@ -690,7 +1071,12 @@
    "duration": "PT1M14S",
    "views": 1097,
    "likes": 34,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "1GzzSxXamLM",
@@ -700,11 +1086,11 @@
    "views": 39189,
    "likes": 1059,
    "comments": 158,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 336,
+   "avg_view_pct": 560,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 6
   },
   {
    "id": "C7f2OGfA7GE",
@@ -731,7 +1117,12 @@
    "duration": "PT54S",
    "views": 1722,
    "likes": 39,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 28,
+   "avg_view_pct": 52.22,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "h4sFsD7yQGY",
@@ -740,7 +1131,12 @@
    "duration": "PT1M1S",
    "views": 22078,
    "likes": 410,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 63,
+   "avg_view_pct": 103.90000000000002,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "HC0rmcJJj7I",
@@ -767,7 +1163,12 @@
    "duration": "PT1M12S",
    "views": 804,
    "likes": 21,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "rXxoyzPLRS8",
@@ -837,14 +1238,14 @@
    "title": "경조사 다 챙기면 쓸쓸하게 죽습니다  니체가 경고한 인맥의 민낯",
    "published": "2026-04-06T22:15:00Z",
    "duration": "PT1M26S",
-   "views": 1024,
+   "views": 1029,
    "likes": 42,
    "comments": 1,
-   "avg_view_sec": 66,
-   "avg_view_pct": 77.09,
+   "avg_view_sec": 48,
+   "avg_view_pct": 56.7,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 13
+   "views_period": 44
   },
   {
    "id": "sGY5jIhH94g",
@@ -862,7 +1263,12 @@
    "duration": "PT50S",
    "views": 1127,
    "likes": 34,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 19,
+   "avg_view_pct": 39.8,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "3p9fQ-MW__Q",
@@ -871,7 +1277,12 @@
    "duration": "PT1M5S",
    "views": 1189,
    "likes": 13,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "p6YuCUFn2cU",
@@ -880,7 +1291,12 @@
    "duration": "PT1M1S",
    "views": 2224,
    "likes": 97,
-   "comments": 5
+   "comments": 5,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "wxnMMNuR7nU",
@@ -907,7 +1323,12 @@
    "duration": "PT1M2S",
    "views": 1189,
    "likes": 45,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "c9LYIMq1h4s",
@@ -934,7 +1355,12 @@
    "duration": "PT59S",
    "views": 1562,
    "likes": 34,
-   "comments": 5
+   "comments": 5,
+   "avg_view_sec": 73,
+   "avg_view_pct": 124.49,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "-iEWbh80pes",
@@ -943,7 +1369,12 @@
    "duration": "PT1M5S",
    "views": 1370,
    "likes": 38,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "YKOKJymUe0s",
@@ -952,7 +1383,12 @@
    "duration": "PT57S",
    "views": 820,
    "likes": 27,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "YpDlr3c3Hsw",
@@ -980,11 +1416,11 @@
    "views": 2010,
    "likes": 62,
    "comments": 27,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 29,
+   "avg_view_pct": 54.05,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 11
   },
   {
    "id": "Y3tkISmGPWI",
@@ -1011,7 +1447,12 @@
    "duration": "PT55S",
    "views": 1881,
    "likes": 39,
-   "comments": 2
+   "comments": 2,
+   "avg_view_sec": 2,
+   "avg_view_pct": 5.27,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "N3-DUSa7MqQ",
@@ -1047,7 +1488,12 @@
    "duration": "PT39S",
    "views": 1251,
    "likes": 18,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "DOq3Qa0Jc-Y",
@@ -1056,7 +1502,12 @@
    "duration": "PT51S",
    "views": 1274,
    "likes": 18,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "mx1YaOHuDLc",
@@ -1083,21 +1534,26 @@
    "duration": "PT1M14S",
    "views": 5700,
    "likes": 188,
-   "comments": 5
+   "comments": 5,
+   "avg_view_sec": 8,
+   "avg_view_pct": 11.49,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "SNNOxKv3Yus",
    "title": "겉모습에 속지 않고 '진짜 사람' 알아보는 법",
    "published": "2026-03-17T22:30:00Z",
    "duration": "PT1M31S",
-   "views": 16759,
+   "views": 16760,
    "likes": 618,
    "comments": 3,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 67,
+   "avg_view_pct": 73.92,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 4
   },
   {
    "id": "3v2szbB6pJk",
@@ -1133,7 +1589,12 @@
    "duration": "PT1M37S",
    "views": 5143,
    "likes": 164,
-   "comments": 4
+   "comments": 4,
+   "avg_view_sec": 51,
+   "avg_view_pct": 53.14,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 4
   },
   {
    "id": "g_JG4qSYRk4",
@@ -1142,7 +1603,12 @@
    "duration": "PT1M15S",
    "views": 1150,
    "likes": 31,
-   "comments": 5
+   "comments": 5,
+   "avg_view_sec": 603,
+   "avg_view_pct": 805.07,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "ZYEdaIf-CUQ",
@@ -1187,7 +1653,12 @@
    "duration": "PT48S",
    "views": 1571,
    "likes": 31,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "nuof0pQWMKo",
@@ -1268,7 +1739,12 @@
    "duration": "PT11S",
    "views": 2036,
    "likes": 7,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "fBs14eSaVpo",
@@ -1277,7 +1753,12 @@
    "duration": "PT1M2S",
    "views": 4279,
    "likes": 79,
-   "comments": 5
+   "comments": 5,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 0
   },
   {
    "id": "QT6XsfAGGcA",
@@ -1300,7 +1781,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 5
   },
   {
    "id": "O3s4rvIEjJc",
@@ -1310,18 +1791,18 @@
    "views": 12973,
    "likes": 515,
    "comments": 9,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 146,
+   "avg_view_pct": 248.19,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 11
   },
   {
    "id": "_NgkMEf1u20",
    "title": "'사람 고쳐 쓰는 거 아닙니다' 겉모습에 속아 평생 후회하기 싫을 때 꼭 봐야 할 영상",
    "published": "2026-03-02T11:30:00Z",
    "duration": "PT46S",
-   "views": 1254,
+   "views": 1258,
    "likes": 27,
    "comments": 0
   },
@@ -1341,7 +1822,12 @@
    "duration": "PT56S",
    "views": 878,
    "likes": 19,
-   "comments": 6
+   "comments": 6,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "CGA_qMaONBM",
@@ -1387,7 +1873,7 @@
    "avg_view_pct": 20.45,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 2
   },
   {
    "id": "RPtNscwYcco",
@@ -1410,7 +1896,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 3
   },
   {
    "id": "OSoIncjts9Y",
@@ -1437,7 +1923,12 @@
    "duration": "PT1M10S",
    "views": 1439,
    "likes": 32,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 5,
+   "avg_view_pct": 7.86,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "yjPACmK1YOU",
@@ -1464,7 +1955,12 @@
    "duration": "PT1M8S",
    "views": 1111,
    "likes": 19,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "7iKrZpoj704",
@@ -1483,11 +1979,11 @@
    "views": 2240,
    "likes": 70,
    "comments": 1,
-   "avg_view_sec": 72,
-   "avg_view_pct": 108.66,
+   "avg_view_sec": 51,
+   "avg_view_pct": 76.42,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 11
   },
   {
    "id": "BiQrVrjL2XY",
@@ -1523,7 +2019,12 @@
    "duration": "PT1M1S",
    "views": 1028,
    "likes": 15,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "mXZYmbuRwAs",
@@ -1577,7 +2078,12 @@
    "duration": "PT1M1S",
    "views": 1060,
    "likes": 20,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 60,
+   "avg_view_pct": 99.67,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "H2b4guw2wdw",
@@ -1587,11 +2093,11 @@
    "views": 1067,
    "likes": 32,
    "comments": 11,
-   "avg_view_sec": 28,
-   "avg_view_pct": 39.68,
+   "avg_view_sec": 26,
+   "avg_view_pct": 37.54,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 4
   },
   {
    "id": "BEWs4zjmnU4",
@@ -1609,7 +2115,12 @@
    "duration": "PT53S",
    "views": 50,
    "likes": 2,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "eZsGDNgcetU",
@@ -1628,11 +2139,11 @@
    "views": 160,
    "likes": 4,
    "comments": 1,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 56,
+   "avg_view_pct": 99.12,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 8
   },
   {
    "id": "Sd9P4DZEXis",
@@ -1641,7 +2152,12 @@
    "duration": "PT1M2S",
    "views": 37,
    "likes": 2,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "3Fc_Lg2nZiE",
@@ -1650,7 +2166,12 @@
    "duration": "PT56S",
    "views": 1119,
    "likes": 21,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "zQ2k5g7iAQ4",
@@ -1668,7 +2189,12 @@
    "duration": "PT55S",
    "views": 876,
    "likes": 10,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 3,
+   "avg_view_pct": 5.6,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "fcnvzImNbTM",
@@ -1677,7 +2203,12 @@
    "duration": "PT48S",
    "views": 1307,
    "likes": 28,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "Vl7zjrGxAwk",
@@ -1695,7 +2226,12 @@
    "duration": "PT48S",
    "views": 1432,
    "likes": 42,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 2,
+   "avg_view_pct": 6.19,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "v22OJA55o6M",
@@ -1749,7 +2285,12 @@
    "duration": "PT57S",
    "views": 1554,
    "likes": 9,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "9eeQttl6Dj4",
@@ -1758,7 +2299,12 @@
    "duration": "PT1M6S",
    "views": 43,
    "likes": 3,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "vBSVpmn83zw",
@@ -1767,7 +2313,12 @@
    "duration": "PT52S",
    "views": 1429,
    "likes": 20,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "YG7uAFX5uWA",
@@ -1776,7 +2327,12 @@
    "duration": "PT54S",
    "views": 9117,
    "likes": 247,
-   "comments": 142
+   "comments": 142,
+   "avg_view_sec": 54,
+   "avg_view_pct": 101.66999999999999,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "AXJXuvw2yaw",
@@ -1804,11 +2360,11 @@
    "views": 6679,
    "likes": 150,
    "comments": 3,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 53,
+   "avg_view_pct": 74.75,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 4
   },
   {
    "id": "Vp-n94Ab3Lg",
@@ -1868,11 +2424,11 @@
    "views": 1555,
    "likes": 36,
    "comments": 1,
-   "avg_view_sec": 34,
-   "avg_view_pct": 72.34,
+   "avg_view_sec": 58,
+   "avg_view_pct": 124.53,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 8
   },
   {
    "id": "QsNpa83ZLto",
@@ -1881,7 +2437,12 @@
    "duration": "PT53S",
    "views": 14449,
    "likes": 310,
-   "comments": 7
+   "comments": 7,
+   "avg_view_sec": 68,
+   "avg_view_pct": 129.76,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "_W5hSKzMWME",
@@ -1899,7 +2460,12 @@
    "duration": "PT43S",
    "views": 4851,
    "likes": 38,
-   "comments": 5
+   "comments": 5,
+   "avg_view_sec": 17,
+   "avg_view_pct": 40.8,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "1EU7yHS4S-w",
@@ -1908,7 +2474,12 @@
    "duration": "PT47S",
    "views": 1057,
    "likes": 25,
-   "comments": 3
+   "comments": 3,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "zwiuTGeug2M",
@@ -1933,9 +2504,14 @@
    "title": "당신을 이용하는 사람과 당장 인연 끊어야 하는 이유 ㅣ쇼펜하우어가 말하는 악연 정리법",
    "published": "2026-01-23T13:46:06Z",
    "duration": "PT39S",
-   "views": 1433,
+   "views": 1434,
    "likes": 8,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "K72g41znKUc",
@@ -2008,11 +2584,11 @@
    "views": 1107,
    "likes": 15,
    "comments": 1,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 53,
+   "avg_view_pct": 99.83,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 3
   },
   {
    "id": "9KXqEuiSqPo",
@@ -2057,7 +2633,12 @@
    "duration": "PT1M",
    "views": 959,
    "likes": 20,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "c53QZHlJ9DA",
@@ -2147,7 +2728,12 @@
    "duration": "PT1M4S",
    "views": 957,
    "likes": 25,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "5kGnavEX2Os",
@@ -2157,11 +2743,11 @@
    "views": 1187,
    "likes": 19,
    "comments": 1,
-   "avg_view_sec": 53,
-   "avg_view_pct": 87.05,
-   "shares": 0,
+   "avg_view_sec": 51,
+   "avg_view_pct": 84.78,
+   "shares": 1,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 7
   },
   {
    "id": "BoPP12-hHeE",
@@ -2184,7 +2770,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 2
   },
   {
    "id": "oUIn9ozs6yk",
@@ -2193,7 +2779,12 @@
    "duration": "PT1M8S",
    "views": 1027,
    "likes": 8,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 5,
+   "avg_view_pct": 7.780000000000001,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "Z-heiAL0bIQ",
@@ -2202,14 +2793,19 @@
    "duration": "PT1M7S",
    "views": 1011,
    "likes": 27,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 3,
+   "avg_view_pct": 5.52,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "Xqiqhn1RvKY",
    "title": "늙어서 돈 보다 더 무서운 것은 '이것'입니다 (노후에 반드시 깨달아야 할 것)",
    "published": "2026-01-07T12:49:12Z",
    "duration": "PT1M20S",
-   "views": 1520,
+   "views": 1521,
    "likes": 36,
    "comments": 1
   },
@@ -2225,7 +2821,7 @@
    "avg_view_pct": 83.75,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 3
   },
   {
    "id": "116numYB6-0",
@@ -2252,7 +2848,12 @@
    "duration": "PT56S",
    "views": 1298,
    "likes": 16,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "vNSuYA8T4G8",
@@ -2279,7 +2880,12 @@
    "duration": "PT1M3S",
    "views": 1153,
    "likes": 31,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "MH0pwwiL_98",
@@ -2293,7 +2899,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 3
   },
   {
    "id": "tt0_PX6OIm4",
@@ -2329,7 +2935,12 @@
    "duration": "PT51S",
    "views": 1778,
    "likes": 19,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 21,
+   "avg_view_pct": 41.86,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 7
   },
   {
    "id": "VXo4_zNlKBY",
@@ -2383,7 +2994,12 @@
    "duration": "PT4M17S",
    "views": 12,
    "likes": 0,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "UaDJPj-OwMA",
@@ -2392,7 +3008,12 @@
    "duration": "PT53S",
    "views": 1672,
    "likes": 24,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 12,
+   "avg_view_pct": 22.64,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "6CvVI6_1P2w",
@@ -2455,7 +3076,12 @@
    "duration": "PT56S",
    "views": 364,
    "likes": 3,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "ILT1bokgrS8",
@@ -2491,7 +3117,12 @@
    "duration": "PT1M43S",
    "views": 1568,
    "likes": 7,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "o82ULRFfGqM",
@@ -2500,7 +3131,12 @@
    "duration": "PT57S",
    "views": 1398,
    "likes": 14,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 60,
+   "avg_view_pct": 105.90000000000002,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 6
   },
   {
    "id": "4aHiCNqtWSU",
@@ -2518,7 +3154,12 @@
    "duration": "PT51S",
    "views": 1350,
    "likes": 28,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "C4iBV75WQXM",
@@ -2590,7 +3231,12 @@
    "duration": "PT1M29S",
    "views": 1302,
    "likes": 0,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "4FNvHxginyE",
@@ -2599,7 +3245,12 @@
    "duration": "PT52S",
    "views": 1536,
    "likes": 8,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 20,
+   "avg_view_pct": 39.71,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "NJUONDJnCHQ",
@@ -2615,14 +3266,14 @@
    "title": "성격은 얼굴에 티가 난다｜나이 들수록 숨길 수 없는 이유",
    "published": "2025-12-18T06:14:19Z",
    "duration": "PT47S",
-   "views": 485,
+   "views": 486,
    "likes": 2,
    "comments": 1,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 63,
+   "avg_view_pct": 135.78,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 9
   },
   {
    "id": "De5vOUGmKCk",
@@ -2632,11 +3283,11 @@
    "views": 3566,
    "likes": 47,
    "comments": 0,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 20,
+   "avg_view_pct": 47.61,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1
+   "views_period": 3
   },
   {
    "id": "8OfG_dZCKHY",
@@ -2654,7 +3305,12 @@
    "duration": "PT56S",
    "views": 1431,
    "likes": 38,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "1y0o8ueW6I8",
@@ -2735,7 +3391,12 @@
    "duration": "PT1M19S",
    "views": 2361,
    "likes": 23,
-   "comments": 0
+   "comments": 0,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "ZWOApLT6TNc",
