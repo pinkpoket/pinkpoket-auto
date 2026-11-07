@@ -36,13 +36,22 @@ def build(body, title, cat, photos, orig_urls=None):
     if m:
         sig_local = ROOT / "brand/naver/naver-signature.png"
         body = body.replace(m.group(0), f'src="{png_uri(sig_local)}" data-orig="{m.group(1)}"')
+    # 📷 [사진 N] 자리에 사진을 바로 넣는다 (본문 복사하면 사진도 같이 붙음)
+    uris = [data_uri(p) for p in photos]
+    for i, u in enumerate(uris, 1):
+        orig = orig_urls[i-1] if orig_urls and i <= len(orig_urls) else ""
+        tag = (f'<img src="{u}" data-orig="{orig}" style="width:100%" alt="">' if orig
+               else f'<img src="{u}" style="width:100%" alt="">')
+        body, n = re.subn(rf'<p>\s*📷\s*\[사진 {i}\]\s*</p>', f'<p>{tag}</p>', body)
+        if not n:
+            body = body.replace(f'📷 [사진 {i}]', tag)
     ph = []
     for i, p in enumerate(photos, 1):
         link = ""
         if orig_urls and i <= len(orig_urls):
             link = f' · <a href="{orig_urls[i-1]}">원본 열기</a>'
         ph.append(f'<div class="ph"><b>사진 {i}</b> (오른쪽 클릭 → 이미지 저장){link}<br>'
-                  f'<img src="{data_uri(p)}" alt="사진 {i}"></div>')
+                  f'<img src="{uris[i-1]}" alt="사진 {i}"></div>')
     t = html.escape(title)
     c = html.escape(cat)
     return f"""<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">
@@ -66,7 +75,7 @@ body{{font-family:-apple-system,'Noto Sans KR','Malgun Gothic',sans-serif;margin
 <div class="box"><button class="btn" onclick="cp('body')">본문 복사</button><div class="ok" id="msg"></div>
 <div id="body">{body}</div>
 <button class="btn" onclick="cp('body')">본문 복사</button></div>
-<div class="box"><b>사진 {len(photos)}장</b> — 본문의 📷 [사진 N] 자리에 넣어 주세요<br>{''.join(ph)}</div>
+<div class="box"><b>예비용 사진 {len(photos)}장</b> — 사진이 본문에 이미 들어가 있어요. 붙여 넣은 뒤 사진이 안 보일 때만 여기서 저장해 넣어 주세요.<br>{''.join(ph)}</div>
 <p class="note">발행 전에 한 번 읽어 봐 주세요.</p>
 </div>
 <script>
