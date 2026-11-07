@@ -44,8 +44,14 @@ PEOPLE = {"woman", "women", "man", "men", "girl", "boy", "model", "portrait", "p
 def main():
     if not KEY:
         return
-    body = json.loads(Path("/tmp/naver_body.json").read_text(encoding="utf-8"))
-    for res_path in [str(ROOT / f"naver/jobs/{body['id']}.result.json")]:
+    bf = Path("/tmp/naver_body.json")
+    if bf.exists():  # Gemini 원고 (ai-write.yml)
+        paths = [str(ROOT / f"naver/jobs/{json.loads(bf.read_text(encoding='utf-8'))['id']}.result.json")]
+    else:  # Claude 원고 (naver.yml): 오늘 만든 작업 중 사진 0장인 것
+        import datetime as dt
+        today = (dt.datetime.utcnow() + dt.timedelta(hours=9)).strftime("%Y%m%d")
+        paths = sorted(glob.glob(str(ROOT / f"naver/jobs/{today}-*.result.json")))
+    for res_path in paths:
         res = json.loads(Path(res_path).read_text(encoding="utf-8"))
         if res.get("images"):
             continue

@@ -33,7 +33,11 @@ jobs:
           COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
           COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
           COUPANG_SUB_ID: ${{ vars.COUPANG_SUB_ID }}
-        run: python -u naver_bot.py
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          pip install -q requests pillow
+          python -u naver_bot.py
+          python -u ai/naver_stock.py
       - name: 결과 올리기
         run: |
           git add naver images/naver 2>/dev/null || true
