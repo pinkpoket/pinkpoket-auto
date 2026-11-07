@@ -1,0 +1,46 @@
+{
+ "title": "다용도실 세탁기 배수구, 얼면 물바다 돼요",
+ "hook": "배수구 결빙 방지",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "다용도실 세탁기 배수구, 영하 날씨에 그냥 두시나요?",
+   "bg": "close up of a modern washing machine drain hose connected to a floor drain in a utility room, soft natural light, centered"
+  },
+  {
+   "text": "고인 물이 얼어붙어 다음 세탁 때 물이 그대로 역류해요",
+   "bg": "close up of a modern washing machine drain hose connected to a floor drain in a utility room, soft natural light, centered"
+  },
+  {
+   "text": "첫째, 세탁 직후 호스를 들어 올려 잔수를 완전히 털어내요",
+   "bg": "close up of a person holding and shaking a gray washing machine drain hose near a laundry room floor, soft light, centered"
+  },
+  {
+   "text": "둘째, 호스가 처지지 않도록 받침대를 괴어 자연 배수 경사를 만들어요",
+   "bg": "close up of a person holding and shaking a gray washing machine drain hose near a laundry room floor, soft light, centered"
+  },
+  {
+   "text": "셋째, 보온재를 감싸고 바닥 틈새를 막아 냉기 유입을 차단해요",
+   "bg": "close up of a gray washing machine drain hose neatly insulated with foam wrapping on a clean gray tile floor, soft daylight, centered"
+  },
+  {
+   "text": "그럼 오늘, 배수 호스가 처져 있지 않은지 눈으로 먼저 확인해 보세요",
+   "bg": "close up of a gray washing machine drain hose neatly insulated with foam wrapping on a clean gray tile floor, soft daylight, centered"
+  }
+ ],
+ "description": "한겨울 다용도실 세탁기 배수구 역류, 미리 막아보세요! 🧊\n세탁 직후 잔수를 비우고 호스 경사를 맞춘 뒤 보온재를 감싸면 얼음 마개를 예방할 수 있어요.\n여러분은 다용도실 동파 어떻게 대비하고 계신가요? 댓글로 알려 주세요.",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집 연구소",
+  "#세탁기배수구",
+  "#다용도실동파",
+  "#겨울철살림",
+  "#배수구얼음",
+  "#살림꿀팁",
+  "#동파방지"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/utility-room-washing-machine-drain.html",
+ "comment": "아침마다 다용도실 문 열기 조마조마하셨죠? 🥶\n찬바람 불기 전에 배수 호스부터 팽팽하게 펴두고 한파에도 마음 편히 보내세요 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
