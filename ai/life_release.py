@@ -85,12 +85,12 @@ def main():
             if b:
                 move(b[0], SQ)
                 out("next", "shorts-life.yml")
-            elif os.environ.get("GEMINI_API_KEY"):
+            elif os.environ.get("GEMINI_FALLBACK") == "1" and os.environ.get("GEMINI_API_KEY"):
                 print("보관함이 비어 Gemini 가 대신 씀")
                 gw.life_shorts(gw.pick_models("flash"))
                 out("next", "shorts-life.yml")
             else:
-                gw.telegram("[인생ON] 쇼츠 보관함이 비었어요.")
+                print("쇼츠 보관함이 비어서 이번엔 건너뜀")
                 return
     left_s, left_l = len(bank(SB)), len(bank(LB))
     print(f"남은 보관함: 쇼츠 {left_s}편, 긴 영상 {left_l}편")
