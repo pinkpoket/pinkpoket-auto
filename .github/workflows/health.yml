@@ -1,0 +1,25 @@
+name: health-check
+
+# 매일 밤 자동 점검 — 문제가 있을 때만 텔레그램 (Claude 매일 점검 대신)
+on:
+  schedule:
+    - cron: "47 12 * * *"   # 한국 21:47
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python -u ai/health.py

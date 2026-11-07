@@ -1,0 +1,62 @@
+name: life-release
+
+# 인생ON 보관함에서 하나씩 꺼내 올리기 (Claude 는 일요일에 한 주 치를 몰아 씀)
+on:
+  schedule:
+    - cron: "47 21 * * *"   # 한국 06:47 쇼츠
+    - cron: "37 0 * * *"    # 한국 09:37 긴 영상
+    - cron: "47 1 * * *"    # 한국 10:47 짝 쇼츠
+    - cron: "47 8 * * *"    # 한국 17:47 쇼츠
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "short / pair / long"
+        default: "short"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: life-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests
+      - name: 무엇을 꺼낼지
+        id: m
+        run: |
+          M="${{ github.event.inputs.mode }}"
+          case "${{ github.event.schedule }}" in
+            "37 0 * * *") M=long ;;
+            "47 1 * * *") M=pair ;;
+            "47 21 * * *"|"47 8 * * *") M=short ;;
+          esac
+          echo "mode=$M" >> $GITHUB_OUTPUT
+      - name: 꺼내기
+        id: r
+        env:
+          MODE: ${{ steps.m.outputs.mode }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        run: python -u ai/life_release.py
+      - name: 올리고 제작 시작
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add -A life/shorts life/long
+          git diff --cached --quiet && exit 0
+          git commit -q -m "인생ON 보관함에서 꺼냄 (${{ steps.m.outputs.mode }})"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
+          [ -n "${{ steps.r.outputs.next }}" ] && gh workflow run "${{ steps.r.outputs.next }}" --ref main
+          true
