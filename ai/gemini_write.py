@@ -108,8 +108,9 @@ def parse_json(txt):
     return d[0] if isinstance(d, list) and d else d
 
 
-def write_loop(models, prompt, check, tries=3):
-    fb, errs = "", []
+def write_loop(models, prompt, check, tries=3, soft=None):
+    """soft: 3번 다 실패했을 때 마지막 글이 이 느슨한 검사를 통과하면 그대로 쓴다."""
+    fb, errs, d = "", [], None
     for _ in range(tries):
         try:
             d = parse_json(generate(models, prompt + fb))
@@ -121,6 +122,9 @@ def write_loop(models, prompt, check, tries=3):
                 return d
         print("고칠 점:", errs)
         fb = "\n\n[이전 답의 문제 — 반드시 고쳐서 JSON 전체를 다시 써라]\n- " + "\n- ".join(errs)
+    if soft and isinstance(d, dict) and not soft(d):
+        print("느슨한 기준으로 통과:", errs)
+        return d
     raise RuntimeError("규칙에 맞는 글을 3번 안에 못 썼어요: " + "; ".join(errs))
 
 
@@ -231,12 +235,12 @@ def check_blog(d, min_html, need=("title", "slug", "description", "labels", "ima
     return errs
 
 
-def check_scenes(d, n_lo, n_hi, c_lo, c_hi, hook_max=14):
+def check_scenes(d, n_lo, n_hi, c_lo, c_hi, hook_max=14, need_bg=True):
     errs = [f"{k} 칸이 없음" for k in ("title", "hook", "scenes", "description", "tags", "comment") if not d.get(k)]
     if errs:
         return errs
     sc = d["scenes"]
-    if not all(isinstance(s, dict) and s.get("text") and s.get("bg") for s in sc):
+    if not all(isinstance(s, dict) and s.get("text") and (s.get("bg") or not need_bg) for s in sc):
         return ['scenes 는 [{"text": "...", "bg": "english"}] 형식, text·bg 모두 채우기']
     total = sum(len(s["text"]) for s in sc)
     if not n_lo <= len(sc) <= n_hi:
@@ -470,7 +474,8 @@ def salim_shorts(models):
 [규칙]
 {guide}
 """
-    d = write_loop(models, prompt, lambda d: check_scenes(d, 5, 6, 170, 200))  # SHORTS_GUIDE: 170~200자
+    d = write_loop(models, prompt, lambda d: check_scenes(d, 5, 6, 170, 200),  # SHORTS_GUIDE: 170~200자
+                   soft=lambda d: check_scenes(d, 5, 7, 155, 210))
     d["blog_url"] = pick["url"] if pick else ""
     d["voice"] = ex.get("voice", "ko-KR-SunHiNeural")
     d["coupang_keywords"] = []
@@ -512,7 +517,8 @@ def news_shorts(models):
     LEN = {"morning": "장면 7개(훅 1장면 15~25자 + 첫째~다섯째 소식 한 장면씩 30~40자 + 마무리 1장면), scenes text 합 230~280자, 60초 미만.",
            "life": "22~28초, 30초 미만. 장면 5~6개, 장면당 30~40자(첫 장면 훅만 15~25자), scenes text 합 170~200자.",
            "money": "22~28초, 30초 미만. 장면 5~6개, 장면당 30~40자(첫 장면 훅만 15~25자), scenes text 합 170~200자. 마지막 장면이나 설명란에 \"투자 판단은 본인 몫\"."}
-    rng = (7, 7, 220, 290) if corner == "morning" else (5, 6, 160, 215)
+    rng = (7, 7, 225, 285) if corner == "morning" else (5, 6, 165, 205)
+    soft_rng = (6, 8, 210, 300) if corner == "morning" else (5, 7, 155, 215)
     prompt = header("유튜브 쇼츠 채널 「핑포의 오늘뉴스」의 대본 작가") + f"""[할 일]
 {task}
 
@@ -529,8 +535,8 @@ def news_shorts(models):
 [규칙]
 {guide}
 """
-    def check(d):
-        e = check_scenes(d, *rng)
+    def check(d, r=rng):
+        e = check_scenes(d, *r, need_bg=False)
         if not e:
             bad = unknown_numbers(" ".join(x["text"] for x in d["scenes"]) + " " + d["title"]
                                   + " " + d.get("description", ""), source)
@@ -538,7 +544,7 @@ def news_shorts(models):
                 e.append(f"자료에 없는 숫자를 썼음: {', '.join(bad[:8])} — 지우거나 자료의 숫자로만")
         return e
 
-    d = write_loop(models, prompt, check)
+    d = write_loop(models, prompt, check, soft=lambda d: check(d, soft_rng))
     d["blog_url"] = post["url"] if post else ""
     d["voice"] = ex.get("voice", "ko-KR-SunHiNeural")
     d["coupang_keywords"] = []
@@ -661,7 +667,8 @@ def life_shorts(models):
 [규칙]
 {guide}
 """
-    d = write_loop(models, prompt, lambda d: check_scenes(d, 9, 12, 330, 410))
+    d = write_loop(models, prompt, lambda d: check_scenes(d, 9, 12, 330, 410),
+                   soft=lambda d: check_scenes(d, 8, 13, 310, 430))
     d["coupang_keywords"] = []
     d["writer"] = "gemini"
     save(ROOT / f"life/shorts/queue/{NOW:%Y%m%d-%H%M}.json", d)
