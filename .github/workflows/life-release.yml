@@ -3,10 +3,10 @@ name: life-release
 # 인생ON 보관함에서 하나씩 꺼내 올리기 (Claude 는 일요일에 한 주 치를 몰아 씀)
 on:
   schedule:
-    - cron: "47 21 * * *"   # 한국 06:47 쇼츠
+    - cron: "21 22 * * *"   # 한국 07:21 쇼츠
     - cron: "37 0 * * *"    # 한국 09:37 긴 영상
-    - cron: "47 1 * * *"    # 한국 10:47 짝 쇼츠
-    - cron: "47 8 * * *"    # 한국 17:47 쇼츠
+    - cron: "21 2 * * *"    # 한국 11:21 짝 쇼츠
+    - cron: "21 9 * * *"    # 한국 18:21 쇼츠
   workflow_dispatch:
     inputs:
       mode:
@@ -37,8 +37,8 @@ jobs:
           M="${{ github.event.inputs.mode }}"
           case "${{ github.event.schedule }}" in
             "37 0 * * *") M=long ;;
-            "47 1 * * *") M=pair ;;
-            "47 21 * * *"|"47 8 * * *") M=short ;;
+            "21 2 * * *") M=pair ;;
+            "21 22 * * *"|"21 9 * * *") M=short ;;
           esac
           echo "mode=$M" >> $GITHUB_OUTPUT
       - name: 꺼내기

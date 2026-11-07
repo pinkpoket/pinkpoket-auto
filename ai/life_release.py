@@ -68,8 +68,20 @@ def pair_short():
     return dst
 
 
+def recent_short(minutes=75):
+    """최근에 (옛 Claude 매일 쇼츠 작업이) 이미 쇼츠를 올렸으면 True — 두 번 올라가지 않게."""
+    log = gw.load(ROOT / "life/data/shorts_log.json", []) or []
+    lim = (dt.datetime.now(dt.timezone.utc) - dt.timedelta(minutes=minutes)).strftime("%Y-%m-%d %H:%M")
+    if any(str(e.get("at", "")) >= lim for e in log[-5:]):
+        return True
+    return bool(glob.glob(str(SQ / "*.json")))
+
+
 def main():
     mode = os.environ.get("MODE", "short")
+    if mode in ("short", "pair") and recent_short():
+        print("방금 다른 쇼츠가 올라가서 이번엔 건너뜀")
+        return
     if mode == "long":
         b = bank(LB)
         if not b:
