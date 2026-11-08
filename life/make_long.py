@@ -43,8 +43,8 @@ LOG = os.path.join(HERE, "data", "long_log.json")
 VOICE = ch.P.get("long_voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"  # 긴 영상: 남성 인준
 C = ch.P["colors"]
 BOX, YEL = tuple(C["hook_bg"]), tuple(C["hook_text"])
-CAP = 88          # 자막 글씨 크기 (시니어용, 74 → 88)
-CAP_LH = 120
+CAP = 110         # 자막 글씨 크기 (시니어용, 74 → 88 → 110, 2026-11-08 핑포 요청)
+CAP_LH = 145
 VOICE_GAIN = 2.3  # 긴 영상 목소리 크게 (쇼츠 1.8)
 BGM_VOL = 0.05
 MOVES = ["zoom_in", "pan_right", "zoom_out", "pan_down", "pan_left", "pan_up"]
@@ -82,10 +82,10 @@ def frame(bg, out, sentence, chapter):
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     ov = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(ov)
-    for y in range(H - 440, H):  # 아래쪽을 부드럽게 어둡게
-        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(210 * ((y - (H - 440)) / 440) ** 1.2)))
+    for y in range(H - 560, H):  # 아래쪽을 부드럽게 어둡게 (자막이 커져 440 → 560)
+        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(215 * ((y - (H - 560)) / 560) ** 1.2)))
     f = ms.font(CAP)
-    lines = [" ".join(l) for l in wrap(d, sentence, f, W - 200)][:3]
+    lines = [" ".join(l) for l in wrap(d, sentence, f, W - 160)][:3]
     y = H - 70 - len(lines) * CAP_LH
     for ln in lines:
         tw = d.textlength(ln, font=f)
