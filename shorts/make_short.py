@@ -211,6 +211,10 @@ def pexels_image(prompt, path):
     return False
 
 
+import threading as _threading
+_USED_LOCK = _threading.Lock()
+
+
 def pixabay_image(prompt, path, orientation="vertical"):
     """무료 사진 사이트 Pixabay 에서 세로 사진을 받아 저장한다 (사람이 나온 사진은 건너뜀)."""
     key = os.environ.get("PIXABAY_API_KEY", "").strip()
@@ -227,16 +231,21 @@ def pixabay_image(prompt, path, orientation="vertical"):
             print(f"[사진] Pixabay 오류: {e}")
             return False
         for h in hits:
-            if h["id"] in PEXELS_USED or PEOPLE.search(h.get("tags") or "") or NOT_SCENERY.search(h.get("tags") or ""):
+            if PEOPLE.search(h.get("tags") or "") or NOT_SCENERY.search(h.get("tags") or ""):
                 continue
+            with _USED_LOCK:  # 여러 장을 동시에 받을 때 같은 사진을 두 번 고르지 않게 먼저 찜한다
+                if h["id"] in PEXELS_USED:
+                    continue
+                PEXELS_USED.add(h["id"])
             try:
                 img = requests.get(h.get("largeImageURL") or h["webformatURL"], timeout=60).content
                 with open(path, "wb") as f:
                     f.write(img)
                 Image.open(path).verify()
             except Exception:  # noqa: BLE001
+                with _USED_LOCK:
+                    PEXELS_USED.discard(h["id"])
                 continue
-            PEXELS_USED.add(h["id"])
             AI_COUNT[0] += 1
             print(f"[사진] Pixabay '{q}' → {h['id']}")
             return True
