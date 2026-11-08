@@ -1,0 +1,75 @@
+name: video-analyze
+
+on:
+  # 직접 실행: 벤치마킹할 유튜브 영상 1편의 공개 정보(제목·설명·조회수·채널)와 자막을 모아 analysis/benchmark/videos/<id>/ 에 저장 (읽기만)
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "영상 주소"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -U yt-dlp requests
+      - name: 영상 정보·자막 모으기
+        env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          URL: ${{ inputs.url }}
+        run: |
+          ID=$(python -c "import re,os;u=os.environ['URL'];m=re.search(r'(?:v=|youtu\.be/|shorts/)([\w-]{11})',u);print(m.group(1))")
+          D="analysis/benchmark/videos/$ID"; mkdir -p "$D"
+          yt-dlp --skip-download --write-auto-subs --write-subs --sub-langs "ko.*,ko" --sub-format vtt \
+            -o "$D/sub.%(ext)s" "https://www.youtube.com/watch?v=$ID" 2> "$D/subs.err" || true
+          tail -3 "$D/subs.err"; ls "$D"
+          python - "$ID" "$D" <<'PY'
+          import json, os, re, sys, glob, requests
+          vid, d = sys.argv[1], sys.argv[2]
+          tok = requests.post("https://oauth2.googleapis.com/token", data={
+              "client_id": os.environ["GOOGLE_CLIENT_ID"], "client_secret": os.environ["GOOGLE_CLIENT_SECRET"],
+              "refresh_token": os.environ["YOUTUBE_REFRESH_TOKEN"], "grant_type": "refresh_token"}, timeout=30).json()["access_token"]
+          h = {"Authorization": f"Bearer {tok}"}
+          v = requests.get("https://www.googleapis.com/youtube/v3/videos", headers=h, timeout=30,
+                           params={"part": "snippet,contentDetails,statistics", "id": vid}).json()["items"][0]
+          ch = requests.get("https://www.googleapis.com/youtube/v3/channels", headers=h, timeout=30,
+                            params={"part": "snippet,statistics", "id": v["snippet"]["channelId"]}).json()["items"][0]
+          info = {"id": vid, "title": v["snippet"]["title"], "published": v["snippet"]["publishedAt"],
+                  "duration": v["contentDetails"]["duration"], "stats": v["statistics"],
+                  "tags": v["snippet"].get("tags", []), "description": v["snippet"].get("description", ""),
+                  "thumb": (v["snippet"]["thumbnails"].get("maxres") or v["snippet"]["thumbnails"].get("high"))["url"],
+                  "channel": {"id": ch["id"], "title": ch["snippet"]["title"], "handle": ch["snippet"].get("customUrl"),
+                              "subs": ch["statistics"].get("subscriberCount"), "videos": ch["statistics"].get("videoCount")}}
+          json.dump(info, open(f"{d}/info.json", "w"), ensure_ascii=False, indent=1)
+          # 자막 vtt → 중복 줄을 뺀 글
+          for f in glob.glob(f"{d}/*.vtt"):
+              out, last = [], ""
+              for ln in open(f, encoding="utf-8"):
+                  ln = re.sub(r"<[^>]+>", "", ln).strip()
+                  if not ln or "-->" in ln or ln.startswith(("WEBVTT", "Kind:", "Language:")) or ln == last:
+                      continue
+                  out.append(ln); last = ln
+              open(f[:-4] + ".txt", "w", encoding="utf-8").write("\n".join(out))
+              print(f, len("".join(out)), "자")
+          print(info["title"], info["stats"], info["channel"]["title"], info["channel"]["subs"])
+          PY
+          # 썸네일
+          curl -sL "$(python -c "import json;print(json.load(open('$D/info.json'))['thumb'])")" -o "$D/thumb.jpg" || true
+      - name: 저장
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add -A analysis/benchmark
+          git diff --cached --quiet && exit 0
+          git commit -m "벤치마킹 영상 정보 모음"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
