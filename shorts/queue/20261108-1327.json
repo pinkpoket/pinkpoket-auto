@@ -1,0 +1,46 @@
+{
+ "title": "보일러 배관 동파, 헌 단열재 그냥 두면 터져요",
+ "hook": "동파 막는 단열 점검",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "한파 때 보일러 배관 터지는 이유, 이거 놓치셨나요?",
+   "bg": "close up of exposed metal water pipes and a boiler lower connection in a utility room, soft daylight, centered"
+  },
+  {
+   "text": "외벽 냉기가 그대로 전해져 밤사이 물이 꽁꽁 얼어붙어요",
+   "bg": "close up of exposed metal water pipes and a boiler lower connection in a utility room, soft daylight, centered"
+  },
+  {
+   "text": "첫째, 단열재를 눌러 푹신한 탄성이 없는지 바스러짐을 확인해요",
+   "bg": "close up of a person's hands checking old foam insulation wrapped around a metal pipe in a balcony, soft light, centered"
+  },
+  {
+   "text": "둘째, 낡은 테이프를 뜯고 배관에 맞는 튜브형 보온재를 씌워요",
+   "bg": "close up of a person's hands checking old foam insulation wrapped around a metal pipe in a balcony, soft light, centered"
+  },
+  {
+   "text": "셋째, 절개면을 은박 테이프로 감고 직수관을 한 겹 더 보강해요",
+   "bg": "close up of gray foam pipe insulation neatly finished with silver aluminum tape on a clean wall, soft light, centered"
+  },
+  {
+   "text": "그럼 오늘, 베란다 보일러 아래 배관 단열재부터 만져보세요",
+   "bg": "close up of gray foam pipe insulation neatly finished with silver aluminum tape on a clean wall, soft light, centered"
+  }
+ ],
+ "description": "한겨울 베란다 보일러 배관 동파, 미리 막아보세요! 🧊\n노후된 단열재를 교체하고 틈새를 은박 테이프로 감싸면 한파에도 든든해요.\n여러분은 베란다 동파 어떻게 대비하고 계신가요? 댓글로 알려 주세요.",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집연구소",
+  "#보일러배관",
+  "#동파방지",
+  "#겨울철살림",
+  "#베란다단열",
+  "#살림꿀팁",
+  "#외풍차단"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/boiler-pipe-outdoor-water-pipe.html",
+ "comment": "아침마다 보일러 에러 코드 뜰까 조마조마하셨죠? 🥶\n본격적인 한파 오기 전에 배관 보온재부터 꼼꼼히 여며주세요 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
