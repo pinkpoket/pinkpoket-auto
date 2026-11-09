@@ -47,6 +47,11 @@
 - 같은 쇼츠를 연달아 두 원고에 쓰지 않는다. `naver/log.txt` 줄 끝에 ` | 쇼츠:<video_id>` 를 붙여 기록한다.
 - **글 맨 마지막**(댓글 질문·하단 쇼츠 링크 다음, 태그 앞)에는 채널 링크 한 줄을 넣는다:
   `▶ 핑포의 작은집 연구소 유튜브` → https://www.youtube.com/channel/UCF2kFXxCID0pGH0l8RD0iKA
+  - ⭐ **채널 링크 바로 위에 유튜브 소제목** (2026-11-09 핑포 요청): STEP 소제목과 같은 모양에 `<b>YOUTUBE</b>` 말머리. 문구는 원고마다 아래에서 돌려 쓴다(비슷한 말로 바꿔도 됨, 이모지 없이):
+    `<h3><span style="color:#d9488b"><b>YOUTUBE</b></span><span style="color:#cfcfcf"> | </span><span style="color:#4a1f35"><b>더 많은 살림 정보는 유튜브로 놀러 오세요</b></span></h3>` → `<p>&nbsp;</p>` → 채널 링크 `<p>`
+    - 더 많은 살림 정보는 유튜브로 놀러 오세요
+    - 영상으로 보고 싶다면 핑포 유튜브로 오세요
+    - 작은집 연구소 유튜브도 있어요
 - **서명 그림** (2026-11-04 핑포 요청): 채널 링크 바로 뒤, 태그 앞에 `<img src="https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@9ee65956345c94ddb8c5815029fa5e395467137a/brand/naver/naver-signature.png" style="width:100%">` 한 장을 넣는다 (AI 사진 3장과 별개, 한도 안 씀).
 - 블로그 꾸미기 그림: `brand/naver/` (타이틀 966×300, 프로필, 서명).
 - 중간에 따로 '🎬 유튜브' 소제목 칸은 만들지 않는다. 쿠팡 '💛 핑포가 골라 본 아이템'은 (쿠팡 재개 후) 원래 자리(체크리스트·마무리 뒤) 그대로.
