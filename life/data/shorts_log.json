@@ -322,5 +322,17 @@
   "url": "https://youtube.com/shorts/IPq5Fvzrnaw",
   "privacy": "public",
   "comment": "ok"
+ },
+ {
+  "file": "20261109-1917.json",
+  "at": "2026-11-09 10:18",
+  "title": "이 중 3개 이상이면 그 모임은 이제 잠시 쉬셔도 됩니다",
+  "voice": "ko-KR-SunHiNeural",
+  "seconds": 57.0,
+  "ai_images": 4,
+  "video_id": "Tdy6np0HAdA",
+  "url": "https://youtube.com/shorts/Tdy6np0HAdA",
+  "privacy": "public",
+  "comment": "ok"
  }
 ]
