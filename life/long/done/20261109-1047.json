@@ -365,7 +365,7 @@
   "title": "자식이 기다리는 부모의 전화는 이 한마디로 시작합니다",
   "hook": "자식이 기다리는 전화",
   "voice": "ko-KR-InJoonNeural",
-  "long_url": "",
+  "long_url": "https://youtu.be/dYSy8E40TmU",
   "scenes": [
    {
     "text": "첫마디가 다릅니다.",
@@ -431,5 +431,6 @@
   ],
   "comment": "자식에게 거는 전화, 첫마디를 어떻게 시작하시나요?\n이번 주엔 '그냥 목소리 듣고 싶어서'로 걸어 보세요.\n나머지 이야기는 채널의 긴 영상에 있어요.",
   "coupang_keywords": []
- }
+ },
+ "pair_used": true
 }
