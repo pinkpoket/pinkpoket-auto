@@ -19,6 +19,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # naver_fix_sha.py 가 옛 커밋에 사진이 있는지 확인함
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -42,4 +44,11 @@ jobs:
         run: |
           git add naver images/naver 2>/dev/null || true
           git diff --cached --quiet || git commit -q -m "네이버 원고 준비 결과"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
+      - name: 사진 주소 커밋 번호 확인·고치기
+        # pull --rebase 로 사진 커밋 번호가 바뀌면 result.json 주소가 없는 커밋을 가리킴 → 실제 번호로 고침
+        run: |
+          python -u ai/naver_fix_sha.py
+          git add naver/jobs 2>/dev/null || true
+          git diff --cached --quiet || git commit -q -m "네이버 사진 주소 커밋 번호 고침"
           for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
