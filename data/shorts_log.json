@@ -455,5 +455,17 @@
   "url": "https://youtube.com/shorts/s2eoEurwaQo",
   "privacy": "public",
   "comment": "ok"
+ },
+ {
+  "file": "20261110-2119.json",
+  "at": "2026-11-10 12:20",
+  "title": "싱크대 하부장 찬바람, 여기서 들어와요",
+  "voice": "ko-KR-SunHiNeural",
+  "seconds": 21.5,
+  "ai_images": 3,
+  "video_id": "ckbRS2I-H_g",
+  "url": "https://youtube.com/shorts/ckbRS2I-H_g",
+  "privacy": "public",
+  "comment": "ok"
  }
 ]
