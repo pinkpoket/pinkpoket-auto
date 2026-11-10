@@ -902,6 +902,19 @@ def yt_upload(video, title, desc, tags, shorts=True):
     return info.get("id"), info.get("status", {}).get("privacyStatus", "")
 
 
+def set_short_thumb(vid, video):
+    """제목 카드(영상 1초 화면)를 쇼츠 썸네일로 (채널 페이지·검색·홈에 보이는 그림, 2026-11-10).
+    쇼츠 피드에서는 썸네일 대신 영상이 바로 재생되니 첫 화면 카드는 그대로 중요하다."""
+    img = os.path.join(WORK, "thumb.jpg")
+    run(["ffmpeg", "-y", "-ss", "1.0", "-i", video, "-frames:v", "1", "-q:v", "3", img])
+    tok = yt_access_token()
+    with open(img, "rb") as f:
+        r = requests.post(f"https://www.googleapis.com/upload/youtube/v3/thumbnails/set?videoId={vid}",
+                          headers={"Authorization": f"Bearer {tok}", "Content-Type": "image/jpeg"}, data=f, timeout=60)
+    if r.status_code >= 300:
+        raise RuntimeError(f"썸네일 실패 {r.status_code}: {r.text[:200]}")
+
+
 def yt_comment(video_id, text):
     """채널 이름으로 댓글을 단다. 토큰에 youtube.force-ssl 권한이 없으면 실패하고 영상은 그대로 둔다."""
     tok = yt_access_token()
@@ -974,6 +987,14 @@ def main():
                 vid, privacy = yt
                 entry.update(video_id=vid, url=f"https://youtube.com/shorts/{vid}", privacy=privacy)
                 print(f"[유튜브] 업로드 완료 ({privacy}): https://youtube.com/shorts/{vid}")
+                if ch.P.get("title_card"):
+                    try:
+                        set_short_thumb(vid, video)
+                        entry["thumb"] = "ok"
+                        print("[썸네일] 제목 카드로 설정")
+                    except Exception as te:  # noqa: BLE001
+                        entry["thumb_error"] = str(te)[:300]
+                        print(f"[썸네일] {te}")
                 try:
                     cid = yt_comment(vid, build_comment(script, product))
                     entry["comment"] = "ok"

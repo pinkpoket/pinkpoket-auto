@@ -1,0 +1,37 @@
+name: life-short-thumb
+
+# 인생ON 쇼츠 썸네일 바꾸기: life/shorts/thumbs/<영상ID>.jpg 를 올리면 그 영상 썸네일로 설정 (2026-11-10)
+on:
+  push:
+    branches: [main]
+    paths: ["life/shorts/thumbs/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  thumb:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CHANNEL: life
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q requests pillow edge-tts==7.3.1
+      - env:
+          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.LIFE_YOUTUBE_REFRESH_TOKEN }}
+          YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
+        run: python -u shorts/set_thumbs.py
+      - run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add -A life/shorts/thumbs life/data/thumb_log.json
+          git diff --cached --quiet && exit 0
+          git commit -m "인생ON 쇼츠 썸네일"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
