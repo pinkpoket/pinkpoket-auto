@@ -942,7 +942,7 @@ def main():
                     pdir = os.path.join(REPO, pdir)
                     os.makedirs(pdir, exist_ok=True)
                     for k in range(8):
-                        t = secs * (k + 0.5) / 8
+                        t = 1.0 if k == 0 else secs * (k + 0.5) / 8  # 첫 장은 제목 카드
                         run(["ffmpeg", "-y", "-ss", f"{t:.2f}", "-i", video, "-frames:v", "1", "-vf", "scale=540:-1",
                              os.path.join(pdir, f"{name}-{k}.jpg")])
                     os.remove(path)

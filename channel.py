@@ -114,7 +114,8 @@ PROFILES = {
         # 인생ON 사연(숏드라마) 그림 스타일 — 수채화 그림책 느낌의 어르신 인물 (실사 아님), 2026-11-10 시작
         "sayeon_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
                          "elderly Korean family members, expressive but kind faces, single clear moment, characters centered, "
-                         "medium close-up, vertical 9:16 composition, plenty of space around faces, "
+                         "medium shot from the waist up, full head visible with empty space above the head, faces in the upper middle of the frame, "
+                         "vertical 9:16 composition, "
                          "no text, no letters, no speech bubbles, no logo, no watermark"),
         # 시니어용 큰 자막 (기본 72 → 92), 4줄까지
         "cap_size": 92, "cap_lh": 124, "cap_lines": 4,
