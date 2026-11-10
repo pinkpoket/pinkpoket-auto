@@ -448,6 +448,80 @@ def caption_png(tokens, active, path, progress):
     img.save(path)
 
 
+def card_lines(text):
+    """첫 화면 제목 카드 글줄. 대본 "card" 에 '\\n' 이 있으면 그 자리에서, 없으면 낱말을 모아 한 줄 약 7자로.
+    [낱말] 은 노란색으로 칠할 자리 (괄호는 화면에 안 보임)."""
+    text = (text or "").strip().rstrip(".")
+    if "\n" in text:
+        lines = [ln.strip() for ln in text.split("\n") if ln.strip()]
+    else:
+        lines, cur = [], ""
+        for w in text.split():
+            plain = re.sub(r"[\[\]]", "", cur + " " + w).strip()
+            if cur and len(plain.replace(" ", "")) > 7:
+                lines.append(cur)
+                cur = w
+            else:
+                cur = (cur + " " + w).strip()
+        if cur:
+            lines.append(cur)
+    lines = lines[:4]
+    marked = any("[" in ln for ln in lines)
+    out = []
+    for li, ln in enumerate(lines):
+        segs = [(s, s.startswith("[")) for s in re.split(r"(\[[^\]]*\])", ln) if s]
+        segs = [(s.strip("[]"), hi) for s, hi in segs]
+        if not marked:  # 표시가 없으면 숫자가 있는 줄, 숫자가 없으면 첫 줄을 노랗게
+            has_num = any(re.search(r"\d", x) for x in lines)
+            hi = bool(re.search(r"\d", ln)) if has_num else li == 0
+            segs = [(re.sub(r"[\[\]]", "", ln), hi)]
+        out.append(segs)
+    return out
+
+
+def title_card_png(text, path):
+    """첫 장면 화면: 위 노란 상자·자막 대신, 화면 가운데에 주제를 큰 글씨 4줄 이내로 (피드에서 넘기지 않게)."""
+    img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    lines = card_lines(text)
+    size = 170
+    while size > 90:
+        f = font(size)
+        if max(sum(d.textlength(s, font=f) for s, _ in ln) for ln in lines) <= W - 150:
+            break
+        size -= 6
+    f = font(size)
+    lh = int(size * 1.25)
+    block = lh * len(lines)
+    top = (H - block) // 2 - 40
+    # 글씨 뒤 배경을 고르게 어둡게 (사진이 밝아도 잘 읽히게)
+    pad = 260
+    for y in range(max(0, top - pad), min(H, top + block + pad)):
+        e = max(0.0, min(1.0, min(y - (top - pad), (top + block + pad) - y) / pad))
+        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(140 * e * e * (3 - 2 * e))))  # 가장자리가 띠처럼 보이지 않게 부드럽게
+    for li, segs in enumerate(lines):
+        x = (W - sum(d.textlength(s, font=f) for s, _ in segs)) / 2
+        y = top + li * lh
+        for s, hi in segs:
+            d.text((x, y), s, font=f, fill=YELLOW if hi else (255, 255, 255),
+                   stroke_width=max(8, size // 14), stroke_fill=(0, 0, 0))
+            x += d.textlength(s, font=f)
+    # 채널 이름 + 로고 (작게, 카드 아래)
+    f_tag = font(40)
+    tag = ch.P.get("tag") or ch.P["name"]
+    tw = d.textlength(tag, font=f_tag)
+    logo_s = 64
+    lx = int((W - tw - logo_s - 12) / 2)
+    ty = top + block + 70
+    tx = (W - tw) / 2
+    if os.path.exists(LOGO):
+        logo = Image.open(LOGO).convert("RGBA").resize((logo_s, logo_s), Image.LANCZOS)
+        img.alpha_composite(logo, (lx, ty - 8))
+        tx = lx + logo_s + 12
+    d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=4, stroke_fill=(0, 0, 0))
+    img.save(path)
+
+
 def wrap_ko(text, width):
     lines = []
     for para in text.split("\n"):
@@ -475,10 +549,15 @@ def make_scene(i, scene, hook, audio, words, t0, total):
     if not os.path.exists(raw):
         gradient_bg(raw, i)
     prepare_image(raw, bg)
-    base_png(hook, base, outro=scene.get("outro", False))
     dur = duration(audio) + 0.05
-    tokens, starts = word_times(scene["text"], words, dur)
     caps = []
+    if scene.get("card"):
+        # 첫 화면 제목 카드: 위 상자·자막 없이 카드 한 장만 (2026-11-10 벤치마킹 반영)
+        title_card_png(scene["card"], base)
+        starts = []
+    else:
+        base_png(hook, base, outro=scene.get("outro", False))
+        tokens, starts = word_times(scene["text"], words, dur)
     for k, st in enumerate(starts):
         cp = os.path.join(WORK, f"cap{i}_{k}.png")
         caption_png(tokens, k, cp, (t0 + st) / total)
@@ -541,6 +620,9 @@ def build_video(script, out_path):
         scenes.append({"text": outro, "bg": ch.P["shorts_outro_bg"], "outro": True})
     if ch.P.get("cap_lines"):
         scenes = split_long_scenes(scenes)
+    if ch.P.get("title_card") and scenes:
+        # 첫 장면은 화면 가운데 큰 제목 카드로 (대본 "card" 가 있으면 그것, 없으면 첫 장면 말)
+        scenes[0] = dict(scenes[0], card=script.get("card") or scenes[0]["text"])
     from concurrent.futures import ThreadPoolExecutor
 
     # 채널 설정 max_images 가 있으면 그림 수를 줄이고, 이어지는 장면끼리 같은 그림을 나눠 쓴다
