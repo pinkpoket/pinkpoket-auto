@@ -1,0 +1,72 @@
+name: shorts-life-preview
+
+on:
+  # 미리보기: life/shorts/preview/ 에 대본을 올리면 영상만 만들고(업로드 안 함) 장면 사진 8장을 life/data/preview/ 에 저장
+  push:
+    branches: [main]
+    paths: ["life/shorts/preview/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: shorts-life-preview
+  cancel-in-progress: false
+
+jobs:
+  make:
+    runs-on: ubuntu-latest
+    env:
+      CHANNEL: life
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 도구 설치 (무료)
+        timeout-minutes: 15
+        run: |
+          # apt 가 응답 없이 멈추는 일이 있어(2026-11-06) 시간 제한 + 재시도
+          APT="-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 -o DPkg::Lock::Timeout=120"
+          export DEBIAN_FRONTEND=noninteractive
+          ok=0
+          for i in 1 2 3; do
+            echo "apt 시도 $i"
+            if timeout 240 sudo -E apt-get $APT update -q && \
+               timeout 400 sudo -E apt-get $APT install -y -q ffmpeg fonts-noto-cjk fonts-noto-cjk-extra > /tmp/apt.log 2>&1; then
+              ok=1; break
+            fi
+            tail -20 /tmp/apt.log || true
+            sleep 10
+          done
+          [ "$ok" = 1 ] || { echo "apt 설치 실패"; exit 1; }
+          pip install -q edge-tts==7.3.1 requests pillow
+      - name: 미리보기 영상 만들기 (업로드 안 함)
+        env:
+          DRY_RUN: "1"
+          SHORTS_QUEUE: life/shorts/preview
+          PREVIEW_DIR: life/data/preview
+          PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          CF_ACCOUNT_ID: ${{ vars.LIFE_CF_ACCOUNT_ID || vars.NEWS_CF_ACCOUNT_ID }}
+          CF_API_TOKEN: ${{ secrets.LIFE_CF_API_TOKEN || secrets.NEWS_CF_API_TOKEN }}
+        run: python -u shorts/make_short.py
+      - name: 미리보기 영상 보관 (3일)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shorts-life-preview
+          path: shorts/_out/*.mp4
+          retention-days: 3
+          if-no-files-found: ignore
+      - name: 미리보기 사진 저장
+        if: always()
+        run: |
+          git config user.name "pinkpoket-bot"
+          git config user.email "pinkpoket-bot@users.noreply.github.com"
+          git add -A life/shorts/preview life/data/preview
+          git diff --cached --quiet && exit 0
+          git commit -m "인생ON 쇼츠 미리보기"
+          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done

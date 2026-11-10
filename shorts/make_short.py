@@ -43,7 +43,7 @@ REPO = os.path.dirname(ROOT)
 sys.path.insert(0, REPO)
 import channel as ch  # noqa: E402
 
-QUEUE = ch.path("shorts", "queue")
+QUEUE = os.path.join(REPO, os.environ["SHORTS_QUEUE"]) if os.environ.get("SHORTS_QUEUE") else ch.path("shorts", "queue")
 DONE = ch.path("shorts", "done")
 WORK = os.path.join(ROOT, "_work")
 OUT = os.path.join(ROOT, "_out")
@@ -252,7 +252,7 @@ def pixabay_image(prompt, path, orientation="vertical"):
     return False
 
 
-def cloudflare_image(prompt, path):
+def cloudflare_image(prompt, path, style=None):
     acc = os.environ.get("CF_ACCOUNT_ID", "").strip()
     tok = os.environ.get("CF_API_TOKEN", "").strip()
     if not (acc and tok):
@@ -261,7 +261,7 @@ def cloudflare_image(prompt, path):
         r = requests.post(
             f"https://api.cloudflare.com/client/v4/accounts/{acc}/ai/run/@cf/black-forest-labs/flux-1-schnell",
             headers={"Authorization": f"Bearer {tok}"},
-            json={"prompt": f"{prompt}, {STYLE}"[:1500], "steps": ch.P.get("image_steps", 8)}, timeout=90)
+            json={"prompt": f"{prompt}, {style or STYLE}"[:1500], "steps": ch.P.get("image_steps", 8)}, timeout=90)
         img = (r.json().get("result") or {}).get("image") if r.ok else None
         if not img:
             print(f"[그림] Cloudflare 응답 {r.status_code}: {r.text[:200]}")
@@ -627,12 +627,28 @@ def build_video(script, out_path):
 
     # 채널 설정 max_images 가 있으면 그림 수를 줄이고, 이어지는 장면끼리 같은 그림을 나눠 쓴다
     n_img = min(len(scenes), ch.P.get("max_images") or len(scenes))
+    # 인생ON 사연(숏드라마, 2026-11-10): 장면마다 AI 그림(수채화 인물), 등장인물 {이름} 은 대본 "characters" 설명으로 바꿔 같은 얼굴로
+    sayeon = script.get("format") == "sayeon"
+    if sayeon:
+        n_img = len(scenes)
+        chars = script.get("characters") or {}
+
+        def expand(prompt):
+            for k, v in chars.items():
+                prompt = prompt.replace("{" + k + "}", f"({v})")
+            return prompt
     group = [i * n_img // len(scenes) for i in range(len(scenes))]
     leaders = {g: group.index(g) for g in range(n_img)}
 
     def _pre(i_s):
         i, sc = i_s
         prompt, path = sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg")
+        if sayeon:
+            for _ in range(2):
+                if cloudflare_image(expand(prompt), path, style=ch.P.get("sayeon_style")):
+                    print(f"[그림] 사연 {i}: {prompt[:60]}")
+                    return
+            return
         if ch.P.get("image_source") == "stock" and (pixabay_image(prompt, path) or pexels_image(prompt, path)):
             return
         cloudflare_image(prompt, path)
@@ -645,7 +661,8 @@ def build_video(script, out_path):
         leaders = {}
     with ThreadPoolExecutor(max_workers=4) as ex:
         list(ex.map(_pre, [(i, scenes[i]) for i in leaders.values()]))
-    cache_dir = ch.path("data", "bg_cache") if ch.P.get("bg_cache") else ""
+    # 사연 그림(사람)은 풍경 예비 그림 모음에 넣지 않는다
+    cache_dir = ch.path("data", "bg_cache") if ch.P.get("bg_cache") and not sayeon else ""
     if cache_dir:
         os.makedirs(cache_dir, exist_ok=True)
         stamp = time.strftime("%Y%m%d%H%M")
@@ -665,6 +682,15 @@ def build_video(script, out_path):
         if i != leaders[g] and os.path.exists(src):
             shutil.copy(src, os.path.join(WORK, f"raw{i}.jpg"))
     missing = [i for i in range(len(scenes)) if not os.path.exists(os.path.join(WORK, f"raw{i}.jpg"))]
+    if sayeon and missing:
+        have = [i for i in range(len(scenes)) if i not in missing]
+        if len(have) < max(3, len(scenes) // 2):
+            raise RuntimeError(f"사연 그림을 {len(have)}장밖에 못 만들었어요 (그림 한도 초과일 수 있음). 풍경으로 채우지 않고 대본은 남겨 둘게요")
+        for i in missing:  # 못 만든 장면은 가장 가까운 장면 그림을 같이 쓴다
+            near = min(have, key=lambda h: (abs(h - i), h))
+            shutil.copy(os.path.join(WORK, f"raw{near}.jpg"), os.path.join(WORK, f"raw{i}.jpg"))
+        print(f"[그림] 사연 그림 {len(have)}장, 빈 장면 {len(missing)}개는 이웃 그림으로")
+        missing = []
     if missing:
         # AI 그림이 모자라면(무료 한도 초과 등) 같은 블로그 글의 사진으로 채운다
         blog_imgs = blog_images(script.get("blog_url"))
@@ -688,9 +714,14 @@ def build_video(script, out_path):
     whoosh(os.path.join(WORK, "whoosh.wav"))
     # 음성을 먼저 모두 만들어 전체 길이를 알아 둔다 (진행 막대용)
     voiced = []
+    base_rate, base_pitch = TTS_RATE, TTS_PITCH
     for i, sc in enumerate(scenes):
         audio = os.path.join(WORK, f"a{i}.mp3")
-        words = tts(sc["text"], voice, audio)
+        # 사연 쇼츠: 장면마다 목소리를 바꿀 수 있다 (등장인물 대사). "voice"/"rate"/"pitch" 가 없으면 기본 목소리
+        v = sc.get("voice") or voice
+        TTS_RATE = sc.get("rate") or ((ch.P.get("voice_rates") or {}).get(v) if sc.get("voice") else None) or base_rate
+        TTS_PITCH = sc.get("pitch") or base_pitch
+        words = tts(sc["text"], v, audio)
         voiced.append((audio, words, duration(audio) + 0.05))
     total = sum(v[2] for v in voiced)
     clips, t0 = [], 0.0
@@ -769,8 +800,10 @@ def build_description(script):
             pass
     if blog:
         lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
-    lines += ["", script.get("description", "").strip(), "",
-              ch.P["shorts_signature"]]  # AI 안내 문구는 넣지 않음 (업로드 시 합성 콘텐츠 표시는 그대로)
+    lines += ["", script.get("description", "").strip(), ""]
+    if script.get("format") == "sayeon":  # 사연 쇼츠는 가상 인물·창작 이야기임을 밝힌다
+        lines += ["※ AI로 만든 가상 인물이 나오는 창작 이야기입니다. #AI가상인물", ""]
+    lines += [ch.P["shorts_signature"]]  # AI 안내 문구는 넣지 않음 (업로드 시 합성 콘텐츠 표시는 그대로)
     return "\n".join(lines).strip(), product
 
 
@@ -904,6 +937,15 @@ def main():
             desc, product = build_description(script)
             if os.environ.get("DRY_RUN") == "1":
                 print("[시험] 업로드 건너뜀\n" + desc + "\n--- 댓글 ---\n" + build_comment(script, product))
+                pdir = os.environ.get("PREVIEW_DIR")
+                if pdir:  # 미리보기: 영상에서 8장면을 뽑아 저장 (사람이 보고 확인)
+                    pdir = os.path.join(REPO, pdir)
+                    os.makedirs(pdir, exist_ok=True)
+                    for k in range(8):
+                        t = secs * (k + 0.5) / 8
+                        run(["ffmpeg", "-y", "-ss", f"{t:.2f}", "-i", video, "-frames:v", "1", "-vf", "scale=540:-1",
+                             os.path.join(pdir, f"{name}-{k}.jpg")])
+                    os.remove(path)
                 continue
             yt = yt_upload(video, script["title"], desc, script.get("tags", []))
             if yt:

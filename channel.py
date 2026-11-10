@@ -111,6 +111,11 @@ PROFILES = {
         # 2026-11-10 벤치마킹 반영(핑포 결정): 그림을 장면마다 새로(4장 → 장면 수만큼, 무료 사진이라 한도 걱정 없음),
         # 첫 장면은 위 노란 상자·자막 대신 화면 가운데 큰 제목 카드
         "title_card": True,
+        # 인생ON 사연(숏드라마) 그림 스타일 — 수채화 그림책 느낌의 어르신 인물 (실사 아님), 2026-11-10 시작
+        "sayeon_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
+                         "elderly Korean family members, expressive but kind faces, single clear moment, characters centered, "
+                         "medium close-up, vertical 9:16 composition, plenty of space around faces, "
+                         "no text, no letters, no speech bubbles, no logo, no watermark"),
         # 시니어용 큰 자막 (기본 72 → 92), 4줄까지
         "cap_size": 92, "cap_lh": 124, "cap_lines": 4,
         # 채널 로고(노란 원 + 검정 글씨)와 통일: 제목 상자 노랑+검정 글씨(2026-11 밝게 바꿈, 위 그늘도 옅게), 강조 자막은 검정 상자에 노란 글씨, 진행 막대 노랑

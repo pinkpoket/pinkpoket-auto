@@ -6,6 +6,7 @@ GitHub 이 매일 정해진 시간에 이 스크립트로 하나씩 꺼내 올�
   MODE=short → 일반 쇼츠 1편
   MODE=pair  → 오늘 올라간 긴 영상의 짝 쇼츠 (긴 영상 대본의 "pair_short"), 없으면 일반 쇼츠
   MODE=long  → 긴 영상 1편
+  MODE=sayeon → 인생ON 사연(숏드라마) 1편 (보관함이 비면 쉼)
 보관함이 비면: 쇼츠는 Gemini 가 대신 쓰고, 긴 영상은 텔레그램으로 알린다.
 """
 import datetime as dt
@@ -25,6 +26,7 @@ import gemini_write as gw  # noqa: E402
 KST = dt.timezone(dt.timedelta(hours=9))
 NOW = dt.datetime.now(KST)
 SB, LB = ROOT / "life/shorts/bank", ROOT / "life/long/bank"
+YB = ROOT / "life/shorts/sayeon"  # 인생ON 사연(숏드라마) 보관함, 밤 22:21 (2026-11-10 시작)
 SQ, LQ = ROOT / "life/shorts/queue", ROOT / "life/long/queue"
 
 
@@ -79,6 +81,20 @@ def recent_short(minutes=75):
 
 def main():
     mode = os.environ.get("MODE", "short")
+    if mode == "sayeon":
+        if recent_short():
+            print("방금 다른 쇼츠가 올라가서 이번엔 건너뜀")
+            return
+        b = bank(YB)
+        if not b:
+            print("사연 보관함이 비어서 이번엔 쉼")
+            return
+        move(b[0], SQ)
+        out("next", "shorts-life.yml")
+        print(f"남은 사연: {len(bank(YB))}편")
+        if len(bank(YB)) <= 1:
+            gw.telegram(f"[인생ON] 사연 쇼츠 보관함이 거의 비었어요 ({len(bank(YB))}편 남음).")
+        return
     if mode in ("short", "pair") and recent_short():
         print("방금 다른 쇼츠가 올라가서 이번엔 건너뜀")
         return
