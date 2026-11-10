@@ -643,6 +643,11 @@ def build_video(script, out_path):
     def _pre(i_s):
         i, sc = i_s
         prompt, path = sc.get("bg") or ch.P["shorts_default_bg"], os.path.join(WORK, f"raw{i}.jpg")
+        keep = os.path.join(REPO, script["image_dir"], f"{i}.jpg") if script.get("image_dir") else ""
+        if sayeon and keep and os.path.exists(keep) and i not in (script.get("redraw") or []):
+            shutil.copy(keep, path)  # 미리보기에서 괜찮았던 그림은 그대로 쓴다
+            print(f"[그림] 사연 {i}: 미리보기 그림 그대로")
+            return
         if sayeon:
             for _ in range(2):
                 if cloudflare_image(expand(prompt), path, style=ch.P.get("sayeon_style")):
@@ -711,6 +716,15 @@ def build_video(script, out_path):
             raise RuntimeError("그림을 하나도 못 만들었어요 (Cloudflare 무료 한도 초과일 수 있음). "
                                "분홍 배경 영상은 올리지 않고 대본은 대기열에 남겨 둘게요")
         print(f"[그림] AI 그림 {len(scenes) - len(missing)}장 + 블로그 사진으로 {len(missing) if blog_imgs else 0}장 채움")
+    if sayeon and os.environ.get("PREVIEW_DIR"):
+        # 미리보기: 장면 그림을 따로 남겨 두고, 이상한 장면만 다시 그릴 수 있게 한다 ("image_dir" + "redraw")
+        kd = os.path.join(REPO, os.environ["PREVIEW_DIR"], "img", script.get("_name", "x"))
+        os.makedirs(kd, exist_ok=True)
+        for i in range(len(scenes)):
+            src = os.path.join(WORK, f"raw{i}.jpg")
+            if os.path.exists(src):
+                im = Image.open(src).convert("RGB")
+                im.save(os.path.join(kd, f"{i}.jpg"), quality=92)
     whoosh(os.path.join(WORK, "whoosh.wav"))
     # 음성을 먼저 모두 만들어 전체 길이를 알아 둔다 (진행 막대용)
     voiced = []
@@ -931,7 +945,15 @@ def main():
             entry["title"] = script.get("title", "")
             entry["voice"] = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
             video = os.path.join(OUT, f"{name}.mp4")
-            secs = build_video(script, video)
+            script["_name"] = name
+            approved = os.path.join(REPO, script["video_file"]) if script.get("video_file") else ""
+            if approved and os.path.exists(approved):
+                # 핑포가 미리보기로 보고 허락한 영상을 그대로 올린다 (다시 만들지 않음)
+                shutil.copy(approved, video)
+                secs = duration(video)
+                print(f"[영상] 허락받은 미리보기 영상 그대로 사용: {script['video_file']}")
+            else:
+                secs = build_video(script, video)
             entry.update(seconds=round(secs, 1), ai_images=AI_COUNT[0])
             print(f"[완성] {name}: {secs:.1f}초, AI 그림 {AI_COUNT[0]}장")
             desc, product = build_description(script)

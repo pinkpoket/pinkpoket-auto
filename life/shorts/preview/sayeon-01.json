@@ -1,0 +1,91 @@
+{
+  "format": "sayeon",
+  "title": "명절마다 빈손으로 오던 막내, 어머니 수술 날 꺼낸 통장의 비밀",
+  "hook": "인생ON 사연",
+  "card": "명절마다\n[빈손]이던\n막내의 비밀",
+  "voice": "ko-KR-SunHiNeural",
+  "characters": {
+    "어머니": "a kind Korean grandmother in her late 70s, short curly gray permed hair, small round glasses, light purple cardigan",
+    "큰아들": "a Korean man in his early 50s, neat short black hair graying at the temples, thin metal glasses, navy blue sweater",
+    "막내": "a Korean man in his early 40s, short slightly messy black hair, no glasses, clean-shaven, plain beige jacket, quiet gentle face"
+  },
+  "scenes": [
+    {
+      "text": "명절마다 빈손이던 막내의 비밀.",
+      "bg": "{막내} standing at the wooden gate of an old Korean country house on a holiday evening, both hands empty, shy smile, warm autumn light"
+    },
+    {
+      "text": "명절이면 큰아들은 늘 양손 가득 선물을 들고 왔습니다.",
+      "bg": "{큰아들} walking into a Korean house yard carrying many colorful wrapped holiday gift boxes in both hands, proud cheerful smile"
+    },
+    {
+      "text": "막내는 해마다 빈손이었습니다. 밥만 먹고 조용히 일어섰지요.",
+      "bg": "{막내} sitting quietly at a low Korean holiday dinner table with many dishes, eating rice, eyes lowered, warm lamp light"
+    },
+    {
+      "text": "“막내는 올 때마다 빈손이네. 형편이 그렇게 어렵나.”",
+      "bg": "{큰아들} at a holiday dinner table, frowning slightly and whispering, glancing sideways",
+      "voice": "ko-KR-InJoonNeural"
+    },
+    {
+      "text": "어머니는 아무 말 없이 웃기만 했습니다.",
+      "bg": "{어머니} smiling softly with closed lips at a holiday dinner table, knowing gentle eyes, warm light"
+    },
+    {
+      "text": "그러던 어느 겨울, 어머니가 무릎 수술을 받게 됐습니다.",
+      "bg": "{어머니} sitting on a hospital bed with a bandaged knee, snowy window behind, calm face"
+    },
+    {
+      "text": "수술비 이야기가 나오자 형제들은 서로 눈치만 봤습니다.",
+      "bg": "{큰아들} and {막내} standing awkwardly in a bright hospital hallway, avoiding each other's eyes"
+    },
+    {
+      "text": "그때 어머니가 베개 밑에서 낡은 통장 하나를 꺼냈습니다.",
+      "bg": "{어머니} sitting up on a hospital bed pulling a small closed plain brown passbook with a blank cover out from under her pillow, medium shot"
+    },
+    {
+      "text": "“막내가 10년 동안 명절마다 선물 대신 여기 넣었다.”",
+      "bg": "{어머니} sitting on a hospital bed holding a small closed plain brown passbook with a completely blank cover against her chest, eyes moist, gentle proud expression, medium shot",
+      "voice": "ko-KR-SunHiNeural",
+      "pitch": "-16Hz",
+      "rate": "-8%"
+    },
+    {
+      "text": "통장에는 수술비를 내고도 남을 돈이 차곡차곡 쌓여 있었습니다.",
+      "bg": "close-up of wrinkled elderly hands gently holding a small closed plain brown passbook with a blank cover on a white hospital blanket, soft warm window light"
+    },
+    {
+      "text": "큰아들은 한참 동안 막내의 어깨만 두드렸습니다.",
+      "bg": "{큰아들} patting {막내} on the shoulder in a hospital hallway, both with teary eyes, warm light"
+    },
+    {
+      "text": "빈손이던 막내, 그 손은 한 번도 비어 있지 않았습니다. 말없이 곁을 지키는 사람에게 오늘 고맙다고 말해 보세요.",
+      "bg": "{막내} sitting beside {어머니} on a hospital bed holding her hand, sunset light through the window, peaceful"
+    }
+  ],
+  "description": "#인생온 #인생ON사연 #가족이야기\n명절마다 양손 가득 선물을 들고 온 큰아들과, 늘 빈손이던 막내.\n어머니가 수술을 받던 날, 베개 밑에서 나온 낡은 통장 하나가 모든 걸 바꿔 놓았습니다.\n말이 없다고 마음이 없는 건 아닙니다.\n오늘, 말없이 곁을 지켜 준 사람에게 고맙다는 한마디 건네 보세요.\n사랑하는 분께 카톡으로 나눠 주세요.\n#인생조언 #노후 #효도 #형제 #명절 #가족 #감동사연 #시니어 #50대 #60대",
+  "tags": [
+    "인생온",
+    "인생ON",
+    "인생ON사연",
+    "인생조언",
+    "노후준비",
+    "가족이야기",
+    "감동사연",
+    "시니어드라마",
+    "시니어쇼츠",
+    "효도",
+    "형제",
+    "명절",
+    "어머니",
+    "막내아들",
+    "통장",
+    "반전",
+    "50대",
+    "60대",
+    "70대",
+    "AI가상인물"
+  ],
+  "comment": "말없이 곁을 지키는 사람이 가장 오래 남는 것 같습니다.\n여러분 곁에도 이런 '막내' 같은 분이 계신가요?\n한 줄이라도 댓글로 나눠 주시면 큰 힘이 됩니다.",
+  "coupang_keywords": []
+}
