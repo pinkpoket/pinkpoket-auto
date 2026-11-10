@@ -618,6 +618,8 @@ def build_video(script, out_path):
     if script.get("end_card"):
         outro = script.get("outro") or ch.P["shorts_outro"]
         scenes.append({"text": outro, "bg": ch.P["shorts_outro_bg"], "outro": True})
+    # 대본의 장면 번호를 기억해 둔다 — 긴 장면이 둘로 나뉘어도 같은 그림을 쓰게 (한 문장 중간에 그림이 바뀌지 않게)
+    scenes = [dict(sc, _src=k) for k, sc in enumerate(scenes)]
     if ch.P.get("cap_lines"):
         scenes = split_long_scenes(scenes)
     if ch.P.get("title_card") and scenes:
@@ -626,18 +628,20 @@ def build_video(script, out_path):
     from concurrent.futures import ThreadPoolExecutor
 
     # 채널 설정 max_images 가 있으면 그림 수를 줄이고, 이어지는 장면끼리 같은 그림을 나눠 쓴다
-    n_img = min(len(scenes), ch.P.get("max_images") or len(scenes))
+    srcs = [sc.get("_src", k) for k, sc in enumerate(scenes)]
+    uniq = sorted(set(srcs))
+    n_img = min(len(uniq), ch.P.get("max_images") or len(uniq))
     # 인생ON 사연(숏드라마, 2026-11-10): 장면마다 AI 그림(수채화 인물), 등장인물 {이름} 은 대본 "characters" 설명으로 바꿔 같은 얼굴로
     sayeon = script.get("format") == "sayeon"
     if sayeon:
-        n_img = len(scenes)
+        n_img = len(uniq)
         chars = script.get("characters") or {}
 
         def expand(prompt):
             for k, v in chars.items():
                 prompt = prompt.replace("{" + k + "}", f"({v})")
             return prompt
-    group = [i * n_img // len(scenes) for i in range(len(scenes))]
+    group = [uniq.index(s) * n_img // len(uniq) for s in srcs]
     leaders = {g: group.index(g) for g in range(n_img)}
 
     def _pre(i_s):
