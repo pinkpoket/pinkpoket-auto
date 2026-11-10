@@ -350,7 +350,7 @@
   "title": "걱정인 척하는 간섭은 이 두 문장으로 끝내세요",
   "hook": "간섭 끝내는 두 문장",
   "voice": "ko-KR-InJoonNeural",
-  "long_url": "",
+  "long_url": "https://youtu.be/1G7nHr8KoKI",
   "scenes": [
    {
     "text": "두 문장이면 됩니다.",
@@ -416,5 +416,6 @@
   ],
   "comment": "걱정인 척하는 간섭, 어떻게 받아 넘기시나요?\n'걱정해 줘서 고마워요. 그래도 저는 이게 좋아요.' 한번 써 보세요.\n나머지 이야기는 채널의 긴 영상에 있어요.",
   "coupang_keywords": []
- }
+ },
+ "pair_used": true
 }
