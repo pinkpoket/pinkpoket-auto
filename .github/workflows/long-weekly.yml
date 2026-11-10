@@ -40,7 +40,7 @@ jobs:
         run: |
           mkdir -p /tmp/art
           since=$(date -u -d '8 days ago' +%Y-%m-%dT%H:%M:%SZ)
-          for id in $(gh run list -R "$GITHUB_REPOSITORY" -w long-life.yml -L 40 --json databaseId,createdAt,conclusion \
+          for id in $(gh run list -R "$GITHUB_REPOSITORY" -w long-life.yml -L 60 --json databaseId,createdAt,conclusion \
                        -q ".[] | select(.createdAt > \"$since\") | .databaseId"); do
             gh run download "$id" -R "$GITHUB_REPOSITORY" -n long-video -D "/tmp/art/$id" 2>/dev/null && echo "받음: $id" || true
           done

@@ -5,6 +5,7 @@ on:
   schedule:
     - cron: "21 22 * * *"   # 한국 07:21 쇼츠
     - cron: "37 0 * * *"    # 한국 09:37 긴 영상
+    - cron: "37 11 * * *"   # 한국 20:37 긴 영상 (하루 2편, 2026-11-10 핑포 결정)
     - cron: "21 2 * * *"    # 한국 11:21 짝 쇼츠
     - cron: "21 9 * * *"    # 한국 18:21 쇼츠
   workflow_dispatch:
@@ -36,7 +37,7 @@ jobs:
         run: |
           M="${{ github.event.inputs.mode }}"
           case "${{ github.event.schedule }}" in
-            "37 0 * * *") M=long ;;
+            "37 0 * * *"|"37 11 * * *") M=long ;;
             "21 2 * * *") M=pair ;;
             "21 22 * * *"|"21 9 * * *") M=short ;;
           esac

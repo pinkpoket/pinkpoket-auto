@@ -3,6 +3,7 @@
 
 이번 주(최근 7일) 공개된 긴 영상들을 이어 붙여 1편으로 올린다. 대본을 새로 쓰지 않는다.
 - 영상 파일: long-life.yml 이 매일 보관한 Actions 아티팩트(long-video)를 ART 폴더에 내려받아 둔 것
+- 이번 주 조회수 상위 7편만 (하루 2편이라 전부 넣으면 6시간이 넘음)
 - 순서: 이번 주 조회수 1위를 맨 앞(첫인상), 나머지는 올린 순서대로
 - 이야기 사이에 3초 제목 화면
 - 설명란: 목차(시간) + 각 원본 영상 링크
@@ -26,6 +27,7 @@ ART = os.environ.get("ART", "/tmp/art")
 WORK = os.path.join(HERE, "long", "_weekly")
 LOG = os.path.join(HERE, "data", "weekly_log.json")
 DAYS = int(os.environ.get("DAYS", "7") or 7)
+MAX_PARTS = int(os.environ.get("MAX_PARTS", "7") or 7)  # 모음에 넣을 최대 편수 (약 3시간)
 
 
 def run(cmd):
@@ -79,8 +81,10 @@ def main():
         print(f"이번 주 영상이 {len(es)}편뿐이라 모음은 쉬어요 (3편 이상일 때만)")
         return 0
     v = views([e["video_id"] for e in es])
-    best = max(es, key=lambda e: v.get(e["video_id"], 0))
-    order = [best] + [e for e in es if e is not best]
+    # 하루 2편이면 한 주 14편(6시간 넘음) → 조회수 상위 MAX_PARTS 편만, 1위를 맨 앞에 두고 나머지는 올린 순서대로
+    top = sorted(es, key=lambda e: -v.get(e["video_id"], 0))[:MAX_PARTS]
+    best = top[0]
+    order = [best] + [e for e in es if e in top and e is not best]
     parts, marks, t = [], [], 0.0
     for i, e in enumerate(order):
         bg = os.path.join(WORK, f"bg{i}.jpg")
