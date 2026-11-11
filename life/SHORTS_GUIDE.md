@@ -79,7 +79,7 @@
 - **제목:** 상황 + 반전 궁금증, 25~40자. 예) "명절마다 빈손으로 오던 막내, 어머니 수술 날 꺼낸 통장의 비밀", "매일 경로당에 늦게 오던 할아버지, 가방 속에서 나온 것". 결말은 제목에 쓰지 않는다.
 - `card`: 첫 화면 카드 (3줄, `[낱말]` 노랑). 첫 장면 text 는 card 를 소리 내어 읽는 한 문장.
 - **대사 장면:** 인물 대사는 “ ” 로 감싸고 그 장면에 목소리를 적는다. 남자 `{"voice": "ko-KR-InJoonNeural"}` (봇이 +15% 빠르게), 어르신 여자 `{"voice": "ko-KR-SunHiNeural", "pitch": "-16Hz", "rate": "-8%"}`. 대사는 한 편에 2~3장면만, 나머지는 해설.
-- **그림:** 봇이 장면마다 AI 수채화 그림을 만든다(사진 사이트 안 씀). `characters` 에 인물마다 영어로 나이·머리·옷을 고정해 적고(`{"어머니": "a kind Korean grandmother in her late 70s, short curly gray permed hair, small round glasses, light purple cardigan"}`), 장면 bg 에는 `{어머니}` 처럼 이름을 넣어 쓴다 → 봇이 설명으로 바꿔서 같은 얼굴로 그린다. 한 장면에 인물 1~2명, 표정·손짓 하나, 장소 하나. 동물·글자·말풍선 넣지 않기.
+- **그림:** 봇이 장면마다 AI 수채화 그림을 만든다(사진 사이트 안 씀). `characters` 에 인물마다 영어로 나이·머리·옷을 고정해 적고(`{"어머니": "a kind Korean grandmother in her late 70s, short curly gray permed hair, small round glasses, light purple cardigan"}`), 장면 bg 에는 `{어머니}` 처럼 이름을 넣어 쓴다 → 봇이 설명으로 바꿔서 같은 얼굴로 그린다. 한 장면에 인물 1~2명, 표정·손짓 하나, 장소 하나. 동물·글자·말풍선 넣지 않기. 사람이 없어야 하는 장면(빈 의자, 가방 속 물건 등)은 그 장면에 `"still": true` 를 넣는다(없으면 사람이 끼어 그려짐). 글자가 생기기 쉬운 것(통장 속지·신문·간판·시계 숫자)은 그리지 않는다.
 - description·tags·comment 는 일반 쇼츠 규칙과 같다 (해시태그에 #인생ON사연, tags 에 `AI가상인물` 포함). 공유 부탁은 description 에만.
 
 ## 최근 분석 반영

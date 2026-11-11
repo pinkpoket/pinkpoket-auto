@@ -111,6 +111,10 @@ PROFILES = {
         # 2026-11-10 벤치마킹 반영(핑포 결정): 그림을 장면마다 새로(4장 → 장면 수만큼, 무료 사진이라 한도 걱정 없음),
         # 첫 장면은 위 노란 상자·자막 대신 화면 가운데 큰 제목 카드
         "title_card": True,
+        # 사연 장면 중 사람 없는 장면("still": true) — 빈 방·물건만 (2026-11-11)
+        "sayeon_still_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
+                               "quiet still life, empty scene without any people, objects centered, vertical 9:16 composition, "
+                               "no text, no letters, no logo, no watermark"),
         # 인생ON 사연(숏드라마) 그림 스타일 — 수채화 그림책 느낌의 어르신 인물 (실사 아님), 2026-11-10 시작
         "sayeon_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
                          "elderly Korean family members, expressive but kind faces, single clear moment, characters centered, "

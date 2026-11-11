@@ -654,7 +654,9 @@ def build_video(script, out_path):
             return
         if sayeon:
             for _ in range(2):
-                if cloudflare_image(expand(prompt), path, style=ch.P.get("sayeon_style")):
+                # "still": true 장면(빈 의자·물건)은 사람을 그리라는 말이 없는 스타일로 — 안 그러면 사람이 끼어든다
+                st = ch.P.get("sayeon_still_style") if sc.get("still") else ch.P.get("sayeon_style")
+                if cloudflare_image(expand(prompt), path, style=st):
                     print(f"[그림] 사연 {i}: {prompt[:60]}")
                     return
             return
