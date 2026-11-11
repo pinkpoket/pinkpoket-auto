@@ -59,5 +59,6 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -q -m "인생ON 보관함에서 꺼냄 (${{ steps.m.outputs.mode }})"
           for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
+          sleep 10  # 방금 올린 커밋이 GitHub 에 반영된 뒤 제작 시작 (2026-11-11 짝 쇼츠가 큐에 걸린 일)
           [ -n "${{ steps.r.outputs.next }}" ] && gh workflow run "${{ steps.r.outputs.next }}" --ref main
           true

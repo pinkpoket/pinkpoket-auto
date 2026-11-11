@@ -27,6 +27,8 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+      - name: 최신 main 으로 (보관함에서 막 꺼낸 대본을 놓치지 않게, 2026-11-11)
+        run: git fetch -q origin main && git reset -q --hard origin/main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
