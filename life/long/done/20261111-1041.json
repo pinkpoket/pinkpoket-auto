@@ -349,7 +349,7 @@
   "title": "휴대폰 속 남의 사진, 이렇게 보셔야 마음이 편합니다",
   "hook": "남의 사진 보는 법",
   "voice": "ko-KR-InJoonNeural",
-  "long_url": "",
+  "long_url": "https://youtu.be/4vhmn_9IRp8",
   "scenes": [
    {
     "text": "그건 진열장입니다.",
@@ -415,5 +415,6 @@
   ],
   "comment": "남의 사진 보고 마음 무거워지신 적 있으시지요?\n오늘은 내 하늘을 한 장 찍어 보세요.\n나머지 이야기는 채널의 긴 영상에 있어요.",
   "coupang_keywords": []
- }
+ },
+ "pair_used": true
 }
