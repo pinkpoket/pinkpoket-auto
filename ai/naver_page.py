@@ -64,21 +64,26 @@ body{{font-family:-apple-system,'Noto Sans KR','Malgun Gothic',sans-serif;margin
 .box{{background:#fff;border:2px solid #f3c1d6;border-radius:12px;padding:14px;margin:14px 0}}
 .btn{{display:block;width:100%;padding:13px;font-size:17px;font-weight:700;border:0;border-radius:10px;background:#d9488b;color:#fff;margin:8px 0;cursor:pointer}}
 .btn:hover{{background:#c23a7a}}
-#body p,#body h3{{margin:0}} #body img{{max-width:100%}}
+#body p,#body h3{{margin:0;word-break:keep-all;overflow-wrap:break-word}} #body img{{max-width:100%}}
 .ph img{{width:100%;border-radius:8px;margin:6px 0 16px}}
 .ok{{color:#2a8a4a;font-weight:700;text-align:center;min-height:1.4em}}
 .note{{font-size:13px;color:#888}}
+.vw{{display:flex;gap:6px;margin:4px 0 10px}} .vw button{{flex:1;padding:8px;border:1px solid #f3c1d6;border-radius:8px;background:#fff;color:#4a1f35;font-weight:700;cursor:pointer}}
+.vw button.on{{background:#4a1f35;color:#fff;border-color:#4a1f35}}
+#frame{{margin:0 auto;transition:max-width .2s}} #frame.m{{max-width:360px;border:1px dashed #e7a9c4;border-radius:10px;padding:12px}} #frame.pc{{max-width:693px}}
 </style></head><body><div class="wrap">
 <div class="cat">📁 카테고리: {c}</div>
 <div class="box"><b>제목</b><div id="title" style="font-size:20px;font-weight:700;margin-top:6px">{t}</div>
 <button class="btn" onclick="cp('title')">제목 복사</button></div>
 <div class="box"><button class="btn" onclick="cp('body')">본문 복사</button><div class="ok" id="msg"></div>
-<div id="body">{body}</div>
+<div class="vw"><button id="vpc" class="on" onclick="vw('pc')">💻 PC 화면으로 보기</button><button id="vm" onclick="vw('m')">📱 모바일 화면으로 보기</button></div>
+<div id="frame" class="pc"><div id="body">{body}</div></div>
 <button class="btn" onclick="cp('body')">본문 복사</button></div>
 <div class="box"><b>예비용 사진 {len(photos)}장</b> — 사진이 본문에 이미 들어가 있어요. 붙여 넣은 뒤 사진이 안 보일 때만 여기서 저장해 넣어 주세요.<br>{''.join(ph)}</div>
 <p class="note">발행 전에 한 번 읽어 봐 주세요.</p>
 </div>
 <script>
+function vw(m){{document.getElementById('frame').className=m;document.getElementById('vpc').className=m=='pc'?'on':'';document.getElementById('vm').className=m=='m'?'on':'';}}
 function say(t){{document.getElementById('msg').textContent=t;}}
 async function cp(id){{
   var el=document.getElementById(id);
