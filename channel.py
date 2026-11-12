@@ -103,14 +103,15 @@ PROFILES = {
         "comment_fallback": "오늘 '{hook}' 이야기, 마음에 닿으셨나요? 🔥\n소중한 분께 카톡으로 나눠 주시면 큰 힘이 돼요 💛",
         "yt_category": "22",
         "voice_gain": 1.8, "bgm_volume": 0.07,
-        # 시니어 시청자용: 쇼츠 목소리 D(여성 선희, 낮게, 기본 속도), 긴 영상은 남성 인준(낮게, 기본 속도), 그림은 장면마다 새로(2026-11-10), 화면 이름은 "인생온"
+        # 시니어 시청자용: 쇼츠 목소리 D(여성 선희, 낮게, 기본 속도), 긴 영상은 남성 인준(낮게, 기본 속도), 그림은 4장만 만들어 장면끼리 나눠 씀(2026-11-12 되돌림), 화면 이름은 "인생온"
         "voice": "ko-KR-SunHiNeural", "long_voice": "ko-KR-InJoonNeural", "tts_pitch": "-6Hz", "tts_rate": "+0%",
         # 쇼츠 남성 목소리(인준)가 느려서 빠르게 (2026-11-05 핑크포켓님 요청). 대본의 "rate" 가 있으면 그게 먼저.
         "voice_rates": {"ko-KR-InJoonNeural": "+15%"},
-        "image_steps": 4, "max_images": 12, "tag": "인생온", "bg_cache": 80, "image_source": "stock", "link_long": True,
+        "image_steps": 4, "max_images": 4, "tag": "인생온", "bg_cache": 80, "image_source": "stock", "link_long": True,
         # 2026-11-10 벤치마킹 반영(핑포 결정): 그림을 장면마다 새로(4장 → 장면 수만큼, 무료 사진이라 한도 걱정 없음),
         # 첫 장면은 위 노란 상자·자막 대신 화면 가운데 큰 제목 카드
-        "title_card": True,
+        # ⏸ 2026-11-12 되돌림: 제목 카드·장면마다 사진 적용 뒤 조회수가 1,000~1,400 → 170~970 으로 떨어짐 (핑포 "완전 망했다")
+        "title_card": False,
         # 사연 장면 중 사람 없는 장면("still": true) — 빈 방·물건만 (2026-11-11)
         "sayeon_still_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
                                "quiet still life, empty scene without any people, objects centered, vertical 9:16 composition, "
