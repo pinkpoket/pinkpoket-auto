@@ -177,7 +177,7 @@
   "title": "매일 열심히 걷는데도 다리 힘이 점점 빠지는 진짜 이유",
   "hook": "다리 힘 지키는 법",
   "voice": "ko-KR-SunHiNeural",
-  "long_url": "",
+  "long_url": "https://youtu.be/35lNIt4i7sI",
   "scenes": [
    {
     "text": "걷기만으론 조금 모자랍니다.",
@@ -251,5 +251,6 @@
   "coupang_keywords": [
    "실내 운동 밴드"
   ]
- }
+ },
+ "pair_used": true
 }
