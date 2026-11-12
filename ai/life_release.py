@@ -34,6 +34,43 @@ def bank(d):
     return sorted(glob.glob(str(d / "*.json")))
 
 
+# 시간대 규칙 (2026-11-12 핑포 결정): 아침 주제가 밤에 올라가지 않게.
+# 제목·썸네일 글·도입부·첫 장면에 아침 말이 있으면 아침(12시 전)에만,
+# 저녁·잠 말이 있으면 저녁(17시 이후)에만 꺼낸다. 맞는 게 없으면 이번 회차는 쉬고 다음 맞는 시간에 올린다.
+MORNING_W = ("아침", "새벽", "기상", "일어나자마자", "눈 뜨자마자", "눈뜨자마자", "모닝")
+EVENING_W = ("저녁", "잠들기", "잠자리", "자기 전", "밤에", "밤마다", "수면", "불면")
+
+
+def topic_time(f):
+    d = gw.load(Path(f), {}) or {}
+    parts = [d.get("title", ""), d.get("thumbnail_text", ""), d.get("hook", "")]
+    parts += list(d.get("intro") or [])
+    sc = d.get("scenes") or []
+    if sc:
+        parts.append(sc[0].get("text", ""))
+    t = " ".join(str(x) for x in parts)
+    if any(w in t for w in MORNING_W):
+        return "morning"
+    if any(w in t for w in EVENING_W):
+        return "evening"
+    return ""
+
+
+def slot():
+    return "morning" if NOW.hour < 12 else ("evening" if NOW.hour >= 17 else "day")
+
+
+def pick(files):
+    """지금 시간대에 맞는 첫 대본. 아침 주제는 아침에만, 저녁 주제는 저녁에만."""
+    now = slot()
+    for f in files:
+        tt = topic_time(f)
+        if not tt or tt == now:
+            return f
+        print(f"시간대 안 맞아 미룸 ({tt} 주제, 지금 {now}):", os.path.basename(f))
+    return None
+
+
 def out(k, v):
     if os.environ.get("GITHUB_OUTPUT"):
         with open(os.environ["GITHUB_OUTPUT"], "a") as f:
@@ -103,15 +140,24 @@ def main():
         if not b:
             gw.telegram("[인생ON] 긴 영상 보관함이 비었어요. 오늘 긴 영상은 쉬어요. (일요일 몰아쓰기 확인 필요)")
             return
-        move(b[0], LQ)
+        f = pick(b)
+        if not f:
+            print("지금 시간대에 맞는 긴 영상이 없어 이번엔 쉼")
+            gw.telegram("[인생ON] 보관함 긴 영상이 모두 다른 시간대 주제라 이번 회차는 쉬어요. (아침 주제는 아침에, 저녁 주제는 저녁에 올라가요)")
+            return
+        move(f, LQ)
         out("next", "long-life.yml")
     else:
         if mode == "pair" and pair_short():
             out("next", "shorts-life.yml")
         else:
             b = bank(SB)
-            if b:
-                move(b[0], SQ)
+            f = pick(b) if b else None
+            if b and not f:
+                print("지금 시간대에 맞는 쇼츠가 없어 이번엔 쉼")
+                return
+            if f:
+                move(f, SQ)
                 out("next", "shorts-life.yml")
             elif os.environ.get("GEMINI_FALLBACK") == "1" and os.environ.get("GEMINI_API_KEY"):
                 print("보관함이 비어 Gemini 가 대신 씀")
