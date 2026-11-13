@@ -347,7 +347,7 @@
   "title": "내가 너희를 어떻게 키웠는데, 이 말 대신 하세요",
   "hook": "이 말은 이제 그만",
   "voice": "ko-KR-InJoonNeural",
-  "long_url": "",
+  "long_url": "https://youtu.be/eVLbMg7K3Nk",
   "scenes": [
    {
     "text": "이 말은 이제 그만.",
@@ -413,5 +413,6 @@
   ],
   "comment": "고생 이야기, 원망 대신 추억으로 꺼내 보세요.\n자식 마음이 미안함 대신 고마움으로 바뀝니다.\n나머지 이야기는 채널의 긴 영상에 있어요.",
   "coupang_keywords": []
- }
+ },
+ "pair_used": true
 }
