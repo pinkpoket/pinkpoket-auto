@@ -1,15 +1,51 @@
 {
- "at": "2026-11-12T12:53:50.735491Z",
+ "at": "2026-11-13T11:08:22.561482Z",
  "channel": "인생ON : 마음의 불을 켜다",
  "subscribers": "2990",
  "analytics": true,
  "videos": [
   {
+   "id": "j-YBUYr5Fdg",
+   "title": "자식 연락이 뜸해졌을 때, 부모가 절대 하면 안 되는 말 3가지 #shorts",
+   "published": "2026-11-13T10:20:00Z",
+   "duration": "PT56S",
+   "views": 3,
+   "likes": 0,
+   "comments": 1
+  },
+  {
+   "id": "LG3UaF3Xrh4",
+   "title": "내가 너희를 어떻게 키웠는데, 이 말 대신 하세요 #shorts",
+   "published": "2026-11-13T03:06:33Z",
+   "duration": "PT56S",
+   "views": 10,
+   "likes": 1,
+   "comments": 1
+  },
+  {
+   "id": "eVLbMg7K3Nk",
+   "title": "자식에게 끝까지 하지 말아야 할 행동 6가지",
+   "published": "2026-11-13T01:56:18Z",
+   "duration": "PT25M37S",
+   "views": 16,
+   "likes": 0,
+   "comments": 1
+  },
+  {
+   "id": "GKN5yetrrzY",
+   "title": "나이 들수록 자식에게 절대 먼저 꺼내면 안 되는 돈 이야기 3가지 #shorts",
+   "published": "2026-11-12T23:00:33Z",
+   "duration": "PT58S",
+   "views": 12,
+   "likes": 1,
+   "comments": 1
+  },
+  {
    "id": "RFG9t7S7wOo",
    "title": "혼자여도 외롭지 않은 사람들의 하루 습관",
    "published": "2026-11-12T12:36:19Z",
    "duration": "PT10M31S",
-   "views": 1,
+   "views": 16,
    "likes": 1,
    "comments": 1
   },
@@ -18,8 +54,8 @@
    "title": "어디서나 대접받는 어른은 식사 자리에서 이 3가지가 다릅니다 #shorts",
    "published": "2026-11-12T10:23:50Z",
    "duration": "PT1M",
-   "views": 182,
-   "likes": 2,
+   "views": 758,
+   "likes": 1,
    "comments": 1
   },
   {
@@ -27,7 +63,7 @@
    "title": "매일 열심히 걷는데도 다리 힘이 점점 빠지는 진짜 이유 #shorts",
    "published": "2026-11-12T03:08:46Z",
    "duration": "PT58S",
-   "views": 233,
+   "views": 437,
    "likes": 0,
    "comments": 1
   },
@@ -36,7 +72,7 @@
    "title": "걷기만 하는 노후 운동, 이것을 꼭 더하세요",
    "published": "2026-11-12T01:57:55Z",
    "duration": "PT10M18S",
-   "views": 9,
+   "views": 27,
    "likes": 0,
    "comments": 1
   },
@@ -45,7 +81,7 @@
    "title": "듣기 좋은 칭찬만 해 주는 사람이 오히려 내 노후를 망치는 이유 #shorts",
    "published": "2026-11-11T23:05:52Z",
    "duration": "PT1M",
-   "views": 615,
+   "views": 713,
    "likes": 7,
    "comments": 1
   },
@@ -54,7 +90,7 @@
    "title": "끊을까 말까 고민되는 관계, 현명한 어른은 이렇게 정리합니다",
    "published": "2026-11-11T12:41:43Z",
    "duration": "PT25M37S",
-   "views": 19,
+   "views": 33,
    "likes": 0,
    "comments": 1
   },
@@ -72,18 +108,28 @@
    "title": "남과 비교할수록 노후가 가난해지는 진짜 이유 6가지",
    "published": "2026-11-11T01:54:05Z",
    "duration": "PT25M48S",
-   "views": 23,
+   "views": 33,
    "likes": 0,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 50,
+   "avg_view_pct": 3.2799999999999994,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "Ty_TzTLRmiM",
    "title": "니체가 미운 사람과 싸울 때 꼭 조심하라고 한 한 가지 #shorts",
    "published": "2026-11-10T22:57:14Z",
    "duration": "PT57S",
-   "views": 972,
-   "likes": 3,
-   "comments": 2
+   "views": 991,
+   "likes": 4,
+   "comments": 2,
+   "avg_view_sec": 34,
+   "avg_view_pct": 59.72,
+   "shares": 1,
+   "subs_gained": 0,
+   "views_period": 967
   },
   {
    "id": "26VMXBTxiaA",
@@ -92,7 +138,12 @@
    "duration": "PT26M10S",
    "views": 12,
    "likes": 1,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 371,
+   "avg_view_pct": 23.67,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 5
   },
   {
    "id": "pFns1NiU6sc",
@@ -101,72 +152,82 @@
    "duration": "PT1M4S",
    "views": 4,
    "likes": 1,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 48,
+   "avg_view_pct": 76.01,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 3
   },
   {
    "id": "TGdSer1uwto",
    "title": "부탁을 거절했을 때 드러나는 그 사람의 3가지 진짜 모습 #shorts",
    "published": "2026-11-10T10:16:25Z",
    "duration": "PT55S",
-   "views": 1223,
-   "likes": 11,
-   "comments": 1
+   "views": 1273,
+   "likes": 12,
+   "comments": 1,
+   "avg_view_sec": 49,
+   "avg_view_pct": 89.9,
+   "shares": 5,
+   "subs_gained": 1,
+   "views_period": 1190
   },
   {
    "id": "5VPDgUJtqM0",
    "title": "걱정인 척하는 간섭은 이 두 문장으로 끝내세요 #shorts",
    "published": "2026-11-10T03:06:10Z",
    "duration": "PT55S",
-   "views": 1096,
+   "views": 1098,
    "likes": 9,
    "comments": 1,
    "avg_view_sec": 41,
-   "avg_view_pct": 75.66,
+   "avg_view_pct": 74.95,
    "shares": 0,
    "subs_gained": 1,
-   "views_period": 1085
+   "views_period": 1096
   },
   {
    "id": "1G7nHr8KoKI",
    "title": "농담처럼 상처 주는 사람, 현명한 어른은 이렇게 받아칩니다",
    "published": "2026-11-10T01:59:29Z",
    "duration": "PT26M14S",
-   "views": 33,
+   "views": 36,
    "likes": 5,
    "comments": 1,
-   "avg_view_sec": 789,
-   "avg_view_pct": 50.18,
-   "shares": 0,
+   "avg_view_sec": 701,
+   "avg_view_pct": 44.59,
+   "shares": 1,
    "subs_gained": 1,
-   "views_period": 11
+   "views_period": 31
   },
   {
    "id": "O-gUFAITjyI",
    "title": "서운한 마음이 안 풀릴 때, 부처님이 법구경에 남긴 한 말씀 #shorts",
    "published": "2026-11-09T22:59:24Z",
    "duration": "PT1M",
-   "views": 258,
+   "views": 259,
    "likes": 4,
    "comments": 1,
-   "avg_view_sec": 62,
-   "avg_view_pct": 104.74,
+   "avg_view_sec": 58,
+   "avg_view_pct": 96.69,
    "shares": 1,
    "subs_gained": 1,
-   "views_period": 194
+   "views_period": 252
   },
   {
    "id": "Tdy6np0HAdA",
    "title": "이 중 3개 이상이면 그 모임은 이제 잠시 쉬셔도 됩니다 #shorts",
    "published": "2026-11-09T10:19:25Z",
    "duration": "PT57S",
-   "views": 1002,
+   "views": 1006,
    "likes": 8,
    "comments": 1,
    "avg_view_sec": 59,
    "avg_view_pct": 103.75000000000001,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 1001
+   "views_period": 1002
   },
   {
    "id": "IPq5Fvzrnaw",
@@ -177,66 +238,66 @@
    "likes": 12,
    "comments": 1,
    "avg_view_sec": 35,
-   "avg_view_pct": 65.62,
+   "avg_view_pct": 66.03,
    "shares": 0,
    "subs_gained": 2,
-   "views_period": 1095
+   "views_period": 1114
   },
   {
    "id": "dYSy8E40TmU",
    "title": "일흔 넘어 말년 복 있는 사람은 '이것'이 다릅니다",
    "published": "2026-11-09T02:04:39Z",
    "duration": "PT26M40S",
-   "views": 47,
+   "views": 49,
    "likes": 4,
    "comments": 1,
-   "avg_view_sec": 357,
-   "avg_view_pct": 22.34,
+   "avg_view_sec": 364,
+   "avg_view_pct": 22.77,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 35
+   "views_period": 40
   },
   {
    "id": "4_RKBvXXPtQ",
    "title": "쇼펜하우어가 행복의 10분의 9는 건강에 달렸다고 한 이유 #shorts",
    "published": "2026-11-08T22:52:43Z",
    "duration": "PT55S",
-   "views": 1029,
+   "views": 1030,
    "likes": 22,
    "comments": 3,
-   "avg_view_sec": 60,
-   "avg_view_pct": 110.28999999999999,
+   "avg_view_sec": 59,
+   "avg_view_pct": 107.37,
    "shares": 5,
    "subs_gained": 2,
-   "views_period": 982
+   "views_period": 1031
   },
   {
    "id": "aU_PRDND3ZA",
    "title": "나이 들수록 신경 끄면 마음이 편해지는 3가지",
    "published": "2026-11-08T13:03:28Z",
    "duration": "PT10M29S",
-   "views": 144,
+   "views": 158,
    "likes": 4,
    "comments": 1,
-   "avg_view_sec": 180,
-   "avg_view_pct": 28.689999999999998,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 39
+   "avg_view_sec": 158,
+   "avg_view_pct": 25.25,
+   "shares": 1,
+   "subs_gained": 1,
+   "views_period": 91
   },
   {
    "id": "9udwePx5xQI",
    "title": "운동을 열심히 해도 하루 종일 앉아 있으면 안 되는 이유 #shorts",
    "published": "2026-11-08T10:03:21Z",
    "duration": "PT57S",
-   "views": 1102,
+   "views": 1101,
    "likes": 25,
    "comments": 1,
    "avg_view_sec": 41,
-   "avg_view_pct": 73.27,
+   "avg_view_pct": 72.93,
    "shares": 2,
    "subs_gained": 3,
-   "views_period": 1075
+   "views_period": 1094
   },
   {
    "id": "Q2HDkS1sHrA",
@@ -247,24 +308,24 @@
    "likes": 15,
    "comments": 1,
    "avg_view_sec": 37,
-   "avg_view_pct": 64.4,
+   "avg_view_pct": 64.29,
    "shares": 0,
    "subs_gained": 3,
-   "views_period": 1028
+   "views_period": 1029
   },
   {
    "id": "zXoQoUjCJAM",
    "title": "은퇴 후 하루가 길게 느껴진다면, 니체가 남긴 견디는 힘의 한 문장 #shorts",
    "published": "2026-11-07T21:51:32Z",
    "duration": "PT1M1S",
-   "views": 1206,
+   "views": 1205,
    "likes": 8,
    "comments": 1,
    "avg_view_sec": 50,
-   "avg_view_pct": 82.32,
+   "avg_view_pct": 82.42,
    "shares": 7,
    "subs_gained": 4,
-   "views_period": 1209
+   "views_period": 1211
   },
   {
    "id": "YMowXgrRwus",
@@ -278,7 +339,7 @@
    "avg_view_pct": 102.76,
    "shares": 8,
    "subs_gained": 3,
-   "views_period": 1220
+   "views_period": 1224
   },
   {
    "id": "w5IOntFGFCg",
@@ -289,10 +350,10 @@
    "likes": 19,
    "comments": 1,
    "avg_view_sec": 56,
-   "avg_view_pct": 97.93,
+   "avg_view_pct": 97.85,
    "shares": 8,
    "subs_gained": 3,
-   "views_period": 1252
+   "views_period": 1257
   },
   {
    "id": "sYrZ-x6oaPg",
@@ -317,10 +378,10 @@
    "likes": 18,
    "comments": 1,
    "avg_view_sec": 89,
-   "avg_view_pct": 148.61,
+   "avg_view_pct": 148.44,
    "shares": 5,
    "subs_gained": 2,
-   "views_period": 1413
+   "views_period": 1414
   },
   {
    "id": "iL8eXi7GFPA",
@@ -341,7 +402,7 @@
    "title": "노후에 이 중 2개 이상이면 그 인연은 나 혼자 붙잡고 있는 겁니다 #shorts",
    "published": "2026-11-06T01:49:31Z",
    "duration": "PT1M10S",
-   "views": 626,
+   "views": 627,
    "likes": 8,
    "comments": 1,
    "avg_view_sec": 66,
@@ -355,14 +416,14 @@
    "title": "착해 보여도 이런 사람은 절대 내 편이 아닙니다",
    "published": "2026-11-06T00:47:07Z",
    "duration": "PT10M46S",
-   "views": 83,
+   "views": 85,
    "likes": 6,
    "comments": 1,
-   "avg_view_sec": 181,
-   "avg_view_pct": 28.04,
+   "avg_view_sec": 182,
+   "avg_view_pct": 28.32,
    "shares": 2,
    "subs_gained": 2,
-   "views_period": 80
+   "views_period": 83
   },
   {
    "id": "kQPP2wJodbQ",
@@ -376,7 +437,7 @@
    "avg_view_pct": 83.57,
    "shares": 9,
    "subs_gained": 1,
-   "views_period": 1320
+   "views_period": 1321
   },
   {
    "id": "VYcxvWQz2ss",
@@ -390,21 +451,21 @@
    "avg_view_pct": 97.26,
    "shares": 1,
    "subs_gained": 2,
-   "views_period": 1312
+   "views_period": 1314
   },
   {
    "id": "fR-QHqBldFk",
    "title": "공자가 경고한, 나이 들수록 버려야 할 말버릇 5가지",
    "published": "2026-11-05T00:47:16Z",
    "duration": "PT10M55S",
-   "views": 49,
+   "views": 50,
    "likes": 2,
    "comments": 1,
-   "avg_view_sec": 256,
-   "avg_view_pct": 39.14,
+   "avg_view_sec": 267,
+   "avg_view_pct": 40.85,
    "shares": 2,
    "subs_gained": 1,
-   "views_period": 45
+   "views_period": 48
   },
   {
    "id": "5PBuK-q-ImU",
@@ -429,10 +490,10 @@
    "likes": 24,
    "comments": 1,
    "avg_view_sec": 35,
-   "avg_view_pct": 52.31,
+   "avg_view_pct": 52.26,
    "shares": 1,
    "subs_gained": 9,
-   "views_period": 1378
+   "views_period": 1379
   },
   {
    "id": "sTDnDHTbi6U",
@@ -509,7 +570,7 @@
    "title": "나이 들수록 근육 빠지는 걸 막으려면 반드시 챙길 3가지 #shorts",
    "published": "2026-11-03T08:53:39Z",
    "duration": "PT1M5S",
-   "views": 1307,
+   "views": 1308,
    "likes": 15,
    "comments": 1,
    "avg_view_sec": 70,
@@ -530,7 +591,7 @@
    "avg_view_pct": 70.47,
    "shares": 4,
    "subs_gained": 3,
-   "views_period": 1262
+   "views_period": 1263
   },
   {
    "id": "SvX8xKtQT1g",
@@ -541,10 +602,10 @@
    "likes": 12,
    "comments": 1,
    "avg_view_sec": 49,
-   "avg_view_pct": 90.22,
+   "avg_view_pct": 90.1,
    "shares": 5,
    "subs_gained": 1,
-   "views_period": 1381
+   "views_period": 1382
   },
   {
    "id": "Z826mTrKNEE",
@@ -568,11 +629,11 @@
    "views": 1625,
    "likes": 14,
    "comments": 0,
-   "avg_view_sec": 40,
-   "avg_view_pct": 81.63,
+   "avg_view_sec": 7,
+   "avg_view_pct": 16.12,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 6
+   "views_period": 2
   },
   {
    "id": "cmbror11dgg",
@@ -581,12 +642,7 @@
    "duration": "PT1M",
    "views": 2718,
    "likes": 33,
-   "comments": 0,
-   "avg_view_sec": 17,
-   "avg_view_pct": 28.67,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 0
   },
   {
    "id": "QLTwztbD-sQ",
@@ -596,11 +652,11 @@
    "views": 8179,
    "likes": 180,
    "comments": 2,
-   "avg_view_sec": 53,
-   "avg_view_pct": 59.93999999999999,
+   "avg_view_sec": 87,
+   "avg_view_pct": 97.87,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 2
   },
   {
    "id": "3Jmar1pgm74",
@@ -614,7 +670,7 @@
    "avg_view_pct": 39.96,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 10
+   "views_period": 9
   },
   {
    "id": "F27wtstNdxo",
@@ -624,8 +680,8 @@
    "views": 8474,
    "likes": 231,
    "comments": 0,
-   "avg_view_sec": 64,
-   "avg_view_pct": 85.46,
+   "avg_view_sec": 65,
+   "avg_view_pct": 86.18,
    "shares": 0,
    "subs_gained": 0,
    "views_period": 4
@@ -642,7 +698,7 @@
    "avg_view_pct": 75,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 1
   },
   {
    "id": "kXlAOlYFOWU",
@@ -656,7 +712,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 1
   },
   {
    "id": "sYQP0X46KAE",
@@ -666,11 +722,11 @@
    "views": 2077,
    "likes": 29,
    "comments": 0,
-   "avg_view_sec": 61,
-   "avg_view_pct": 94.92,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 1
   },
   {
    "id": "eqn3dheh1aQ",
@@ -679,12 +735,7 @@
    "duration": "PT1M20S",
    "views": 1859,
    "likes": 12,
-   "comments": 0,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 1
+   "comments": 0
   },
   {
    "id": "mZCr5tFLvow",
@@ -698,7 +749,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 1
   },
   {
    "id": "ooI5xytaaUQ",
@@ -712,7 +763,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 1
   },
   {
    "id": "YSdhidPdpv8",
@@ -721,12 +772,7 @@
    "duration": "PT46S",
    "views": 1304,
    "likes": 24,
-   "comments": 0,
-   "avg_view_sec": 37,
-   "avg_view_pct": 81.67,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 3
+   "comments": 0
   },
   {
    "id": "ZMLwzbN8uUw",
@@ -740,7 +786,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 6
+   "views_period": 3
   },
   {
    "id": "a8GF9GvCrMs",
@@ -749,12 +795,7 @@
    "duration": "PT35S",
    "views": 1351,
    "likes": 17,
-   "comments": 1,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "M4VOTkEV30I",
@@ -763,12 +804,7 @@
    "duration": "PT38S",
    "views": 1456,
    "likes": 17,
-   "comments": 1,
-   "avg_view_sec": 9,
-   "avg_view_pct": 23.95,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "yKil6nsSFpw",
@@ -777,12 +813,7 @@
    "duration": "PT1M19S",
    "views": 1537,
    "likes": 42,
-   "comments": 1,
-   "avg_view_sec": 84,
-   "avg_view_pct": 107.15,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 3
+   "comments": 1
   },
   {
    "id": "G3_2D3oba2I",
@@ -791,12 +822,7 @@
    "duration": "PT59S",
    "views": 961,
    "likes": 22,
-   "comments": 1,
-   "avg_view_sec": 24,
-   "avg_view_pct": 40.85,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "3m51-OwaKw0",
@@ -805,12 +831,7 @@
    "duration": "PT1M35S",
    "views": 1274,
    "likes": 35,
-   "comments": 1,
-   "avg_view_sec": 20,
-   "avg_view_pct": 21.26,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "P4c2oyetmRo",
@@ -819,12 +840,7 @@
    "duration": "PT1M",
    "views": 2502,
    "likes": 62,
-   "comments": 1,
-   "avg_view_sec": 8,
-   "avg_view_pct": 13.33,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "zPpWAF8DKao",
@@ -838,7 +854,7 @@
    "avg_view_pct": 15.71,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 1
   },
   {
    "id": "kKnxMHwLOf0",
@@ -847,12 +863,7 @@
    "duration": "PT53S",
    "views": 2358,
    "likes": 36,
-   "comments": 2,
-   "avg_view_sec": 52,
-   "avg_view_pct": 98.49,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 2
   },
   {
    "id": "WZGzQcpk0fk",
@@ -861,12 +872,7 @@
    "duration": "PT1M15S",
    "views": 1719,
    "likes": 52,
-   "comments": 2,
-   "avg_view_sec": 43,
-   "avg_view_pct": 58.599999999999994,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 2
   },
   {
    "id": "S4bsA5IuOLI",
@@ -880,7 +886,7 @@
    "avg_view_pct": 183.26,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 5
+   "views_period": 3
   },
   {
    "id": "Fuh6PKXToaQ",
@@ -894,14 +900,14 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 1
   },
   {
    "id": "Z3F7qt-xmVI",
    "title": "인간관계에 지쳐 마음이 헛헛할 때, 반드시 명심해야 할 3가지 인생 지혜",
    "published": "2026-05-22T07:32:59Z",
    "duration": "PT3M58S",
-   "views": 103,
+   "views": 108,
    "likes": 0,
    "comments": 1,
    "avg_view_sec": 130,
@@ -917,12 +923,7 @@
    "duration": "PT1M13S",
    "views": 2317,
    "likes": 63,
-   "comments": 3,
-   "avg_view_sec": 18,
-   "avg_view_pct": 25.89,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 3
+   "comments": 3
   },
   {
    "id": "jNQYGnLZ41Y",
@@ -931,12 +932,7 @@
    "duration": "PT1M23S",
    "views": 933,
    "likes": 5,
-   "comments": 1,
-   "avg_view_sec": 6,
-   "avg_view_pct": 7.470000000000001,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 3
+   "comments": 1
   },
   {
    "id": "7XIPB8THclM",
@@ -950,7 +946,7 @@
    "avg_view_pct": 3.93,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 6
+   "views_period": 4
   },
   {
    "id": "SZ4HsuBlQVw",
@@ -959,12 +955,7 @@
    "duration": "PT1M12S",
    "views": 2007,
    "likes": 93,
-   "comments": 1,
-   "avg_view_sec": 83,
-   "avg_view_pct": 116.53,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 3
+   "comments": 1
   },
   {
    "id": "JIJPE3ZniQI",
@@ -978,7 +969,7 @@
    "avg_view_pct": 35.34,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 5
+   "views_period": 2
   },
   {
    "id": "M0FJvcnx9W8",
@@ -988,11 +979,11 @@
    "views": 9019,
    "likes": 291,
    "comments": 3,
-   "avg_view_sec": 32,
-   "avg_view_pct": 42.63,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 0
   },
   {
    "id": "WzZ6kyb5ykY",
@@ -1001,12 +992,7 @@
    "duration": "PT56S",
    "views": 1076,
    "likes": 33,
-   "comments": 3,
-   "avg_view_sec": 28,
-   "avg_view_pct": 50.27,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 3
   },
   {
    "id": "pp9gEfb6MZE",
@@ -1015,12 +1001,7 @@
    "duration": "PT1M6S",
    "views": 1045,
    "likes": 29,
-   "comments": 1,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "dkaTPdH1Y0o",
@@ -1030,11 +1011,11 @@
    "views": 1184,
    "likes": 20,
    "comments": 1,
-   "avg_view_sec": 20,
-   "avg_view_pct": 51.5,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 1
   },
   {
    "id": "bY7RrFdsE2c",
@@ -1044,11 +1025,11 @@
    "views": 1252,
    "likes": 67,
    "comments": 61,
-   "avg_view_sec": 4,
-   "avg_view_pct": 6.52,
+   "avg_view_sec": 2,
+   "avg_view_pct": 4.2,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 4
+   "views_period": 2
   },
   {
    "id": "dQ63rPU9bis",
@@ -1058,11 +1039,11 @@
    "views": 4345,
    "likes": 129,
    "comments": 29,
-   "avg_view_sec": 1661,
-   "avg_view_pct": 3322.45,
+   "avg_view_sec": 2489,
+   "avg_view_pct": 4978.78,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 9
+   "views_period": 7
   },
   {
    "id": "fdc7NEWXqwE",
@@ -1071,12 +1052,7 @@
    "duration": "PT39S",
    "views": 2110,
    "likes": 41,
-   "comments": 1,
-   "avg_view_sec": 55,
-   "avg_view_pct": 143.46,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 3
+   "comments": 1
   },
   {
    "id": "dY2AXYpDxnc",
@@ -1086,11 +1062,11 @@
    "views": 3497,
    "likes": 81,
    "comments": 11,
-   "avg_view_sec": 18,
-   "avg_view_pct": 30.579999999999995,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 0
   },
   {
    "id": "l7Apv8juqrU",
@@ -1099,12 +1075,7 @@
    "duration": "PT41S",
    "views": 6858,
    "likes": 113,
-   "comments": 1,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "sKbXzBqUMY8",
@@ -1118,7 +1089,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 0
   },
   {
    "id": "mquSSzVh6IQ",
@@ -1128,11 +1099,11 @@
    "views": 8060,
    "likes": 231,
    "comments": 1,
-   "avg_view_sec": 35,
-   "avg_view_pct": 70.21,
+   "avg_view_sec": 40,
+   "avg_view_pct": 80.55,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 6
+   "views_period": 4
   },
   {
    "id": "yU-KRzQz4v4",
@@ -1142,11 +1113,11 @@
    "views": 10236,
    "likes": 240,
    "comments": 2,
-   "avg_view_sec": 177,
-   "avg_view_pct": 269.5,
+   "avg_view_sec": 198,
+   "avg_view_pct": 300.37,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 7
+   "views_period": 4
   },
   {
    "id": "Yi3tP1gEERY",
@@ -1182,13 +1153,13 @@
    "published": "2026-05-02T22:00:00Z",
    "duration": "PT1M7S",
    "views": 4671,
-   "likes": 116,
+   "likes": 115,
    "comments": 1,
    "avg_view_sec": 1,
    "avg_view_pct": 1.6399999999999997,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 2
   },
   {
    "id": "9m_dTtve9Zk",
@@ -1204,14 +1175,14 @@
    "title": "더 이상 사람에게 상처받지 마세요! 법륜 스님이 말하는 인연의 괴로움에서 단숨에 벗어나는 법",
    "published": "2026-04-29T22:00:00Z",
    "duration": "PT1M7S",
-   "views": 2721,
+   "views": 2722,
    "likes": 86,
    "comments": 11,
    "avg_view_sec": 36,
    "avg_view_pct": 54.03,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 11
+   "views_period": 8
   },
   {
    "id": "d7WMjRfk0Zc",
@@ -1221,11 +1192,11 @@
    "views": 9972,
    "likes": 199,
    "comments": 15,
-   "avg_view_sec": 14,
-   "avg_view_pct": 27.04,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 5
+   "views_period": 2
   },
   {
    "id": "9Vm2VkSy_o8",
@@ -1253,7 +1224,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 0
+   "views_period": 2
   },
   {
    "id": "ozVSRNVwxS4",
@@ -1437,12 +1408,7 @@
    "duration": "PT54S",
    "views": 1722,
    "likes": 39,
-   "comments": 1,
-   "avg_view_sec": 28,
-   "avg_view_pct": 52.22,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 1
+   "comments": 1
   },
   {
    "id": "h4sFsD7yQGY",
@@ -1563,14 +1529,14 @@
    "title": "경조사 다 챙기면 쓸쓸하게 죽습니다  니체가 경고한 인맥의 민낯",
    "published": "2026-04-06T22:15:00Z",
    "duration": "PT1M26S",
-   "views": 1039,
+   "views": 1041,
    "likes": 42,
    "comments": 1,
    "avg_view_sec": 46,
    "avg_view_pct": 53.55,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 43
+   "views_period": 44
   },
   {
    "id": "sGY5jIhH94g",
@@ -1849,11 +1815,11 @@
    "views": 16760,
    "likes": 618,
    "comments": 3,
-   "avg_view_sec": 39,
-   "avg_view_pct": 43.04,
+   "avg_view_sec": 11,
+   "avg_view_pct": 12.16,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 5
+   "views_period": 3
   },
   {
    "id": "3v2szbB6pJk",
@@ -2011,7 +1977,12 @@
    "duration": "PT57S",
    "views": 1505,
    "likes": 70,
-   "comments": 5
+   "comments": 5,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 1
   },
   {
    "id": "vaqEgbDz3l4",
@@ -2029,12 +2000,7 @@
    "duration": "PT11S",
    "views": 2036,
    "likes": 7,
-   "comments": 1,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 1
+   "comments": 1
   },
   {
    "id": "fBs14eSaVpo",
@@ -2253,7 +2219,7 @@
    "title": "도무지 이해 안 가는 사람 때문에 화가 날 때 (법륜스님의 마음 관리)",
    "published": "2026-02-23T11:40:23Z",
    "duration": "PT1M8S",
-   "views": 1124,
+   "views": 1129,
    "likes": 19,
    "comments": 1,
    "avg_view_sec": 0,
@@ -2445,7 +2411,7 @@
    "title": "\"돈이 많다고 다 부자가 아닙니다. 탈무드가 말하는 진짜 부자의 3가지 조건\"",
    "published": "2026-02-10T12:00:00Z",
    "duration": "PT1M2S",
-   "views": 37,
+   "views": 38,
    "likes": 2,
    "comments": 1
   },
@@ -2725,7 +2691,7 @@
    "title": "아침 1분으로 인생의 운을 바꾸세요 | 나이 들어 운이 확 풀리는 사람들의 3가지 특징",
    "published": "2026-01-26T23:00:00Z",
    "duration": "PT53S",
-   "views": 14449,
+   "views": 14450,
    "likes": 310,
    "comments": 7
   },
@@ -2807,7 +2773,7 @@
    "title": "무조건 외워야 할 인생 조언 4가지 : 이제는 당신을 위해 사세요",
    "published": "2026-01-22T13:46:31Z",
    "duration": "PT58S",
-   "views": 2206,
+   "views": 2207,
    "likes": 14,
    "comments": 3
   },
@@ -3022,7 +2988,7 @@
    "avg_view_pct": 85.72,
    "shares": 1,
    "subs_gained": 0,
-   "views_period": 5
+   "views_period": 6
   },
   {
    "id": "BoPP12-hHeE",
@@ -3064,11 +3030,11 @@
    "views": 1012,
    "likes": 27,
    "comments": 1,
-   "avg_view_sec": 3,
-   "avg_view_pct": 5.52,
+   "avg_view_sec": 0,
+   "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 2
+   "views_period": 1
   },
   {
    "id": "Xqiqhn1RvKY",
@@ -3205,7 +3171,7 @@
    "avg_view_pct": 18.62,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 4
   },
   {
    "id": "VXo4_zNlKBY",
@@ -3271,7 +3237,7 @@
    "title": "나이 들어 이런 사람은 제발 손절하세요ㅣ 노후가 평안해지는 인간관계 정리법",
    "published": "2025-12-28T21:00:29Z",
    "duration": "PT53S",
-   "views": 1674,
+   "views": 1677,
    "likes": 24,
    "comments": 1,
    "avg_view_sec": 12,
@@ -3401,7 +3367,7 @@
    "avg_view_pct": 105.90000000000002,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 5
+   "views_period": 9
   },
   {
    "id": "4aHiCNqtWSU",
@@ -3538,7 +3504,7 @@
    "avg_view_pct": 9,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 6
+   "views_period": 5
   },
   {
    "id": "De5vOUGmKCk",
@@ -3562,11 +3528,11 @@
    "views": 5668,
    "likes": 141,
    "comments": 6,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
+   "avg_view_sec": 2,
+   "avg_view_pct": 3.5699999999999994,
    "shares": 0,
-   "subs_gained": 0,
-   "views_period": 1
+   "subs_gained": 1,
+   "views_period": 3
   },
   {
    "id": "qqOwjMVQLK8",
