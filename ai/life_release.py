@@ -13,6 +13,7 @@ import datetime as dt
 import glob
 import json
 import os
+import time
 import shutil
 import subprocess
 import sys
@@ -118,6 +119,14 @@ def recent_short(minutes=75):
 
 def main():
     mode = os.environ.get("MODE", "short")
+    # ⏸ 쉬는 기간 (2026-11-13 핑포 결정: 쇼츠 조회수가 10회 안팎으로 막혀 사흘 쉼). life/PAUSE 첫 줄 날짜(한국) 전까지 아무것도 안 올림
+    pf = ROOT / "life/PAUSE"
+    if pf.exists():
+        until = pf.read_text(encoding="utf-8").split()[0]
+        today = time.strftime("%Y-%m-%d", time.gmtime(time.time() + 9 * 3600))
+        if today < until:
+            print(f"⏸ 쉬는 중 ({until} 부터 다시 올림) — 이번엔 건너뜀")
+            return
     if mode == "sayeon":
         if recent_short():
             print("방금 다른 쇼츠가 올라가서 이번엔 건너뜀")
