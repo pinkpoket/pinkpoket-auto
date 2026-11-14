@@ -5,7 +5,7 @@ on:
   workflow_dispatch: {}
   push:
     branches: [main]
-    paths: ["life/diag.py"]
+    paths: ["life/diag.py", "life/diag2.py"]
 
 permissions:
   contents: write
@@ -25,11 +25,11 @@ jobs:
           GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
           YOUTUBE_REFRESH_TOKEN: ${{ secrets.LIFE_YOUTUBE_REFRESH_TOKEN }}
           YT_CHANNEL_ID: "UCkN5Ws9cI_B8fyE71-dl__Q"
-        run: python -u life/diag.py
+        run: python -u life/diag.py && python -u life/diag2.py
       - run: |
           git config user.name "pinkpoket-bot"
           git config user.email "pinkpoket-bot@users.noreply.github.com"
-          git add life/data/diag.json
+          git add life/data/diag.json life/data/diag2.json
           git diff --cached --quiet && exit 0
           git commit -m "인생ON 진단"
           for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
