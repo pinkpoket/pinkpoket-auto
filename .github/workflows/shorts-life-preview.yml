@@ -70,4 +70,4 @@ jobs:
           git add -A life/shorts/preview life/data/preview
           git diff --cached --quiet && exit 0
           git commit -m "인생ON 쇼츠 미리보기"
-          for i in 1 2 3; do git pull --rebase -q origin main && git push -q && break; sleep 5; done
+          for i in 1 2 3; do git pull --rebase --autostash -q origin main && git push -q && break; sleep 5; done
