@@ -23,7 +23,7 @@ def main():
         R[f"type_{label}"] = report(h, metrics="views,engagedViews,estimatedMinutesWatched,averageViewDuration,averageViewPercentage,subscribersGained,likes,shares,comments",
                                     startDate=S, endDate=E, dimensions="creatorContentType")
         R[f"age_gender_{label}"] = report(h, metrics="viewerPercentage", startDate=S, endDate=E, dimensions="ageGroup,gender", sort="gender,ageGroup")
-        for ct in ("SHORTS", "VIDEO_ON_DEMAND"):
+        for ct in ("shorts", "videoOnDemand"):
             R[f"age_{ct}_{label}"] = report(h, metrics="viewerPercentage", startDate=S, endDate=E, dimensions="ageGroup",
                                             filters=f"creatorContentType=={ct}")
         R[f"sub_{label}"] = report(h, metrics="views,estimatedMinutesWatched,averageViewDuration", startDate=S, endDate=E,
