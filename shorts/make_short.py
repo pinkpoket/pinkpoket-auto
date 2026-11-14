@@ -337,6 +337,49 @@ def hook_lines(d, hook, f, max_w):
     return best[1]
 
 
+HL_COLORS = [(184, 242, 58), (255, 225, 0), (255, 255, 255)]   # 줄마다 연두·노랑·흰색
+HL_HI = (255, 70, 70)                                            # [낱말] 은 빨강
+
+
+def draw_headline(img, d, text):
+    """화면 위쪽 큰 3줄 제목 — 장면 내내 고정. "\n" 으로 줄, [낱말] 은 빨강. 위에 작은 로고·채널 이름."""
+    # 위쪽을 조금 더 어둡게 (밝은 사진에서도 읽히게)
+    for y in range(0, 760):
+        d.line([(0, y), (W, y)], fill=(0, 0, 0, int(110 * (1 - y / 760) ** 1.2)))
+    lines = [ln.strip() for ln in text.split("\n") if ln.strip()][:3]
+    segs = [[(t.strip("[]"), t.startswith("[")) for t in re.split(r"(\[[^\]]*\])", ln) if t] for ln in lines]
+    size = 160
+    while size > 90:
+        f = font(size)
+        if max(sum(d.textlength(t, font=f) for t, _ in sg) for sg in segs) <= W - 110:
+            break
+        size -= 6
+    f = font(size)
+    lh = int(size * 1.12)
+    # 로고 + 채널 이름 (작게, 맨 위)
+    f_tag = font(34)
+    tag = ch.P.get("tag") or ch.P["name"]
+    tw = d.textlength(tag, font=f_tag)
+    logo_s = 56
+    lx = int((W - tw - logo_s - 10) / 2)
+    ty = 120
+    if os.path.exists(LOGO):
+        logo = Image.open(LOGO).convert("RGBA").resize((logo_s, logo_s), Image.LANCZOS)
+        img.alpha_composite(logo, (lx, ty - 8))
+        tx = lx + logo_s + 10
+    else:
+        tx = (W - tw) / 2
+    d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=3, stroke_fill=(0, 0, 0))
+    y = 200
+    for li, sg in enumerate(segs):
+        x = (W - sum(d.textlength(t, font=f) for t, _ in sg)) / 2
+        for t, hi in sg:
+            col = HL_HI if hi else HL_COLORS[li % len(HL_COLORS)]
+            d.text((x, y), t, font=f, fill=col, stroke_width=max(10, size // 12), stroke_fill=(0, 0, 0))
+            x += d.textlength(t, font=f)
+        y += lh
+
+
 def base_png(hook, path, outro=False):
     """장면 내내 고정되는 부분: 위 제목 상자, 로고·채널 이름, 아래 그늘, (마지막 장면) 좋아요·구독 버튼."""
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -348,34 +391,38 @@ def base_png(hook, path, outro=False):
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(120 * a ** 0.8)))
     for y in range(0, 520):
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(C.get("top_shade", 90) * (1 - y / 520))))
-    # 위 제목: 노란 바탕 알약 상자, 글씨 크기에 맞춰 가운데
-    f_hook = font(88)
-    lh, pad_x, pad_y = 112, 56, 26
-    lines = hook_lines(d, hook, f_hook, W - 2 * pad_x - 80)
-    tw_max = max(d.textlength(ln, font=f_hook) for ln in lines)
-    box_w, box_h = tw_max + pad_x * 2, len(lines) * lh + pad_y * 2
-    bx0, by0 = (W - box_w) / 2, 180
-    d.rounded_rectangle([bx0 + 4, by0 + 6, bx0 + box_w + 4, by0 + box_h + 6], radius=box_h / 2, fill=(0, 0, 0, 70))
-    d.rounded_rectangle([bx0, by0, bx0 + box_w, by0 + box_h], radius=box_h / 2, fill=HOOK_BG + (250,))
-    y = by0 + pad_y - 8
-    for line in lines:
-        tw = d.textlength(line, font=f_hook)
-        d.text(((W - tw) / 2, y), line, font=f_hook, fill=tuple(C["hook_text"]))
-        y += lh
-    # 채널 이름 + 로고 (작게)
-    f_tag = font(32)
-    tag = ch.P.get("tag") or ch.P["name"]
-    tw = d.textlength(tag, font=f_tag)
-    logo_s = 54
-    lx = int((W - tw - logo_s - 10) / 2)
-    ty = by0 + box_h + 20
-    if os.path.exists(LOGO):
-        logo = Image.open(LOGO).convert("RGBA").resize((logo_s, logo_s), Image.LANCZOS)
-        img.alpha_composite(logo, (lx, ty - 7))
-        tx = lx + logo_s + 10
+    if HEADLINE[0]:
+        # 큰 3줄 컬러 제목 (1~5월 히트 쇼츠 화면, 2026-11-14 하루 1편 시험)
+        draw_headline(img, d, HEADLINE[0])
     else:
-        tx = (W - tw) / 2
-    d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=3, stroke_fill=(0, 0, 0))
+        # 위 제목: 노란 바탕 알약 상자, 글씨 크기에 맞춰 가운데
+        f_hook = font(88)
+        lh, pad_x, pad_y = 112, 56, 26
+        lines = hook_lines(d, hook, f_hook, W - 2 * pad_x - 80)
+        tw_max = max(d.textlength(ln, font=f_hook) for ln in lines)
+        box_w, box_h = tw_max + pad_x * 2, len(lines) * lh + pad_y * 2
+        bx0, by0 = (W - box_w) / 2, 180
+        d.rounded_rectangle([bx0 + 4, by0 + 6, bx0 + box_w + 4, by0 + box_h + 6], radius=box_h / 2, fill=(0, 0, 0, 70))
+        d.rounded_rectangle([bx0, by0, bx0 + box_w, by0 + box_h], radius=box_h / 2, fill=HOOK_BG + (250,))
+        y = by0 + pad_y - 8
+        for line in lines:
+            tw = d.textlength(line, font=f_hook)
+            d.text(((W - tw) / 2, y), line, font=f_hook, fill=tuple(C["hook_text"]))
+            y += lh
+        # 채널 이름 + 로고 (작게)
+        f_tag = font(32)
+        tag = ch.P.get("tag") or ch.P["name"]
+        tw = d.textlength(tag, font=f_tag)
+        logo_s = 54
+        lx = int((W - tw - logo_s - 10) / 2)
+        ty = by0 + box_h + 20
+        if os.path.exists(LOGO):
+            logo = Image.open(LOGO).convert("RGBA").resize((logo_s, logo_s), Image.LANCZOS)
+            img.alpha_composite(logo, (lx, ty - 7))
+            tx = lx + logo_s + 10
+        else:
+            tx = (W - tw) / 2
+        d.text((tx, ty), tag, font=f_tag, fill=(255, 255, 255), stroke_width=3, stroke_fill=(0, 0, 0))
     if outro:
         f_b = font(70)
         for k, label in enumerate(["좋아요", "구독"]):
@@ -606,6 +653,7 @@ def build_video(script, out_path):
     shutil.rmtree(WORK, ignore_errors=True)
     os.makedirs(WORK, exist_ok=True)
     AI_COUNT[0] = 0
+    HEADLINE[0] = (script.get("headline") or "").strip()
     global TTS_RATE, TTS_PITCH
     voice = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
     TTS_RATE = (script.get("rate") or (ch.P.get("voice_rates") or {}).get(voice)
@@ -820,7 +868,10 @@ def build_description(script):
             pass
     if blog:
         lines.append(f"📖 블로그에서 자세히 보기 👉 {blog}")
-    lines += ["", script.get("description", "").strip(), ""]
+    desc_body = script.get("description", "").strip()
+    if ch.P.get("share_in_comment"):  # 공유 부탁 줄은 설명란에서 빼고 댓글에만
+        desc_body = "\n".join(ln for ln in desc_body.split("\n") if "나눠 주세요" not in ln)
+    lines += ["", desc_body, ""]
     if script.get("format") == "sayeon":  # 사연 쇼츠는 가상 인물·창작 이야기임을 밝힌다
         lines += ["※ AI로 만든 가상 인물이 나오는 창작 이야기입니다. #AI가상인물", ""]
     lines += [ch.P["shorts_signature"]]  # AI 안내 문구는 넣지 않음 (업로드 시 합성 콘텐츠 표시는 그대로)
@@ -836,6 +887,8 @@ def build_comment(script, product):
         body = ch.P["comment_fallback"].format(hook=hook)
     tail = ["", "더 궁금하신 분은 영상 아래 ‘더보기’를 눌러 봐 주세요 👀",
             "도움이 되셨다면 구독과 좋아요 꾹 부탁드려요 🙏💗"]
+    if ch.P.get("share_in_comment"):  # 공유 부탁은 댓글에만 (2026-11-14 핑포 결정)
+        tail.insert(1, "소중한 분께 카톡으로 나눠 주세요 💌")
     return body + "\n" + "\n".join(tail)
 
 
@@ -889,7 +942,7 @@ def yt_upload(video, title, desc, tags, shorts=True):
         "snippet": {"title": title[:100], "description": yt_clean(desc)[:4900], "tags": clean_tags,
                     "categoryId": ch.P["yt_category"], "defaultLanguage": "ko", "defaultAudioLanguage": "ko"},
         "status": {"privacyStatus": os.environ.get("YT_PRIVACY", "public"),
-                   "selfDeclaredMadeForKids": False, "containsSyntheticMedia": True},
+                   "selfDeclaredMadeForKids": False, "containsSyntheticMedia": SYNTH[0]},
     }
     size = os.path.getsize(video)
     r = requests.post(
@@ -906,6 +959,11 @@ def yt_upload(video, title, desc, tags, shorts=True):
         raise RuntimeError(f"유튜브 업로드 실패 {up.status_code}: {up.text[:300]}")
     info = up.json()
     return info.get("id"), info.get("status", {}).get("privacyStatus", "")
+
+
+# AI(합성) 표시: 풍경 사진 + AI 목소리는 표시 의무가 없어 끈다 (2026-11-14 핑포 결정). 사람 그림이 나오는 사연 쇼츠만 켬
+SYNTH = [False]
+HEADLINE = [""]
 
 
 def set_short_thumb(vid, video):
@@ -965,6 +1023,7 @@ def main():
             entry["voice"] = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
             video = os.path.join(OUT, f"{name}.mp4")
             script["_name"] = name
+            SYNTH[0] = script.get("format") == "sayeon" or bool(script.get("synthetic"))
             approved = os.path.join(REPO, script["video_file"]) if script.get("video_file") else ""
             if approved and os.path.exists(approved):
                 # 핑포가 미리보기로 보고 허락한 영상을 그대로 올린다 (다시 만들지 않음)

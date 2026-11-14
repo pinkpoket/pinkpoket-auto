@@ -112,6 +112,8 @@ PROFILES = {
         # 첫 장면은 위 노란 상자·자막 대신 화면 가운데 큰 제목 카드
         # ⏸ 2026-11-12 되돌림: 제목 카드·장면마다 사진 적용 뒤 조회수가 1,000~1,400 → 170~970 으로 떨어짐 (핑포 "완전 망했다")
         "title_card": False,
+        # 공유 부탁은 댓글에만 (설명란·화면에서 뺌, 2026-11-14 핑포 결정)
+        "share_in_comment": True,
         # 사연 장면 중 사람 없는 장면("still": true) — 빈 방·물건만 (2026-11-11)
         "sayeon_still_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
                                "quiet still life, empty scene without any people, objects centered, vertical 9:16 composition, "
