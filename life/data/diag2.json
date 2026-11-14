@@ -1,0 +1,7928 @@
+{
+ "type_d28": {
+  "cols": [
+   "creatorContentType",
+   "views",
+   "engagedViews",
+   "estimatedMinutesWatched",
+   "averageViewDuration",
+   "averageViewPercentage",
+   "subscribersGained",
+   "likes",
+   "shares",
+   "comments"
+  ],
+  "rows": [
+   [
+    "videoOnDemand",
+    575,
+    373,
+    1695,
+    271,
+    29.43,
+    6,
+    26,
+    6,
+    5
+   ],
+   [
+    "shorts",
+    29445,
+    13891,
+    12790,
+    53,
+    89.28,
+    55,
+    350,
+    102,
+    11
+   ],
+   [
+    "creatorContentTypeUnspecified",
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+   ]
+  ]
+ },
+ "age_gender_d28": {
+  "cols": [
+   "ageGroup",
+   "gender",
+   "viewerPercentage"
+  ],
+  "rows": [
+   [
+    "age25-34",
+    "female",
+    0.1
+   ],
+   [
+    "age35-44",
+    "female",
+    1.2
+   ],
+   [
+    "age45-54",
+    "female",
+    6.8
+   ],
+   [
+    "age55-64",
+    "female",
+    18.9
+   ],
+   [
+    "age65-",
+    "female",
+    36.6
+   ],
+   [
+    "age35-44",
+    "male",
+    1.3
+   ],
+   [
+    "age45-54",
+    "male",
+    5.3
+   ],
+   [
+    "age55-64",
+    "male",
+    11.8
+   ],
+   [
+    "age65-",
+    "male",
+    18.1
+   ]
+  ]
+ },
+ "age_SHORTS_d28": {
+  "error": "{'code': 400, 'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
+  "params": {
+   "metrics": "viewerPercentage",
+   "startDate": "2026-10-17",
+   "endDate": "2026-11-14",
+   "dimensions": "ageGroup",
+   "filters": "creatorContentType==SHORTS"
+  }
+ },
+ "age_VIDEO_ON_DEMAND_d28": {
+  "error": "{'code': 400, 'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
+  "params": {
+   "metrics": "viewerPercentage",
+   "startDate": "2026-10-17",
+   "endDate": "2026-11-14",
+   "dimensions": "ageGroup",
+   "filters": "creatorContentType==VIDEO_ON_DEMAND"
+  }
+ },
+ "sub_d28": {
+  "cols": [
+   "subscribedStatus",
+   "creatorContentType",
+   "views",
+   "estimatedMinutesWatched",
+   "averageViewDuration"
+  ],
+  "rows": [
+   [
+    "UNSUBSCRIBED",
+    "videoOnDemand",
+    534,
+    1595,
+    269
+   ],
+   [
+    "SUBSCRIBED",
+    "videoOnDemand",
+    41,
+    100,
+    315
+   ],
+   [
+    "UNSUBSCRIBED",
+    "shorts",
+    29220,
+    12670,
+    53
+   ],
+   [
+    "SUBSCRIBED",
+    "shorts",
+    225,
+    119,
+    64
+   ]
+  ]
+ },
+ "device_d28": {
+  "cols": [
+   "deviceType",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "DESKTOP",
+    814,
+    469
+   ],
+   [
+    "TV",
+    212,
+    242
+   ],
+   [
+    "MOBILE",
+    28146,
+    13195
+   ],
+   [
+    "TABLET",
+    847,
+    578
+   ]
+  ]
+ },
+ "source_d28": {
+  "cols": [
+   "insightTrafficSourceType",
+   "creatorContentType",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "NO_LINK_OTHER",
+    "shorts",
+    6,
+    4
+   ],
+   [
+    "NO_LINK_OTHER",
+    "videoOnDemand",
+    6,
+    0
+   ],
+   [
+    "SUBSCRIBER",
+    "shorts",
+    24,
+    6
+   ],
+   [
+    "SUBSCRIBER",
+    "videoOnDemand",
+    192,
+    90
+   ],
+   [
+    "YT_CHANNEL",
+    "shorts",
+    21,
+    9
+   ],
+   [
+    "YT_CHANNEL",
+    "videoOnDemand",
+    14,
+    36
+   ],
+   [
+    "YT_SEARCH",
+    "shorts",
+    591,
+    328
+   ],
+   [
+    "YT_SEARCH",
+    "videoOnDemand",
+    34,
+    5
+   ],
+   [
+    "RELATED_VIDEO",
+    "videoOnDemand",
+    300,
+    1450
+   ],
+   [
+    "YT_OTHER_PAGE",
+    "shorts",
+    176,
+    64
+   ],
+   [
+    "YT_OTHER_PAGE",
+    "videoOnDemand",
+    6,
+    37
+   ],
+   [
+    "EXT_URL",
+    "shorts",
+    11,
+    5
+   ],
+   [
+    "EXT_URL",
+    "videoOnDemand",
+    4,
+    0
+   ],
+   [
+    "PLAYLIST",
+    "shorts",
+    2,
+    1
+   ],
+   [
+    "PLAYLIST",
+    "videoOnDemand",
+    1,
+    2
+   ],
+   [
+    "NOTIFICATION",
+    "shorts",
+    29,
+    22
+   ],
+   [
+    "NOTIFICATION",
+    "videoOnDemand",
+    9,
+    67
+   ],
+   [
+    "SHORTS",
+    "shorts",
+    28581,
+    12346
+   ],
+   [
+    "SHORTS",
+    "videoOnDemand",
+    9,
+    3
+   ],
+   [
+    "HASHTAGS",
+    "shorts",
+    3,
+    2
+   ],
+   [
+    "SOUND_PAGE",
+    "shorts",
+    1,
+    0
+   ]
+  ]
+ },
+ "country_d28": {
+  "cols": [
+   "country",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "KR",
+    22460,
+    10523
+   ],
+   [
+    "US",
+    6054,
+    3068
+   ],
+   [
+    "JP",
+    168,
+    70
+   ],
+   [
+    "AU",
+    164,
+    81
+   ],
+   [
+    "CA",
+    154,
+    105
+   ],
+   [
+    "VN",
+    23,
+    8
+   ]
+  ]
+ },
+ "share_d28": {
+  "cols": [
+   "sharingService",
+   "shares"
+  ],
+  "rows": [
+   [
+    "KAKAO",
+    74
+   ],
+   [
+    "OTHER",
+    23
+   ],
+   [
+    "GMAIL",
+    4
+   ],
+   [
+    "COPY_PASTE",
+    2
+   ],
+   [
+    "TEXT_MESSAGE",
+    2
+   ],
+   [
+    "SAMSUNG_MESSAGES",
+    2
+   ],
+   [
+    "DIRECT_SYSTEM_ACTIVITY_DIALOG",
+    1
+   ]
+  ]
+ },
+ "type_d90": {
+  "cols": [
+   "creatorContentType",
+   "views",
+   "engagedViews",
+   "estimatedMinutesWatched",
+   "averageViewDuration",
+   "averageViewPercentage",
+   "subscribersGained",
+   "likes",
+   "shares",
+   "comments"
+  ],
+  "rows": [
+   [
+    "videoOnDemand",
+    617,
+    388,
+    1727,
+    266,
+    29.65,
+    6,
+    25,
+    6,
+    5
+   ],
+   [
+    "shorts",
+    30410,
+    14264,
+    13160,
+    53,
+    89.35,
+    58,
+    344,
+    121,
+    11
+   ],
+   [
+    "creatorContentTypeUnspecified",
+    0,
+    0,
+    0,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0
+   ]
+  ]
+ },
+ "age_gender_d90": {
+  "cols": [
+   "ageGroup",
+   "gender",
+   "viewerPercentage"
+  ],
+  "rows": [
+   [
+    "age25-34",
+    "female",
+    0.1
+   ],
+   [
+    "age35-44",
+    "female",
+    1.2
+   ],
+   [
+    "age45-54",
+    "female",
+    6.7
+   ],
+   [
+    "age55-64",
+    "female",
+    18.8
+   ],
+   [
+    "age65-",
+    "female",
+    36.5
+   ],
+   [
+    "age35-44",
+    "male",
+    1.3
+   ],
+   [
+    "age45-54",
+    "male",
+    5.3
+   ],
+   [
+    "age55-64",
+    "male",
+    12.2
+   ],
+   [
+    "age65-",
+    "male",
+    18
+   ]
+  ]
+ },
+ "age_SHORTS_d90": {
+  "error": "{'code': 400, 'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
+  "params": {
+   "metrics": "viewerPercentage",
+   "startDate": "2026-08-16",
+   "endDate": "2026-11-14",
+   "dimensions": "ageGroup",
+   "filters": "creatorContentType==SHORTS"
+  }
+ },
+ "age_VIDEO_ON_DEMAND_d90": {
+  "error": "{'code': 400, 'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
+  "params": {
+   "metrics": "viewerPercentage",
+   "startDate": "2026-08-16",
+   "endDate": "2026-11-14",
+   "dimensions": "ageGroup",
+   "filters": "creatorContentType==VIDEO_ON_DEMAND"
+  }
+ },
+ "sub_d90": {
+  "cols": [
+   "subscribedStatus",
+   "creatorContentType",
+   "views",
+   "estimatedMinutesWatched",
+   "averageViewDuration"
+  ],
+  "rows": [
+   [
+    "UNSUBSCRIBED",
+    "videoOnDemand",
+    576,
+    1626,
+    263
+   ],
+   [
+    "SUBSCRIBED",
+    "videoOnDemand",
+    41,
+    100,
+    315
+   ],
+   [
+    "UNSUBSCRIBED",
+    "shorts",
+    30182,
+    13039,
+    53
+   ],
+   [
+    "SUBSCRIBED",
+    "shorts",
+    228,
+    120,
+    63
+   ]
+  ]
+ },
+ "device_d90": {
+  "cols": [
+   "deviceType",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "DESKTOP",
+    884,
+    495
+   ],
+   [
+    "TV",
+    224,
+    249
+   ],
+   [
+    "MOBILE",
+    29054,
+    13550
+   ],
+   [
+    "TABLET",
+    864,
+    592
+   ]
+  ]
+ },
+ "source_d90": {
+  "cols": [
+   "insightTrafficSourceType",
+   "creatorContentType",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "NO_LINK_OTHER",
+    "shorts",
+    6,
+    4
+   ],
+   [
+    "NO_LINK_OTHER",
+    "videoOnDemand",
+    6,
+    0
+   ],
+   [
+    "SUBSCRIBER",
+    "shorts",
+    156,
+    54
+   ],
+   [
+    "SUBSCRIBER",
+    "videoOnDemand",
+    192,
+    90
+   ],
+   [
+    "YT_CHANNEL",
+    "shorts",
+    106,
+    34
+   ],
+   [
+    "YT_CHANNEL",
+    "videoOnDemand",
+    16,
+    36
+   ],
+   [
+    "YT_SEARCH",
+    "shorts",
+    1167,
+    534
+   ],
+   [
+    "YT_SEARCH",
+    "videoOnDemand",
+    73,
+    34
+   ],
+   [
+    "RELATED_VIDEO",
+    "shorts",
+    2,
+    0
+   ],
+   [
+    "RELATED_VIDEO",
+    "videoOnDemand",
+    300,
+    1450
+   ],
+   [
+    "YT_OTHER_PAGE",
+    "shorts",
+    176,
+    64
+   ],
+   [
+    "YT_OTHER_PAGE",
+    "videoOnDemand",
+    6,
+    37
+   ],
+   [
+    "EXT_URL",
+    "shorts",
+    29,
+    19
+   ],
+   [
+    "EXT_URL",
+    "videoOnDemand",
+    5,
+    3
+   ],
+   [
+    "PLAYLIST",
+    "shorts",
+    16,
+    12
+   ],
+   [
+    "PLAYLIST",
+    "videoOnDemand",
+    1,
+    2
+   ],
+   [
+    "NOTIFICATION",
+    "shorts",
+    29,
+    22
+   ],
+   [
+    "NOTIFICATION",
+    "videoOnDemand",
+    9,
+    67
+   ],
+   [
+    "SHORTS",
+    "shorts",
+    28666,
+    12396
+   ],
+   [
+    "SHORTS",
+    "videoOnDemand",
+    9,
+    3
+   ],
+   [
+    "HASHTAGS",
+    "shorts",
+    55,
+    15
+   ],
+   [
+    "SOUND_PAGE",
+    "shorts",
+    1,
+    0
+   ],
+   [
+    "SHORTS_CONTENT_LINKS",
+    "shorts",
+    1,
+    0
+   ]
+  ]
+ },
+ "country_d90": {
+  "cols": [
+   "country",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "KR",
+    22639,
+    10579
+   ],
+   [
+    "US",
+    6054,
+    3068
+   ],
+   [
+    "JP",
+    168,
+    70
+   ],
+   [
+    "AU",
+    164,
+    81
+   ],
+   [
+    "CA",
+    154,
+    105
+   ],
+   [
+    "VN",
+    23,
+    8
+   ]
+  ]
+ },
+ "share_d90": {
+  "cols": [
+   "sharingService",
+   "shares"
+  ],
+  "rows": [
+   [
+    "KAKAO",
+    87
+   ],
+   [
+    "OTHER",
+    25
+   ],
+   [
+    "GMAIL",
+    4
+   ],
+   [
+    "COPY_PASTE",
+    4
+   ],
+   [
+    "TEXT_MESSAGE",
+    2
+   ],
+   [
+    "SAMSUNG_MESSAGES",
+    2
+   ],
+   [
+    "SAMSUNG_NOTES",
+    2
+   ],
+   [
+    "DIRECT_SYSTEM_ACTIVITY_DIALOG",
+    1
+   ]
+  ]
+ },
+ "type_d365": {
+  "cols": [
+   "creatorContentType",
+   "views",
+   "engagedViews",
+   "estimatedMinutesWatched",
+   "averageViewDuration",
+   "averageViewPercentage",
+   "subscribersGained",
+   "likes",
+   "shares",
+   "comments"
+  ],
+  "rows": [
+   [
+    "videoOnDemand",
+    922,
+    693,
+    2326,
+    200,
+    28.34,
+    9,
+    41,
+    11,
+    16
+   ],
+   [
+    "shorts",
+    683870,
+    278300,
+    385333,
+    81,
+    129.13,
+    2899,
+    15751,
+    7056,
+    686
+   ],
+   [
+    "creatorContentTypeUnspecified",
+    0,
+    0,
+    0,
+    0,
+    0,
+    281,
+    0,
+    0,
+    0
+   ],
+   [
+    "posts",
+    151,
+    33,
+    8,
+    9,
+    64.94,
+    0,
+    0,
+    0,
+    0
+   ]
+  ]
+ },
+ "age_gender_d365": {
+  "cols": [
+   "ageGroup",
+   "gender",
+   "viewerPercentage"
+  ],
+  "rows": [
+   [
+    "age25-34",
+    "female",
+    0.3
+   ],
+   [
+    "age35-44",
+    "female",
+    1.2
+   ],
+   [
+    "age45-54",
+    "female",
+    7.8
+   ],
+   [
+    "age55-64",
+    "female",
+    21.1
+   ],
+   [
+    "age65-",
+    "female",
+    35.9
+   ],
+   [
+    "age25-34",
+    "male",
+    0.4
+   ],
+   [
+    "age35-44",
+    "male",
+    1.6
+   ],
+   [
+    "age45-54",
+    "male",
+    5.7
+   ],
+   [
+    "age55-64",
+    "male",
+    11.9
+   ],
+   [
+    "age65-",
+    "male",
+    14.2
+   ]
+  ]
+ },
+ "age_SHORTS_d365": {
+  "error": "{'code': 400, 'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
+  "params": {
+   "metrics": "viewerPercentage",
+   "startDate": "2025-11-14",
+   "endDate": "2026-11-14",
+   "dimensions": "ageGroup",
+   "filters": "creatorContentType==SHORTS"
+  }
+ },
+ "age_VIDEO_ON_DEMAND_d365": {
+  "error": "{'code': 400, 'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
+  "params": {
+   "metrics": "viewerPercentage",
+   "startDate": "2025-11-14",
+   "endDate": "2026-11-14",
+   "dimensions": "ageGroup",
+   "filters": "creatorContentType==VIDEO_ON_DEMAND"
+  }
+ },
+ "sub_d365": {
+  "cols": [
+   "subscribedStatus",
+   "creatorContentType",
+   "views",
+   "estimatedMinutesWatched",
+   "averageViewDuration"
+  ],
+  "rows": [
+   [
+    "SUBSCRIBED",
+    "posts",
+    151,
+    8,
+    9
+   ],
+   [
+    "UNSUBSCRIBED",
+    "videoOnDemand",
+    865,
+    2178,
+    198
+   ],
+   [
+    "SUBSCRIBED",
+    "videoOnDemand",
+    57,
+    147,
+    253
+   ],
+   [
+    "UNSUBSCRIBED",
+    "shorts",
+    672495,
+    376980,
+    81
+   ],
+   [
+    "SUBSCRIBED",
+    "shorts",
+    11375,
+    8352,
+    99
+   ]
+  ]
+ },
+ "device_d365": {
+  "cols": [
+   "deviceType",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "DESKTOP",
+    16063,
+    9516
+   ],
+   [
+    "TV",
+    5585,
+    5424
+   ],
+   [
+    "MOBILE",
+    652929,
+    366287
+   ],
+   [
+    "TABLET",
+    10354,
+    6435
+   ]
+  ]
+ },
+ "source_d365": {
+  "cols": [
+   "insightTrafficSourceType",
+   "creatorContentType",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "NO_LINK_OTHER",
+    "shorts",
+    589,
+    420
+   ],
+   [
+    "NO_LINK_OTHER",
+    "videoOnDemand",
+    23,
+    23
+   ],
+   [
+    "ADVERTISING",
+    "shorts",
+    5630,
+    983
+   ],
+   [
+    "SUBSCRIBER",
+    "shorts",
+    2190,
+    1993
+   ],
+   [
+    "SUBSCRIBER",
+    "videoOnDemand",
+    237,
+    170
+   ],
+   [
+    "YT_CHANNEL",
+    "shorts",
+    4465,
+    3860
+   ],
+   [
+    "YT_CHANNEL",
+    "videoOnDemand",
+    56,
+    136
+   ],
+   [
+    "YT_SEARCH",
+    "shorts",
+    8156,
+    3838
+   ],
+   [
+    "YT_SEARCH",
+    "videoOnDemand",
+    82,
+    52
+   ],
+   [
+    "YT_SEARCH",
+    "posts",
+    2,
+    0
+   ],
+   [
+    "RELATED_VIDEO",
+    "shorts",
+    11,
+    6
+   ],
+   [
+    "RELATED_VIDEO",
+    "videoOnDemand",
+    417,
+    1751
+   ],
+   [
+    "YT_OTHER_PAGE",
+    "shorts",
+    5332,
+    4124
+   ],
+   [
+    "YT_OTHER_PAGE",
+    "videoOnDemand",
+    10,
+    40
+   ],
+   [
+    "EXT_URL",
+    "shorts",
+    610,
+    646
+   ],
+   [
+    "EXT_URL",
+    "videoOnDemand",
+    7,
+    3
+   ],
+   [
+    "PLAYLIST",
+    "shorts",
+    296,
+    245
+   ],
+   [
+    "PLAYLIST",
+    "videoOnDemand",
+    1,
+    2
+   ],
+   [
+    "NOTIFICATION",
+    "shorts",
+    563,
+    566
+   ],
+   [
+    "NOTIFICATION",
+    "videoOnDemand",
+    9,
+    67
+   ],
+   [
+    "END_SCREEN",
+    "videoOnDemand",
+    1,
+    0
+   ],
+   [
+    "SHORTS",
+    "shorts",
+    652640,
+    365486
+   ],
+   [
+    "SHORTS",
+    "videoOnDemand",
+    9,
+    3
+   ],
+   [
+    "SHORTS",
+    "posts",
+    149,
+    8
+   ],
+   [
+    "HASHTAGS",
+    "shorts",
+    371,
+    359
+   ],
+   [
+    "SOUND_PAGE",
+    "shorts",
+    286,
+    169
+   ],
+   [
+    "IMMERSIVE_LIVE",
+    "shorts",
+    2,
+    0
+   ],
+   [
+    "SHORTS_CONTENT_LINKS",
+    "shorts",
+    2729,
+    2632
+   ],
+   [
+    "SHORTS_CONTENT_LINKS",
+    "videoOnDemand",
+    70,
+    73
+   ]
+  ]
+ },
+ "country_d365": {
+  "cols": [
+   "country",
+   "views",
+   "estimatedMinutesWatched"
+  ],
+  "rows": [
+   [
+    "KR",
+    651353,
+    364404
+   ],
+   [
+    "US",
+    19248,
+    13203
+   ],
+   [
+    "JP",
+    1641,
+    1436
+   ],
+   [
+    "CA",
+    551,
+    419
+   ],
+   [
+    "AU",
+    326,
+    254
+   ],
+   [
+    "DE",
+    52,
+    33
+   ],
+   [
+    "BR",
+    32,
+    20
+   ],
+   [
+    "GT",
+    26,
+    52
+   ],
+   [
+    "VN",
+    23,
+    8
+   ]
+  ]
+ },
+ "share_d365": {
+  "cols": [
+   "sharingService",
+   "shares"
+  ],
+  "rows": [
+   [
+    "KAKAO",
+    3724
+   ],
+   [
+    "OTHER",
+    2592
+   ],
+   [
+    "SAMSUNG_MESSAGES",
+    313
+   ],
+   [
+    "COPY_PASTE",
+    185
+   ],
+   [
+    "SAMSUNG_NOTES",
+    86
+   ],
+   [
+    "TEXT_MESSAGE",
+    41
+   ],
+   [
+    "DIRECT_SYSTEM_ACTIVITY_DIALOG",
+    37
+   ],
+   [
+    "GMAIL",
+    25
+   ],
+   [
+    "WHATS_APP",
+    16
+   ],
+   [
+    "FACEBOOK",
+    14
+   ]
+  ]
+ },
+ "videos_365": {
+  "cols": [
+   "video",
+   "views",
+   "engagedViews",
+   "estimatedMinutesWatched",
+   "averageViewDuration",
+   "averageViewPercentage",
+   "likes",
+   "shares",
+   "comments",
+   "subscribersGained"
+  ],
+  "rows": [
+   [
+    "1GzzSxXamLM",
+    39189,
+    16323,
+    24409,
+    88,
+    147.64,
+    1059,
+    474,
+    76,
+    359
+   ],
+   [
+    "h4sFsD7yQGY",
+    22078,
+    8394,
+    15444,
+    109,
+    178.94,
+    410,
+    295,
+    2,
+    103
+   ],
+   [
+    "dOy4O69_aDI",
+    19580,
+    7986,
+    16508,
+    123,
+    170.9,
+    499,
+    211,
+    3,
+    84
+   ],
+   [
+    "SNNOxKv3Yus",
+    16760,
+    7770,
+    14820,
+    113,
+    124.56,
+    618,
+    172,
+    2,
+    140
+   ],
+   [
+    "QsNpa83ZLto",
+    14449,
+    5186,
+    7187,
+    81,
+    154.03,
+    310,
+    136,
+    4,
+    69
+   ],
+   [
+    "GBYLK_O_GiQ",
+    13206,
+    6131,
+    10640,
+    103,
+    154.16,
+    791,
+    494,
+    52,
+    152
+   ],
+   [
+    "O3s4rvIEjJc",
+    12973,
+    6208,
+    9625,
+    92,
+    156.39,
+    515,
+    315,
+    5,
+    118
+   ],
+   [
+    "yU-KRzQz4v4",
+    10236,
+    4754,
+    7766,
+    96,
+    146.87,
+    240,
+    66,
+    1,
+    41
+   ],
+   [
+    "d7WMjRfk0Zc",
+    9972,
+    4299,
+    6838,
+    94,
+    174.77,
+    199,
+    137,
+    8,
+    33
+   ],
+   [
+    "YG7uAFX5uWA",
+    9118,
+    3974,
+    4376,
+    65,
+    120.46999999999998,
+    247,
+    7,
+    72,
+    61
+   ],
+   [
+    "M0FJvcnx9W8",
+    9019,
+    4496,
+    10159,
+    134,
+    177.54,
+    291,
+    151,
+    2,
+    58
+   ],
+   [
+    "F27wtstNdxo",
+    8474,
+    4081,
+    6916,
+    100,
+    132.54,
+    231,
+    282,
+    1,
+    24
+   ],
+   [
+    "QLTwztbD-sQ",
+    8179,
+    3927,
+    6887,
+    104,
+    117.26,
+    180,
+    152,
+    1,
+    24
+   ],
+   [
+    "mquSSzVh6IQ",
+    8060,
+    3559,
+    5281,
+    87,
+    175.94,
+    231,
+    82,
+    2,
+    52
+   ],
+   [
+    "3KZbzSjF3ME",
+    7681,
+    2842,
+    5026,
+    104,
+    147.65,
+    134,
+    62,
+    2,
+    32
+   ],
+   [
+    "Fuh6PKXToaQ",
+    7467,
+    3538,
+    5282,
+    88,
+    143.47,
+    120,
+    38,
+    1,
+    26
+   ],
+   [
+    "MH0pwwiL_98",
+    7282,
+    2699,
+    4514,
+    99,
+    183.37,
+    142,
+    123,
+    1,
+    25
+   ],
+   [
+    "yQHLvvLHHNE",
+    7267,
+    3535,
+    3848,
+    64,
+    113.25,
+    224,
+    139,
+    2,
+    36
+   ],
+   [
+    "l7Apv8juqrU",
+    6858,
+    2913,
+    3825,
+    77,
+    190.17,
+    113,
+    36,
+    1,
+    9
+   ],
+   [
+    "IPKtFlXMqSs",
+    6680,
+    2861,
+    3812,
+    78,
+    111.00000000000001,
+    150,
+    66,
+    2,
+    27
+   ],
+   [
+    "bBTOJZRmgzk",
+    6311,
+    2782,
+    5673,
+    121,
+    117.65999999999998,
+    137,
+    84,
+    1,
+    33
+   ],
+   [
+    "hbRHB-0x_IY",
+    6233,
+    2276,
+    2953,
+    75,
+    143.26,
+    176,
+    58,
+    1,
+    21
+   ],
+   [
+    "K72g41znKUc",
+    5940,
+    1908,
+    2759,
+    85,
+    223.78999999999996,
+    76,
+    32,
+    2,
+    10
+   ],
+   [
+    "62JN_NlMhZI",
+    5921,
+    1833,
+    2664,
+    85,
+    203.09,
+    86,
+    39,
+    2,
+    14
+   ],
+   [
+    "heTnoa6_1WU",
+    5700,
+    2656,
+    4639,
+    103,
+    140.33,
+    188,
+    150,
+    3,
+    28
+   ],
+   [
+    "8OfG_dZCKHY",
+    5668,
+    1442,
+    1804,
+    70,
+    125.86,
+    141,
+    55,
+    7,
+    10
+   ],
+   [
+    "tv1D7fmgt1M",
+    5282,
+    2463,
+    3946,
+    95,
+    156.27,
+    152,
+    86,
+    3,
+    36
+   ],
+   [
+    "hcamTf1_65k",
+    5143,
+    2719,
+    4376,
+    95,
+    98.66,
+    164,
+    101,
+    2,
+    20
+   ],
+   [
+    "BRFRiLoBQvI",
+    4853,
+    1974,
+    1897,
+    56,
+    130.85,
+    38,
+    17,
+    3,
+    6
+   ],
+   [
+    "sKbXzBqUMY8",
+    4678,
+    1966,
+    2620,
+    78,
+    140.35,
+    102,
+    60,
+    1,
+    19
+   ],
+   [
+    "AnEYI8nPZBQ",
+    4671,
+    2131,
+    3263,
+    90,
+    135.72,
+    116,
+    35,
+    1,
+    12
+   ],
+   [
+    "dQ63rPU9bis",
+    4345,
+    1991,
+    2957,
+    88,
+    176.64,
+    129,
+    63,
+    13,
+    19
+   ],
+   [
+    "fBs14eSaVpo",
+    4279,
+    1877,
+    2617,
+    82,
+    132.8,
+    79,
+    7,
+    3,
+    14
+   ],
+   [
+    "x7XK_b5uBug",
+    4264,
+    1332,
+    1332,
+    57,
+    142.68,
+    75,
+    17,
+    3,
+    6
+   ],
+   [
+    "9Vm2VkSy_o8",
+    4039,
+    1991,
+    3161,
+    94,
+    143.03,
+    128,
+    33,
+    5,
+    16
+   ],
+   [
+    "Z826mTrKNEE",
+    3689,
+    1788,
+    3011,
+    100,
+    120.56,
+    78,
+    39,
+    1,
+    11
+   ],
+   [
+    "DKYxpU-VmfY",
+    3661,
+    1659,
+    2306,
+    82,
+    137.45,
+    142,
+    143,
+    3,
+    30
+   ],
+   [
+    "De5vOUGmKCk",
+    3566,
+    944,
+    1163,
+    69,
+    157.85,
+    47,
+    23,
+    0,
+    3
+   ],
+   [
+    "bF90H3Pew3Q",
+    3526,
+    1425,
+    1076,
+    43,
+    145.53,
+    53,
+    14,
+    1,
+    5
+   ],
+   [
+    "dY2AXYpDxnc",
+    3497,
+    1703,
+    1792,
+    61,
+    103.32999999999998,
+    81,
+    22,
+    6,
+    16
+   ],
+   [
+    "6Q0mW3Nj3nA",
+    3474,
+    1201,
+    2194,
+    107,
+    122.61,
+    81,
+    49,
+    1,
+    15
+   ],
+   [
+    "Ccyu-U57hNc",
+    3445,
+    1736,
+    4267,
+    146,
+    124.4,
+    139,
+    224,
+    4,
+    25
+   ],
+   [
+    "wcj8FkcnIkg",
+    2937,
+    1318,
+    2259,
+    102,
+    152.32,
+    47,
+    15,
+    1,
+    6
+   ],
+   [
+    "RPtNscwYcco",
+    2923,
+    1496,
+    2775,
+    110,
+    111.72,
+    101,
+    28,
+    1,
+    17
+   ],
+   [
+    "ZgxSoVQaDAE",
+    2735,
+    770,
+    584,
+    38,
+    108.08,
+    46,
+    3,
+    1,
+    1
+   ],
+   [
+    "kwA8fK8UuWc",
+    2721,
+    1292,
+    1462,
+    66,
+    99.5,
+    86,
+    22,
+    7,
+    10
+   ],
+   [
+    "cmbror11dgg",
+    2718,
+    1003,
+    1037,
+    60,
+    100.25,
+    33,
+    14,
+    0,
+    3
+   ],
+   [
+    "wxnMMNuR7nU",
+    2680,
+    1209,
+    1626,
+    79,
+    135.13,
+    58,
+    20,
+    1,
+    14
+   ],
+   [
+    "8wiRqFzwpeY",
+    2516,
+    1112,
+    1566,
+    83,
+    119.48999999999998,
+    67,
+    19,
+    1,
+    9
+   ],
+   [
+    "5PBKgmomCck",
+    2508,
+    1131,
+    1138,
+    59,
+    123.51999999999998,
+    56,
+    13,
+    1,
+    13
+   ],
+   [
+    "P4c2oyetmRo",
+    2502,
+    987,
+    1586,
+    95,
+    158.41,
+    62,
+    19,
+    1,
+    9
+   ],
+   [
+    "3Jmar1pgm74",
+    2477,
+    1027,
+    1053,
+    59,
+    96.28,
+    33,
+    18,
+    1,
+    6
+   ],
+   [
+    "c9LYIMq1h4s",
+    2477,
+    1441,
+    1855,
+    76,
+    102.18,
+    126,
+    21,
+    37,
+    27
+   ],
+   [
+    "NjF87bJVryo",
+    2462,
+    993,
+    725,
+    41,
+    110.22000000000001,
+    23,
+    27,
+    0,
+    6
+   ],
+   [
+    "C7f2OGfA7GE",
+    2459,
+    1123,
+    1357,
+    71,
+    119.06000000000002,
+    73,
+    13,
+    0,
+    11
+   ],
+   [
+    "_W5hSKzMWME",
+    2407,
+    532,
+    1059,
+    115,
+    206.79,
+    41,
+    22,
+    1,
+    9
+   ],
+   [
+    "-IdZks6X9kY",
+    2361,
+    525,
+    432,
+    44,
+    56.60000000000001,
+    23,
+    5,
+    0,
+    7
+   ],
+   [
+    "kKnxMHwLOf0",
+    2358,
+    962,
+    1630,
+    100,
+    189.68,
+    36,
+    32,
+    2,
+    8
+   ],
+   [
+    "9m_dTtve9Zk",
+    2331,
+    997,
+    1308,
+    77,
+    155.45,
+    52,
+    25,
+    2,
+    8
+   ],
+   [
+    "L_h8pTuMm5g",
+    2317,
+    1008,
+    1962,
+    115,
+    158.75,
+    63,
+    12,
+    2,
+    10
+   ],
+   [
+    "4RneGNTzcwY",
+    2250,
+    901,
+    1610,
+    105,
+    158.07,
+    70,
+    22,
+    1,
+    8
+   ],
+   [
+    "Y3tkISmGPWI",
+    2235,
+    882,
+    1459,
+    97,
+    130.21,
+    46,
+    12,
+    0,
+    7
+   ],
+   [
+    "p6YuCUFn2cU",
+    2224,
+    960,
+    1142,
+    70,
+    114.97,
+    97,
+    35,
+    3,
+    9
+   ],
+   [
+    "5dRAyBBzm9E",
+    2206,
+    341,
+    334,
+    51,
+    89.06,
+    14,
+    5,
+    2,
+    2
+   ],
+   [
+    "kXlAOlYFOWU",
+    2162,
+    833,
+    1015,
+    71,
+    111.57999999999998,
+    31,
+    11,
+    1,
+    5
+   ],
+   [
+    "fdc7NEWXqwE",
+    2110,
+    881,
+    791,
+    52,
+    135.18,
+    41,
+    7,
+    1,
+    6
+   ],
+   [
+    "sYQP0X46KAE",
+    2077,
+    818,
+    813,
+    57,
+    88.47,
+    29,
+    9,
+    0,
+    5
+   ],
+   [
+    "Bf44ZukD8GA",
+    2036,
+    705,
+    272,
+    22,
+    200.96000000000004,
+    7,
+    6,
+    1,
+    1
+   ],
+   [
+    "Q2CNmBLeATY",
+    2010,
+    1001,
+    986,
+    58,
+    105.49,
+    62,
+    8,
+    13,
+    10
+   ],
+   [
+    "SZ4HsuBlQVw",
+    2007,
+    915,
+    1536,
+    99,
+    138.31,
+    93,
+    71,
+    1,
+    14
+   ],
+   [
+    "QT6XsfAGGcA",
+    1953,
+    796,
+    1438,
+    107,
+    228.23,
+    27,
+    7,
+    0,
+    2
+   ],
+   [
+    "frKI6iePDEQ",
+    1944,
+    757,
+    903,
+    70,
+    137.33,
+    22,
+    22,
+    2,
+    7
+   ],
+   [
+    "Or7FxxJXZGA",
+    1930,
+    222,
+    151,
+    32,
+    93.16,
+    4,
+    1,
+    1,
+    0
+   ],
+   [
+    "OSoIncjts9Y",
+    1920,
+    805,
+    1599,
+    117,
+    129.51,
+    58,
+    6,
+    2,
+    6
+   ],
+   [
+    "iE2Dv8yXGDE",
+    1915,
+    865,
+    1382,
+    95,
+    132.14,
+    53,
+    14,
+    1,
+    10
+   ],
+   [
+    "S4bsA5IuOLI",
+    1893,
+    573,
+    796,
+    80,
+    104.30999999999999,
+    21,
+    8,
+    1,
+    1
+   ],
+   [
+    "OlU3YdzlYLQ",
+    1890,
+    493,
+    623,
+    72,
+    122.57000000000001,
+    33,
+    11,
+    1,
+    7
+   ],
+   [
+    "RhJzrzQ2DZ4",
+    1881,
+    792,
+    1177,
+    88,
+    160.06,
+    39,
+    6,
+    1,
+    6
+   ],
+   [
+    "r8m4JZxLv2M",
+    1871,
+    702,
+    252,
+    19,
+    122.68,
+    8,
+    12,
+    1,
+    2
+   ],
+   [
+    "eqn3dheh1aQ",
+    1859,
+    750,
+    957,
+    74,
+    93.63,
+    12,
+    2,
+    0,
+    5
+   ],
+   [
+    "CGA_qMaONBM",
+    1834,
+    818,
+    868,
+    62,
+    122.72000000000001,
+    98,
+    43,
+    2,
+    9
+   ],
+   [
+    "Yi3tP1gEERY",
+    1815,
+    677,
+    534,
+    45,
+    70.57,
+    38,
+    2,
+    1,
+    5
+   ],
+   [
+    "NJUONDJnCHQ",
+    1815,
+    732,
+    957,
+    76,
+    105.05,
+    50,
+    10,
+    0,
+    5
+   ],
+   [
+    "p0K1b4jOXA0",
+    1779,
+    535,
+    617,
+    66,
+    130.31,
+    19,
+    4,
+    1,
+    5
+   ],
+   [
+    "mZCr5tFLvow",
+    1764,
+    747,
+    619,
+    48,
+    100.22999999999999,
+    22,
+    10,
+    2,
+    4
+   ],
+   [
+    "8Mt8cktrrkg",
+    1722,
+    550,
+    688,
+    72,
+    134.68,
+    39,
+    7,
+    1,
+    8
+   ],
+   [
+    "WZGzQcpk0fk",
+    1719,
+    866,
+    1294,
+    88,
+    118.53,
+    52,
+    34,
+    2,
+    6
+   ],
+   [
+    "2JjL_9MP3vU",
+    1698,
+    739,
+    738,
+    58,
+    101.25,
+    37,
+    9,
+    1,
+    3
+   ],
+   [
+    "gizZoLmoI-A",
+    1690,
+    641,
+    1000,
+    91,
+    143.22,
+    44,
+    34,
+    3,
+    10
+   ],
+   [
+    "UaDJPj-OwMA",
+    1674,
+    556,
+    553,
+    57,
+    108.89,
+    24,
+    3,
+    1,
+    2
+   ],
+   [
+    "E8iyclIwKLI",
+    1653,
+    774,
+    802,
+    61,
+    115.89,
+    71,
+    23,
+    17,
+    13
+   ],
+   [
+    "AXJXuvw2yaw",
+    1649,
+    396,
+    323,
+    45,
+    91.93,
+    14,
+    5,
+    1,
+    2
+   ],
+   [
+    "3v2szbB6pJk",
+    1632,
+    701,
+    1027,
+    86,
+    96.05,
+    54,
+    27,
+    1,
+    12
+   ],
+   [
+    "r5drN6Xr75w",
+    1625,
+    624,
+    699,
+    65,
+    133.34,
+    14,
+    11,
+    0,
+    2
+   ],
+   [
+    "ooI5xytaaUQ",
+    1619,
+    763,
+    828,
+    63,
+    120.59,
+    21,
+    0,
+    2,
+    5
+   ],
+   [
+    "mx1YaOHuDLc",
+    1600,
+    503,
+    755,
+    87,
+    126.98,
+    25,
+    12,
+    0,
+    0
+   ],
+   [
+    "v47kIueDzec",
+    1582,
+    497,
+    682,
+    79,
+    86.45,
+    30,
+    22,
+    1,
+    3
+   ],
+   [
+    "7XIPB8THclM",
+    1581,
+    834,
+    888,
+    62,
+    83.92,
+    49,
+    20,
+    1,
+    21
+   ],
+   [
+    "YpDlr3c3Hsw",
+    1573,
+    748,
+    910,
+    71,
+    130.69,
+    54,
+    9,
+    1,
+    16
+   ],
+   [
+    "y5gZTxbeV8g",
+    1571,
+    690,
+    685,
+    58,
+    122.14,
+    31,
+    9,
+    1,
+    9
+   ],
+   [
+    "0qiLbHx6GYc",
+    1569,
+    329,
+    432,
+    73,
+    154.06,
+    19,
+    6,
+    1,
+    1
+   ],
+   [
+    "1dwjez0UfKg",
+    1568,
+    191,
+    197,
+    52,
+    51.03,
+    7,
+    5,
+    1,
+    1
+   ],
+   [
+    "XvmSrMVCugg",
+    1563,
+    748,
+    1373,
+    109,
+    184.79,
+    34,
+    7,
+    3,
+    8
+   ],
+   [
+    "r35pl6Fb43o",
+    1557,
+    599,
+    1018,
+    100,
+    190.11,
+    57,
+    50,
+    2,
+    16
+   ],
+   [
+    "GlCVPLoW9s4",
+    1555,
+    546,
+    647,
+    69,
+    147.24,
+    36,
+    8,
+    1,
+    12
+   ],
+   [
+    "aUtFTpd1_FM",
+    1554,
+    515,
+    395,
+    43,
+    76.42,
+    9,
+    0,
+    1,
+    3
+   ],
+   [
+    "pvtLUakzztg",
+    1553,
+    694,
+    805,
+    68,
+    109.92,
+    35,
+    10,
+    3,
+    8
+   ],
+   [
+    "1y0o8ueW6I8",
+    1541,
+    651,
+    660,
+    58,
+    111.28,
+    25,
+    6,
+    2,
+    4
+   ],
+   [
+    "6nDt54uzWmg",
+    1541,
+    622,
+    843,
+    79,
+    130.97,
+    40,
+    9,
+    1,
+    5
+   ],
+   [
+    "yKil6nsSFpw",
+    1537,
+    710,
+    1334,
+    111,
+    141.68,
+    42,
+    31,
+    1,
+    12
+   ],
+   [
+    "4FNvHxginyE",
+    1536,
+    410,
+    354,
+    48,
+    93.25,
+    8,
+    5,
+    1,
+    1
+   ],
+   [
+    "eZsGDNgcetU",
+    1530,
+    444,
+    624,
+    81,
+    143.3,
+    31,
+    14,
+    1,
+    2
+   ],
+   [
+    "LSMWR4UUmeU",
+    1530,
+    653,
+    939,
+    85,
+    152.24,
+    32,
+    10,
+    1,
+    4
+   ],
+   [
+    "jSAq-zek9m0",
+    1525,
+    416,
+    485,
+    67,
+    111.74,
+    15,
+    9,
+    1,
+    0
+   ],
+   [
+    "7ru1zEEL0jw",
+    1522,
+    378,
+    328,
+    48,
+    87.35,
+    17,
+    0,
+    1,
+    2
+   ],
+   [
+    "vy7KCxajqY4",
+    1522,
+    682,
+    785,
+    67,
+    96.47,
+    27,
+    6,
+    3,
+    6
+   ],
+   [
+    "Xqiqhn1RvKY",
+    1521,
+    485,
+    719,
+    86,
+    108.66,
+    36,
+    11,
+    1,
+    3
+   ],
+   [
+    "Eo45fzPOJvo",
+    1505,
+    739,
+    671,
+    53,
+    93.66,
+    70,
+    28,
+    3,
+    8
+   ],
+   [
+    "CJOgooGul8k",
+    1483,
+    249,
+    412,
+    92,
+    123.83,
+    10,
+    1,
+    1,
+    3
+   ],
+   [
+    "9wQg32kVgOA",
+    1466,
+    721,
+    947,
+    77,
+    109.7,
+    49,
+    6,
+    5,
+    6
+   ],
+   [
+    "M4VOTkEV30I",
+    1456,
+    391,
+    305,
+    43,
+    114.55,
+    17,
+    7,
+    1,
+    1
+   ],
+   [
+    "iK5bcAfjdYY",
+    1440,
+    486,
+    758,
+    91,
+    130.86,
+    32,
+    17,
+    1,
+    5
+   ],
+   [
+    "HC0rmcJJj7I",
+    1434,
+    687,
+    816,
+    70,
+    101.77000000000001,
+    36,
+    8,
+    1,
+    0
+   ],
+   [
+    "fBc5T0q-d50",
+    1434,
+    243,
+    174,
+    37,
+    96.05,
+    8,
+    6,
+    1,
+    1
+   ],
+   [
+    "bA2Cs_E7LQg",
+    1432,
+    567,
+    802,
+    83,
+    174.23,
+    42,
+    11,
+    1,
+    3
+   ],
+   [
+    "qqOwjMVQLK8",
+    1431,
+    537,
+    555,
+    60,
+    107.4,
+    38,
+    15,
+    1,
+    2
+   ],
+   [
+    "vBSVpmn83zw",
+    1429,
+    627,
+    670,
+    62,
+    120.68,
+    20,
+    8,
+    0,
+    3
+   ],
+   [
+    "D8nlgroAgTg",
+    1414,
+    632,
+    952,
+    89,
+    148.44,
+    18,
+    5,
+    0,
+    2
+   ],
+   [
+    "7iKrZpoj704",
+    1413,
+    633,
+    986,
+    92,
+    118.80999999999999,
+    61,
+    52,
+    2,
+    15
+   ],
+   [
+    "116numYB6-0",
+    1412,
+    490,
+    731,
+    87,
+    119.5,
+    27,
+    10,
+    1,
+    6
+   ],
+   [
+    "5PBuK-q-ImU",
+    1412,
+    715,
+    612,
+    50,
+    77.13,
+    15,
+    5,
+    0,
+    0
+   ],
+   [
+    "o82ULRFfGqM",
+    1402,
+    438,
+    408,
+    52,
+    92.72,
+    14,
+    10,
+    1,
+    3
+   ],
+   [
+    "GkR4SmyOtak",
+    1400,
+    535,
+    712,
+    78,
+    144.9,
+    29,
+    9,
+    0,
+    7
+   ],
+   [
+    "LbN4RgzRq9s",
+    1395,
+    763,
+    863,
+    67,
+    108.62,
+    50,
+    20,
+    1,
+    6
+   ],
+   [
+    "SvX8xKtQT1g",
+    1382,
+    690,
+    583,
+    49,
+    90.1,
+    12,
+    5,
+    0,
+    1
+   ],
+   [
+    "zwiuTGeug2M",
+    1381,
+    208,
+    152,
+    37,
+    92.52,
+    6,
+    4,
+    1,
+    1
+   ],
+   [
+    "N3-DUSa7MqQ",
+    1379,
+    437,
+    352,
+    45,
+    68.86,
+    15,
+    7,
+    2,
+    3
+   ],
+   [
+    "cTEJTeUTrvE",
+    1379,
+    665,
+    407,
+    35,
+    52.26,
+    24,
+    1,
+    0,
+    9
+   ],
+   [
+    "Fw-IOFaBGOc",
+    1377,
+    459,
+    477,
+    60,
+    115.57,
+    24,
+    11,
+    1,
+    3
+   ],
+   [
+    "-iEWbh80pes",
+    1370,
+    655,
+    743,
+    66,
+    102.90000000000002,
+    38,
+    17,
+    1,
+    3
+   ],
+   [
+    "1Dnl4FHn33Q",
+    1364,
+    638,
+    692,
+    63,
+    113.77999999999999,
+    28,
+    16,
+    1,
+    7
+   ],
+   [
+    "GPzJGJyRPsQ",
+    1361,
+    421,
+    307,
+    40,
+    72.33,
+    21,
+    2,
+    1,
+    3
+   ],
+   [
+    "sTDnDHTbi6U",
+    1358,
+    596,
+    605,
+    59,
+    93.99,
+    24,
+    8,
+    1,
+    2
+   ],
+   [
+    "a8GF9GvCrMs",
+    1351,
+    557,
+    391,
+    40,
+    115.84,
+    17,
+    2,
+    1,
+    1
+   ],
+   [
+    "ze0wC8IsGuU",
+    1350,
+    379,
+    499,
+    76,
+    149.71,
+    28,
+    13,
+    1,
+    5
+   ],
+   [
+    "Nrai-VJKcQE",
+    1328,
+    552,
+    402,
+    42,
+    105.73000000000002,
+    27,
+    12,
+    1,
+    2
+   ],
+   [
+    "kQPP2wJodbQ",
+    1322,
+    550,
+    561,
+    59,
+    83.57,
+    12,
+    9,
+    0,
+    1
+   ],
+   [
+    "3T76dWPaQZM",
+    1322,
+    584,
+    450,
+    44,
+    76.01,
+    14,
+    6,
+    0,
+    2
+   ],
+   [
+    "ILT1bokgrS8",
+    1321,
+    376,
+    295,
+    44,
+    74.67,
+    29,
+    6,
+    2,
+    5
+   ],
+   [
+    "7yy-VVyL8uM",
+    1315,
+    347,
+    408,
+    67,
+    122.77,
+    19,
+    11,
+    2,
+    1
+   ],
+   [
+    "VYcxvWQz2ss",
+    1314,
+    611,
+    690,
+    66,
+    97.26,
+    11,
+    1,
+    0,
+    2
+   ],
+   [
+    "EZe2ngYmQpw",
+    1313,
+    360,
+    435,
+    69,
+    96.09,
+    21,
+    9,
+    1,
+    3
+   ],
+   [
+    "682EuS_QVC4",
+    1311,
+    395,
+    282,
+    39,
+    73.95,
+    25,
+    7,
+    1,
+    3
+   ],
+   [
+    "zQ2k5g7iAQ4",
+    1311,
+    459,
+    561,
+    71,
+    118.39,
+    27,
+    11,
+    1,
+    5
+   ],
+   [
+    "oX0JME4mfMI",
+    1307,
+    476,
+    542,
+    66,
+    110.78000000000002,
+    19,
+    12,
+    2,
+    6
+   ],
+   [
+    "fcnvzImNbTM",
+    1307,
+    476,
+    440,
+    53,
+    111.40999999999998,
+    28,
+    23,
+    1,
+    5
+   ],
+   [
+    "JcjdxNB_Iu4",
+    1307,
+    562,
+    671,
+    69,
+    107.65,
+    15,
+    8,
+    0,
+    4
+   ],
+   [
+    "YSdhidPdpv8",
+    1304,
+    575,
+    385,
+    38,
+    84.03,
+    24,
+    3,
+    0,
+    4
+   ],
+   [
+    "JIJPE3ZniQI",
+    1303,
+    577,
+    1118,
+    115,
+    125.09000000000002,
+    29,
+    14,
+    1,
+    6
+   ],
+   [
+    "aW6AXDejeuY",
+    1302,
+    179,
+    134,
+    35,
+    40.4,
+    0,
+    2,
+    2,
+    0
+   ],
+   [
+    "_bMa5gXARuo",
+    1299,
+    409,
+    425,
+    59,
+    94.58,
+    26,
+    4,
+    1,
+    1
+   ],
+   [
+    "LDDQBPWZ7dE",
+    1298,
+    393,
+    287,
+    41,
+    73.84,
+    16,
+    0,
+    0,
+    1
+   ],
+   [
+    "3m51-OwaKw0",
+    1274,
+    558,
+    1238,
+    131,
+    138.67,
+    35,
+    17,
+    1,
+    5
+   ],
+   [
+    "9ZiqZwn3MsA",
+    1274,
+    484,
+    453,
+    54,
+    98.7,
+    17,
+    6,
+    1,
+    4
+   ],
+   [
+    "DOq3Qa0Jc-Y",
+    1274,
+    451,
+    328,
+    41,
+    81.16,
+    18,
+    3,
+    1,
+    2
+   ],
+   [
+    "zPpWAF8DKao",
+    1269,
+    624,
+    806,
+    76,
+    121.87,
+    36,
+    7,
+    1,
+    5
+   ],
+   [
+    "xkiaSnCCxHo",
+    1269,
+    430,
+    490,
+    66,
+    103.75000000000001,
+    16,
+    16,
+    1,
+    1
+   ],
+   [
+    "K6PaDdbmThU",
+    1266,
+    496,
+    610,
+    72,
+    150.86,
+    43,
+    9,
+    1,
+    12
+   ],
+   [
+    "9zJPmIwCUbQ",
+    1263,
+    760,
+    556,
+    42,
+    70.47,
+    17,
+    4,
+    0,
+    3
+   ],
+   [
+    "6CvVI6_1P2w",
+    1261,
+    347,
+    395,
+    64,
+    132.14,
+    11,
+    2,
+    1,
+    1
+   ],
+   [
+    "w5IOntFGFCg",
+    1258,
+    672,
+    646,
+    56,
+    97.77,
+    19,
+    8,
+    0,
+    3
+   ],
+   [
+    "_NgkMEf1u20",
+    1258,
+    593,
+    505,
+    49,
+    108.62,
+    27,
+    13,
+    0,
+    2
+   ],
+   [
+    "kOVsqbnoHrQ",
+    1255,
+    434,
+    366,
+    48,
+    76.64,
+    28,
+    3,
+    1,
+    5
+   ],
+   [
+    "bY7RrFdsE2c",
+    1252,
+    543,
+    717,
+    77,
+    112.38999999999999,
+    67,
+    3,
+    31,
+    10
+   ],
+   [
+    "rXcdV1H2I80",
+    1251,
+    438,
+    326,
+    42,
+    108.02000000000001,
+    18,
+    8,
+    1,
+    2
+   ],
+   [
+    "MizR_VRbKys",
+    1247,
+    365,
+    300,
+    46,
+    63.92,
+    8,
+    4,
+    0,
+    1
+   ],
+   [
+    "z6RCHC8UJnY",
+    1232,
+    537,
+    428,
+    46,
+    99.47,
+    21,
+    3,
+    2,
+    4
+   ],
+   [
+    "S9Tnbu3RpDk",
+    1228,
+    543,
+    624,
+    67,
+    118.22,
+    44,
+    10,
+    2,
+    5
+   ],
+   [
+    "TGdSer1uwto",
+    1225,
+    673,
+    561,
+    48,
+    88.72,
+    11,
+    5,
+    1,
+    1
+   ],
+   [
+    "YMowXgrRwus",
+    1225,
+    641,
+    672,
+    61,
+    102.76,
+    22,
+    10,
+    0,
+    3
+   ],
+   [
+    "THwF08vwblI",
+    1220,
+    406,
+    329,
+    46,
+    69.08,
+    16,
+    0,
+    1,
+    3
+   ],
+   [
+    "ZMLwzbN8uUw",
+    1212,
+    597,
+    447,
+    43,
+    71.45,
+    19,
+    8,
+    1,
+    3
+   ],
+   [
+    "zXoQoUjCJAM",
+    1212,
+    541,
+    466,
+    50,
+    82.31,
+    8,
+    7,
+    0,
+    4
+   ],
+   [
+    "eIov1Tv3vcE",
+    1210,
+    530,
+    776,
+    86,
+    71.32,
+    21,
+    14,
+    0,
+    3
+   ],
+   [
+    "57xvMbMiKI8",
+    1209,
+    442,
+    512,
+    67,
+    104.01,
+    30,
+    28,
+    1,
+    9
+   ],
+   [
+    "BoPP12-hHeE",
+    1200,
+    323,
+    299,
+    52,
+    96.56,
+    18,
+    3,
+    1,
+    1
+   ],
+   [
+    "_rQAMYg1FM0",
+    1195,
+    485,
+    740,
+    90,
+    125.12,
+    27,
+    24,
+    1,
+    4
+   ],
+   [
+    "3p9fQ-MW__Q",
+    1189,
+    538,
+    426,
+    45,
+    70.58,
+    13,
+    2,
+    1,
+    3
+   ],
+   [
+    "0h88bFFUd3w",
+    1189,
+    590,
+    673,
+    67,
+    108.93000000000002,
+    45,
+    5,
+    1,
+    13
+   ],
+   [
+    "FpWaTySYLLc",
+    1189,
+    463,
+    424,
+    53,
+    92.1,
+    21,
+    18,
+    1,
+    7
+   ],
+   [
+    "5kGnavEX2Os",
+    1188,
+    348,
+    460,
+    76,
+    125.22,
+    19,
+    14,
+    1,
+    1
+   ],
+   [
+    "dkaTPdH1Y0o",
+    1184,
+    429,
+    450,
+    61,
+    153.42,
+    20,
+    5,
+    1,
+    3
+   ],
+   [
+    "9KXqEuiSqPo",
+    1181,
+    342,
+    277,
+    45,
+    88.74,
+    13,
+    1,
+    1,
+    3
+   ],
+   [
+    "Yf7s_ypxNYE",
+    1178,
+    389,
+    385,
+    57,
+    159.18,
+    22,
+    2,
+    1,
+    1
+   ],
+   [
+    "FAJWaDu_RBE",
+    1163,
+    370,
+    229,
+    34,
+    69.66,
+    12,
+    4,
+    1,
+    1
+   ],
+   [
+    "NR2nAM1rXeY",
+    1153,
+    455,
+    452,
+    57,
+    91.77,
+    31,
+    20,
+    1,
+    3
+   ],
+   [
+    "g_JG4qSYRk4",
+    1150,
+    553,
+    719,
+    76,
+    102.36000000000001,
+    31,
+    10,
+    2,
+    5
+   ],
+   [
+    "7doSYUH6JNQ",
+    1143,
+    538,
+    658,
+    72,
+    122.28000000000002,
+    52,
+    22,
+    1,
+    7
+   ],
+   [
+    "tt0_PX6OIm4",
+    1140,
+    369,
+    361,
+    56,
+    110.62,
+    10,
+    0,
+    1,
+    0
+   ],
+   [
+    "jIiE5pbuhZc",
+    1136,
+    333,
+    352,
+    60,
+    70.51,
+    10,
+    0,
+    1,
+    0
+   ]
+  ]
+ },
+ "monthly": {
+  "error": "{'code': 400, 'message': 'Date range (2026-11-14) in field parameters.end-date does not align to chosen date dimension.', 'errors': [{'message': 'Date range (2026-11-14) in field parameters.end-date does not align to chosen date dimension.', 'domain': 'global', 'reason': 'badRequest'}]}",
+  "params": {
+   "metrics": "views,estimatedMinutesWatched,subscribersGained,subscribersLost",
+   "startDate": "2025-12-01",
+   "endDate": "2026-11-14",
+   "dimensions": "month",
+   "sort": "month"
+  }
+ },
+ "search_terms": {
+  "cols": [
+   "insightTrafficSourceDetail",
+   "views"
+  ],
+  "rows": [
+   [
+    "법륜스님 마음다스리는법",
+    154
+   ],
+   [
+    "불태워보는인생",
+    85
+   ],
+   [
+    "경조사",
+    68
+   ],
+   [
+    "인생나날",
+    66
+   ],
+   [
+    "정약용 인생조언",
+    65
+   ],
+   [
+    "정약용 명언",
+    40
+   ],
+   [
+    "불태워보는내인생",
+    30
+   ],
+   [
+    "마음이 지옥일때",
+    19
+   ],
+   [
+    "법륜스님",
+    18
+   ],
+   [
+    "법률스님즉문즉답 베스트",
+    18
+   ],
+   [
+    "인생여전함",
+    18
+   ],
+   [
+    "법륜",
+    16
+   ],
+   [
+    "법륜스님의 즉문즉설",
+    14
+   ],
+   [
+    "법륜스님 노숙자",
+    13
+   ],
+   [
+    "법률스님",
+    13
+   ],
+   [
+    "법정스님 명언",
+    12
+   ],
+   [
+    "쇼펜하우어",
+    12
+   ],
+   [
+    "쇼펜하우어 명언",
+    12
+   ],
+   [
+    "쇼펜하우어 철학",
+    12
+   ],
+   [
+    "불태워보는 내인생",
+    11
+   ],
+   [
+    "빈지게 남진",
+    11
+   ],
+   [
+    "스님 법륜",
+    11
+   ],
+   [
+    "미니멀라이프",
+    10
+   ],
+   [
+    "정약용",
+    10
+   ],
+   [
+    "매불쇼",
+    9
+   ]
+  ]
+ },
+ "long_curves": {
+  "aU_PRDND3ZA": [
+   "나이 들수록 신경 끄면 마음이 편해지는 3가지",
+   {
+    "cols": [
+     "elapsedVideoTimeRatio",
+     "audienceWatchRatio",
+     "relativeRetentionPerformance"
+    ],
+    "rows": [
+     [
+      0.01,
+      0.9672,
+      0.24555
+     ],
+     [
+      0.02,
+      0.8033,
+      0.20565
+     ],
+     [
+      0.03,
+      0.6884999999999999,
+      0.17959999999999998
+     ],
+     [
+      0.04,
+      0.623,
+      0.17070000000000002
+     ],
+     [
+      0.05,
+      0.5574,
+      0.16615000000000002
+     ],
+     [
+      0.06,
+      0.541,
+      0.1622
+     ],
+     [
+      0.07,
+      0.5246,
+      0.16035
+     ],
+     [
+      0.08,
+      0.5082,
+      0.16005000000000003
+     ],
+     [
+      0.09,
+      0.45899999999999996,
+      0.15755000000000002
+     ],
+     [
+      0.1,
+      0.45899999999999996,
+      0.15354999999999996
+     ],
+     [
+      0.11,
+      0.42619999999999997,
+      0.1528
+     ],
+     [
+      0.12,
+      0.377,
+      0.15765
+     ],
+     [
+      0.13,
+      0.3607,
+      0.16609999999999997
+     ],
+     [
+      0.14,
+      0.3443,
+      0.175
+     ],
+     [
+      0.15,
+      0.3443,
+      0.1814
+     ],
+     [
+      0.16,
+      0.3607,
+      0.18864999999999998
+     ],
+     [
+      0.17,
+      0.32789999999999997,
+      0.20079999999999998
+     ],
+     [
+      0.18,
+      0.32789999999999997,
+      0.22275
+     ],
+     [
+      0.19,
+      0.32789999999999997,
+      0.2611
+     ],
+     [
+      0.2,
+      0.3607,
+      0.30945
+     ],
+     [
+      0.21,
+      0.29510000000000003,
+      0.3448
+     ],
+     [
+      0.22,
+      0.2787,
+      0.34725
+     ],
+     [
+      0.23,
+      0.2623,
+      0.315
+     ],
+     [
+      0.24,
+      0.2459,
+      0.26670000000000005
+     ],
+     [
+      0.25,
+      0.22949999999999998,
+      0.23085
+     ],
+     [
+      0.26,
+      0.22949999999999998,
+      0.22194999999999998
+     ],
+     [
+      0.27,
+      0.2623,
+      0.23215000000000002
+     ],
+     [
+      0.28,
+      0.2623,
+      0.2415
+     ],
+     [
+      0.29,
+      0.22949999999999998,
+      0.2369
+     ],
+     [
+      0.3,
+      0.21309999999999998,
+      0.22355000000000003
+     ],
+     [
+      0.31,
+      0.21309999999999998,
+      0.21289999999999998
+     ],
+     [
+      0.32,
+      0.21309999999999998,
+      0.20829999999999999
+     ],
+     [
+      0.33,
+      0.22949999999999998,
+      0.20784999999999998
+     ],
+     [
+      0.34,
+      0.21309999999999998,
+      0.2138
+     ],
+     [
+      0.35,
+      0.1967,
+      0.22665000000000002
+     ],
+     [
+      0.36,
+      0.1967,
+      0.24185
+     ],
+     [
+      0.37,
+      0.1967,
+      0.25585
+     ],
+     [
+      0.38,
+      0.18030000000000002,
+      0.27165
+     ],
+     [
+      0.39,
+      0.18030000000000002,
+      0.29215
+     ],
+     [
+      0.4,
+      0.1967,
+      0.31179999999999997
+     ],
+     [
+      0.41,
+      0.1967,
+      0.3272
+     ],
+     [
+      0.42,
+      0.1967,
+      0.3439
+     ],
+     [
+      0.43,
+      0.1967,
+      0.361
+     ],
+     [
+      0.44,
+      0.1967,
+      0.37345
+     ],
+     [
+      0.45,
+      0.21309999999999998,
+      0.37915
+     ],
+     [
+      0.46,
+      0.22949999999999998,
+      0.37765
+     ],
+     [
+      0.47,
+      0.22949999999999998,
+      0.36935
+     ],
+     [
+      0.48,
+      0.1967,
+      0.3553
+     ],
+     [
+      0.49,
+      0.1967,
+      0.33694999999999997
+     ],
+     [
+      0.5,
+      0.18030000000000002,
+      0.3156
+     ],
+     [
+      0.51,
+      0.21309999999999998,
+      0.29264999999999997
+     ],
+     [
+      0.52,
+      0.1967,
+      0.26935
+     ],
+     [
+      0.53,
+      0.1967,
+      0.247
+     ],
+     [
+      0.54,
+      0.1967,
+      0.22749999999999998
+     ],
+     [
+      0.55,
+      0.1967,
+      0.21454999999999996
+     ],
+     [
+      0.56,
+      0.1967,
+      0.20750000000000002
+     ],
+     [
+      0.57,
+      0.1967,
+      0.19979999999999998
+     ],
+     [
+      0.58,
+      0.1967,
+      0.19420000000000004
+     ],
+     [
+      0.59,
+      0.1967,
+      0.19340000000000002
+     ],
+     [
+      0.6,
+      0.1967,
+      0.1911
+     ],
+     [
+      0.61,
+      0.18030000000000002,
+      0.18764999999999998
+     ],
+     [
+      0.62,
+      0.18030000000000002,
+      0.1896
+     ],
+     [
+      0.63,
+      0.16390000000000002,
+      0.19774999999999998
+     ],
+     [
+      0.64,
+      0.16390000000000002,
+      0.20784999999999998
+     ],
+     [
+      0.65,
+      0.16390000000000002,
+      0.22435
+     ],
+     [
+      0.66,
+      0.16390000000000002,
+      0.2536
+     ],
+     [
+      0.67,
+      0.16390000000000002,
+      0.2891
+     ],
+     [
+      0.68,
+      0.1967,
+      0.3087
+     ],
+     [
+      0.69,
+      0.16390000000000002,
+      0.2982
+     ],
+     [
+      0.7,
+      0.16390000000000002,
+      0.27105
+     ],
+     [
+      0.71,
+      0.16390000000000002,
+      0.24879999999999997
+     ],
+     [
+      0.72,
+      0.16390000000000002,
+      0.238
+     ],
+     [
+      0.73,
+      0.16390000000000002,
+      0.2324
+     ],
+     [
+      0.74,
+      0.1475,
+      0.2269
+     ],
+     [
+      0.75,
+      0.1475,
+      0.2247
+     ],
+     [
+      0.76,
+      0.1475,
+      0.22559999999999997
+     ],
+     [
+      0.77,
+      0.1475,
+      0.22449999999999998
+     ],
+     [
+      0.78,
+      0.1475,
+      0.21575
+     ],
+     [
+      0.79,
+      0.1475,
+      0.19855
+     ],
+     [
+      0.8,
+      0.16390000000000002,
+      0.17729999999999996
+     ],
+     [
+      0.81,
+      0.16390000000000002,
+      0.15425
+     ],
+     [
+      0.82,
+      0.1475,
+      0.13494999999999996
+     ],
+     [
+      0.83,
+      0.1475,
+      0.12020000000000003
+     ],
+     [
+      0.84,
+      0.1475,
+      0.10729999999999995
+     ],
+     [
+      0.85,
+      0.1475,
+      0.0958
+     ],
+     [
+      0.86,
+      0.1475,
+      0.08610000000000001
+     ],
+     [
+      0.87,
+      0.1475,
+      0.07854999999999995
+     ],
+     [
+      0.88,
+      0.1475,
+      0.07345000000000002
+     ],
+     [
+      0.89,
+      0.1475,
+      0.07040000000000002
+     ],
+     [
+      0.9,
+      0.1475,
+      0.06884999999999997
+     ],
+     [
+      0.91,
+      0.1311,
+      0.0685
+     ],
+     [
+      0.92,
+      0.1311,
+      0.06965000000000005
+     ],
+     [
+      0.93,
+      0.1148,
+      0.07409999999999994
+     ],
+     [
+      0.94,
+      0.0984,
+      0.08134999999999998
+     ],
+     [
+      0.95,
+      0.08199999999999999,
+      0.08770000000000006
+     ],
+     [
+      0.96,
+      0.08199999999999999,
+      0.09289999999999998
+     ],
+     [
+      0.97,
+      0.08199999999999999,
+      0.09795000000000004
+     ],
+     [
+      0.98,
+      0.08199999999999999,
+      0.10289999999999999
+     ],
+     [
+      0.99,
+      0.08199999999999999,
+      0.10735
+     ],
+     [
+      1,
+      0.08199999999999999,
+      0.11054999999999998
+     ]
+    ]
+   }
+  ],
+  "Z3F7qt-xmVI": [
+   "인간관계에 지쳐 마음이 헛헛할 때, 반드시 명심해야 할 3가지 인생 지혜",
+   {
+    "cols": [
+     "elapsedVideoTimeRatio",
+     "audienceWatchRatio",
+     "relativeRetentionPerformance"
+    ],
+    "rows": [
+     [
+      0.01,
+      0.9455,
+      0.28535
+     ],
+     [
+      0.02,
+      0.8909,
+      0.2993
+     ],
+     [
+      0.03,
+      0.7818,
+      0.3083
+     ],
+     [
+      0.04,
+      0.7273000000000001,
+      0.3115
+     ],
+     [
+      0.05,
+      0.7091,
+      0.31325000000000003
+     ],
+     [
+      0.06,
+      0.7273000000000001,
+      0.3135
+     ],
+     [
+      0.07,
+      0.6727,
+      0.31275
+     ],
+     [
+      0.08,
+      0.6909000000000001,
+      0.3147
+     ],
+     [
+      0.09,
+      0.6909000000000001,
+      0.31955
+     ],
+     [
+      0.1,
+      0.6545000000000001,
+      0.3254
+     ],
+     [
+      0.11,
+      0.6545000000000001,
+      0.33145
+     ],
+     [
+      0.12,
+      0.6545000000000001,
+      0.3374
+     ],
+     [
+      0.13,
+      0.6364,
+      0.34299999999999997
+     ],
+     [
+      0.14,
+      0.6364,
+      0.34795
+     ],
+     [
+      0.15,
+      0.6364,
+      0.35225
+     ],
+     [
+      0.16,
+      0.6364,
+      0.35595
+     ],
+     [
+      0.17,
+      0.6364,
+      0.3594
+     ],
+     [
+      0.18,
+      0.6182,
+      0.36275
+     ],
+     [
+      0.19,
+      0.6,
+      0.36675
+     ],
+     [
+      0.2,
+      0.6,
+      0.37335
+     ],
+     [
+      0.21,
+      0.5818,
+      0.38245
+     ],
+     [
+      0.22,
+      0.5818,
+      0.3905
+     ],
+     [
+      0.23,
+      0.5455,
+      0.39725
+     ],
+     [
+      0.24,
+      0.5455,
+      0.40445
+     ],
+     [
+      0.25,
+      0.5273,
+      0.41265
+     ],
+     [
+      0.26,
+      0.5273,
+      0.42275
+     ],
+     [
+      0.27,
+      0.5273,
+      0.4377
+     ],
+     [
+      0.28,
+      0.5455,
+      0.45665
+     ],
+     [
+      0.29,
+      0.5636,
+      0.47295
+     ],
+     [
+      0.3,
+      0.5636,
+      0.4878
+     ],
+     [
+      0.31,
+      0.5273,
+      0.5021
+     ],
+     [
+      0.32,
+      0.5273,
+      0.5109
+     ],
+     [
+      0.33,
+      0.5273,
+      0.5147
+     ],
+     [
+      0.34,
+      0.5273,
+      0.51735
+     ],
+     [
+      0.35,
+      0.5273,
+      0.52215
+     ],
+     [
+      0.36,
+      0.5273,
+      0.5298
+     ],
+     [
+      0.37,
+      0.5273,
+      0.5365
+     ],
+     [
+      0.38,
+      0.5273,
+      0.541
+     ],
+     [
+      0.39,
+      0.5273,
+      0.5461
+     ],
+     [
+      0.4,
+      0.5455,
+      0.552
+     ],
+     [
+      0.41,
+      0.5273,
+      0.5549
+     ],
+     [
+      0.42,
+      0.5273,
+      0.55075
+     ],
+     [
+      0.43,
+      0.5273,
+      0.5386
+     ],
+     [
+      0.44,
+      0.5273,
+      0.5207
+     ],
+     [
+      0.45,
+      0.5273,
+      0.49905
+     ],
+     [
+      0.46,
+      0.5273,
+      0.47475
+     ],
+     [
+      0.47,
+      0.5273,
+      0.4484
+     ],
+     [
+      0.48,
+      0.5273,
+      0.42110000000000003
+     ],
+     [
+      0.49,
+      0.5091,
+      0.39465
+     ],
+     [
+      0.5,
+      0.49090000000000006,
+      0.37065000000000003
+     ],
+     [
+      0.51,
+      0.49090000000000006,
+      0.34950000000000003
+     ],
+     [
+      0.52,
+      0.49090000000000006,
+      0.33120000000000005
+     ],
+     [
+      0.53,
+      0.49090000000000006,
+      0.316
+     ],
+     [
+      0.54,
+      0.4727,
+      0.3039
+     ],
+     [
+      0.55,
+      0.4727,
+      0.29464999999999997
+     ],
+     [
+      0.56,
+      0.4727,
+      0.28845
+     ],
+     [
+      0.57,
+      0.4545,
+      0.28500000000000003
+     ],
+     [
+      0.58,
+      0.4364,
+      0.2835
+     ],
+     [
+      0.59,
+      0.4,
+      0.28345
+     ],
+     [
+      0.6,
+      0.4,
+      0.28405
+     ],
+     [
+      0.61,
+      0.4,
+      0.2832
+     ],
+     [
+      0.62,
+      0.4,
+      0.2782
+     ],
+     [
+      0.63,
+      0.4,
+      0.26890000000000003
+     ],
+     [
+      0.64,
+      0.3818,
+      0.2597
+     ],
+     [
+      0.65,
+      0.3818,
+      0.2564
+     ],
+     [
+      0.66,
+      0.3818,
+      0.25965
+     ],
+     [
+      0.67,
+      0.3818,
+      0.26515
+     ],
+     [
+      0.68,
+      0.3636,
+      0.2716
+     ],
+     [
+      0.69,
+      0.3636,
+      0.28405
+     ],
+     [
+      0.7,
+      0.3636,
+      0.30305
+     ],
+     [
+      0.71,
+      0.3455,
+      0.32535000000000003
+     ],
+     [
+      0.72,
+      0.3455,
+      0.34909999999999997
+     ],
+     [
+      0.73,
+      0.3455,
+      0.3724
+     ],
+     [
+      0.74,
+      0.3455,
+      0.39235
+     ],
+     [
+      0.75,
+      0.3455,
+      0.40305
+     ],
+     [
+      0.76,
+      0.3455,
+      0.40515
+     ],
+     [
+      0.77,
+      0.3455,
+      0.4102
+     ],
+     [
+      0.78,
+      0.3455,
+      0.41935
+     ],
+     [
+      0.79,
+      0.3455,
+      0.42745
+     ],
+     [
+      0.8,
+      0.3455,
+      0.43305
+     ],
+     [
+      0.81,
+      0.3455,
+      0.43615
+     ],
+     [
+      0.82,
+      0.3455,
+      0.43685
+     ],
+     [
+      0.83,
+      0.3455,
+      0.4356
+     ],
+     [
+      0.84,
+      0.3455,
+      0.43275
+     ],
+     [
+      0.85,
+      0.3455,
+      0.4288
+     ],
+     [
+      0.86,
+      0.3273,
+      0.4243
+     ],
+     [
+      0.87,
+      0.3273,
+      0.41960000000000003
+     ],
+     [
+      0.88,
+      0.3273,
+      0.41495
+     ],
+     [
+      0.89,
+      0.3273,
+      0.41054999999999997
+     ],
+     [
+      0.9,
+      0.3273,
+      0.40665
+     ],
+     [
+      0.91,
+      0.3273,
+      0.4034
+     ],
+     [
+      0.92,
+      0.3273,
+      0.4007
+     ],
+     [
+      0.93,
+      0.3273,
+      0.3984
+     ],
+     [
+      0.94,
+      0.3091,
+      0.3965
+     ],
+     [
+      0.95,
+      0.2909,
+      0.39495
+     ],
+     [
+      0.96,
+      0.2909,
+      0.39365
+     ],
+     [
+      0.97,
+      0.2909,
+      0.3926
+     ],
+     [
+      0.98,
+      0.2909,
+      0.39195
+     ],
+     [
+      0.99,
+      0.2727,
+      0.39155
+     ],
+     [
+      1,
+      0.2727,
+      0.39144999999999996
+     ]
+    ]
+   }
+  ],
+  "nAvnhmQykUk": [
+   "나이 들수록 품격 있어 보이는 사람의 7가지 습관 | 나는 몇 개나 해당될까 점검해 보세요",
+   {
+    "cols": [
+     "elapsedVideoTimeRatio",
+     "audienceWatchRatio",
+     "relativeRetentionPerformance"
+    ],
+    "rows": [
+     [
+      0.01,
+      1,
+      0.3335
+     ],
+     [
+      0.02,
+      0.9037999999999999,
+      0.36975
+     ],
+     [
+      0.03,
+      0.8269,
+      0.40425
+     ],
+     [
+      0.04,
+      0.7308,
+      0.4371
+     ],
+     [
+      0.05,
+      0.6731,
+      0.47385
+     ],
+     [
+      0.06,
+      0.6923,
+      0.50535
+     ],
+     [
+      0.07,
+      0.6537999999999999,
+      0.5222
+     ],
+     [
+      0.08,
+      0.6537999999999999,
+      0.52845
+     ],
+     [
+      0.09,
+      0.6346,
+      0.53325
+     ],
+     [
+      0.1,
+      0.6537999999999999,
+      0.53635
+     ],
+     [
+      0.11,
+      0.6154,
+      0.5329
+     ],
+     [
+      0.12,
+      0.5962,
+      0.52465
+     ],
+     [
+      0.13,
+      0.5962,
+      0.51895
+     ],
+     [
+      0.14,
+      0.5962,
+      0.5224
+     ],
+     [
+      0.15,
+      0.5769,
+      0.53825
+     ],
+     [
+      0.16,
+      0.5577000000000001,
+      0.56435
+     ],
+     [
+      0.17,
+      0.5577000000000001,
+      0.5917
+     ],
+     [
+      0.18,
+      0.5577000000000001,
+      0.60965
+     ],
+     [
+      0.19,
+      0.5385,
+      0.61235
+     ],
+     [
+      0.2,
+      0.5385,
+      0.60045
+     ],
+     [
+      0.21,
+      0.5,
+      0.58135
+     ],
+     [
+      0.22,
+      0.5,
+      0.56725
+     ],
+     [
+      0.23,
+      0.5,
+      0.56645
+     ],
+     [
+      0.24,
+      0.5,
+      0.57585
+     ],
+     [
+      0.25,
+      0.5192,
+      0.58395
+     ],
+     [
+      0.26,
+      0.5,
+      0.5831
+     ],
+     [
+      0.27,
+      0.5,
+      0.57565
+     ],
+     [
+      0.28,
+      0.5,
+      0.56935
+     ],
+     [
+      0.29,
+      0.5,
+      0.5696
+     ],
+     [
+      0.3,
+      0.5,
+      0.576
+     ],
+     [
+      0.31,
+      0.5,
+      0.58305
+     ],
+     [
+      0.32,
+      0.5192,
+      0.58245
+     ],
+     [
+      0.33,
+      0.5,
+      0.57025
+     ],
+     [
+      0.34,
+      0.5,
+      0.55065
+     ],
+     [
+      0.35,
+      0.4808,
+      0.53155
+     ],
+     [
+      0.36,
+      0.46149999999999997,
+      0.5171
+     ],
+     [
+      0.37,
+      0.46149999999999997,
+      0.50605
+     ],
+     [
+      0.38,
+      0.46149999999999997,
+      0.49615
+     ],
+     [
+      0.39,
+      0.46149999999999997,
+      0.4847
+     ],
+     [
+      0.4,
+      0.46149999999999997,
+      0.46699999999999997
+     ],
+     [
+      0.41,
+      0.46149999999999997,
+      0.43685
+     ],
+     [
+      0.42,
+      0.46149999999999997,
+      0.39185000000000003
+     ],
+     [
+      0.43,
+      0.44229999999999997,
+      0.3417
+     ],
+     [
+      0.44,
+      0.44229999999999997,
+      0.30145
+     ],
+     [
+      0.45,
+      0.44229999999999997,
+      0.27575
+     ],
+     [
+      0.46,
+      0.42310000000000003,
+      0.25905
+     ],
+     [
+      0.47,
+      0.3846,
+      0.24595
+     ],
+     [
+      0.48,
+      0.3846,
+      0.23804999999999998
+     ],
+     [
+      0.49,
+      0.3846,
+      0.23585
+     ],
+     [
+      0.5,
+      0.3846,
+      0.23515000000000003
+     ],
+     [
+      0.51,
+      0.3846,
+      0.23085
+     ],
+     [
+      0.52,
+      0.3846,
+      0.2238
+     ],
+     [
+      0.53,
+      0.3846,
+      0.21925
+     ],
+     [
+      0.54,
+      0.3846,
+      0.21389999999999998
+     ],
+     [
+      0.55,
+      0.3846,
+      0.20640000000000003
+     ],
+     [
+      0.56,
+      0.3846,
+      0.20690000000000003
+     ],
+     [
+      0.57,
+      0.3846,
+      0.21575
+     ],
+     [
+      0.58,
+      0.3846,
+      0.22325
+     ],
+     [
+      0.59,
+      0.3846,
+      0.23100000000000004
+     ],
+     [
+      0.6,
+      0.3846,
+      0.242
+     ],
+     [
+      0.61,
+      0.3846,
+      0.25025
+     ],
+     [
+      0.62,
+      0.3654,
+      0.25655
+     ],
+     [
+      0.63,
+      0.34619999999999995,
+      0.26725
+     ],
+     [
+      0.64,
+      0.32689999999999997,
+      0.28469999999999995
+     ],
+     [
+      0.65,
+      0.32689999999999997,
+      0.30684999999999996
+     ],
+     [
+      0.66,
+      0.32689999999999997,
+      0.3375
+     ],
+     [
+      0.67,
+      0.34619999999999995,
+      0.3878
+     ],
+     [
+      0.68,
+      0.34619999999999995,
+      0.4618
+     ],
+     [
+      0.69,
+      0.3654,
+      0.53705
+     ],
+     [
+      0.7,
+      0.3846,
+      0.57635
+     ],
+     [
+      0.71,
+      0.3654,
+      0.5618
+     ],
+     [
+      0.72,
+      0.34619999999999995,
+      0.5081
+     ],
+     [
+      0.73,
+      0.34619999999999995,
+      0.44995
+     ],
+     [
+      0.74,
+      0.34619999999999995,
+      0.40859999999999996
+     ],
+     [
+      0.75,
+      0.34619999999999995,
+      0.38025
+     ],
+     [
+      0.76,
+      0.34619999999999995,
+      0.35295
+     ],
+     [
+      0.77,
+      0.34619999999999995,
+      0.32199999999999995
+     ],
+     [
+      0.78,
+      0.34619999999999995,
+      0.29305000000000003
+     ],
+     [
+      0.79,
+      0.34619999999999995,
+      0.2676
+     ],
+     [
+      0.8,
+      0.34619999999999995,
+      0.24255
+     ],
+     [
+      0.81,
+      0.34619999999999995,
+      0.21475
+     ],
+     [
+      0.82,
+      0.34619999999999995,
+      0.18545
+     ],
+     [
+      0.83,
+      0.34619999999999995,
+      0.1592
+     ],
+     [
+      0.84,
+      0.34619999999999995,
+      0.13729999999999998
+     ],
+     [
+      0.85,
+      0.32689999999999997,
+      0.12420000000000003
+     ],
+     [
+      0.86,
+      0.32689999999999997,
+      0.11965000000000003
+     ],
+     [
+      0.87,
+      0.32689999999999997,
+      0.11995
+     ],
+     [
+      0.88,
+      0.3077,
+      0.124
+     ],
+     [
+      0.89,
+      0.28850000000000003,
+      0.13195
+     ],
+     [
+      0.9,
+      0.2692,
+      0.14384999999999998
+     ],
+     [
+      0.91,
+      0.2692,
+      0.15950000000000003
+     ],
+     [
+      0.92,
+      0.25,
+      0.17905
+     ],
+     [
+      0.93,
+      0.25,
+      0.20379999999999998
+     ],
+     [
+      0.94,
+      0.25,
+      0.23345
+     ],
+     [
+      0.95,
+      0.25,
+      0.2647
+     ],
+     [
+      0.96,
+      0.25,
+      0.29684999999999995
+     ],
+     [
+      0.97,
+      0.25,
+      0.33035000000000003
+     ],
+     [
+      0.98,
+      0.25,
+      0.3633
+     ],
+     [
+      0.99,
+      0.25,
+      0.3922
+     ],
+     [
+      1,
+      0.2692,
+      0.4118
+     ]
+    ]
+   }
+  ],
+  "6j84NRAahjA": [
+   "착해 보여도 이런 사람은 절대 내 편이 아닙니다",
+   {
+    "cols": [
+     "elapsedVideoTimeRatio",
+     "audienceWatchRatio",
+     "relativeRetentionPerformance"
+    ],
+    "rows": [
+     [
+      0.01,
+      0.9732999999999999,
+      0.26864999999999994
+     ],
+     [
+      0.02,
+      0.84,
+      0.2596
+     ],
+     [
+      0.03,
+      0.7867000000000001,
+      0.25239999999999996
+     ],
+     [
+      0.04,
+      0.7467,
+      0.24805
+     ],
+     [
+      0.05,
+      0.68,
+      0.24425000000000002
+     ],
+     [
+      0.06,
+      0.6,
+      0.24045
+     ],
+     [
+      0.07,
+      0.56,
+      0.23845
+     ],
+     [
+      0.08,
+      0.5467,
+      0.242
+     ],
+     [
+      0.09,
+      0.5067,
+      0.25270000000000004
+     ],
+     [
+      0.1,
+      0.48,
+      0.2659
+     ],
+     [
+      0.11,
+      0.4667,
+      0.27745
+     ],
+     [
+      0.12,
+      0.4667,
+      0.2894
+     ],
+     [
+      0.13,
+      0.4533,
+      0.30475
+     ],
+     [
+      0.14,
+      0.44,
+      0.32385
+     ],
+     [
+      0.15,
+      0.4267,
+      0.34135
+     ],
+     [
+      0.16,
+      0.4533,
+      0.3509
+     ],
+     [
+      0.17,
+      0.4667,
+      0.35205
+     ],
+     [
+      0.18,
+      0.4667,
+      0.34925
+     ],
+     [
+      0.19,
+      0.4533,
+      0.3472
+     ],
+     [
+      0.2,
+      0.4,
+      0.35075
+     ],
+     [
+      0.21,
+      0.4,
+      0.3648
+     ],
+     [
+      0.22,
+      0.37329999999999997,
+      0.3885
+     ],
+     [
+      0.23,
+      0.3467,
+      0.4143
+     ],
+     [
+      0.24,
+      0.3467,
+      0.4345
+     ],
+     [
+      0.25,
+      0.3333,
+      0.44715
+     ],
+     [
+      0.26,
+      0.30670000000000003,
+      0.45475
+     ],
+     [
+      0.27,
+      0.2933,
+      0.45975
+     ],
+     [
+      0.28,
+      0.2933,
+      0.46245
+     ],
+     [
+      0.29,
+      0.32,
+      0.46085
+     ],
+     [
+      0.3,
+      0.28,
+      0.4528
+     ],
+     [
+      0.31,
+      0.28,
+      0.4389
+     ],
+     [
+      0.32,
+      0.2667,
+      0.42125
+     ],
+     [
+      0.33,
+      0.25329999999999997,
+      0.3982
+     ],
+     [
+      0.34,
+      0.28,
+      0.36595
+     ],
+     [
+      0.35,
+      0.24,
+      0.33094999999999997
+     ],
+     [
+      0.36,
+      0.2267,
+      0.3085
+     ],
+     [
+      0.37,
+      0.2267,
+      0.30379999999999996
+     ],
+     [
+      0.38,
+      0.2267,
+      0.30855
+     ],
+     [
+      0.39,
+      0.2267,
+      0.31475
+     ],
+     [
+      0.4,
+      0.2267,
+      0.32284999999999997
+     ],
+     [
+      0.41,
+      0.28,
+      0.3311
+     ],
+     [
+      0.42,
+      0.28,
+      0.3325
+     ],
+     [
+      0.43,
+      0.25329999999999997,
+      0.3263
+     ],
+     [
+      0.44,
+      0.24,
+      0.3202
+     ],
+     [
+      0.45,
+      0.24,
+      0.31489999999999996
+     ],
+     [
+      0.46,
+      0.25329999999999997,
+      0.3048
+     ],
+     [
+      0.47,
+      0.24,
+      0.29074999999999995
+     ],
+     [
+      0.48,
+      0.24,
+      0.28115
+     ],
+     [
+      0.49,
+      0.2267,
+      0.27765
+     ],
+     [
+      0.5,
+      0.2133,
+      0.27735
+     ],
+     [
+      0.51,
+      0.2133,
+      0.27925
+     ],
+     [
+      0.52,
+      0.2267,
+      0.28405
+     ],
+     [
+      0.53,
+      0.2267,
+      0.29469999999999996
+     ],
+     [
+      0.54,
+      0.2133,
+      0.30984999999999996
+     ],
+     [
+      0.55,
+      0.24,
+      0.3219
+     ],
+     [
+      0.56,
+      0.2267,
+      0.3317
+     ],
+     [
+      0.57,
+      0.2267,
+      0.3432
+     ],
+     [
+      0.58,
+      0.2267,
+      0.35255000000000003
+     ],
+     [
+      0.59,
+      0.2267,
+      0.356
+     ],
+     [
+      0.6,
+      0.2267,
+      0.35714999999999997
+     ],
+     [
+      0.61,
+      0.2267,
+      0.36005
+     ],
+     [
+      0.62,
+      0.2133,
+      0.36355000000000004
+     ],
+     [
+      0.63,
+      0.2133,
+      0.36745
+     ],
+     [
+      0.64,
+      0.2133,
+      0.37505
+     ],
+     [
+      0.65,
+      0.24,
+      0.38365
+     ],
+     [
+      0.66,
+      0.2267,
+      0.38305
+     ],
+     [
+      0.67,
+      0.2133,
+      0.36715
+     ],
+     [
+      0.68,
+      0.2267,
+      0.3432
+     ],
+     [
+      0.69,
+      0.2267,
+      0.32275
+     ],
+     [
+      0.7,
+      0.2267,
+      0.31055
+     ],
+     [
+      0.71,
+      0.2,
+      0.30415000000000003
+     ],
+     [
+      0.72,
+      0.2,
+      0.30369999999999997
+     ],
+     [
+      0.73,
+      0.2,
+      0.3127
+     ],
+     [
+      0.74,
+      0.2,
+      0.32945
+     ],
+     [
+      0.75,
+      0.2,
+      0.34825
+     ],
+     [
+      0.76,
+      0.1867,
+      0.36615
+     ],
+     [
+      0.77,
+      0.1867,
+      0.38534999999999997
+     ],
+     [
+      0.78,
+      0.1867,
+      0.40295000000000003
+     ],
+     [
+      0.79,
+      0.1867,
+      0.41495
+     ],
+     [
+      0.8,
+      0.2,
+      0.42495
+     ],
+     [
+      0.81,
+      0.2133,
+      0.4324
+     ],
+     [
+      0.82,
+      0.2133,
+      0.43420000000000003
+     ],
+     [
+      0.83,
+      0.2133,
+      0.4292
+     ],
+     [
+      0.84,
+      0.2133,
+      0.41645
+     ],
+     [
+      0.85,
+      0.2133,
+      0.396
+     ],
+     [
+      0.86,
+      0.2133,
+      0.3692
+     ],
+     [
+      0.87,
+      0.2133,
+      0.33865
+     ],
+     [
+      0.88,
+      0.2133,
+      0.30695
+     ],
+     [
+      0.89,
+      0.2,
+      0.27649999999999997
+     ],
+     [
+      0.9,
+      0.2133,
+      0.2494
+     ],
+     [
+      0.91,
+      0.2,
+      0.2267
+     ],
+     [
+      0.92,
+      0.2133,
+      0.20835000000000004
+     ],
+     [
+      0.93,
+      0.2133,
+      0.19390000000000002
+     ],
+     [
+      0.94,
+      0.2133,
+      0.18309999999999998
+     ],
+     [
+      0.95,
+      0.2,
+      0.17715000000000003
+     ],
+     [
+      0.96,
+      0.1867,
+      0.17524999999999996
+     ],
+     [
+      0.97,
+      0.17329999999999998,
+      0.173
+     ],
+     [
+      0.98,
+      0.16,
+      0.16935
+     ],
+     [
+      0.99,
+      0.1467,
+      0.1658
+     ],
+     [
+      1,
+      0.1467,
+      0.16344999999999998
+     ]
+    ]
+   }
+  ]
+ },
+ "titles": {
+  "j-YBUYr5Fdg": [
+   "2026-11-13T10:20:00Z",
+   "자식 연락이 뜸해졌을 때, 부모가 절대 하면 안 되는 말 3가지 #shorts",
+   "PT56S",
+   3
+  ],
+  "LG3UaF3Xrh4": [
+   "2026-11-13T03:06:33Z",
+   "내가 너희를 어떻게 키웠는데, 이 말 대신 하세요 #shorts",
+   "PT56S",
+   10
+  ],
+  "eVLbMg7K3Nk": [
+   "2026-11-13T01:56:18Z",
+   "자식에게 끝까지 하지 말아야 할 행동 6가지",
+   "PT25M37S",
+   16
+  ],
+  "GKN5yetrrzY": [
+   "2026-11-12T23:00:33Z",
+   "나이 들수록 자식에게 절대 먼저 꺼내면 안 되는 돈 이야기 3가지 #shorts",
+   "PT58S",
+   12
+  ],
+  "RFG9t7S7wOo": [
+   "2026-11-12T12:36:19Z",
+   "혼자여도 외롭지 않은 사람들의 하루 습관",
+   "PT10M31S",
+   16
+  ],
+  "G6VEnN_pgLg": [
+   "2026-11-12T10:23:50Z",
+   "어디서나 대접받는 어른은 식사 자리에서 이 3가지가 다릅니다 #shorts",
+   "PT1M",
+   758
+  ],
+  "-GauPZKbF8E": [
+   "2026-11-12T03:08:46Z",
+   "매일 열심히 걷는데도 다리 힘이 점점 빠지는 진짜 이유 #shorts",
+   "PT58S",
+   437
+  ],
+  "35lNIt4i7sI": [
+   "2026-11-12T01:57:55Z",
+   "걷기만 하는 노후 운동, 이것을 꼭 더하세요",
+   "PT10M18S",
+   27
+  ],
+  "XwyKYsBhdDM": [
+   "2026-11-11T23:05:52Z",
+   "듣기 좋은 칭찬만 해 주는 사람이 오히려 내 노후를 망치는 이유 #shorts",
+   "PT1M",
+   713
+  ],
+  "TAKDfHbXcGQ": [
+   "2026-11-11T12:41:43Z",
+   "끊을까 말까 고민되는 관계, 현명한 어른은 이렇게 정리합니다",
+   "PT25M37S",
+   33
+  ],
+  "s2LqdQLQfv0": [
+   "2026-11-11T12:18:08Z",
+   "휴대폰 속 남의 사진, 이렇게 보셔야 마음이 편합니다 #shorts",
+   "PT53S",
+   173
+  ],
+  "4vhmn_9IRp8": [
+   "2026-11-11T01:54:05Z",
+   "남과 비교할수록 노후가 가난해지는 진짜 이유 6가지",
+   "PT25M48S",
+   33
+  ],
+  "Ty_TzTLRmiM": [
+   "2026-11-10T22:57:14Z",
+   "니체가 미운 사람과 싸울 때 꼭 조심하라고 한 한 가지 #shorts",
+   "PT57S",
+   991
+  ],
+  "26VMXBTxiaA": [
+   "2026-11-10T12:59:08Z",
+   "60 넘어 곁에 두면 노후가 편안해지는 사람 7가지",
+   "PT26M10S",
+   12
+  ],
+  "pFns1NiU6sc": [
+   "2026-11-10T12:38:51Z",
+   "명절마다 빈손으로 오던 막내, 어머니 수술 날 꺼낸 통장의 비밀 #shorts",
+   "PT1M4S",
+   4
+  ],
+  "TGdSer1uwto": [
+   "2026-11-10T10:16:25Z",
+   "부탁을 거절했을 때 드러나는 그 사람의 3가지 진짜 모습 #shorts",
+   "PT55S",
+   1273
+  ],
+  "5VPDgUJtqM0": [
+   "2026-11-10T03:06:10Z",
+   "걱정인 척하는 간섭은 이 두 문장으로 끝내세요 #shorts",
+   "PT55S",
+   1098
+  ],
+  "1G7nHr8KoKI": [
+   "2026-11-10T01:59:29Z",
+   "농담처럼 상처 주는 사람, 현명한 어른은 이렇게 받아칩니다",
+   "PT26M14S",
+   36
+  ],
+  "O-gUFAITjyI": [
+   "2026-11-09T22:59:24Z",
+   "서운한 마음이 안 풀릴 때, 부처님이 법구경에 남긴 한 말씀 #shorts",
+   "PT1M",
+   259
+  ],
+  "Tdy6np0HAdA": [
+   "2026-11-09T10:19:25Z",
+   "이 중 3개 이상이면 그 모임은 이제 잠시 쉬셔도 됩니다 #shorts",
+   "PT57S",
+   1006
+  ],
+  "IPq5Fvzrnaw": [
+   "2026-11-09T03:06:53Z",
+   "자식이 기다리는 부모의 전화는 이 한마디로 시작합니다 #shorts",
+   "PT54S",
+   1114
+  ],
+  "dYSy8E40TmU": [
+   "2026-11-09T02:04:39Z",
+   "일흔 넘어 말년 복 있는 사람은 '이것'이 다릅니다",
+   "PT26M40S",
+   49
+  ],
+  "4_RKBvXXPtQ": [
+   "2026-11-08T22:52:43Z",
+   "쇼펜하우어가 행복의 10분의 9는 건강에 달렸다고 한 이유 #shorts",
+   "PT55S",
+   1030
+  ],
+  "aU_PRDND3ZA": [
+   "2026-11-08T13:03:28Z",
+   "나이 들수록 신경 끄면 마음이 편해지는 3가지",
+   "PT10M29S",
+   158
+  ],
+  "9udwePx5xQI": [
+   "2026-11-08T10:03:21Z",
+   "운동을 열심히 해도 하루 종일 앉아 있으면 안 되는 이유 #shorts",
+   "PT57S",
+   1101
+  ],
+  "Q2HDkS1sHrA": [
+   "2026-11-08T01:50:57Z",
+   "내 좋은 소식에 걱정부터 꺼내는 사람, 그 사람은 절대 내 편이 아닙니다 #shorts",
+   "PT59S",
+   1015
+  ],
+  "zXoQoUjCJAM": [
+   "2026-11-07T21:51:32Z",
+   "은퇴 후 하루가 길게 느껴진다면, 니체가 남긴 견디는 힘의 한 문장 #shorts",
+   "PT1M1S",
+   1205
+  ],
+  "YMowXgrRwus": [
+   "2026-11-07T08:55:57Z",
+   "자식 잘되라고 한 조언이 오히려 자식을 멀어지게 하는 이유 #shorts",
+   "PT1M",
+   1220
+  ],
+  "w5IOntFGFCg": [
+   "2026-11-07T08:15:07Z",
+   "가까운 사람이 서운하게 할 때, 당장 따지기 전에 꼭 해야 할 3가지 #shorts",
+   "PT58S",
+   1255
+  ],
+  "sYrZ-x6oaPg": [
+   "2026-11-06T22:02:40Z",
+   "남의 말에 자꾸 흔들린다면, 부처님이 법구경에 남긴 바위 이야기 #shorts",
+   "PT53S",
+   929
+  ],
+  "D8nlgroAgTg": [
+   "2026-11-06T08:51:15Z",
+   "잠이 안 올 때 침대에서 버티면 오히려 더 못 자는 이유 #shorts",
+   "PT1M",
+   1414
+  ],
+  "iL8eXi7GFPA": [
+   "2026-11-06T02:12:11Z",
+   "그 사람이 묻는 말을 들어 보면 진짜 내 편인지 보입니다 #shorts",
+   "PT1M2S",
+   530
+  ],
+  "QirOdoVkoH4": [
+   "2026-11-06T01:49:31Z",
+   "노후에 이 중 2개 이상이면 그 인연은 나 혼자 붙잡고 있는 겁니다 #shorts",
+   "PT1M10S",
+   627
+  ],
+  "6j84NRAahjA": [
+   "2026-11-06T00:47:07Z",
+   "착해 보여도 이런 사람은 절대 내 편이 아닙니다",
+   "PT10M46S",
+   85
+  ],
+  "kQPP2wJodbQ": [
+   "2026-11-05T08:51:27Z",
+   "나이 들수록 집에서 혈압 잴 때 절대 하면 안 되는 실수 3가지 #shorts",
+   "PT1M11S",
+   1321
+  ],
+  "VYcxvWQz2ss": [
+   "2026-11-05T03:24:24Z",
+   "공자가 경고한, 나이 들수록 반드시 버려야 할 말버릇 1가지 #shorts",
+   "PT1M8S",
+   1314
+  ],
+  "fR-QHqBldFk": [
+   "2026-11-05T00:47:16Z",
+   "공자가 경고한, 나이 들수록 버려야 할 말버릇 5가지",
+   "PT10M55S",
+   50
+  ],
+  "5PBuK-q-ImU": [
+   "2026-11-04T21:51:13Z",
+   "나이 들수록 진짜 내 편은 반드시 이 3가지 순간에 드러납니다 #shorts",
+   "PT1M5S",
+   1412
+  ],
+  "cTEJTeUTrvE": [
+   "2026-11-04T08:50:24Z",
+   "나이 들수록 내 앞에서 남 흉보는 사람과 반드시 거리 둬야 할 3가지 이유 #shorts",
+   "PT1M7S",
+   1379
+  ],
+  "sTDnDHTbi6U": [
+   "2026-11-04T01:57:16Z",
+   "노후에 집 안에서 넘어지지 않으려면 반드시 바꿀 3가지 #shorts",
+   "PT1M3S",
+   1358
+  ],
+  "nAvnhmQykUk": [
+   "2026-11-04T00:47:46Z",
+   "나이 들수록 품격 있어 보이는 사람의 7가지 습관 | 나는 몇 개나 해당될까 점검해 보세요",
+   "PT10M27S",
+   95
+  ],
+  "3T76dWPaQZM": [
+   "2026-11-03T21:51:35Z",
+   "나이 들수록 사람 떠나게 만드는 절대 묻지 말아야 할 질문 3가지 #shorts",
+   "PT59S",
+   1322
+  ],
+  "AgtcQyHky58": [
+   "2026-11-03T11:22:18Z",
+   "자식에게 서운할 때 이렇게 해 보세요 | 부모라면 한 번쯤 하는 고민 6가지와 현명한 답",
+   "PT9M54S",
+   15
+  ],
+  "OkiAM-u7gs8": [
+   "2026-11-03T11:22:15Z",
+   "나이 들수록 반드시 끊어야 할 인연 7가지 | 노후가 편안해지는 사람 정리법",
+   "PT7M55S",
+   8
+  ],
+  "JcjdxNB_Iu4": [
+   "2026-11-03T08:53:39Z",
+   "나이 들수록 근육 빠지는 걸 막으려면 반드시 챙길 3가지 #shorts",
+   "PT1M5S",
+   1308
+  ],
+  "9zJPmIwCUbQ": [
+   "2026-11-03T02:29:31Z",
+   "나이 들수록 목마를 때만 물 마시면 절대 안 되는 이유와 3가지 습관 #shorts",
+   "PT1M1S",
+   1263
+  ],
+  "SvX8xKtQT1g": [
+   "2026-11-03T01:53:43Z",
+   "나이 들수록 반드시 줄여야 할 말버릇 3가지 #shorts",
+   "PT55S",
+   1382
+  ],
+  "Z826mTrKNEE": [
+   "2026-07-23T22:00:00Z",
+   "80세 전 건강이 급격히 무너지는 진짜 이유 4가지 #반드시알아야할 #건강정보 #shorts",
+   "PT1M23S",
+   3689
+  ],
+  "r5drN6Xr75w": [
+   "2026-07-22T22:30:34Z",
+   "나이 들수록 꼭 알아야 할 것들 #인생 #조언 #성장",
+   "PT49S",
+   1625
+  ],
+  "cmbror11dgg": [
+   "2026-07-20T02:20:13Z",
+   "쇼펜하우어가 남긴 소름 돋는 인간관계 조언",
+   "PT1M",
+   2718
+  ],
+  "QLTwztbD-sQ": [
+   "2026-07-15T23:00:18Z",
+   "니체가 죽기 전 남긴 인간관계 레전드 명언",
+   "PT1M29S",
+   8179
+  ],
+  "3Jmar1pgm74": [
+   "2026-07-14T04:00:32Z",
+   "나이 들수록 자식과 연락이 끊기고 멀어지는 부모들의 1가지 공통점",
+   "PT1M2S",
+   2477
+  ],
+  "F27wtstNdxo": [
+   "2026-07-09T22:00:27Z",
+   "워런 버핏이 자녀에게 남긴 소름 돋는 10가지 충고",
+   "PT1M16S",
+   8474
+  ],
+  "r8m4JZxLv2M": [
+   "2026-07-08T02:07:17Z",
+   "매일 들어야 하는 요일별 인생 조언 #명언 #조언 #동기부여",
+   "PT16S",
+   1871
+  ],
+  "kXlAOlYFOWU": [
+   "2026-07-07T02:00:12Z",
+   "혼자 살다가 가장 품위 있고 행복하게 죽는 3가지 방법",
+   "PT1M4S",
+   2162
+  ],
+  "sYQP0X46KAE": [
+   "2026-07-06T02:00:16Z",
+   "소름 돋는 살다보니 다 맞는 말 5가지",
+   "PT1M5S",
+   2077
+  ],
+  "eqn3dheh1aQ": [
+   "2026-06-20T23:00:12Z",
+   "이런 말버릇 있으면 당신도 위험합니다 #의식 #대화습관 #개선",
+   "PT1M20S",
+   1859
+  ],
+  "mZCr5tFLvow": [
+   "2026-06-19T23:00:37Z",
+   "자식 집 비밀번호 당장 지우세요! 뼈 빠지게 도와주고 뒤에서 욕먹는 부모들의 치명적 실수",
+   "PT48S",
+   1764
+  ],
+  "ooI5xytaaUQ": [
+   "2026-06-13T23:00:29Z",
+   "동창회에서 만난 친구가 10년 더 늙어 보이는 소름 끼치는 이유 #노화 #자기관리 #인간관계",
+   "PT53S",
+   1619
+  ],
+  "YSdhidPdpv8": [
+   "2026-06-11T23:00:39Z",
+   "나이 들수록 절대 하지 말아야 할 걷기 습관 — 오늘부터 당장 바꾸세요",
+   "PT46S",
+   1304
+  ],
+  "ZMLwzbN8uUw": [
+   "2026-06-08T23:00:05Z",
+   "매번 얻어먹기만 하는 얌체 친구, 여러분은 어떻게 하시겠습니까?",
+   "PT1M1S",
+   1212
+  ],
+  "a8GF9GvCrMs": [
+   "2026-06-04T23:00:27Z",
+   "사람에게 너무 기대지 마세요 l 관계가 편해지는 한마디",
+   "PT35S",
+   1351
+  ],
+  "M4VOTkEV30I": [
+   "2026-06-03T23:00:37Z",
+   "마음이 흔들리는 건 잘못된 게 아닙니다 ㅣ    법륜스님",
+   "PT38S",
+   1456
+  ],
+  "yKil6nsSFpw": [
+   "2026-06-02T00:22:06Z",
+   "눈 뜨자마자 무조건 이것부터 하세요 ㅣ기적의 아침 해독 습관 3가지",
+   "PT1M19S",
+   1537
+  ],
+  "G3_2D3oba2I": [
+   "2026-05-31T01:38:27Z",
+   "국민연금만 믿으면 큰일 나는 이유 #노후준비 #은퇴 #건강",
+   "PT59S",
+   961
+  ],
+  "3m51-OwaKw0": [
+   "2026-05-30T11:47:30Z",
+   "[노후 멘탈 테스트] 당신은 몇 점짜리 노후인가요? (3개 이상이면 인생 고수입니다}",
+   "PT1M35S",
+   1274
+  ],
+  "P4c2oyetmRo": [
+   "2026-05-29T23:00:37Z",
+   "욱해서 한마디 했다가 평생 후회하는 노년의 특징",
+   "PT1M",
+   2502
+  ],
+  "zPpWAF8DKao": [
+   "2026-05-28T23:00:24Z",
+   "죽음 앞에서 아무 의미 없어지는 3가지",
+   "PT1M3S",
+   1269
+  ],
+  "kKnxMHwLOf0": [
+   "2026-05-26T23:00:23Z",
+   "아침에 눈을 뜨면 무조건 이 말부터 하세요｜나이 들수록 꼭 스스로에게 해줘야 하는 말 5가지",
+   "PT53S",
+   2358
+  ],
+  "WZGzQcpk0fk": [
+   "2026-05-25T22:00:29Z",
+   "나이 들수록 잡생각에 괴롭다면 당장 '이것'부터 하세요",
+   "PT1M15S",
+   1719
+  ],
+  "S4bsA5IuOLI": [
+   "2026-05-25T12:33:35Z",
+   "밤마다 불안해서 잠이 안 올 때 무조건 보세요 #부처님 말씀",
+   "PT1M17S",
+   1893
+  ],
+  "Fuh6PKXToaQ": [
+   "2026-05-23T23:00:28Z",
+   "무덤까지 싸 들고 갈 거 아니잖아요, 당장 갖다 버려야 할 3가지",
+   "PT1M2S",
+   7467
+  ],
+  "Z3F7qt-xmVI": [
+   "2026-05-22T07:32:59Z",
+   "인간관계에 지쳐 마음이 헛헛할 때, 반드시 명심해야 할 3가지 인생 지혜",
+   "PT3M58S",
+   108
+  ],
+  "L_h8pTuMm5g": [
+   "2026-05-21T23:00:04Z",
+   "나이 들어 이거 4가지 아끼면 나중에 땅을 치고 후회합니다",
+   "PT1M13S",
+   2317
+  ],
+  "jNQYGnLZ41Y": [
+   "2026-05-20T23:00:27Z",
+   "돈만 쓰는 취미는 끝! 은퇴 후 평생 쌓아온 노하우로 당당하게 월급 버는 법",
+   "PT1M23S",
+   933
+  ],
+  "7XIPB8THclM": [
+   "2026-05-20T02:00:17Z",
+   "자식에게 다 털어놓고 후회하지 마세요  내 패를 보여주면 무시당합니다",
+   "PT1M15S",
+   1581
+  ],
+  "SZ4HsuBlQVw": [
+   "2026-05-18T09:30:33Z",
+   "양파만 먹으면 손해? 의사들이 숨겨둔 혈관 보약 음식 3가지",
+   "PT1M12S",
+   2007
+  ],
+  "JIJPE3ZniQI": [
+   "2026-05-17T22:00:20Z",
+   "노년에 혼자 살면 무조건 좋은 5가지 이유",
+   "PT1M32S",
+   1304
+  ],
+  "M0FJvcnx9W8": [
+   "2026-05-16T11:00:22Z",
+   "나이 들어 혼자여도 비참하지 않고 우아하게 사는 법",
+   "PT1M16S",
+   9019
+  ],
+  "WzZ6kyb5ykY": [
+   "2026-05-14T22:00:09Z",
+   "평생 고생만 한 당신, 인생이 '눈부시게 만개하는' 단 하나의 주문",
+   "PT56S",
+   1076
+  ],
+  "pp9gEfb6MZE": [
+   "2026-05-14T10:00:25Z",
+   "평생 남을 위해 살다가 이제야 깨달았다 #인생 #깨달음 #행복",
+   "PT1M6S",
+   1045
+  ],
+  "dkaTPdH1Y0o": [
+   "2026-05-13T22:00:36Z",
+   "평생 손해만 보고 산 당신, 말년에 '이런 복'이 쏟아집니다",
+   "PT40S",
+   1184
+  ],
+  "bY7RrFdsE2c": [
+   "2026-05-13T09:30:05Z",
+   "지금 죽고 싶을 만큼 힘들다면, 당신은 곧 대박 날 징조입니다",
+   "PT1M9S",
+   1252
+  ],
+  "dQ63rPU9bis": [
+   "2026-05-12T10:30:25Z",
+   "인간관계로 스트레스 받는다면, 당장 '이것'부터 멈추세요 [인생의 지혜]",
+   "PT50S",
+   4345
+  ],
+  "fdc7NEWXqwE": [
+   "2026-05-11T22:00:34Z",
+   "남과 비교하며 늙기엔 당신의 인생은 너무나 존귀합니다",
+   "PT39S",
+   2110
+  ],
+  "dY2AXYpDxnc": [
+   "2026-05-11T10:00:30Z",
+   "인생에서 가장 큰 복은 돈이 아니라 '이런 사람'을 만나는 것입니다",
+   "PT1M",
+   3497
+  ],
+  "l7Apv8juqrU": [
+   "2026-05-10T22:00:37Z",
+   "남과 비교하며 늙는 것만큼 비참한 일은 없습니다 (노년의 행복)",
+   "PT41S",
+   6858
+  ],
+  "sKbXzBqUMY8": [
+   "2026-05-09T23:00:10Z",
+   "인생 후반전, 불필요한 인연을 정리해야 비로소 보이는 것들",
+   "PT56S",
+   4678
+  ],
+  "mquSSzVh6IQ": [
+   "2026-05-08T23:00:34Z",
+   "나이 들어 무시당하지 않으려면 절대로 하면 안 되는 8가지",
+   "PT50S",
+   8060
+  ],
+  "yU-KRzQz4v4": [
+   "2026-05-08T10:30:17Z",
+   "묘하게 품격 느껴지는 사람들의 5가지 공통점",
+   "PT1M6S",
+   10236
+  ],
+  "Yi3tP1gEERY": [
+   "2026-05-08T07:33:48Z",
+   "열심히 살아도 인생 안 풀리는 사람들의 결정적 특징",
+   "PT1M4S",
+   1815
+  ],
+  "kOVsqbnoHrQ": [
+   "2026-05-03T22:00:00Z",
+   "마음이 흔들려 괴롭다면 꼭 보세요, 법륜스님이 전하는 인생 해답",
+   "PT1M3S",
+   1255
+  ],
+  "AnEYI8nPZBQ": [
+   "2026-05-02T22:00:00Z",
+   "나이 먹고 함부로 대할 수 없는 사람, 내면의 기가 센 사람의 특징",
+   "PT1M7S",
+   4671
+  ],
+  "9m_dTtve9Zk": [
+   "2026-05-01T22:00:00Z",
+   "자식에게 서운해하지 마세요! 노후에 무시당하지 않고 자식 복福 터지게 만드는 법",
+   "PT50S",
+   2331
+  ],
+  "kwA8fK8UuWc": [
+   "2026-04-29T22:00:00Z",
+   "더 이상 사람에게 상처받지 마세요! 법륜 스님이 말하는 인연의 괴로움에서 단숨에 벗어나는 법",
+   "PT1M7S",
+   2722
+  ],
+  "d7WMjRfk0Zc": [
+   "2026-04-28T22:00:00Z",
+   "더 이상 마음 쓰지 마세요.  법륜 스님이 말하는 노후에 가장 부질없는 10가지 (마음 비우는 법)",
+   "PT54S",
+   9972
+  ],
+  "9Vm2VkSy_o8": [
+   "2026-04-28T10:00:00Z",
+   "나이 들어 돈 아끼면 결국 추해집니다! 50대 이후 반드시 돈을 써야 할 4가지 곳",
+   "PT1M6S",
+   4039
+  ],
+  "dOy4O69_aDI": [
+   "2026-04-27T22:00:00Z",
+   "더 이상 참지 마세요! 노후에 내 복福 다 뺏어가는 반드시 끊어야 할 5가지 인연",
+   "PT1M12S",
+   19580
+  ],
+  "ozVSRNVwxS4": [
+   "2026-04-27T11:00:00Z",
+   "비싼 유산균 사 먹지 마세요! 풍수사가 알려주는 노후 생기(生氣)를 되살리는 기적의 음식",
+   "PT46S",
+   960
+  ],
+  "GkR4SmyOtak": [
+   "2026-04-26T22:00:00Z",
+   "평생 참기만 하셨나요? 이제는 내 마음부터 챙겨야 복福이 쏟아집니다",
+   "PT54S",
+   1400
+  ],
+  "hbRHB-0x_IY": [
+   "2026-04-25T23:00:00Z",
+   "인생이 안 풀릴 때 거울부터 보세요! 정약용 선생의 노후 품격과 행운을 결정짓는 '이것'",
+   "PT53S",
+   6233
+  ],
+  "S9Tnbu3RpDk": [
+   "2026-04-24T22:00:00Z",
+   "큰돈 안 들이고 재물운 3배 높이는 비결! 풍수사가 권하는 노후 돈복 부르는 '이것'",
+   "PT57S",
+   1228
+  ],
+  "DRTrZUFHrNw": [
+   "2026-04-22T22:00:00Z",
+   "착하게 살아도 자꾸 가난해진다면? 풍수사가 말하는 노후에 운 다 깎아먹는 행동",
+   "PT49S",
+   1084
+  ],
+  "7ru1zEEL0jw": [
+   "2026-04-22T10:00:00Z",
+   "운이 막혔다고 느껴질 때 당장 '이것'부터 하세요! 나이 들수록 복 터지는 사람들의 비밀",
+   "PT55S",
+   1522
+  ],
+  "9wQg32kVgOA": [
+   "2026-04-21T22:00:00Z",
+   "60세 이후, 인생이 편안해지려면 반드시 버려야 할 3가지",
+   "PT1M11S",
+   1466
+  ],
+  "_bMa5gXARuo": [
+   "2026-04-21T10:00:00Z",
+   "워런 버핏이 강조한 '노후에 돈 걱정 없이 사는 법'",
+   "PT1M3S",
+   1299
+  ],
+  "GBYLK_O_GiQ": [
+   "2026-04-20T22:30:00Z",
+   "의사들이 매일 먹는 이유가 있습니다! 지방간 싹 비워주는 해독 음식 3가지",
+   "PT1M7S",
+   13206
+  ],
+  "7doSYUH6JNQ": [
+   "2026-04-20T10:00:00Z",
+   "의사들도 놀라는 장수 비결! 100세까지 팔팔한 사람들의 공통 식단",
+   "PT59S",
+   1143
+  ],
+  "Uy_VlokTjhY": [
+   "2026-04-20T03:00:00Z",
+   "법정 스님이 들려주는 악연 정리하는 법  더 이상 참지 마세요",
+   "PT1M16S",
+   1084
+  ],
+  "gZ7SbdEG6pc": [
+   "2026-04-18T23:00:00Z",
+   "법륜스님이 말하는 이별에서 자유로워지는 단 하나의 비결",
+   "PT1M14S",
+   1097
+  ],
+  "1GzzSxXamLM": [
+   "2026-04-17T23:00:00Z",
+   "노후에 걷기 운동만 하면 절대 안 되는 충격적인 이유",
+   "PT1M",
+   39189
+  ],
+  "C7f2OGfA7GE": [
+   "2026-04-17T10:00:00Z",
+   "1,000만 원보다 더 귀한 노후 최고의 자산",
+   "PT1M",
+   2459
+  ],
+  "lh5BjJVVRt4": [
+   "2026-04-16T22:30:00Z",
+   "나이 들어 살림이 힘든 분들이 꼭 보셔야 할 영상",
+   "PT52S",
+   941
+  ],
+  "8Mt8cktrrkg": [
+   "2026-04-16T10:40:37Z",
+   "노후가 편안해지기 위해 당장 버려야 할 '이것' #법륜스님#지혜",
+   "PT54S",
+   1722
+  ],
+  "h4sFsD7yQGY": [
+   "2026-04-15T22:30:00Z",
+   "나이 들수록 인간관계에서 반드시 신경 꺼야 할 3가지",
+   "PT1M1S",
+   22078
+  ],
+  "HC0rmcJJj7I": [
+   "2026-04-14T22:30:00Z",
+   "말수는 적어도 절대 만만하지 않은 사람들의 3가지 특징",
+   "PT1M9S",
+   1434
+  ],
+  "I8I7euEOe90": [
+   "2026-04-14T10:00:00Z",
+   "단순 건망증 아닙니다 당신이 착각하는 의외의 치매 신호 #치매#건강",
+   "PT1M4S",
+   788
+  ],
+  "LIe72MPqKOs": [
+   "2026-04-13T22:30:00Z",
+   "누굴 만나도 불행하다면? 문제는 상대가 아니라 내 '업'에 있습니다",
+   "PT1M12S",
+   804
+  ],
+  "rXxoyzPLRS8": [
+   "2026-04-12T22:30:00Z",
+   "노후를 망치는 집안의 3가지 독소 나이보다 빨리 늙는 집안의 특징",
+   "PT51S",
+   95
+  ],
+  "pvtLUakzztg": [
+   "2026-04-10T23:00:00Z",
+   "당신이 자꾸 무시당하는 진짜 이유  웃음을 멈추고 '3초'만 바라보세요",
+   "PT1M2S",
+   1553
+  ],
+  "LbN4RgzRq9s": [
+   "2026-04-10T06:00:00Z",
+   "보약보다 중요한 게 있다는 거 알아요? #건강 #안티에이징",
+   "PT1M2S",
+   1395
+  ],
+  "Oimquvi1INw": [
+   "2026-04-09T10:30:00Z",
+   "고치지 않으면 평생 전쟁인 이유, 시간이 약이 아니라고? #관계 #부부싸움",
+   "PT1M9S",
+   810
+  ],
+  "r35pl6Fb43o": [
+   "2026-04-08T22:00:00Z",
+   "70대에도 머리가 맑아지는 하루 30초의 기적",
+   "PT53S",
+   1557
+  ],
+  "5PBKgmomCck": [
+   "2026-04-08T11:00:00Z",
+   "정약용이 말하는 뒤통수 치는 사람의 특징, 노후에 반드시 걸러야 할 인맥 1순위",
+   "PT48S",
+   2508
+  ],
+  "K6PaDdbmThU": [
+   "2026-04-07T22:30:00Z",
+   "80대에도 멀쩡한 다리 유지하는 10분 습관 #노화방지 #하체운동",
+   "PT48S",
+   1266
+  ],
+  "qz8eWfFaSsM": [
+   "2026-04-06T22:15:00Z",
+   "경조사 다 챙기면 쓸쓸하게 죽습니다  니체가 경고한 인맥의 민낯",
+   "PT1M26S",
+   1041
+  ],
+  "sGY5jIhH94g": [
+   "2026-04-06T10:30:00Z",
+   "큰 집 팔고 '이곳'으로 옮기세요  노후 연금보다 든든한 황금 입지의 비밀",
+   "PT1M",
+   1078
+  ],
+  "COPNPXXUeYM": [
+   "2026-04-05T22:00:00Z",
+   "'있는 사람은 증명할 필요가 없어' 나이 들수록 말을 줄여야 하는 이유",
+   "PT50S",
+   1127
+  ],
+  "3p9fQ-MW__Q": [
+   "2026-04-05T11:00:00Z",
+   "이런 느낌 들면 절대 놓치지 마세요 무속인도 강조하는 진짜 인연 알아보는 법",
+   "PT1M5S",
+   1189
+  ],
+  "p6YuCUFn2cU": [
+   "2026-04-03T23:00:00Z",
+   "세상은 생각보다 잔인합니다 늙어서 서럽지 않으려면 꼭 알아야 할 진실",
+   "PT1M1S",
+   2224
+  ],
+  "wxnMMNuR7nU": [
+   "2026-04-03T10:30:00Z",
+   "노후에 돈보다 100배 중요한 딱 하나! 가장 확실한 '이것'알려드립니다",
+   "PT59S",
+   2680
+  ],
+  "6nDt54uzWmg": [
+   "2026-04-02T22:00:00Z",
+   "이걸 깨달으면 인생이 바뀝니다 다산 정약용의 4가지 인생 비결",
+   "PT1M1S",
+   1541
+  ],
+  "0h88bFFUd3w": [
+   "2026-04-02T11:00:00Z",
+   "마음이 어지러울 때 나를 살리는 3가지 처방",
+   "PT1M2S",
+   1189
+  ],
+  "c9LYIMq1h4s": [
+   "2026-04-01T22:00:00Z",
+   "집에 두자마자 돈벼락 맞았습니다 재물운 폭발하는 물건 3가지",
+   "PT1M15S",
+   2477
+  ],
+  "wtqeNXY5nBU": [
+   "2026-04-01T10:00:00Z",
+   "애쓸수록 멀어집니다 인간관계가 유독 힘든 사람들의 결정적 특징",
+   "PT42S",
+   1084
+  ],
+  "XvmSrMVCugg": [
+   "2026-03-31T22:00:00Z",
+   "돈보다 100배 중요합니다 최고의 노후 대책",
+   "PT59S",
+   1563
+  ],
+  "-iEWbh80pes": [
+   "2026-03-30T22:00:00Z",
+   "자존감 높은 사람이 실수했을 때 절대 하지 않는 '이것'",
+   "PT1M5S",
+   1370
+  ],
+  "YKOKJymUe0s": [
+   "2026-03-30T10:00:00Z",
+   "돈 안 들이고 인생을 180도 바꾸는 법, 지금 당장 입꼬리만 살짝 올리세요",
+   "PT57S",
+   820
+  ],
+  "YpDlr3c3Hsw": [
+   "2026-03-29T22:00:00Z",
+   "자식 걱정 이제 그만하세요  70 넘으면 재산도 인생도 나를 위해 써야 합니다",
+   "PT55S",
+   1573
+  ],
+  "bF90H3Pew3Q": [
+   "2026-03-29T09:20:52Z",
+   "70 넘어 깨달았습니다  돈만 모으다 죽으면 가장 억울한 이유",
+   "PT30S",
+   3526
+  ],
+  "Q2CNmBLeATY": [
+   "2026-03-28T23:00:00Z",
+   "아침에 눈 뜨자마자 '이 말' 한마디면 기적이 일어납니다",
+   "PT55S",
+   2010
+  ],
+  "Y3tkISmGPWI": [
+   "2026-03-27T23:00:00Z",
+   "인생이 유독 무겁게 느껴질 때, 당장 비워야 할 5가지",
+   "PT1M15S",
+   2235
+  ],
+  "vy7KCxajqY4": [
+   "2026-03-27T11:00:00Z",
+   "말없이 이기는 사람이 진짜 무서운 이유 #심리 #인간관계",
+   "PT1M10S",
+   1522
+  ],
+  "RhJzrzQ2DZ4": [
+   "2026-03-25T22:00:00Z",
+   "오래 사는 사람은 운 좋은 사람이 아닙니다 '지금 당장 버릴 습관 5가지'",
+   "PT55S",
+   1881
+  ],
+  "N3-DUSa7MqQ": [
+   "2026-03-25T10:00:00Z",
+   "인생이 유독 꽉 막혔을 때, 현관에 '이것' 하나만 두세요",
+   "PT1M6S",
+   1379
+  ],
+  "HrdV65w_RKg": [
+   "2026-03-25T00:16:31Z",
+   "남 부럽지 않게 살려다 내 몸 다 망쳤습니다 이제 나를 귀하게 대접할 시간",
+   "PT4M2S",
+   73
+  ],
+  "CWEjMonD5NI": [
+   "2026-03-23T22:30:00Z",
+   "인생의 황혼, 99%가 후회하며 마주하는 세 가지 진실",
+   "PT1M2S",
+   1076
+  ],
+  "rXcdV1H2I80": [
+   "2026-03-23T10:21:30Z",
+   "남 부럽지 않게 살려다 내 몸 다 망쳤습니다 (남들만큼 살고 싶다는 말의 함정)",
+   "PT39S",
+   1251
+  ],
+  "DOq3Qa0Jc-Y": [
+   "2026-03-22T23:35:31Z",
+   "결국 깨닫게 된다, 남부럽지 않게 살려다 내 인생 망치고 있다는 걸",
+   "PT51S",
+   1274
+  ],
+  "mx1YaOHuDLc": [
+   "2026-03-20T07:51:32Z",
+   "절대 곁에 두면 안 되는 사람, 3가지만 보면 알 수 있습니다 #인간관계 #사람보는법",
+   "PT1M9S",
+   1600
+  ],
+  "yQHLvvLHHNE": [
+   "2026-03-19T11:13:57Z",
+   "'70세 넘으면 제발 따로 사세요' 억지로 같이 살다간 노후의 복福 다 날아갑니다",
+   "PT57S",
+   7267
+  ],
+  "heTnoa6_1WU": [
+   "2026-03-19T02:00:00Z",
+   "무례한 사람 한 방에 입 다물게 하는 5가지 말",
+   "PT1M14S",
+   5700
+  ],
+  "SNNOxKv3Yus": [
+   "2026-03-17T22:30:00Z",
+   "겉모습에 속지 않고 '진짜 사람' 알아보는 법",
+   "PT1M31S",
+   16760
+  ],
+  "3v2szbB6pJk": [
+   "2026-03-17T10:31:12Z",
+   "누구도 바꾸려 하지 마세요  관계가 편안해지는 7가지 진실",
+   "PT1M30S",
+   1632
+  ],
+  "gizZoLmoI-A": [
+   "2026-03-16T11:17:14Z",
+   "착하게 살지 마세요, 결국 만만한 호구로 기억될 뿐입니다",
+   "PT1M4S",
+   1690
+  ],
+  "Ccyu-U57hNc": [
+   "2026-03-15T22:30:00Z",
+   "70을 넘기고야 깨달은 사실, 걷기만 하면 노화가 빨라집니다",
+   "PT1M58S",
+   3445
+  ],
+  "hcamTf1_65k": [
+   "2026-03-14T23:00:00Z",
+   "거절할 때 절대 '이 말'부터 하지 마세요 [품격 있게 거절하는 법]",
+   "PT1M37S",
+   5143
+  ],
+  "g_JG4qSYRk4": [
+   "2026-03-14T09:00:00Z",
+   "자식 연락 기다리지 마세요, 혼자여도 비참하지 않은 법",
+   "PT1M15S",
+   1150
+  ],
+  "ZYEdaIf-CUQ": [
+   "2026-03-13T10:30:00Z",
+   "추하게 늙는 이유, 결국 이것 때문입니다 #인생 #성장",
+   "PT1M19S",
+   750
+  ],
+  "tv1D7fmgt1M": [
+   "2026-03-12T22:30:00Z",
+   "같은 나이 10년 젊어 보이는 사람들의 비결 5가지 #인생조언 #습관 #젊음",
+   "PT1M1S",
+   5282
+  ],
+  "8wiRqFzwpeY": [
+   "2026-03-12T10:30:00Z",
+   "70 넘어서야 비로소 알게 되는 인생의 현실 5가지",
+   "PT1M10S",
+   2516
+  ],
+  "iE2Dv8yXGDE": [
+   "2026-03-11T22:30:00Z",
+   "70대가 되니까 이걸 그만뒀어요 #라이프스타일 #건강 #인생",
+   "PT1M12S",
+   1915
+  ],
+  "y5gZTxbeV8g": [
+   "2026-03-10T22:30:00Z",
+   "'요양원 가기 전 꼭 보세요' 혼자된 노후를 180도 바꿔줄 최고의 장소",
+   "PT48S",
+   1571
+  ],
+  "nuof0pQWMKo": [
+   "2026-03-10T10:30:00Z",
+   "죽을 때까지 걱정만 하실 겁니까? 복잡한 머릿속을 단칼에 정리하는 지혜",
+   "PT58S",
+   993
+  ],
+  "1Dnl4FHn33Q": [
+   "2026-03-09T22:30:00Z",
+   "'절대 미리 다 주지 마세요' 노후에 눈물 흘리지 않으려면 꼭 지켜야 할 것",
+   "PT56S",
+   1364
+  ],
+  "HYkBxAkLVaY": [
+   "2026-03-09T11:50:00Z",
+   "'절대 고쳐 쓰지 마세요' 곁에 두면 내 노후 망치는 무서운 사람 특징",
+   "PT55S",
+   104
+  ],
+  "wcj8FkcnIkg": [
+   "2026-03-08T22:30:00Z",
+   "'절대 만만하게 보지 마세요' 소리 없이 강한 사람들의 무서운 특징",
+   "PT1M7S",
+   2937
+  ],
+  "FpWaTySYLLc": [
+   "2026-03-08T10:00:00Z",
+   "말을 줄이는 것만으로 존경받는 이유 #처세술 #인간관계 #노년의품격",
+   "PT58S",
+   1189
+  ],
+  "DKYxpU-VmfY": [
+   "2026-03-07T08:00:00Z",
+   "죽기 전에 깨달으면 인생이 180도 편해지는 진리",
+   "PT1M",
+   3661
+  ],
+  "Eo45fzPOJvo": [
+   "2026-03-06T11:00:00Z",
+   "나를 배신한 사람을 절대로 다시 믿으면 안 되는 소름 돋는 이유",
+   "PT57S",
+   1505
+  ],
+  "vaqEgbDz3l4": [
+   "2026-03-05T22:30:00Z",
+   "인생이 풀리기 직전, 주변 사람들이 하나둘씩 정리되는 신호",
+   "PT50S",
+   837
+  ],
+  "Bf44ZukD8GA": [
+   "2026-03-05T10:43:54Z",
+   "말투를 보면 그 사람의 인생이 보입니다",
+   "PT11S",
+   2036
+  ],
+  "fBs14eSaVpo": [
+   "2026-03-04T11:24:46Z",
+   "살다 보니 뒤늦게 깨달은, 나를 지키는 소름 돋는 현실 10가지",
+   "PT1M2S",
+   4279
+  ],
+  "QT6XsfAGGcA": [
+   "2026-03-04T07:11:55Z",
+   "나이 들수록 주변에 사람이 없는 진짜 이유 삶의 10계명",
+   "PT47S",
+   1953
+  ],
+  "b8ssNI-0uYY": [
+   "2026-03-03T11:30:00Z",
+   "돈 빌려달라는 사람, 절대 믿지 마세요 노후 망치기 싫으면 꼭 봐야 할 영상",
+   "PT56S",
+   1087
+  ],
+  "O3s4rvIEjJc": [
+   "2026-03-02T22:30:00Z",
+   "'이런 말투 쓰는 사람은 무조건 멀리하세요' 인생 망치는 인간 구별법",
+   "PT59S",
+   12973
+  ],
+  "_NgkMEf1u20": [
+   "2026-03-02T11:30:00Z",
+   "'사람 고쳐 쓰는 거 아닙니다' 겉모습에 속아 평생 후회하기 싫을 때 꼭 봐야 할 영상",
+   "PT46S",
+   1258
+  ],
+  "ktmQCehvqv0": [
+   "2026-03-01T23:00:00Z",
+   "착하게 살지 마세요, 정약용이 강조한 노년에 무시당하지 않는 3가지 원칙",
+   "PT1M1S",
+   910
+  ],
+  "eB_0arYnHOs": [
+   "2026-03-01T11:00:00Z",
+   "착한 척하다가 노후 망칩니다 정약용이 말하는 우아하게 혼자 사는 법",
+   "PT56S",
+   878
+  ],
+  "CGA_qMaONBM": [
+   "2026-02-28T23:00:00Z",
+   "'이것' 모르면 평생 비참해집니다, 정약용의 뼈 때리는 감정 청소법",
+   "PT51S",
+   1834
+  ],
+  "EZe2ngYmQpw": [
+   "2026-02-28T13:29:31Z",
+   "배우자를 손님처럼 대해야 하는 이유, 정약용의 정답 #결혼생활 #조언",
+   "PT1M12S",
+   1313
+  ],
+  "iSmFIJ7FWvc": [
+   "2026-02-27T23:00:00Z",
+   "자식에게 돈 물려줄 생각 마세요, 정약용이 유배지에서 피눈물로 쓴 조언",
+   "PT1M47S",
+   1021
+  ],
+  "6Q0mW3Nj3nA": [
+   "2026-02-27T12:54:41Z",
+   "혼자서도 인생을 참 맛있게 사는 사람들의 3가지 특징",
+   "PT1M28S",
+   3474
+  ],
+  "RPtNscwYcco": [
+   "2026-02-26T22:30:00Z",
+   "65세 넘어서도 유독 젊어 보이는 사람들의 아침 비밀 3가지",
+   "PT1M39S",
+   2923
+  ],
+  "bBTOJZRmgzk": [
+   "2026-02-26T11:37:15Z",
+   "자식에게 다 말해주면 반드시 후회하는 부모의 비밀 세 가지",
+   "PT1M43S",
+   6311
+  ],
+  "OSoIncjts9Y": [
+   "2026-02-25T22:30:00Z",
+   "나이 들어서 대접받는 사람과 무시당하는 사람의 결정적 차이",
+   "PT1M31S",
+   1920
+  ],
+  "_rQAMYg1FM0": [
+   "2026-02-25T11:00:00Z",
+   "'착하게 살지 마세요' 정약용이 말하는 반드시 손절해야 할 사람 3부류",
+   "PT1M12S",
+   1195
+  ],
+  "iK5bcAfjdYY": [
+   "2026-02-24T22:30:00Z",
+   "'행복하려 애쓰지 마세요' 쇼펜하우어가 말하는 노후에 가장 편안하게 사는 법",
+   "PT1M10S",
+   1440
+  ],
+  "yjPACmK1YOU": [
+   "2026-02-24T11:00:00Z",
+   "70세 넘었다면 절대 먹지 마세요  뇌와 몸을 망치는 최악의 음식 3가지",
+   "PT1M4S",
+   981
+  ],
+  "z6RCHC8UJnY": [
+   "2026-02-23T22:30:00Z",
+   "나이 들어 가장 비참해지는 사람들의 공통점 3가지",
+   "PT47S",
+   1232
+  ],
+  "T589tlb0jEM": [
+   "2026-02-23T11:40:23Z",
+   "도무지 이해 안 가는 사람 때문에 화가 날 때 (법륜스님의 마음 관리)",
+   "PT1M8S",
+   1129
+  ],
+  "7iKrZpoj704": [
+   "2026-02-22T22:30:00Z",
+   "자식이 불쌍해도 절대 해주면 안 되는 것 (정약용의 냉철한 조언)",
+   "PT1M18S",
+   1413
+  ],
+  "4RneGNTzcwY": [
+   "2026-02-21T23:00:00Z",
+   "마음이 지옥 같을 때 반드시 들어보세요 (정약용의 마음 다스리는 법)",
+   "PT1M7S",
+   2250
+  ],
+  "BiQrVrjL2XY": [
+   "2026-02-20T12:24:06Z",
+   "정약용이 경고한, 말년에 가난보다 100배 더 비참한 3가지 (노후의 품격)",
+   "PT5M33S",
+   25
+  ],
+  "TwxFXX9AZ44": [
+   "2026-02-19T22:30:00Z",
+   "나이 들어 돈 없다고 절대 기죽지 마세요. 정약용의 노후 품격 3가지",
+   "PT1M30S",
+   1133
+  ],
+  "OlU3YdzlYLQ": [
+   "2026-02-19T11:28:09Z",
+   "정약용이 경고한, 말년에 반드시 곁에서 치워야 할 사람 1순위",
+   "PT59S",
+   1890
+  ],
+  "TqIef8nzBgM": [
+   "2026-02-18T23:00:00Z",
+   "자식에게 서운함 느낀다면 이 영상이 마지막 구원이 될 겁니다",
+   "PT1M1S",
+   1028
+  ],
+  "mXZYmbuRwAs": [
+   "2026-02-18T12:58:45Z",
+   "잠들기 전 1분, 딱 3번만!! 무심코 한 '이 생각'이 말년의 부를 결정합니다.",
+   "PT57S",
+   1096
+  ],
+  "Nrai-VJKcQE": [
+   "2026-02-17T23:00:00Z",
+   "인생 후반전, 입만 닫아도 재물과 사람이 저절로 따릅니다",
+   "PT40S",
+   1328
+  ],
+  "nUvgVr0TNUk": [
+   "2026-02-17T12:28:41Z",
+   "앉아서 딱 10초, 굽은 허리 펴지는 순간 '돈복'이 들어옵니다",
+   "PT53S",
+   1037
+  ],
+  "Xm67L61esy4": [
+   "2026-02-17T00:30:00Z",
+   "절대 해서는 안 될 '최악의 행동' 조상님이 복 보따리 다시 들고 나갑니다",
+   "PT49S",
+   878
+  ],
+  "IOkKsBEdSow": [
+   "2026-02-14T23:00:00Z",
+   "설날 아침, 복을 부르는 '최고의 행동' 조상님이 돈벼락 내리는 집의 특징",
+   "PT56S",
+   890
+  ],
+  "-bPJgE3go2Q": [
+   "2026-02-13T23:00:00Z",
+   "이 말' 한마디면 효도와 재물운이 동시에 터집니다",
+   "PT1M1S",
+   1060
+  ],
+  "H2b4guw2wdw": [
+   "2026-02-13T08:00:00Z",
+   "나간 돈 아까워하지 마세요. 재물운 터지는 사람은 '이것'부터 다릅니다",
+   "PT1M11S",
+   1068
+  ],
+  "BEWs4zjmnU4": [
+   "2026-02-12T12:00:00Z",
+   "나이 들어 친구 찾지 마세요. 인생 망조 드는 지름길입니다",
+   "PT1M4S",
+   928
+  ],
+  "v7JNd9gaewI": [
+   "2026-02-11T23:00:00Z",
+   "\"설날 복 받으려면 당장 '이것'부터 버리세요. 집안 망치는 3가지 물건\"",
+   "PT53S",
+   50
+  ],
+  "eZsGDNgcetU": [
+   "2026-02-11T12:00:00Z",
+   "\"나이 들수록 입은 닫고 주머니는 열어라, 채근담의 노년 처세술\"",
+   "PT57S",
+   1530
+  ],
+  "T1k-hYiYVXw": [
+   "2026-02-10T23:00:00Z",
+   "\"현관에서 거실로 들어올 때 '이 식물' 보이면 집안 대대로 부자 됩니다\"",
+   "PT57S",
+   160
+  ],
+  "Sd9P4DZEXis": [
+   "2026-02-10T12:00:00Z",
+   "\"돈이 많다고 다 부자가 아닙니다. 탈무드가 말하는 진짜 부자의 3가지 조건\"",
+   "PT1M2S",
+   38
+  ],
+  "3Fc_Lg2nZiE": [
+   "2026-02-09T23:00:00Z",
+   "\"법정 스님의 마지막 가르침, 나이 들어 이것 안 버리면 노후가 괴롭습니다\"",
+   "PT56S",
+   1119
+  ],
+  "zQ2k5g7iAQ4": [
+   "2026-02-09T12:00:00Z",
+   "\"나이 들수록 무시당하지 않으려면? 이순신 장군의 뼈 때리는 침묵\"",
+   "PT1M",
+   1311
+  ],
+  "oP_VBJm2mTE": [
+   "2026-02-08T23:00:00Z",
+   "\"복을 담는 수저, 거꾸로 꽂아두셨나요? 집안 돈복 터지는 수저 관리법\"",
+   "PT55S",
+   879
+  ],
+  "fcnvzImNbTM": [
+   "2026-02-07T23:00:00Z",
+   "쇼펜하우어의 뼈 때리는 조언, 노년에 외로움을 못 견디면 만만해 보입니다\"",
+   "PT48S",
+   1307
+  ],
+  "Vl7zjrGxAwk": [
+   "2026-02-06T23:00:00Z",
+   "\"현관 신발장에 '이것' 있으면 당장 버리세요. 집안 재물운 씨를 말립니다\"",
+   "PT50S",
+   1102
+  ],
+  "bA2Cs_E7LQg": [
+   "2026-02-06T12:00:00Z",
+   "\"늙어서 사람 때문에 지치셨나요? 정약용의 뼈 때리는 인간관계 처세술\"",
+   "PT48S",
+   1432
+  ],
+  "v22OJA55o6M": [
+   "2026-02-05T23:00:00Z",
+   "\"잠잘 때 발치에 '이것' 두지 마세요. 대운이 들어오다 돌아나갑니다\"",
+   "PT45S",
+   1036
+  ],
+  "rKW9f5KWUk0": [
+   "2026-02-05T12:00:00Z",
+   "\"조선 천재 정약용의 가르침, 당신의 노후가 궁색해지는 진짜 이유\"",
+   "PT46S",
+   1053
+  ],
+  "E8iyclIwKLI": [
+   "2026-02-04T23:00:00Z",
+   "\"아침에 '이것' 한 잔 마시면 재물운과 건강이 한꺼번에 쏟아집니다\"",
+   "PT53S",
+   1653
+  ],
+  "biFBvfSEk2U": [
+   "2026-02-04T12:52:24Z",
+   "자식에게 너무 잘해주면 말년이 외로워집니다",
+   "PT51S",
+   42
+  ],
+  "LSMWR4UUmeU": [
+   "2026-02-03T22:00:00Z",
+   "\"마지막까지 자식에게 짐 안 되고 '곱게 늙는' 사람들의 3가지 비밀\"",
+   "PT56S",
+   1530
+  ],
+  "aUtFTpd1_FM": [
+   "2026-02-03T11:38:10Z",
+   "\"부자들은 지갑에 '이것' 절대 안 넣습니다\" 돈복을 줄줄 새게 하는 지갑 속 3가지",
+   "PT57S",
+   1554
+  ],
+  "9eeQttl6Dj4": [
+   "2026-02-02T23:00:00Z",
+   "\"팔자 좋다는게 결국 이런 거 였구나\" 평범해도 진짜 속이 알찬 '팔자 좋은 노년'의 비밀 3가지",
+   "PT1M6S",
+   43
+  ],
+  "vBSVpmn83zw": [
+   "2026-02-02T12:02:18Z",
+   "\"이런 사람 곁엔 아무도 안 남습니다\" 나이 들수록 친구가 사라지는 무서운 이유",
+   "PT52S",
+   1429
+  ],
+  "YG7uAFX5uWA": [
+   "2026-02-01T23:00:00Z",
+   "\"이 증조가 보인다면 무조건 잡으세요\" 대운이 들어오기 직전 나타나는 3가지 신호",
+   "PT54S",
+   9118
+  ],
+  "AXJXuvw2yaw": [
+   "2026-02-01T12:16:10Z",
+   "\"인연은 맺는 것보다 지키는 게 진짜 실력입니다\" 사람 때문에 지친 당신을 위한 위로",
+   "PT49S",
+   1649
+  ],
+  "QbccNHkKqoU": [
+   "2026-01-31T23:00:00Z",
+   "\"입만 열면 복이 달아납니다\" 말년운 박살 내는 사람들의 3가지 입버릇",
+   "PT58S",
+   958
+  ],
+  "IPKtFlXMqSs": [
+   "2026-01-31T12:57:27Z",
+   "\"착한 게 아니라 만만한 거였습니다\" 함부로 대할 수 없는 사람들의 무서운 특징",
+   "PT1M11S",
+   6680
+  ],
+  "Vp-n94Ab3Lg": [
+   "2026-01-30T23:00:00Z",
+   "\"주방 식탁에 '이것' 절대 두지 마세요\" 재물운 박살 내는 소름 돋는 특징 3가지",
+   "PT59S",
+   1084
+  ],
+  "9ZiqZwn3MsA": [
+   "2026-01-29T23:00:00Z",
+   "현관이 지저분하면 절대 부자가 될 수 없다는 이유 #풍수 #재물운 #성공",
+   "PT55S",
+   1274
+  ],
+  "HPX_mNmxwkQ": [
+   "2026-01-29T12:00:00Z",
+   "잠들기 전 딱 1분만 이 생각하세요 ㅣ 내일 아침 기적이 일어납니다",
+   "PT1M1S",
+   1048
+  ],
+  "jSAq-zek9m0": [
+   "2026-01-28T12:10:01Z",
+   "죽기 전 반드시 후회하는 3가지 ㅣ지금 당장 당신의 인생을 점검하십시오",
+   "PT1M",
+   1525
+  ],
+  "3KZbzSjF3ME": [
+   "2026-01-27T23:00:00Z",
+   "나이 들어 유독 마음이 편안한 사람들의 공통점. 평온한 노후를 위한 3가지 법칙",
+   "PT1M11S",
+   7681
+  ],
+  "GlCVPLoW9s4": [
+   "2026-01-27T12:00:00Z",
+   "험한 말 하는 사람, 절대 대꾸하지 마세요 무시가 최고의 복수인 진짜 이유",
+   "PT47S",
+   1555
+  ],
+  "QsNpa83ZLto": [
+   "2026-01-26T23:00:00Z",
+   "아침 1분으로 인생의 운을 바꾸세요 | 나이 들어 운이 확 풀리는 사람들의 3가지 특징",
+   "PT53S",
+   14450
+  ],
+  "_W5hSKzMWME": [
+   "2026-01-26T13:11:28Z",
+   "\"오늘 못한 일은 그대로 두십시오\" 나이 들어 가장 편안하게 잠드는 비결",
+   "PT56S",
+   2407
+  ],
+  "BRFRiLoBQvI": [
+   "2026-01-25T23:00:00Z",
+   "부부 사이가 멀어지고 있다는 5가지 신호 ㅣ 더 늦기 전에 꼭 확인하세요",
+   "PT43S",
+   4853
+  ],
+  "1EU7yHS4S-w": [
+   "2026-01-25T13:56:50Z",
+   "나이 들어 친구가 다 부질없는 이유 ㅣ이제는 사람 정리해야 당신이 삽니다",
+   "PT47S",
+   1057
+  ],
+  "zwiuTGeug2M": [
+   "2026-01-24T12:38:43Z",
+   "나이 들수록 지켜야 할 단 하나의 기준",
+   "PT41S",
+   1381
+  ],
+  "62JN_NlMhZI": [
+   "2026-01-23T23:00:00Z",
+   "법륜스님이 전하는 인생 후반전의 지혜 \"이제 그만 애쓰고 사십시오\"",
+   "PT42S",
+   5921
+  ],
+  "fBc5T0q-d50": [
+   "2026-01-23T13:46:06Z",
+   "당신을 이용하는 사람과 당장 인연 끊어야 하는 이유 ㅣ쇼펜하우어가 말하는 악연 정리법",
+   "PT39S",
+   1434
+  ],
+  "K72g41znKUc": [
+   "2026-01-22T23:00:00Z",
+   "모든 것을 놓아야 하는 이유 #인생조언 #마음 #평온#법륜스님",
+   "PT38S",
+   5940
+  ],
+  "5dRAyBBzm9E": [
+   "2026-01-22T13:46:31Z",
+   "무조건 외워야 할 인생 조언 4가지 : 이제는 당신을 위해 사세요",
+   "PT58S",
+   2207
+  ],
+  "aLBujGY-rnU": [
+   "2026-01-22T11:57:51Z",
+   "돈 없는 노인은 자식도 외면하는 게 현실입니다. 명심보감, 석가모니, 법륜스님이 전하는 비정한 인간 본성",
+   "PT6M2S",
+   28
+  ],
+  "Yf7s_ypxNYE": [
+   "2026-01-21T12:42:28Z",
+   "법륜스님이 말한, 마음이 괴로운 진짜 이유",
+   "PT36S",
+   1178
+  ],
+  "z5xvjV8rdA4": [
+   "2026-01-20T12:00:00Z",
+   "자식에게 다 퍼주지 마세요. 노후에 돈 없으면 자식도 당신을 외면합니다",
+   "PT54S",
+   909
+  ],
+  "2JjL_9MP3vU": [
+   "2026-01-19T23:00:00Z",
+   "늙어서 절대 무시당하지 않는 무거운 카리스마의 비밀",
+   "PT58S",
+   1698
+  ],
+  "HCQIKN7TCXU": [
+   "2026-01-19T12:00:00Z",
+   "나이 들어보니 가장 미안한 사람은 '나'였습니다. 지친 당신을 위한 밤의 위로",
+   "PT53S",
+   999
+  ],
+  "khBM5O8vxoQ": [
+   "2026-01-18T23:00:00Z",
+   "곁에 두면 내 복(福)까지 뺏어가는 '운 나쁜 사람'의 특징 ㅣ노후에 무조건 멀리해야 할 사람",
+   "PT54S",
+   1107
+  ],
+  "9KXqEuiSqPo": [
+   "2026-01-18T12:27:06Z",
+   "나이 들수록 혼자가 편해지는 건, 당신이 '품격' 있어졌기 때문입니다",
+   "PT51S",
+   1181
+  ],
+  "xkiaSnCCxHo": [
+   "2026-01-17T23:30:00Z",
+   "나이 들어 인맥에 목 매지 마세요. 결국 곁에 남는 건 '이런 사람'뿐입니다",
+   "PT1M4S",
+   1269
+  ],
+  "oX0JME4mfMI": [
+   "2026-01-17T12:45:33Z",
+   "나이 들어 후회하기 싫다면, 반드시 지켜야 할 삶의 태도 3가지",
+   "PT1M",
+   1307
+  ],
+  "frKI6iePDEQ": [
+   "2026-01-16T23:00:00Z",
+   "나이 들수록 '이것'만 버려도 인생이 훨씬 편해집니다 ㅣ 마음을 비우는 2가지 지혜",
+   "PT51S",
+   1944
+  ],
+  "smxinXJqZ3w": [
+   "2026-01-16T12:01:52Z",
+   "내 장례식에 조문객 안 올까 봐 걱정된다면? 반드시 알아야 할 진실",
+   "PT1M",
+   960
+  ],
+  "c53QZHlJ9DA": [
+   "2026-01-15T23:00:00Z",
+   "나이 들수록 사람들이 따르는 3가지 습관 #인간관계 #자기계발 #존경#성공",
+   "PT55S",
+   823
+  ],
+  "DwFmbRPlTsw": [
+   "2026-01-15T12:48:09Z",
+   "공자가 말하는 최고의 복수: 상대를 무너뜨리려 애쓰지 마세요",
+   "PT57S",
+   1080
+  ],
+  "7yy-VVyL8uM": [
+   "2026-01-14T22:00:18Z",
+   "마음 한 번 고쳐먹었더니 인생이 편해졌습니다 - 법륜 스님 조언 -",
+   "PT55S",
+   1315
+  ],
+  "luySD4WF9XM": [
+   "2026-01-14T14:23:03Z",
+   "나이 들어 자식에게 서운함이 몰려올 때, 이 영상을 꼭 보세요",
+   "PT55S",
+   885
+  ],
+  "xNxD5VZ8G9s": [
+   "2026-01-13T22:01:12Z",
+   "나이 들어 무시당한다면? 당장 당신의 '말투'부터 점검하세요",
+   "PT48S",
+   13
+  ],
+  "kg6nruatbm0": [
+   "2026-01-13T12:59:33Z",
+   "나이 들어 냄새나면 사람 다 떠납니다. 향기 나는 노후를 위한 3가지 비결",
+   "PT1M11S",
+   1061
+  ],
+  "3tJP5mBHRPg": [
+   "2026-01-12T22:00:05Z",
+   "100세까지 병원 안 가고 장수할 사람들의 소름 돋는 공통점 3가지",
+   "PT55S",
+   1123
+  ],
+  "iKNHdka_ex8": [
+   "2026-01-12T13:20:27Z",
+   "잠 안 온다고 그냥 깨어있지 마세요. 치매가 시작되는 신호입니다",
+   "PT1M9S",
+   903
+  ],
+  "37Uf7RLoDRw": [
+   "2026-01-11T22:00:05Z",
+   "인간관계 싹 정리해도 이런 사람 한 명만 있으면 성공한 인생입니다",
+   "PT6M13S",
+   27
+  ],
+  "q3wdNTqMsvc": [
+   "2026-01-11T07:18:08Z",
+   "당신의 가치를 높이는 대화의 비밀 6가지 (이런 사람 놓치지 마라)",
+   "PT1M4S",
+   957
+  ],
+  "5kGnavEX2Os": [
+   "2026-01-10T22:30:02Z",
+   "나이 들면 꼭 알아야 할 고독의 진실 | 쇼펜하우어",
+   "PT1M1S",
+   1188
+  ],
+  "BoPP12-hHeE": [
+   "2026-01-10T12:30:28Z",
+   "쇼펜하우어 \"말수가 적을수록 당신의 품격이 올라가는 소름 돋는 이유\"",
+   "PT54S",
+   1200
+  ],
+  "57xvMbMiKI8": [
+   "2026-01-09T22:00:07Z",
+   "쇼펜하우어가 말하는 '늙어서 혼자가 편한 진짜 이유",
+   "PT1M5S",
+   1209
+  ],
+  "oUIn9ozs6yk": [
+   "2026-01-09T06:06:27Z",
+   "곁에 두면 내 복(福) 다 깎아먹는 사람 특징 (당장 손절하세요) #삶#조언#관계#깨달음",
+   "PT1M8S",
+   1027
+  ],
+  "Z-heiAL0bIQ": [
+   "2026-01-08T22:00:42Z",
+   "자식이 무시하는 진짜 이유  #부모 #육아 #가족#노후",
+   "PT1M7S",
+   1012
+  ],
+  "Xqiqhn1RvKY": [
+   "2026-01-07T12:49:12Z",
+   "늙어서 돈 보다 더 무서운 것은 '이것'입니다 (노후에 반드시 깨달아야 할 것)",
+   "PT1M20S",
+   1521
+  ],
+  "eyrzkO8NAdQ": [
+   "2026-01-06T22:30:12Z",
+   "늙어서 복이 들어오는 사람 vs 복이 달아나는 사람",
+   "PT1M20S",
+   862
+  ],
+  "116numYB6-0": [
+   "2026-01-06T12:55:00Z",
+   "70세 이후 자식에게 대접받으려면 '이것'부터 끊으세요",
+   "PT1M13S",
+   1412
+  ],
+  "FAJWaDu_RBE": [
+   "2026-01-06T10:22:11Z",
+   "나이 들수록 \"이런 사람\" 한 명만 있어도 성공한 인생입니다",
+   "PT50S",
+   1163
+  ],
+  "LDDQBPWZ7dE": [
+   "2026-01-05T13:00:43Z",
+   "나이들어 불편해지는 사람의 5가지 ㅣ주변에 사람이 없다면 반드시 이 영상을 보세요",
+   "PT56S",
+   1298
+  ],
+  "vNSuYA8T4G8": [
+   "2026-01-05T06:22:15Z",
+   "늙어도 호감 가는 사람의 5가지 비밀 | 나이 들수록 더 빛나는 법",
+   "PT1M18S",
+   1002
+  ],
+  "682EuS_QVC4": [
+   "2026-01-04T04:36:25Z",
+   "나이 들수록 조용한 사람이 무서운 진짜 이유 (말의 품격)",
+   "PT54S",
+   1311
+  ],
+  "NR2nAM1rXeY": [
+   "2026-01-03T22:00:19Z",
+   "나이 들수록 말투 하나에 품격이 결정되는 이유 (인생 명언)",
+   "PT1M3S",
+   1153
+  ],
+  "MH0pwwiL_98": [
+   "2026-01-03T02:28:57Z",
+   "험한 말을 하는 사람의 진짜 이유 #심리 #인간관계 #진실",
+   "PT54S",
+   7282
+  ],
+  "tt0_PX6OIm4": [
+   "2026-01-02T08:01:09Z",
+   "나이 들어 절대 가면 안 되는 3곳 | 품격이 무너지는 순간",
+   "PT51S",
+   1140
+  ],
+  "vbCQLLvIEX4": [
+   "2026-01-02T04:41:53Z",
+   "2026년 복이 넝쿨째 굴러오는 사람의 3가지 특징 | 새해 준비",
+   "PT14M5S",
+   22
+  ],
+  "3yctGhWOZpM": [
+   "2025-12-31T14:00:14Z",
+   "나이 먹는 게 두려운 당신에게, 2026년이 선물처럼 바뀌는 비결",
+   "PT59S",
+   988
+  ],
+  "p0K1b4jOXA0": [
+   "2025-12-31T09:00:41Z",
+   "나이 들어도 정말 '멋있는' 사람들의 3가지 공통점",
+   "PT51S",
+   1779
+  ],
+  "VXo4_zNlKBY": [
+   "2025-12-30T22:00:42Z",
+   "아침 첫 행동, 이것만은 제발 멈추세요.",
+   "PT57S",
+   860
+  ],
+  "x7XK_b5uBug": [
+   "2025-12-30T14:37:22Z",
+   "나이 들어 자식에게 대접받는 어른들의 소름 돋는 공통점",
+   "PT40S",
+   4264
+  ],
+  "UroxqxboFsM": [
+   "2025-12-30T09:24:35Z",
+   "나이 들수록 친구가 적어지는 건, 당신이 잘살고 있다는 증거입니다",
+   "PT47S",
+   249
+  ],
+  "ZgxSoVQaDAE": [
+   "2025-12-29T21:00:43Z",
+   "노년에 나를 위해 꼭 남겨두어야 할 3가지",
+   "PT36S",
+   2735
+  ],
+  "THwF08vwblI": [
+   "2025-12-29T13:28:35Z",
+   "나이 들어 절대 만만해 보이지 않는 법",
+   "PT1M7S",
+   1220
+  ],
+  "LG7ymZJKjRQ": [
+   "2025-12-29T12:14:03Z",
+   "돈 없어도 무시당하지 않는 법 | 나이 들수록 귀티 나는 사람들의 비밀",
+   "PT4M17S",
+   12
+  ],
+  "UaDJPj-OwMA": [
+   "2025-12-28T21:00:29Z",
+   "나이 들어 이런 사람은 제발 손절하세요ㅣ 노후가 평안해지는 인간관계 정리법",
+   "PT53S",
+   1677
+  ],
+  "6CvVI6_1P2w": [
+   "2025-12-28T12:30:09Z",
+   "자식에게 다 퍼준 부모들이 노년에 뒤늦게 후회하는 진짜 이유",
+   "PT49S",
+   1261
+  ],
+  "qUa3YteS2Mc": [
+   "2025-12-27T21:00:49Z",
+   "말년에 복이 들어오는 사람들의 3가지 공통점",
+   "PT1M2S",
+   158
+  ],
+  "DLjGN48mPHU": [
+   "2025-12-26T21:00:14Z",
+   "착한 사람이 무시당하는 소름 돋는 이유",
+   "PT58S",
+   957
+  ],
+  "GPzJGJyRPsQ": [
+   "2025-12-26T14:32:04Z",
+   "가장 가까운 사람에게도 절대 하면 안 되는 말 | 특히 자식에게 (부처님 가르침)",
+   "PT56S",
+   1361
+  ],
+  "Fw-IOFaBGOc": [
+   "2025-12-25T21:00:14Z",
+   "나이 들수록 추해지는 사람과 우아해지는 사람의 결정적 차이",
+   "PT52S",
+   1377
+  ],
+  "0Sfl5HtJFw8": [
+   "2025-12-25T02:47:20Z",
+   "이 말 한 마디가 업보를 복으로 바꾼다 | 불교가 말하는 복 받는 말",
+   "PT1M15S",
+   1121
+  ],
+  "SGj0BXE6MK8": [
+   "2025-12-24T14:40:37Z",
+   "나이 들어 혼자 사는 것의 진짜 의미ㅣ불행이 아니라 자유입니다 (정리된 삶)",
+   "PT56S",
+   367
+  ],
+  "ILT1bokgrS8": [
+   "2025-12-24T04:03:55Z",
+   "나이 들수록 사람을 멀리해야 마음이 편해지는 이유 | 소모가 아닌 평화",
+   "PT59S",
+   1321
+  ],
+  "CJOgooGul8k": [
+   "2025-12-23T15:53:09Z",
+   "나이 들수록 예의 없는 사람과 멀어져야 하는 이유 | 공자의 가르침",
+   "PT1M15S",
+   1483
+  ],
+  "jIiE5pbuhZc": [
+   "2025-12-23T02:05:10Z",
+   "이런 사람 주변에 있나요? | 나이 들수록 정리해야 할 5가지 관계",
+   "PT1M26S",
+   1136
+  ],
+  "1dwjez0UfKg": [
+   "2025-12-22T13:29:03Z",
+   "마음이 괴로울 때 석가모니가 스스로에게 했던 말 | 불안을 붙잡지 마십시오",
+   "PT1M43S",
+   1568
+  ],
+  "o82ULRFfGqM": [
+   "2025-12-22T06:14:20Z",
+   "침묵이 손절입니다 설명하지 마세요",
+   "PT57S",
+   1402
+  ],
+  "4aHiCNqtWSU": [
+   "2025-12-22T01:00:10Z",
+   "사람을 떠나보낸 뒤 생긴 3가지 변화 | 외로움이 아니었습니다",
+   "PT1M1S",
+   1047
+  ],
+  "ze0wC8IsGuU": [
+   "2025-12-21T21:00:57Z",
+   "비우면 편해지는 나이, 사람이 없어도 무너지지 않는 이유",
+   "PT51S",
+   1350
+  ],
+  "C4iBV75WQXM": [
+   "2025-12-21T11:57:40Z",
+   "떠나보내고 나서, 삶이 이렇게 달라졌습니다",
+   "PT46S",
+   926
+  ],
+  "MizR_VRbKys": [
+   "2025-12-20T20:00:30Z",
+   "오래된 인연을 정리해야 하는 진짜 이유",
+   "PT1M12S",
+   1247
+  ],
+  "Or7FxxJXZGA": [
+   "2025-12-20T15:28:06Z",
+   "나이 들어서 말을 가볍게 하는 사람은 곁에 두지 마세요",
+   "PT35S",
+   1930
+  ],
+  "0qiLbHx6GYc": [
+   "2025-12-20T14:17:12Z",
+   "죽음을 앞두고도 쇼펜하우어가 포기하지 않은 인간관계 철학",
+   "PT48S",
+   1569
+  ],
+  "v47kIueDzec": [
+   "2025-12-19T17:00:33Z",
+   "나이 들어서 곁에 두지 말아야 할 사람 다섯 가지",
+   "PT1M32S",
+   1582
+  ],
+  "Tyo0m27ub74": [
+   "2025-12-19T07:06:06Z",
+   "60대에 이르러서야, 대부분이 뒤늦게 깨닫는 다섯 가지 #명언",
+   "PT1M33S",
+   1011
+  ],
+  "QaBei1HKdtE": [
+   "2025-12-19T01:43:10Z",
+   "쇼펜하우어가 말한, 고독을 두려워하지 말아야 하는 이유",
+   "PT43S",
+   456
+  ],
+  "aW6AXDejeuY": [
+   "2025-12-18T15:32:11Z",
+   "평생 믿었던 사람에게 배신 당했을 때 꼭 들어야 할 말 ㅣ쇼펜하우어",
+   "PT1M29S",
+   1302
+  ],
+  "4FNvHxginyE": [
+   "2025-12-18T13:44:30Z",
+   "눈빛만 봐도 사람의 본성이 보입니다｜철학이 말하는 인간관계",
+   "PT52S",
+   1536
+  ],
+  "NJUONDJnCHQ": [
+   "2025-12-18T09:00:00Z",
+   "정신과 의사가 말합니다, 이 관계는 끊으세요",
+   "PT1M13S",
+   1815
+  ],
+  "iM-9bUEXyd8": [
+   "2025-12-18T06:14:19Z",
+   "성격은 얼굴에 티가 난다｜나이 들수록 숨길 수 없는 이유",
+   "PT47S",
+   486
+  ],
+  "De5vOUGmKCk": [
+   "2025-12-17T14:33:41Z",
+   "〈외로움과 고독의 차이〉쇼펜하우어 철학",
+   "PT44S",
+   3566
+  ],
+  "8OfG_dZCKHY": [
+   "2025-12-17T14:08:33Z",
+   "나이 들면서 사람을 떠나보내는 것의 진짜 의미 #인생 #철학 #깨달음",
+   "PT56S",
+   5668
+  ],
+  "qqOwjMVQLK8": [
+   "2025-12-16T15:01:40Z",
+   "쇼펜하우어가 말한 ‘버티지 않아도 되는 삶'",
+   "PT56S",
+   1431
+  ],
+  "1y0o8ueW6I8": [
+   "2025-12-16T14:25:19Z",
+   "왜 착한 사람일수록 인생이 힘들까",
+   "PT53S",
+   1541
+  ],
+  "yGS70BVrP0E": [
+   "2025-12-15T18:41:07Z",
+   "이 한마디로 인생이 달라졌어요! #명언 #좋은글",
+   "PT46S",
+   405
+  ],
+  "NjF87bJVryo": [
+   "2025-12-14T16:50:47Z",
+   "떠나는 인간관계의 진실 -쇼펜하우어",
+   "PT38S",
+   2462
+  ],
+  "HAsWksFtwjA": [
+   "2025-12-14T16:50:36Z",
+   "쇼펜하우어-그들은 떠난 게 아니라, 본모습이 드러난 것이다.",
+   "PT6M8S",
+   8
+  ],
+  "zSgxmsbdSeQ": [
+   "2025-12-14T03:01:19Z",
+   "걱정 많은 당신, 오늘 이 말 꼭 들으세요 (데일 카네기 조언)",
+   "PT1M3S",
+   807
+  ],
+  "eIov1Tv3vcE": [
+   "2025-12-13T21:00:48Z",
+   "상처는 타인이 아니라 ‘내 마음’이 만든다",
+   "PT2M1S",
+   1210
+  ],
+  "acYgv3UPrDg": [
+   "2025-12-12T18:17:42Z",
+   "쇼펜하우어가 예민한 사람에게 전하는 말",
+   "PT1M50S",
+   991
+  ],
+  "4tUAvllmR6Q": [
+   "2025-12-12T06:23:27Z",
+   "🌙 인생 후반부를 살아가는 모든 이에게",
+   "PT10M51S",
+   7
+  ],
+  "-IdZks6X9kY": [
+   "2025-12-12T04:52:50Z",
+   "마음 약한 사람을 위한 쇼펜하우어 인생 강의",
+   "PT1M19S",
+   2361
+  ],
+  "ZWOApLT6TNc": [
+   "2025-12-11T04:44:05Z",
+   "마음 아픈 이유, 당신 잘못이 아니에요",
+   "PT39S",
+   285
+  ],
+  "CCdryCtrTCg": [
+   "2025-12-10T15:14:50Z",
+   "부처님 말씀 한마디가 인생을 바꾸는 순간 (명언)",
+   "PT35S",
+   161
+  ],
+  "qKd-HgZLV94": [
+   "2025-12-10T12:54:18Z",
+   "부처님 말씀, 오늘 당신을 살리는 인생 조언 10가지",
+   "PT31M27S",
+   13
+  ],
+  "UCjha56GmJ4": [
+   "2025-12-10T10:05:53Z",
+   "힘든 날 꼭 들어야 할 부처님 말씀 (마음이 편안해집니다)",
+   "PT58S",
+   325
+  ],
+  "vNQkBAHqN0g": [
+   "2025-12-09T15:41:11Z",
+   "명심보감, 이 한마디가 당신을 살립니다",
+   "PT6M46S",
+   21
+  ],
+  "RVqNZ-ph94o": [
+   "2025-12-09T10:24:34Z",
+   "이 10가지 명언만 알면 인생이 쉬워진다!",
+   "PT59S",
+   709
+  ],
+  "XC0DnzZRc9g": [
+   "2025-12-08T11:02:54Z",
+   "인생을 바꾸는 정약용의 10가지 조언 | 지금 당신에게 필요한 지혜",
+   "PT13M10S",
+   29
+  ],
+  "W4c_B-DfeKI": [
+   "2025-12-08T06:46:53Z",
+   "마음에 온기를 채우는 다산의 지혜",
+   "PT10M18S",
+   6
+  ],
+  "SSc5zIctUYo": [
+   "2025-09-15T11:38:25Z",
+   "“며느리 한마디에… 평생 희생한 엄마가 무너졌습니다”",
+   "PT15M41S",
+   21
+  ],
+  "ItSQDg06ZmA": [
+   "2025-09-08T15:20:32Z",
+   "온라인 커뮤니티를 뒤흔든 논란의 사건!",
+   "PT15M10S",
+   6
+  ]
+ }
+}
