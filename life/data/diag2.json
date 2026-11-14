@@ -105,25 +105,40 @@
    ]
   ]
  },
- "age_SHORTS_d28": {
-  "error": "{'code': 400, 'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
-  "params": {
-   "metrics": "viewerPercentage",
-   "startDate": "2026-10-17",
-   "endDate": "2026-11-14",
-   "dimensions": "ageGroup",
-   "filters": "creatorContentType==SHORTS"
-  }
+ "age_shorts_d28": {
+  "cols": [
+   "ageGroup",
+   "viewerPercentage"
+  ],
+  "rows": [
+   [
+    "age25-34",
+    0.2
+   ],
+   [
+    "age35-44",
+    2.3
+   ],
+   [
+    "age45-54",
+    11.7
+   ],
+   [
+    "age55-64",
+    31.8
+   ],
+   [
+    "age65-",
+    54
+   ]
+  ]
  },
- "age_VIDEO_ON_DEMAND_d28": {
-  "error": "{'code': 400, 'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
-  "params": {
-   "metrics": "viewerPercentage",
-   "startDate": "2026-10-17",
-   "endDate": "2026-11-14",
-   "dimensions": "ageGroup",
-   "filters": "creatorContentType==VIDEO_ON_DEMAND"
-  }
+ "age_videoOnDemand_d28": {
+  "cols": [
+   "ageGroup",
+   "viewerPercentage"
+  ],
+  "rows": []
  },
  "sub_d28": {
   "cols": [
@@ -510,25 +525,40 @@
    ]
   ]
  },
- "age_SHORTS_d90": {
-  "error": "{'code': 400, 'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
-  "params": {
-   "metrics": "viewerPercentage",
-   "startDate": "2026-08-16",
-   "endDate": "2026-11-14",
-   "dimensions": "ageGroup",
-   "filters": "creatorContentType==SHORTS"
-  }
+ "age_shorts_d90": {
+  "cols": [
+   "ageGroup",
+   "viewerPercentage"
+  ],
+  "rows": [
+   [
+    "age25-34",
+    0.2
+   ],
+   [
+    "age35-44",
+    2.3
+   ],
+   [
+    "age45-54",
+    11.7
+   ],
+   [
+    "age55-64",
+    32
+   ],
+   [
+    "age65-",
+    53.8
+   ]
+  ]
  },
- "age_VIDEO_ON_DEMAND_d90": {
-  "error": "{'code': 400, 'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
-  "params": {
-   "metrics": "viewerPercentage",
-   "startDate": "2026-08-16",
-   "endDate": "2026-11-14",
-   "dimensions": "ageGroup",
-   "filters": "creatorContentType==VIDEO_ON_DEMAND"
-  }
+ "age_videoOnDemand_d90": {
+  "cols": [
+   "ageGroup",
+   "viewerPercentage"
+  ],
+  "rows": []
  },
  "sub_d90": {
   "cols": [
@@ -948,25 +978,40 @@
    ]
   ]
  },
- "age_SHORTS_d365": {
-  "error": "{'code': 400, 'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (SHORTS) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
-  "params": {
-   "metrics": "viewerPercentage",
-   "startDate": "2025-11-14",
-   "endDate": "2026-11-14",
-   "dimensions": "ageGroup",
-   "filters": "creatorContentType==SHORTS"
-  }
+ "age_shorts_d365": {
+  "cols": [
+   "ageGroup",
+   "viewerPercentage"
+  ],
+  "rows": [
+   [
+    "age25-34",
+    0.7
+   ],
+   [
+    "age35-44",
+    2.6
+   ],
+   [
+    "age45-54",
+    13.3
+   ],
+   [
+    "age55-64",
+    34
+   ],
+   [
+    "age65-",
+    49.4
+   ]
+  ]
  },
- "age_VIDEO_ON_DEMAND_d365": {
-  "error": "{'code': 400, 'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'errors': [{'message': 'Invalid value (VIDEO_ON_DEMAND) given in field parameters.filters.', 'domain': 'global', 'reason': 'invalid'}]}",
-  "params": {
-   "metrics": "viewerPercentage",
-   "startDate": "2025-11-14",
-   "endDate": "2026-11-14",
-   "dimensions": "ageGroup",
-   "filters": "creatorContentType==VIDEO_ON_DEMAND"
-  }
+ "age_videoOnDemand_d365": {
+  "cols": [
+   "ageGroup",
+   "viewerPercentage"
+  ],
+  "rows": []
  },
  "sub_d365": {
   "cols": [
@@ -2628,18 +2673,6 @@
     8
    ],
    [
-    "1y0o8ueW6I8",
-    1541,
-    651,
-    660,
-    58,
-    111.28,
-    25,
-    6,
-    2,
-    4
-   ],
-   [
     "6nDt54uzWmg",
     1541,
     622,
@@ -2650,6 +2683,18 @@
     9,
     1,
     5
+   ],
+   [
+    "1y0o8ueW6I8",
+    1541,
+    651,
+    660,
+    58,
+    111.28,
+    25,
+    6,
+    2,
+    4
    ],
    [
     "yKil6nsSFpw",
@@ -2676,18 +2721,6 @@
     1
    ],
    [
-    "eZsGDNgcetU",
-    1530,
-    444,
-    624,
-    81,
-    143.3,
-    31,
-    14,
-    1,
-    2
-   ],
-   [
     "LSMWR4UUmeU",
     1530,
     653,
@@ -2698,6 +2731,18 @@
     10,
     1,
     4
+   ],
+   [
+    "eZsGDNgcetU",
+    1530,
+    444,
+    624,
+    81,
+    143.3,
+    31,
+    14,
+    1,
+    2
    ],
    [
     "jSAq-zek9m0",
@@ -2712,18 +2757,6 @@
     0
    ],
    [
-    "7ru1zEEL0jw",
-    1522,
-    378,
-    328,
-    48,
-    87.35,
-    17,
-    0,
-    1,
-    2
-   ],
-   [
     "vy7KCxajqY4",
     1522,
     682,
@@ -2734,6 +2767,18 @@
     6,
     3,
     6
+   ],
+   [
+    "7ru1zEEL0jw",
+    1522,
+    378,
+    328,
+    48,
+    87.35,
+    17,
+    0,
+    1,
+    2
    ],
    [
     "Xqiqhn1RvKY",
@@ -2808,18 +2853,6 @@
     5
    ],
    [
-    "HC0rmcJJj7I",
-    1434,
-    687,
-    816,
-    70,
-    101.77000000000001,
-    36,
-    8,
-    1,
-    0
-   ],
-   [
     "fBc5T0q-d50",
     1434,
     243,
@@ -2830,6 +2863,18 @@
     6,
     1,
     1
+   ],
+   [
+    "HC0rmcJJj7I",
+    1434,
+    687,
+    816,
+    70,
+    101.77000000000001,
+    36,
+    8,
+    1,
+    0
    ],
    [
     "bA2Cs_E7LQg",
@@ -2892,18 +2937,6 @@
     15
    ],
    [
-    "116numYB6-0",
-    1412,
-    490,
-    731,
-    87,
-    119.5,
-    27,
-    10,
-    1,
-    6
-   ],
-   [
     "5PBuK-q-ImU",
     1412,
     715,
@@ -2914,6 +2947,18 @@
     5,
     0,
     0
+   ],
+   [
+    "116numYB6-0",
+    1412,
+    490,
+    731,
+    87,
+    119.5,
+    27,
+    10,
+    1,
+    6
    ],
    [
     "o82ULRFfGqM",
@@ -3096,18 +3141,6 @@
     2
    ],
    [
-    "kQPP2wJodbQ",
-    1322,
-    550,
-    561,
-    59,
-    83.57,
-    12,
-    9,
-    0,
-    1
-   ],
-   [
     "3T76dWPaQZM",
     1322,
     584,
@@ -3118,6 +3151,18 @@
     6,
     0,
     2
+   ],
+   [
+    "kQPP2wJodbQ",
+    1322,
+    550,
+    561,
+    59,
+    83.57,
+    12,
+    9,
+    0,
+    1
    ],
    [
     "ILT1bokgrS8",
@@ -3168,18 +3213,6 @@
     3
    ],
    [
-    "682EuS_QVC4",
-    1311,
-    395,
-    282,
-    39,
-    73.95,
-    25,
-    7,
-    1,
-    3
-   ],
-   [
     "zQ2k5g7iAQ4",
     1311,
     459,
@@ -3190,6 +3223,18 @@
     11,
     1,
     5
+   ],
+   [
+    "682EuS_QVC4",
+    1311,
+    395,
+    282,
+    39,
+    73.95,
+    25,
+    7,
+    1,
+    3
    ],
    [
     "oX0JME4mfMI",
@@ -3324,18 +3369,6 @@
     2
    ],
    [
-    "zPpWAF8DKao",
-    1269,
-    624,
-    806,
-    76,
-    121.87,
-    36,
-    7,
-    1,
-    5
-   ],
-   [
     "xkiaSnCCxHo",
     1269,
     430,
@@ -3346,6 +3379,18 @@
     16,
     1,
     1
+   ],
+   [
+    "zPpWAF8DKao",
+    1269,
+    624,
+    806,
+    76,
+    121.87,
+    36,
+    7,
+    1,
+    5
    ],
    [
     "K6PaDdbmThU",
@@ -3480,18 +3525,6 @@
     5
    ],
    [
-    "TGdSer1uwto",
-    1225,
-    673,
-    561,
-    48,
-    88.72,
-    11,
-    5,
-    1,
-    1
-   ],
-   [
     "YMowXgrRwus",
     1225,
     641,
@@ -3502,6 +3535,18 @@
     10,
     0,
     3
+   ],
+   [
+    "TGdSer1uwto",
+    1225,
+    673,
+    561,
+    48,
+    88.72,
+    11,
+    5,
+    1,
+    1
    ],
    [
     "THwF08vwblI",
@@ -3588,6 +3633,18 @@
     4
    ],
    [
+    "FpWaTySYLLc",
+    1189,
+    463,
+    424,
+    53,
+    92.1,
+    21,
+    18,
+    1,
+    7
+   ],
+   [
     "3p9fQ-MW__Q",
     1189,
     538,
@@ -3610,18 +3667,6 @@
     5,
     1,
     13
-   ],
-   [
-    "FpWaTySYLLc",
-    1189,
-    463,
-    424,
-    53,
-    92.1,
-    21,
-    18,
-    1,
-    7
    ],
    [
     "5kGnavEX2Os",
