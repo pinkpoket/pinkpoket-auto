@@ -201,6 +201,19 @@ def silent_segment(png, out, secs):
     return secs
 
 
+# 구독 부탁 문장 (2026-11-14 핑포 문구). 영상 맨 끝 목소리·설명란·고정 댓글에 같은 말로 넣는다.
+SUB_LINE = "구독과 좋아요 눌러 주시고, 작지만 따뜻한 복 하나 받아 가세요."
+SUB_TEXT = "💛 구독과 좋아요 눌러 주시고, 작지만 따뜻한 복 하나 받아 가세요 🙏"
+
+
+def outro_with_sub(script):
+    """outro 맨 끝에 구독 부탁 한 문장 (대본에 이미 구독 말이 있으면 그대로)."""
+    out = [x for x in (script.get("outro") or []) if x.strip()]
+    if not any("구독" in x for x in out):
+        out.append(SUB_LINE)
+    return out
+
+
 def build(script, out_path):
     shutil.rmtree(WORK, ignore_errors=True)
     os.makedirs(WORK, exist_ok=True)
@@ -216,7 +229,7 @@ def build(script, out_path):
     for c in chapters:
         items.append({"card": c["title"], "photo": len(photos)})
         add_block(c["sentences"], c["title"], c.get("bg") or random.choice(ms.NATURE_QUERIES))
-    add_block(script.get("outro", []), "", script.get("outro_bg", "sunset calm lake"))
+    add_block(outro_with_sub(script), "", script.get("outro_bg", "sunset calm lake"))
     # 2) 사진 받기 (같은 대표 낱말로 여러 장이면 서로 다른 사진)
     raw = [os.path.join(WORK, f"p{i}.jpg") for i in range(len(photos))]
     with ThreadPoolExecutor(max_workers=4) as ex:
@@ -309,7 +322,7 @@ def description(script, marks):
         lines += [f"▶ {x['title'].split('|')[0].strip()} 👉 {x['url']}" for x in prev]
     lines += ["", "📌 목차", "0:00 시작"]
     lines += [f"{stamp(t)} {title}" for t, title in marks]
-    lines += ["", "🔥 인생ON : 마음의 불을 켜다",
+    lines += ["", SUB_TEXT, "", "🔥 인생ON : 마음의 불을 켜다",
               "※ 이 영상은 AI 음성을 사용해 만들었어요. 건강 관련 내용은 일반 정보이며, 지병이 있으면 의사와 상의하세요."]
     return "\n".join(lines).strip()
 
@@ -318,7 +331,7 @@ def long_comment(script):
     """긴 영상 고정 댓글: 대본의 감성 글 + 목차·구독·좋아요 안내."""
     body = (script.get("comment") or "").strip() or f"오늘 '{script['title'].split('|')[0].strip()}' 이야기, 마음에 닿으셨나요? 🔥"
     tail = ["", "📌 영상 아래 '더보기'를 누르시면 목차가 있어요. 다시 듣고 싶은 부분만 골라 보실 수 있어요.",
-            "도움이 되셨다면 구독과 좋아요 꾹 눌러 주세요 🙏💛",
+            SUB_TEXT,
             *([f"📺 지난 이야기도 들어 보세요 👉 {p[0]['url']}"] if (p := recent_long(1)) else []),
             "소중한 분께 카톡으로 나눠 주시면 인생ON에 큰 힘이 됩니다."]
     return body + "\n" + "\n".join(tail)
