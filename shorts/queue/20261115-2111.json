@@ -1,0 +1,46 @@
+{
+ "title": "겨울 난방텐트, 이렇게 쓰면 안에서 썩어요",
+ "hook": "난방텐트 결로 방지",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "난방텐트 지퍼 꽁꽁 닫고 주무시나요?",
+   "bg": "close up of a cozy winter bedroom with a fabric canopy over the bed, soft warm lighting, centered"
+  },
+  {
+   "text": "아침마다 천장에 이슬이 맺히고 이불이 눅눅해져요",
+   "bg": "close up of a cozy winter bedroom with a fabric canopy over the bed, soft warm lighting, centered"
+  },
+  {
+   "text": "첫째, 텐트 벽면과 차가운 외벽 사이에 꼭 공기 틈을 띄워두세요",
+   "bg": "close up of a neat bed mattress and warm bedding inside a bedroom, cozy interior, centered"
+  },
+  {
+   "text": "둘째, 윗부분 메쉬 통기창은 닫지 말고 항상 열어두어야 해요",
+   "bg": "close up of a neat bed mattress and warm bedding inside a bedroom, cozy interior, centered"
+  },
+  {
+   "text": "셋째, 일어나자마자 텐트 문을 활짝 열어 밤새 찬 습기를 날려요",
+   "bg": "close up of a bright and clean bedroom interior with morning sunlight, centered"
+  },
+  {
+   "text": "그럼 오늘 밤, 텐트 상단 환기창이 열려 있는지 꼭 확인해 보세요",
+   "bg": "close up of a bright and clean bedroom interior with morning sunlight, centered"
+  }
+ ],
+ "description": "겨울철 난방텐트 안쪽 결로와 눅눅한 이불 고민, 아침 환기로 해결하세요 ⛺\n외풍은 막고 습기는 날리는 텐트 활용법을 확인해 보세요!\n여러분은 침실 외풍을 어떻게 차단하고 계신가요?",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집연구소",
+  "#난방텐트",
+  "#방풍캐노피",
+  "#겨울철침실",
+  "#결로예방",
+  "#살림팁",
+  "#원룸인테리어"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/winter-bedroom-draft-canopy-heating.html",
+ "comment": "아침마다 텐트 안이 눅눅해서 깜놀하셨죠? 🌧️\n오늘 밤엔 상단 환기창 살짝 열어두고 주무세요. 훨씬 보송해져요 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
