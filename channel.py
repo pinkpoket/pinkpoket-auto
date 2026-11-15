@@ -114,6 +114,8 @@ PROFILES = {
         "title_card": False,
         # 공유 부탁은 댓글에만 (설명란·화면에서 뺌, 2026-11-14 핑포 결정)
         "share_in_comment": True,
+        # 장면 넘어갈 때 "휙" 효과음 끔 (2026-11-15 핑포 결정)
+        "whoosh": False,
         # 사연 장면 중 사람 없는 장면("still": true) — 빈 방·물건만 (2026-11-11)
         "sayeon_still_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
                                "quiet still life, empty scene without any people, objects centered, vertical 9:16 composition, "

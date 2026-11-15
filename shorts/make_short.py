@@ -625,7 +625,7 @@ def make_scene(i, scene, hook, audio, words, t0, total):
     for k, (_, st, en) in enumerate(caps):
         fc += f";[v{k}][{2 + k}:v]overlay=0:0:enable='between(t,{st:.3f},{en:.3f})'[v{k + 1}]"
     fc += f";[v{n}]format=yuv420p[v]"
-    if i > 0:
+    if i > 0 and ch.P.get("whoosh", True):  # 장면 넘어갈 때 "휙" 소리 (인생ON 은 끔, 2026-11-15)
         fc += f";[{a_idx}:a]aformat=sample_rates=44100:channel_layouts=stereo[va];[{w_idx}:a][va]amix=inputs=2:duration=longest:normalize=0[a]"
     else:
         fc += f";[{a_idx}:a]aformat=sample_rates=44100:channel_layouts=stereo[a]"
