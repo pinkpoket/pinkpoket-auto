@@ -170,6 +170,10 @@ NOT_SCENERY = re.compile(r"\b(cat|cats|kitten|dog|dogs|puppy|animal|animals|pet|
                          r"squirrel|fish|duck|swan|wildlife|food|car|building|city|street|house|room|interior|text)\b", re.I)
 NATURE_QUERIES = ["forest trees", "flower field", "mountain valley stream", "autumn leaves forest", "calm lake mountains",
                   "waterfall valley", "cherry blossom tree", "green meadow", "misty mountains", "river stones forest"]
+# 단순한 배경 (2026-11-16 핑포 결정: 1~5월 히트 쇼츠처럼 잔잔한 물결·안개 들판·풀잎·하늘 — 큰 글씨가 잘 보이게)
+SIMPLE_BG = ["calm water surface", "misty field lone tree", "green grass close up", "soft clouds blue sky",
+             "foggy morning meadow", "calm sea horizon", "sunset sky clouds", "green leaves bokeh",
+             "snowy field winter", "golden wheat field", "lake reflection calm", "morning fog hills"]
 PEOPLE = re.compile(r"\b(person|people|man|men|woman|women|girl|boy|child|children|kid|couple|face|portrait|hand|hands|selfie)\b", re.I)
 
 
@@ -654,6 +658,11 @@ def build_video(script, out_path):
     os.makedirs(WORK, exist_ok=True)
     AI_COUNT[0] = 0
     HEADLINE[0] = (script.get("headline") or "").strip()
+    if not HEADLINE[0] and ch.P.get("headline_all"):
+        # 대본에 headline 이 없으면 hook 으로 2줄 제목을 만든다 (노란 상자는 쓰지 않음, 2026-11-16)
+        w = (script.get("hook") or "").split()
+        HEADLINE[0] = (" ".join(w[:-1]) + "\n[" + w[-1] + "]") if len(w) > 1 else (f"[{w[0]}]" if w else "")
+    SIMPLE_OFF[0] = random.randrange(len(SIMPLE_BG))
     global TTS_RATE, TTS_PITCH
     voice = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
     TTS_RATE = (script.get("rate") or (ch.P.get("voice_rates") or {}).get(voice)
@@ -708,6 +717,8 @@ def build_video(script, out_path):
                     print(f"[그림] 사연 {i}: {prompt[:60]}")
                     return
             return
+        if ch.P.get("simple_bg"):
+            prompt = SIMPLE_BG[(i + SIMPLE_OFF[0]) % len(SIMPLE_BG)]
         if ch.P.get("image_source") == "stock" and (pixabay_image(prompt, path) or pexels_image(prompt, path)):
             return
         cloudflare_image(prompt, path)
@@ -963,6 +974,7 @@ def yt_upload(video, title, desc, tags, shorts=True):
 
 # AI(합성) 표시: 풍경 사진 + AI 목소리는 표시 의무가 없어 끈다 (2026-11-14 핑포 결정). 사람 그림이 나오는 사연 쇼츠만 켬
 SYNTH = [False]
+SIMPLE_OFF = [0]
 HEADLINE = [""]
 
 

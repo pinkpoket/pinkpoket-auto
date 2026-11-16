@@ -116,6 +116,9 @@ PROFILES = {
         "share_in_comment": True,
         # 장면 넘어갈 때 "휙" 효과음 끔 (2026-11-15 핑포 결정)
         "whoosh": False,
+        # 2026-11-16 핑포 결정: 모든 쇼츠 큰 3줄 제목 + 단순한 배경(잔잔한 물결·안개 들판·풀잎·하늘)
+        "headline_all": True,
+        "simple_bg": True,
         # 사연 장면 중 사람 없는 장면("still": true) — 빈 방·물건만 (2026-11-11)
         "sayeon_still_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
                                "quiet still life, empty scene without any people, objects centered, vertical 9:16 composition, "
