@@ -171,9 +171,9 @@ NOT_SCENERY = re.compile(r"\b(cat|cats|kitten|dog|dogs|puppy|animal|animals|pet|
 NATURE_QUERIES = ["forest trees", "flower field", "mountain valley stream", "autumn leaves forest", "calm lake mountains",
                   "waterfall valley", "cherry blossom tree", "green meadow", "misty mountains", "river stones forest"]
 # 단순한 배경 (2026-11-16 핑포 결정: 1~5월 히트 쇼츠처럼 잔잔한 물결·안개 들판·풀잎·하늘 — 큰 글씨가 잘 보이게)
-SIMPLE_BG = ["calm water surface", "misty field lone tree", "green grass close up", "soft clouds blue sky",
-             "foggy morning meadow", "calm sea horizon", "sunset sky clouds", "green leaves bokeh",
-             "snowy field winter", "golden wheat field", "lake reflection calm", "morning fog hills"]
+SIMPLE_BG = ["water ripples texture", "green grass texture", "white clouds blue sky background", "fog background",
+             "green bokeh background", "calm sea water texture", "sunset sky gradient", "snow texture",
+             "wheat field background", "rain drops water surface", "soft clouds pastel sky", "moss texture green"]
 PEOPLE = re.compile(r"\b(person|people|man|men|woman|women|girl|boy|child|children|kid|couple|face|portrait|hand|hands|selfie)\b", re.I)
 
 
@@ -296,7 +296,10 @@ def prepare_image(src, dst):
     scale = max(W / img.width, H / img.height)
     img = img.resize((int(img.width * scale) + 1, int(img.height * scale) + 1), Image.LANCZOS)
     left, top = (img.width - W) // 2, (img.height - H) // 2
-    img.crop((left, top, left + W, top + H)).save(dst, quality=92)
+    img = img.crop((left, top, left + W, top + H))
+    if ch.P.get("bg_blur"):  # 배경을 부드럽게 흐려 단순하게 (글씨가 잘 보이게, 2026-11-16)
+        img = img.filter(ImageFilter.GaussianBlur(ch.P["bg_blur"]))
+    img.save(dst, quality=92)
 
 
 # ---------------------------------------------------------------- 자막
