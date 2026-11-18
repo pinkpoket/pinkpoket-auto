@@ -31,7 +31,19 @@ def png_uri(path):
     return "data:image/png;base64," + base64.b64encode(Path(path).read_bytes()).decode()
 
 
+HEAD_PX = 24  # 소제목 글자 크기 (2026-11-18 핑포 요청: 네이버에 붙이면 소제목이 본문과 크기가 비슷해서 키움)
+
+
+def big_heads(html, px=HEAD_PX):
+    """<h3> 소제목 안 span 마다 글자 크기를 직접 넣는다 (네이버 편집기는 h3 크기를 지우고 inline font-size 만 남김)."""
+    def fix(m):
+        inner = re.sub(r'<span style="(?![^"]*font-size)', f'<span style="font-size:{px}px;', m.group(2))
+        return f'{m.group(1)}{inner}</h3>'
+    return re.sub(r'(<h3[^>]*>)(.*?)</h3>', fix, html, flags=re.S)
+
+
 def build(body, title, cat, photos, orig_urls=None):
+    body = big_heads(body)
     m = SIG_URL_RE.search(body)
     if m:
         sig_local = ROOT / "brand/naver/naver-signature.png"
