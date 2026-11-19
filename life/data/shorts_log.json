@@ -603,5 +603,18 @@
   "url": "https://youtube.com/shorts/wbqB5CAkylc",
   "privacy": "public",
   "comment": "ok"
+ },
+ {
+  "file": "20261120-0800.json",
+  "at": "2026-11-19 23:01",
+  "title": "한 번 거절했다고 등 돌리는 사람은 이제 놓아주셔도 됩니다",
+  "voice": "ko-KR-InJoonNeural",
+  "sub_cta": true,
+  "seconds": 64.0,
+  "ai_images": 4,
+  "video_id": "ehSyDXtHvtE",
+  "url": "https://youtube.com/shorts/ehSyDXtHvtE",
+  "privacy": "public",
+  "comment": "ok"
  }
 ]
