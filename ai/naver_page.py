@@ -16,7 +16,13 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
-SIG_URL_RE = re.compile(r'src="(https://cdn\.jsdelivr\.net/gh/pinkpoket/pinkpoket-auto@[0-9a-f]+/brand/naver/naver-signature\.png)"')
+# 서명 배너 그림 태그 전체 (큰 그림·작은 그림 모두)
+SIG_TAG_RE = re.compile(r'<img [^>]*src="https://cdn\.jsdelivr\.net/gh/pinkpoket/pinkpoket-auto@[0-9a-f]+/brand/naver/naver-signature(?:-sm)?\.png"[^>]*>')
+# ⭐ 2026-11-19 핑포 요청: 맨 아래 배너가 너무 커서 글 폭에 맞게 줄임 → 가로 460px 작은 그림을 쓴다.
+#   네이버는 붙여 넣은 그림을 원래 크기로 보여 주므로 그림 파일 자체가 작아야 한다.
+SIG_SM_PATH = "brand/naver/naver-signature-sm.png"
+SIG_SM_URL = "https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@0cd444cc782e26f20699b254559df4c6524bfad4/brand/naver/naver-signature-sm.png"
+SIG_W = 460
 
 
 def data_uri(path, max_side=1024, quality=85):
@@ -44,10 +50,11 @@ def big_heads(html, px=HEAD_PX):
 
 def build(body, title, cat, photos, orig_urls=None):
     body = big_heads(body)
-    m = SIG_URL_RE.search(body)
+    m = SIG_TAG_RE.search(body)
     if m:
-        sig_local = ROOT / "brand/naver/naver-signature.png"
-        body = body.replace(m.group(0), f'src="{png_uri(sig_local)}" data-orig="{m.group(1)}"')
+        sig_tag = (f'<img src="{png_uri(ROOT / SIG_SM_PATH)}" data-orig="{SIG_SM_URL}" '
+                   f'width="{SIG_W}" style="width:{SIG_W}px;max-width:100%" alt="">')
+        body = body[:m.start()] + sig_tag + body[m.end():]
     # 📷 [사진 N] 자리에 사진을 바로 넣는다 (본문 복사하면 사진도 같이 붙음)
     uris = [data_uri(p) for p in photos]
     for i, u in enumerate(uris, 1):

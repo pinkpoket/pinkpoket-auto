@@ -610,7 +610,7 @@ def naver(models):
 [규칙]
 {guide}
 """
-    sig = "naver-signature.png"
+    sig = "naver-signature"  # 큰 그림·작은 그림(-sm) 모두 인정
     ids = {s["video_id"]: s for s in shorts}
 
     def check(d):

@@ -55,6 +55,6 @@
     - 더 많은 살림 정보는 유튜브로 놀러 오세요
     - 영상으로 보고 싶다면 핑포 유튜브로 오세요
     - 작은집 연구소 유튜브도 있어요
-- **서명 그림** (2026-11-04 핑포 요청): 채널 링크 바로 뒤, 태그 앞에 `<img src="https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@9ee65956345c94ddb8c5815029fa5e395467137a/brand/naver/naver-signature.png" style="width:100%">` 한 장을 넣는다 (AI 사진 3장과 별개, 한도 안 씀).
+- **서명 그림** (2026-11-04 핑포 요청): 채널 링크 바로 뒤, 태그 앞에 `<img src="https://cdn.jsdelivr.net/gh/pinkpoket/pinkpoket-auto@0cd444cc782e26f20699b254559df4c6524bfad4/brand/naver/naver-signature-sm.png" width="460" style="width:460px;max-width:100%">` 한 장을 넣는다 (AI 사진 3장과 별개, 한도 안 씀). ⭐ 2026-11-19 핑포 요청: 배너가 너무 커서 글 폭에 맞게 **가로 460px 작은 그림(naver-signature-sm.png)** 으로 바꿈 — 예전 큰 그림 주소를 넣어도 naver_page.py 가 작은 그림으로 바꿔 준다.
 - 블로그 꾸미기 그림: `brand/naver/` (타이틀 966×300, 프로필, 서명).
 - 중간에 따로 '🎬 유튜브' 소제목 칸은 만들지 않는다. 쿠팡 '💛 핑포가 골라 본 아이템'은 (쿠팡 재개 후) 원래 자리(체크리스트·마무리 뒤) 그대로.
