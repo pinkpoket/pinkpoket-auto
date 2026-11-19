@@ -280,6 +280,115 @@ def cloudflare_image(prompt, path, style=None):
         return False
 
 
+# ---------------------------------------------------------------- 움직이는 자연 영상 배경
+# 2026-11-19 핑포 결정(시니어 길라잡이 벤치마킹 시험): 대본에 "bg_video": true 가 있으면
+# 사진 대신 실제 자연 영상(강·바다·노을·숲)을 깔고 흐리게 하지 않는다. 사람·동물·건물 영상은 건너뛴다.
+VIDEO_USED = set()
+SCENE_VIDEO = {}   # 장면 번호 → (영상 파일, 시작 초, 영상 길이)
+CALM_VIDEO = ["river forest", "calm sea waves", "sunset clouds", "mountain lake", "waterfall forest",
+              "autumn forest", "flowing stream", "misty mountains", "sea sunset", "clouds timelapse"]
+
+
+def _scenery_only(text):
+    return not (PEOPLE.search(text or "") or NOT_SCENERY.search(text or ""))
+
+
+def _download(url, path):
+    with requests.get(url, stream=True, timeout=120) as r:
+        r.raise_for_status()
+        with open(path, "wb") as f:
+            for chunk in r.iter_content(1 << 20):
+                f.write(chunk)
+    return duration(path)
+
+
+def pexels_video(query, need, path):
+    """Pexels 무료 영상 — 세로 영상, 필요한 길이 이상인 것부터."""
+    key = os.environ.get("PEXELS_API_KEY", "").strip()
+    if not key:
+        return 0.0
+    try:
+        r = requests.get("https://api.pexels.com/videos/search", headers={"Authorization": key}, timeout=30,
+                         params={"query": query, "orientation": "portrait", "per_page": 40, "size": "medium"})
+        vids = r.json().get("videos", []) if r.ok else []
+    except Exception as e:  # noqa: BLE001
+        print(f"[영상] Pexels 오류: {e}")
+        return 0.0
+    vids.sort(key=lambda v: v.get("duration", 0) < need)   # 길이가 충분한 영상 먼저 (순위는 유지)
+    for v in vids:
+        slug = (v.get("url") or "").rstrip("/").rsplit("/", 1)[-1].replace("-", " ")
+        if v["id"] in VIDEO_USED or v.get("duration", 0) < 5 or not _scenery_only(slug):
+            continue
+        files = [f for f in v.get("video_files", []) if f.get("file_type") == "video/mp4"
+                 and f.get("width") and f.get("height") and f["height"] > f["width"] and f["height"] >= 1280]
+        if not files:
+            continue
+        f = min(files, key=lambda f: abs(f["height"] - 1920))
+        try:
+            secs = _download(f["link"], path)
+        except Exception:  # noqa: BLE001
+            continue
+        VIDEO_USED.add(v["id"])
+        print(f"[영상] Pexels '{query}' → {v['id']} ({secs:.0f}초, {f['width']}x{f['height']}) {slug}")
+        return secs
+    return 0.0
+
+
+def pixabay_video(query, need, path):
+    """Pixabay 무료 영상 (대부분 가로 영상 → 가운데를 세로로 잘라 씀)."""
+    key = os.environ.get("PIXABAY_API_KEY", "").strip()
+    if not key:
+        return 0.0
+    try:
+        r = requests.get("https://pixabay.com/api/videos/", timeout=30, params={
+            "key": key, "q": query, "category": "nature", "safesearch": "true", "per_page": 50, "order": "popular"})
+        hits = r.json().get("hits", []) if r.ok else []
+    except Exception as e:  # noqa: BLE001
+        print(f"[영상] Pixabay 오류: {e}")
+        return 0.0
+    hits.sort(key=lambda h: h.get("duration", 0) < need)
+    for h in hits:
+        if ("px", h["id"]) in VIDEO_USED or h.get("duration", 0) < 5 or not _scenery_only(h.get("tags")):
+            continue
+        vs = h.get("videos") or {}
+        f = next((vs[k] for k in ("large", "medium") if (vs.get(k) or {}).get("url") and vs[k].get("height", 0) >= 1080), None)
+        if not f:
+            continue
+        try:
+            secs = _download(f["url"], path)
+        except Exception:  # noqa: BLE001
+            continue
+        VIDEO_USED.add(("px", h["id"]))
+        print(f"[영상] Pixabay '{query}' → {h['id']} ({secs:.0f}초, {f.get('width')}x{f.get('height')}) {h.get('tags')}")
+        return secs
+    return 0.0
+
+
+def prepare_bg_videos(scenes, group, leaders, voiced):
+    """장면 묶음마다 자연 영상 하나를 받아, 묶음 안 장면들이 그 영상을 이어서 쓰게 한다 (장면이 바뀌어도 영상은 계속 흐름)."""
+    SCENE_VIDEO.clear()
+    for g, lead in sorted(leaders.items()):
+        members = [i for i in range(len(scenes)) if group[i] == g]
+        need = sum(voiced[i][2] for i in members)
+        path = os.path.join(WORK, f"vsrc{g}.mp4")
+        prompt = scenes[lead].get("bg") or ""
+        secs = 0.0
+        for q in dict.fromkeys([pexels_query(prompt) if prompt else "", random.choice(CALM_VIDEO), "nature landscape"]):
+            if not q:
+                continue
+            secs = pexels_video(q, need, path) or pixabay_video(q, need, path)
+            if secs:
+                break
+        if not secs:
+            print(f"[영상] 묶음 {g}: 영상을 못 받아 사진으로 대신함")
+            continue
+        off = 0.0
+        for i in members:
+            SCENE_VIDEO[i] = (path, off % secs, secs)
+            off += voiced[i][2]
+    print(f"[영상] 자연 영상 배경 장면 {len(SCENE_VIDEO)}/{len(scenes)}개")
+
+
 def gradient_bg(path, seed):
     rnd = random.Random(seed)
     a, b = rnd.choice([tuple(map(tuple, g)) for g in C["gradients"]])
@@ -620,15 +729,24 @@ def make_scene(i, scene, hook, audio, words, t0, total):
     frames = int(dur * FPS) + 1
     # 모든 장면 같은 움직임: 천천히 확대
     z = "min(1.0+0.0015*on,1.12)"
-    inputs = ["-loop", "1", "-i", bg, "-i", base]
+    vid = SCENE_VIDEO.get(i)
+    if vid:
+        # 실제 자연 영상 배경: 묶음 안에서 이어지는 지점부터, 짧으면 반복 (흐리게 하지 않음)
+        inputs = ["-stream_loop", "-1", "-ss", f"{vid[1]:.3f}", "-i", vid[0], "-i", base]
+    else:
+        inputs = ["-loop", "1", "-i", bg, "-i", base]
     for cp, _, _ in caps:
         inputs += ["-i", cp]
     inputs += ["-i", audio, "-i", os.path.join(WORK, "whoosh.wav")]
     n = len(caps)
     a_idx, w_idx = 2 + n, 3 + n
-    fc = (f"[0:v]scale={int(W * 1.2)}:{int(H * 1.2)},"
-          f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={W}x{H}:fps={FPS}[bg];"
-          f"[bg][1:v]overlay=0:0[v0]")
+    if vid:
+        fc = (f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},setsar=1,fps={FPS},"
+              f"eq=brightness=-0.03:saturation=1.08[bg];[bg][1:v]overlay=0:0[v0]")
+    else:
+        fc = (f"[0:v]scale={int(W * 1.2)}:{int(H * 1.2)},"
+              f"zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={frames}:s={W}x{H}:fps={FPS}[bg];"
+              f"[bg][1:v]overlay=0:0[v0]")
     for k, (_, st, en) in enumerate(caps):
         fc += f";[v{k}][{2 + k}:v]overlay=0:0:enable='between(t,{st:.3f},{en:.3f})'[v{k + 1}]"
     fc += f";[v{n}]format=yuv420p[v]"
@@ -690,7 +808,7 @@ def build_video(script, out_path):
     # 채널 설정 max_images 가 있으면 그림 수를 줄이고, 이어지는 장면끼리 같은 그림을 나눠 쓴다
     srcs = [sc.get("_src", k) for k, sc in enumerate(scenes)]
     uniq = sorted(set(srcs))
-    n_img = min(len(uniq), ch.P.get("max_images") or len(uniq))
+    n_img = min(len(uniq), script.get("bg_clips") or ch.P.get("max_images") or len(uniq))
     # 인생ON 사연(숏드라마, 2026-11-10): 장면마다 AI 그림(수채화 인물), 등장인물 {이름} 은 대본 "characters" 설명으로 바꿔 같은 얼굴로
     sayeon = script.get("format") == "sayeon"
     if sayeon:
@@ -806,6 +924,9 @@ def build_video(script, out_path):
         words = tts(sc["text"], v, audio)
         voiced.append((audio, words, duration(audio) + 0.05))
     total = sum(v[2] for v in voiced)
+    SCENE_VIDEO.clear()
+    if script.get("bg_video") and not sayeon:
+        prepare_bg_videos(scenes, group, leaders, voiced)
     clips, t0 = [], 0.0
     for i, sc in enumerate(scenes):
         audio, words, dur = voiced[i]
