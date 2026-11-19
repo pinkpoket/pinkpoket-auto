@@ -13,6 +13,7 @@ import datetime as dt
 import glob
 import json
 import os
+import re
 import time
 import shutil
 import subprocess
@@ -117,6 +118,21 @@ def recent_short(minutes=75):
     return bool(glob.glob(str(SQ / "*.json")))
 
 
+def stuck_queue(hours=2):
+    """큐에 오래(2시간 넘게) 남은 대본 — 제작이 실패해 걸린 것 (2026-11-19 도구 설치 시간 초과로 하루가 막힌 일).
+    파일 이름의 YYYYMMDD-HHMM(한국 시간)으로 판단한다."""
+    now_kst = dt.datetime.now(dt.timezone.utc) + dt.timedelta(hours=9)
+    out = []
+    for f in glob.glob(str(SQ / "*.json")):
+        m = re.match(r"(\d{8})-(\d{4})", os.path.basename(f))
+        if not m:
+            continue
+        t = dt.datetime.strptime(m.group(1) + m.group(2), "%Y%m%d%H%M").replace(tzinfo=dt.timezone.utc)
+        if (now_kst.replace(tzinfo=dt.timezone.utc) - t).total_seconds() > hours * 3600:
+            out.append(f)
+    return out
+
+
 def main():
     mode = os.environ.get("MODE", "short")
     # ⏸ 쉬는 기간 (2026-11-13 핑포 결정: 쇼츠 조회수가 10회 안팎으로 막혀 사흘 쉼). life/PAUSE 첫 줄 날짜(한국) 전까지 아무것도 안 올림
@@ -140,6 +156,11 @@ def main():
         print(f"남은 사연: {len(bank(YB))}편")
         if len(bank(YB)) <= 1:
             gw.telegram(f"[인생ON] 사연 쇼츠 보관함이 거의 비었어요 ({len(bank(YB))}편 남음).")
+        return
+    if mode in ("short", "pair") and stuck_queue():
+        # 지난번 제작이 실패해 큐에 걸린 대본이 있으면, 새로 꺼내지 않고 그걸 다시 만든다 (이번 칸을 대신함)
+        print("큐에 걸린 대본을 다시 만듭니다:", [os.path.basename(f) for f in stuck_queue()])
+        out("next", "shorts-life.yml")
         return
     if mode in ("short", "pair") and recent_short():
         print("방금 다른 쇼츠가 올라가서 이번엔 건너뜀")
