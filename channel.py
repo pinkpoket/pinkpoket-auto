@@ -122,6 +122,9 @@ PROFILES = {
         "bg_blur": 7,
         # 구독 부탁 한 줄 (아침 쇼츠에만 시험, 2026-11-19 핑포 결정) — 조회 1,000회당 구독을 저녁 쇼츠와 비교
         "sub_cta": "매일 노후에 힘이 되는 지혜, 구독하고 받아 보세요.",
+        # 2026-11-19 핑포 결정(시니어 길라잡이 벤치마킹): 모든 쇼츠 배경을 실제 자연 영상(강·바다·숲·노을)으로, 흐리지 않음.
+        # 장면 묶음 4개가 영상 하나씩 이어서 씀. 영상을 못 받은 묶음만 위 흐린 질감 사진으로 대신함
+        "bg_video": True,
         # 사연 장면 중 사람 없는 장면("still": true) — 빈 방·물건만 (2026-11-11)
         "sayeon_still_style": ("soft watercolor and ink illustration, warm Korean picture-book style, gentle muted colors, "
                                "quiet still life, empty scene without any people, objects centered, vertical 9:16 composition, "

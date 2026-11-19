@@ -925,7 +925,8 @@ def build_video(script, out_path):
         voiced.append((audio, words, duration(audio) + 0.05))
     total = sum(v[2] for v in voiced)
     SCENE_VIDEO.clear()
-    if script.get("bg_video") and not sayeon:
+    # 채널 설정 bg_video(인생ON, 2026-11-19 핑포 결정: 모든 쇼츠) 또는 대본 "bg_video": true. 대본에 false 면 사진 배경
+    if script.get("bg_video", ch.P.get("bg_video")) and not sayeon:
         prepare_bg_videos(scenes, group, leaders, voiced)
     clips, t0 = [], 0.0
     for i, sc in enumerate(scenes):
