@@ -41,7 +41,7 @@ def main():
     start = end - dt.timedelta(days=45)
     S, E = start.isoformat(), end.isoformat()
     out = {"at": dt.datetime.utcnow().isoformat() + "Z", "scope": scope}
-    out["daily"] = tryreport(h, ["views,engagedViews,averageViewPercentage,likes,subscribersGained",
+    out["daily"] = tryreport(h, ["views,engagedViews,averageViewPercentage,likes,subscribersGained,subscribersLost",
                                  "views,averageViewPercentage,likes,subscribersGained"],
                              startDate=S, endDate=E, dimensions="day", sort="day")
     out["daily_type"] = tryreport(h, ["views,engagedViews", "views"], startDate=S, endDate=E,
