@@ -1,15 +1,51 @@
 {
- "at": "2026-11-19T11:45:33.729436Z",
+ "at": "2026-11-20T11:11:44.439426Z",
  "channel": "인생ON : 마음의 불을 켜다",
  "subscribers": "3000",
  "analytics": true,
  "videos": [
   {
+   "id": "HCU3JPE4XPw",
+   "title": "70살이 넘었다면 자식 앞에서 절대 하지 말아야 할 말 3가지 #shorts",
+   "published": "2026-11-20T10:26:13Z",
+   "duration": "PT1M1S",
+   "views": 1,
+   "likes": 0,
+   "comments": 1
+  },
+  {
+   "id": "HefSnDYSJVc",
+   "title": "자식이 돈 부탁할 때 절대 하면 안 되는 말 6가지",
+   "published": "2026-11-20T02:01:18Z",
+   "duration": "PT26M57S",
+   "views": 10,
+   "likes": 1,
+   "comments": 1
+  },
+  {
+   "id": "ehSyDXtHvtE",
+   "title": "한 번 거절했다고 등 돌리는 사람은 이제 놓아주셔도 됩니다 #shorts",
+   "published": "2026-11-19T23:03:07Z",
+   "duration": "PT1M4S",
+   "views": 443,
+   "likes": 7,
+   "comments": 1
+  },
+  {
+   "id": "wbqB5CAkylc",
+   "title": "이 중 2개 이상이면 자식이 조용히 부담을 느끼고 있습니다 #shorts",
+   "published": "2026-11-19T11:53:01Z",
+   "duration": "PT58S",
+   "views": 995,
+   "likes": 13,
+   "comments": 2
+  },
+  {
    "id": "UbhGAWG00dk",
    "title": "노년에 존경받는 어른과 외면받는 어른의 차이 6가지",
    "published": "2026-11-19T02:02:23Z",
    "duration": "PT26M10S",
-   "views": 9,
+   "views": 36,
    "likes": 0,
    "comments": 1
   },
@@ -18,7 +54,7 @@
    "title": "쇼펜하우어가 혼자 있는 시간을 아끼라고 한 이유 #shorts",
    "published": "2026-11-18T10:25:53Z",
    "duration": "PT55S",
-   "views": 410,
+   "views": 491,
    "likes": 6,
    "comments": 1
   },
@@ -27,27 +63,42 @@
    "title": "60 넘어 부부 사이가 다시 좋아지는 사람들의 6가지 습관",
    "published": "2026-11-18T02:05:48Z",
    "duration": "PT25M21S",
-   "views": 16,
+   "views": 34,
    "likes": 1,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 89,
+   "avg_view_pct": 5.85,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 2
   },
   {
    "id": "lAUMn_ysAyI",
    "title": "돈 빌려 간 뒤 이 3가지 말을 하는 사람에게는 절대 다시 빌려주지 마세요 #shorts",
    "published": "2026-11-17T23:09:44Z",
    "duration": "PT1M3S",
-   "views": 1175,
+   "views": 1196,
    "likes": 21,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 45,
+   "avg_view_pct": 72.42,
+   "shares": 6,
+   "subs_gained": 1,
+   "views_period": 1132
   },
   {
    "id": "2QO7c5REG6A",
    "title": "귀가 어두워졌는데 TV 소리만 키우고 넘기면 안 되는 진짜 이유 #shorts",
    "published": "2026-11-17T10:26:54Z",
    "duration": "PT56S",
-   "views": 206,
+   "views": 207,
    "likes": 4,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 14,
+   "avg_view_pct": 26.33,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 177
   },
   {
    "id": "S-_PlEGREvw",
@@ -56,77 +107,82 @@
    "duration": "PT25M6S",
    "views": 45,
    "likes": 0,
-   "comments": 1
+   "comments": 1,
+   "avg_view_sec": 189,
+   "avg_view_pct": 12.58,
+   "shares": 0,
+   "subs_gained": 0,
+   "views_period": 43
   },
   {
    "id": "meZpOGV2gFI",
    "title": "아플 때 자식에게는 서운함 말고 사실과 부탁만 짧게 전하세요 #shorts",
    "published": "2026-11-16T23:01:26Z",
    "duration": "PT1M",
-   "views": 913,
+   "views": 915,
    "likes": 4,
    "comments": 1,
-   "avg_view_sec": 51,
-   "avg_view_pct": 85.51,
+   "avg_view_sec": 46,
+   "avg_view_pct": 77.34,
    "shares": 2,
    "subs_gained": 1,
-   "views_period": 564
+   "views_period": 803
   },
   {
    "id": "Yt-NdgvCMlI",
    "title": "손주 봐 주기 전에 자식과 반드시 정해야 할 3가지 #shorts",
    "published": "2026-11-16T10:51:19Z",
    "duration": "PT1M7S",
-   "views": 128,
+   "views": 129,
    "likes": 3,
    "comments": 1,
-   "avg_view_sec": 139,
-   "avg_view_pct": 208.51999999999998,
-   "shares": 0,
+   "avg_view_sec": 107,
+   "avg_view_pct": 160.95,
+   "shares": 1,
    "subs_gained": 0,
-   "views_period": 47
+   "views_period": 124
   },
   {
    "id": "oPUCfTd6s5I",
    "title": "65세가 넘으면 가장 먼저 내려놓아야 할 6가지",
    "published": "2026-11-16T02:08:48Z",
    "duration": "PT25M53S",
-   "views": 45,
+   "views": 48,
    "likes": 0,
    "comments": 1,
-   "avg_view_sec": 382,
-   "avg_view_pct": 24.64,
+   "avg_view_sec": 430,
+   "avg_view_pct": 27.74,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 35
+   "views_period": 40
   },
   {
    "id": "6ZgWy8vY6ZQ",
    "title": "자식 집에 갈 때 이 3가지만 지켜도 반가운 손님이 됩니다 #shorts",
    "published": "2026-11-15T22:54:57Z",
    "duration": "PT53S",
-   "views": 1221,
+   "views": 1228,
    "likes": 19,
    "comments": 1,
    "avg_view_sec": 52,
-   "avg_view_pct": 99.26,
+   "avg_view_pct": 98.65,
    "shares": 5,
    "subs_gained": 1,
-   "views_period": 1180
+   "views_period": 1207
   },
   {
    "id": "x529xIiWe6Y",
    "title": "나이 들수록 자식이 먼저 찾아오는 부모들의 3가지 공통점 #shorts",
    "published": "2026-11-15T10:06:00Z",
    "duration": "PT53S",
-   "views": 1182,
+   "views": 1184,
    "likes": 7,
    "comments": 1,
    "avg_view_sec": 41,
-   "avg_view_pct": 78.55,
+   "avg_view_pct": 78.5,
    "shares": 2,
    "subs_gained": 0,
-   "views_period": 1176
+   "views_period": 1181
   },
   {
    "id": "0njGJw0qNec",
@@ -147,53 +203,53 @@
    "title": "연금이 적어도 노후가 넉넉한 사람들의 6가지 습관",
    "published": "2026-11-15T01:55:24Z",
    "duration": "PT25M19S",
-   "views": 70,
+   "views": 71,
    "likes": 0,
    "comments": 1,
    "avg_view_sec": 192,
    "avg_view_pct": 12.689999999999998,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 59
+   "views_period": 66
   },
   {
    "id": "wi75oxt9qLg",
    "title": "정약용이 유배지에서 두 아들에게 재산 대신 남긴 두 글자 #shorts",
    "published": "2026-11-14T22:53:14Z",
    "duration": "PT1M",
-   "views": 83,
+   "views": 85,
    "likes": 3,
    "comments": 1,
    "avg_view_sec": 35,
    "avg_view_pct": 59.96,
    "shares": 2,
    "subs_gained": 0,
-   "views_period": 84
+   "views_period": 83
   },
   {
    "id": "dl0urfFGX9E",
    "title": "자식이 돈 빌려 달라고 하면 절대 바로 대답하지 마세요! 관계도 노후도 지키는 3마디 #shorts",
    "published": "2026-11-14T06:20:14Z",
    "duration": "PT1M1S",
-   "views": 1029,
+   "views": 1030,
    "likes": 20,
    "comments": 1,
    "avg_view_sec": 52,
-   "avg_view_pct": 86.82,
+   "avg_view_pct": 86.85,
    "shares": 1,
    "subs_gained": 3,
-   "views_period": 1026
+   "views_period": 1029
   },
   {
    "id": "j-YBUYr5Fdg",
    "title": "자식 연락이 뜸해졌을 때, 부모가 절대 하면 안 되는 말 3가지 #shorts",
    "published": "2026-11-13T10:20:00Z",
    "duration": "PT56S",
-   "views": 1063,
+   "views": 1067,
    "likes": 14,
    "comments": 1,
    "avg_view_sec": 68,
-   "avg_view_pct": 122.35000000000001,
+   "avg_view_pct": 122.13000000000001,
    "shares": 3,
    "subs_gained": 5,
    "views_period": 1064
@@ -203,7 +259,7 @@
    "title": "내가 너희를 어떻게 키웠는데, 이 말 대신 하세요 #shorts",
    "published": "2026-11-13T03:06:33Z",
    "duration": "PT56S",
-   "views": 247,
+   "views": 248,
    "likes": 5,
    "comments": 1,
    "avg_view_sec": 55,
@@ -217,14 +273,14 @@
    "title": "자식에게 끝까지 하지 말아야 할 행동 6가지",
    "published": "2026-11-13T01:56:18Z",
    "duration": "PT25M37S",
-   "views": 761,
+   "views": 763,
    "likes": 3,
    "comments": 1,
-   "avg_view_sec": 340,
-   "avg_view_pct": 22.12,
+   "avg_view_sec": 344,
+   "avg_view_pct": 22.43,
    "shares": 2,
    "subs_gained": 2,
-   "views_period": 757
+   "views_period": 759
   },
   {
    "id": "GKN5yetrrzY",
@@ -259,14 +315,14 @@
    "title": "어디서나 대접받는 어른은 식사 자리에서 이 3가지가 다릅니다 #shorts",
    "published": "2026-11-12T10:23:50Z",
    "duration": "PT1M",
-   "views": 795,
+   "views": 796,
    "likes": 3,
    "comments": 1,
    "avg_view_sec": 40,
-   "avg_view_pct": 67.63,
+   "avg_view_pct": 67.97,
    "shares": 1,
    "subs_gained": 1,
-   "views_period": 793
+   "views_period": 795
   },
   {
    "id": "-GauPZKbF8E",
@@ -276,11 +332,11 @@
    "views": 435,
    "likes": 0,
    "comments": 1,
-   "avg_view_sec": 33,
-   "avg_view_pct": 58.26,
+   "avg_view_sec": 34,
+   "avg_view_pct": 58.86,
    "shares": 0,
    "subs_gained": 1,
-   "views_period": 433
+   "views_period": 435
   },
   {
    "id": "35lNIt4i7sI",
@@ -315,7 +371,7 @@
    "title": "끊을까 말까 고민되는 관계, 현명한 어른은 이렇게 정리합니다",
    "published": "2026-11-11T12:41:43Z",
    "duration": "PT25M37S",
-   "views": 36,
+   "views": 37,
    "likes": 0,
    "comments": 1,
    "avg_view_sec": 230,
@@ -378,7 +434,7 @@
    "avg_view_pct": 29.32,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 17
+   "views_period": 18
   },
   {
    "id": "pFns1NiU6sc",
@@ -429,7 +485,7 @@
    "avg_view_pct": 44.59,
    "shares": 1,
    "subs_gained": 1,
-   "views_period": 38
+   "views_period": 40
   },
   {
    "id": "O-gUFAITjyI",
@@ -485,7 +541,7 @@
    "avg_view_pct": 25.53,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 70
+   "views_period": 72
   },
   {
    "id": "4_RKBvXXPtQ",
@@ -509,11 +565,11 @@
    "views": 218,
    "likes": 4,
    "comments": 1,
-   "avg_view_sec": 160,
-   "avg_view_pct": 25.44,
+   "avg_view_sec": 165,
+   "avg_view_pct": 26.35,
    "shares": 1,
    "subs_gained": 1,
-   "views_period": 212
+   "views_period": 218
   },
   {
    "id": "9udwePx5xQI",
@@ -548,7 +604,7 @@
    "title": "은퇴 후 하루가 길게 느껴진다면, 니체가 남긴 견디는 힘의 한 문장 #shorts",
    "published": "2026-11-07T21:51:32Z",
    "duration": "PT1M1S",
-   "views": 1205,
+   "views": 1206,
    "likes": 8,
    "comments": 1,
    "avg_view_sec": 50,
@@ -821,7 +877,7 @@
    "avg_view_pct": 70.49,
    "shares": 4,
    "subs_gained": 3,
-   "views_period": 1264
+   "views_period": 1265
   },
   {
    "id": "SvX8xKtQT1g",
@@ -1098,7 +1154,7 @@
    "title": "욱해서 한마디 했다가 평생 후회하는 노년의 특징",
    "published": "2026-05-29T23:00:37Z",
    "duration": "PT1M",
-   "views": 2502,
+   "views": 2503,
    "likes": 62,
    "comments": 1
   },
@@ -1180,11 +1236,11 @@
    "views": 109,
    "likes": 0,
    "comments": 1,
-   "avg_view_sec": 123,
-   "avg_view_pct": 51.94,
+   "avg_view_sec": 131,
+   "avg_view_pct": 55.36,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 70
+   "views_period": 69
   },
   {
    "id": "L_h8pTuMm5g",
@@ -1416,7 +1472,7 @@
    "published": "2026-05-08T10:30:17Z",
    "duration": "PT1M6S",
    "views": 10236,
-   "likes": 240,
+   "likes": 239,
    "comments": 2,
    "avg_view_sec": 137,
    "avg_view_pct": 208.87000000000003,
@@ -1464,7 +1520,7 @@
    "avg_view_pct": 48.05,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 13
+   "views_period": 14
   },
   {
    "id": "9m_dTtve9Zk",
@@ -1487,7 +1543,7 @@
    "avg_view_pct": 42.84,
    "shares": 1,
    "subs_gained": 0,
-   "views_period": 23
+   "views_period": 24
   },
   {
    "id": "d7WMjRfk0Zc",
@@ -1515,7 +1571,7 @@
    "avg_view_pct": 34.49,
    "shares": 1,
    "subs_gained": 0,
-   "views_period": 7
+   "views_period": 8
   },
   {
    "id": "dOy4O69_aDI",
@@ -1523,7 +1579,7 @@
    "published": "2026-04-27T22:00:00Z",
    "duration": "PT1M12S",
    "views": 19580,
-   "likes": 499,
+   "likes": 498,
    "comments": 5,
    "avg_view_sec": 136,
    "avg_view_pct": 190.27,
@@ -1728,11 +1784,11 @@
    "views": 22078,
    "likes": 410,
    "comments": 3,
-   "avg_view_sec": 68,
-   "avg_view_pct": 111.57999999999998,
+   "avg_view_sec": 62,
+   "avg_view_pct": 102.56,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 7
+   "views_period": 5
   },
   {
    "id": "HC0rmcJJj7I",
@@ -1844,14 +1900,14 @@
    "title": "경조사 다 챙기면 쓸쓸하게 죽습니다  니체가 경고한 인맥의 민낯",
    "published": "2026-04-06T22:15:00Z",
    "duration": "PT1M26S",
-   "views": 1054,
+   "views": 1057,
    "likes": 42,
    "comments": 1,
-   "avg_view_sec": 46,
-   "avg_view_pct": 53.73,
+   "avg_view_sec": 45,
+   "avg_view_pct": 53.339999999999996,
    "shares": 2,
    "subs_gained": 0,
-   "views_period": 77
+   "views_period": 81
   },
   {
    "id": "sGY5jIhH94g",
@@ -1895,7 +1951,7 @@
    "title": "세상은 생각보다 잔인합니다 늙어서 서럽지 않으려면 꼭 알아야 할 진실",
    "published": "2026-04-03T23:00:00Z",
    "duration": "PT1M1S",
-   "views": 2228,
+   "views": 2238,
    "likes": 97,
    "comments": 5
   },
@@ -1905,7 +1961,7 @@
    "published": "2026-04-03T10:30:00Z",
    "duration": "PT59S",
    "views": 2680,
-   "likes": 58,
+   "likes": 57,
    "comments": 1
   },
   {
@@ -2121,12 +2177,7 @@
    "duration": "PT57S",
    "views": 7267,
    "likes": 224,
-   "comments": 3,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 3
   },
   {
    "id": "heTnoa6_1WU",
@@ -2207,7 +2258,7 @@
    "title": "자식 연락 기다리지 마세요, 혼자여도 비참하지 않은 법",
    "published": "2026-03-14T09:00:00Z",
    "duration": "PT1M15S",
-   "views": 1150,
+   "views": 1152,
    "likes": 31,
    "comments": 5,
    "avg_view_sec": 157,
@@ -2355,12 +2406,7 @@
    "duration": "PT11S",
    "views": 2036,
    "likes": 7,
-   "comments": 1,
-   "avg_view_sec": 0,
-   "avg_view_pct": 0,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "fBs14eSaVpo",
@@ -2418,7 +2464,7 @@
    "title": "'사람 고쳐 쓰는 거 아닙니다' 겉모습에 속아 평생 후회하기 싫을 때 꼭 봐야 할 영상",
    "published": "2026-03-02T11:30:00Z",
    "duration": "PT46S",
-   "views": 1258,
+   "views": 1259,
    "likes": 27,
    "comments": 0,
    "avg_view_sec": 47,
@@ -2448,7 +2494,7 @@
    "avg_view_pct": 0,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 3
+   "views_period": 4
   },
   {
    "id": "CGA_qMaONBM",
@@ -2464,7 +2510,7 @@
    "title": "배우자를 손님처럼 대해야 하는 이유, 정약용의 정답 #결혼생활 #조언",
    "published": "2026-02-28T13:29:31Z",
    "duration": "PT1M12S",
-   "views": 1313,
+   "views": 1314,
    "likes": 21,
    "comments": 1,
    "avg_view_sec": 0,
@@ -2495,11 +2541,11 @@
    "views": 3474,
    "likes": 81,
    "comments": 1,
-   "avg_view_sec": 13,
-   "avg_view_pct": 15.17,
+   "avg_view_sec": 18,
+   "avg_view_pct": 20.45,
    "shares": 0,
    "subs_gained": 0,
-   "views_period": 6
+   "views_period": 5
   },
   {
    "id": "RPtNscwYcco",
@@ -2790,11 +2836,11 @@
    "views": 161,
    "likes": 4,
    "comments": 1,
-   "avg_view_sec": 49,
-   "avg_view_pct": 87.03,
+   "avg_view_sec": 50,
+   "avg_view_pct": 89.44,
    "shares": 3,
    "subs_gained": 0,
-   "views_period": 114
+   "views_period": 112
   },
   {
    "id": "Sd9P4DZEXis",
@@ -2803,12 +2849,7 @@
    "duration": "PT1M2S",
    "views": 38,
    "likes": 2,
-   "comments": 1,
-   "avg_view_sec": 3,
-   "avg_view_pct": 4.84,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 1
   },
   {
    "id": "3Fc_Lg2nZiE",
@@ -2959,12 +3000,7 @@
    "duration": "PT52S",
    "views": 1429,
    "likes": 20,
-   "comments": 0,
-   "avg_view_sec": 4,
-   "avg_view_pct": 8.11,
-   "shares": 0,
-   "subs_gained": 0,
-   "views_period": 2
+   "comments": 0
   },
   {
    "id": "YG7uAFX5uWA",
@@ -3097,7 +3133,7 @@
    "published": "2026-01-26T23:00:00Z",
    "duration": "PT53S",
    "views": 14450,
-   "likes": 310,
+   "likes": 309,
    "comments": 7,
    "avg_view_sec": 76,
    "avg_view_pct": 144.56,
@@ -3133,7 +3169,7 @@
    "title": "나이 들어 친구가 다 부질없는 이유 ㅣ이제는 사람 정리해야 당신이 삽니다",
    "published": "2026-01-25T13:56:50Z",
    "duration": "PT47S",
-   "views": 1057,
+   "views": 1058,
    "likes": 25,
    "comments": 3
   },
@@ -3292,7 +3328,7 @@
    "title": "내 장례식에 조문객 안 올까 봐 걱정된다면? 반드시 알아야 할 진실",
    "published": "2026-01-16T12:01:52Z",
    "duration": "PT1M",
-   "views": 960,
+   "views": 961,
    "likes": 20,
    "comments": 0,
    "avg_view_sec": 215,
@@ -3880,7 +3916,7 @@
    "title": "평생 믿었던 사람에게 배신 당했을 때 꼭 들어야 할 말 ㅣ쇼펜하우어",
    "published": "2025-12-18T15:32:11Z",
    "duration": "PT1M29S",
-   "views": 1302,
+   "views": 1307,
    "likes": 0,
    "comments": 1,
    "avg_view_sec": 48,
