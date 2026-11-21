@@ -246,7 +246,7 @@ def check_scenes(d, n_lo, n_hi, c_lo, c_hi, hook_max=14, need_bg=True):
     if not n_lo <= len(sc) <= n_hi:
         errs.append(f"장면이 {len(sc)}개 — {n_lo}~{n_hi}개로")
     if not c_lo <= total <= c_hi:
-        errs.append(f"scenes text 합이 {total}자 — {c_lo}~{c_hi}자로 (장면마다 30~40자)")
+        errs.append(f"scenes text 합이 {total}자 — {c_lo}~{c_hi}자로")
     if len(d["hook"].replace("\\n", "").replace("\n", "")) > hook_max:
         errs.append(f"hook 이 {hook_max - 2}자를 넘음")
     if EMOJI.search(d["hook"] + "".join(s["text"] for s in sc)):
@@ -662,14 +662,14 @@ def life_shorts(models):
 {chr(10).join('- ' + t for t in titles)}
 
 {NO_SEARCH}
-- 명언은 쓰지 마라. scenes text 합 340~400자, 장면 9~11개. 첫 장면 8~15자 단정형 훅.
+- 명언·철학자·위인·건강 주제는 쓰지 마라. 자식·돈·사람 관계 주제만. scenes text 합 220~250자(약 40초), 장면 8~10개, 장면마다 15~30자. 첫 장면 8~15자 단정형 훅.
 - JSON 키: title, hook, scenes([{{"text","bg"}}]), description, tags, comment, coupang_keywords([]).
 
 [규칙]
 {guide}
 """
-    d = write_loop(models, prompt, lambda d: check_scenes(d, 9, 12, 330, 410),
-                   soft=lambda d: check_scenes(d, 8, 13, 310, 430))
+    d = write_loop(models, prompt, lambda d: check_scenes(d, 8, 10, 210, 255),
+                   soft=lambda d: check_scenes(d, 7, 11, 195, 275))
     d["coupang_keywords"] = []
     d["writer"] = "gemini"
     save(ROOT / f"life/shorts/queue/{NOW:%Y%m%d-%H%M}.json", d)
