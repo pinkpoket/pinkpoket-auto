@@ -1,0 +1,46 @@
+{
+ "title": "가습기 세균 번식, 물만 덧부으면 큰일 나요",
+ "hook": "가습기 위생 4단계",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "가습기 물, 매일 그냥 덧붓고 계신가요?",
+   "bg": "a modern ultrasonic humidifier on a wooden table, close up, centered"
+  },
+  {
+   "text": "고인 물은 하루 만에 세균과 곰팡이 포자가 증식하는 최적의 장소입니다",
+   "bg": "a modern ultrasonic humidifier on a wooden table, close up, centered"
+  },
+  {
+   "text": "첫째, 남은 물을 전량 배출하고 분리 가능한 모든 부품을 분해하세요",
+   "bg": "dismantled humidifier parts on a clean kitchen towel, top down, centered"
+  },
+  {
+   "text": "둘째, 구연산이나 식초를 푼 미온수에 부품을 담가 물때를 녹이세요",
+   "bg": "dismantled humidifier parts on a clean kitchen towel, top down, centered"
+  },
+  {
+   "text": "셋째, 흐르는 물에 헹구고 진동자는 면봉으로 부드럽게 닦아냅니다",
+   "bg": "a cotton swab cleaning a small ultrasonic vibrator, macro view, centered"
+  },
+  {
+   "text": "넷째, 통풍 잘되는 그늘에서 완벽히 건조해야 세균 번식을 막아요",
+   "bg": "a cotton swab cleaning a small ultrasonic vibrator, macro view, centered"
+  }
+ ],
+ "description": "매일 물만 채워 넣던 가습기, 오늘부터는 꼭 비우고 말려보세요! 💧\n수조 속 세균 증식을 막는 올바른 4단계 세척 루틴을 확인하세요.\n여러분의 가습기는 며칠에 한 번씩 세척하시나요?",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집연구소",
+  "#가습기세척",
+  "#가습기관리",
+  "#겨울철습도관리",
+  "#건강한실내환경",
+  "#살림꿀팁",
+  "#위생관리"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/winter-humidifier-cleaning-maintenance.html",
+ "comment": "매일 켜는 가습기, 내 가족의 호흡기 건강과 직결되죠. 🌬️\n번거롭지만 오늘 저녁엔 수조를 말끔히 비워보는 건 어떨까요? 작은 습관이 쾌적한 겨울을 만듭니다 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
