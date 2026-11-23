@@ -196,8 +196,28 @@ STYLES = {
 }
 
 
+def fix_markup(body):
+    """AI 가 자주 틀리는 표기를 바로잡는다 (2026-11-23 애드센스 점검).
+    - **굵게** 같은 마크다운이 그대로 보이는 문제 → <strong>
+    - <ul> 안에 <li> 대신 <div>/<p> 를 써서 항목이 한 줄로 붙는 문제 → <li>
+    - 그 밖의 <div> → <p>
+    """
+    body = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", body, flags=re.S)
+
+    def list_items(match):
+        inner = re.sub(r"<\s*(div|p)\b[^>]*>", "<li>", match.group(2), flags=re.I)
+        inner = re.sub(r"<\s*/\s*(div|p)\s*>", "</li>", inner, flags=re.I)
+        return f"<{match.group(1)}>{inner}</{match.group(1)}>"
+
+    body = re.sub(r"<(ul|ol)\b[^>]*>(.*?)</\1>", list_items, body, flags=re.S | re.I)
+    body = re.sub(r"<\s*div\b[^>]*>", "<p>", body, flags=re.I)
+    body = re.sub(r"<\s*/\s*div\s*>", "</p>", body, flags=re.I)
+    return body
+
+
 def sanitize_html(body):
     """허용하지 않는 태그는 지우고(내용은 남김), 모든 속성을 없앤다."""
+    body = fix_markup(body)
     body = re.sub(r"<\s*(script|style|iframe)[^>]*>.*?<\s*/\s*\1\s*>", "", body, flags=re.S | re.I)
 
     def fix(match):
@@ -245,6 +265,7 @@ def faq_html(faq):
     rows = []
     for item in faq or []:
         q, a = str(item.get("q", "")).strip(), str(item.get("a", "")).strip()
+        q, a = (re.sub(r"\*\*(.+?)\*\*", r"\1", x) for x in (q, a))  # 마크다운 별표 지우기
         if q and a:
             rows.append(
                 f'<div style="margin:0 0 14px"><p style="margin:0 0 4px;font-size:16px;font-weight:bold">'
@@ -376,12 +397,26 @@ def assemble(name, obj, state, links, images):
     return title, "\n".join(p for p in parts if p)
 
 
+def topic_of(obj):
+    """채널에 카테고리 목록(topics)이 있으면 글 하나에 카테고리 하나를 고른다."""
+    topics = ch.P.get("topics") or []
+    names = [n for n, _ in topics]
+    picked = str(obj.get("topic", "")).strip()
+    if picked in names:
+        return picked
+    title = str(obj.get("title", ""))
+    return next((n for n, words in topics if any(w in title for w in words)), ch.P.get("topic_default", ""))
+
+
 def build(name, state):
     obj = read_post(name)
     title = str(obj.get("title", "")).strip()
     if not title or not str(obj.get("html", "")).strip():
         raise ValueError("title 또는 html 이 비어 있습니다")
-    labels = [str(x).strip() for x in obj.get("labels", []) if str(x).strip()][:8]
+    if ch.P.get("topics"):
+        labels = [topic_of(obj)]  # 라벨 = 카테고리 하나 (2026-11-23)
+    else:
+        labels = [str(x).strip() for x in obj.get("labels", []) if str(x).strip()][:8]
     links = pick_links(obj, state, name)
     images = images_for(name, obj, state)
     title, content = assemble(name, obj, state, links, images)

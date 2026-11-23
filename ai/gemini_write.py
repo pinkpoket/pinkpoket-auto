@@ -331,48 +331,194 @@ def news_corner():
 
 
 # ================================================================ 살림 블로그
+# 2026-11-23 애드센스 점검: 최근 글을 '형식 예시'로 그대로 보여 주니 제목·구성이 "겨울철 ~ 4단계"로 굳고
+# 마크다운(**)·<div> 실수까지 따라 했다. → 최근 글 대신 고정 예시를 주고, 글 형식을 돌려 쓰고, 검사를 늘린다.
+sys.path.insert(0, str(ROOT))
+import channel as _ch  # noqa: E402
+
+TOPICS = [n for n, _ in _ch.PROFILES["salim"]["topics"]]
+
+FORMATS = {
+    "steps": ("순서형", "한 가지 일을 처음부터 끝까지 순서대로. 소제목은 '①~④' 같은 번호 대신 할 일을 그대로 쓴다 (예: '🧽 배수 구멍 먼지부터 긁어내기')."),
+    "mistakes": ("실수 바로잡기형", "사람들이 흔히 하는 실수·오해 4~5가지를 하나씩: 왜 문제인지 → 대신 이렇게. 제목 예: '○○ 할 때 흔한 실수 5가지, 이것만 바꾸면 돼요'"),
+    "compare": ("비교·고르기형", "두세 가지 방법이나 물건을 비교해 우리 집 조건(원룸·베란다 유무·북향 등)에 맞는 선택 기준을 준다. 비교 표 필수. 제목 예: 'A vs B, 우리 집엔 뭐가 맞을까'"),
+    "qa": ("질문 답변형", "검색창에 실제로 칠 법한 질문 5~6개를 소제목(h2)으로 하고 각각 원리와 방법으로 답한다. 이 형식은 faq 칸에 본문과 다른 질문 2개만."),
+    "cases": ("상황별 해결형", "같은 문제를 집 상황별로 나눠 푼다 (예: 원룸 / 베란다 있는 집 / 오래된 빌라 / 아이·반려동물 있는 집). 제목 예: '○○, 우리 집 상황별로 다르게 해야 해요'"),
+    "why": ("원인 찾기형", "'왜 생길까'부터: 원인 3~4가지와 원인별 확인 방법·해결법. 제목 예: '○○ 계속 생기는 이유 4가지와 원인별 해결법'"),
+}
+
+EXAMPLE = {
+    "title": "욕실 줄눈 곰팡이 계속 생기는 이유 4가지와 원인별 해결법",
+    "slug": "bathroom-grout-mold-causes",
+    "description": "80~120자 검색 결과 요약",
+    "topic": "욕실·배수구",
+    "format": "why",
+    "labels": ["욕실곰팡이"],
+    "images": [{"prompt": "english scene prompt, no people, no text", "alt": "한국어 그림 설명"}],
+    "faq": [{"q": "질문", "a": "답"}],
+    "notice": "제품 표시와 설명서를 꼭 함께 확인해 주세요.",
+    "html": "<p>도입 문단</p><h2>🔍 소제목</h2><p>문단</p><ul><li><strong>항목 이름</strong>: 설명</li><li>…</li></ul>"
+            "<table><tr><th>…</th></tr><tr><td>…</td></tr></table><p>마무리 문단</p>",
+}
+
+GENERIC = {"겨울", "겨울철", "초겨울", "좁은", "작은", "원룸", "우리", "관리", "방법", "예방", "루틴", "정리"}
+
+
+def recent_posts(n=8):
+    out = []
+    for f in sorted(glob.glob(str(ROOT / "posts/*.json")))[-n:]:
+        d = load(f, {}) or {}
+        if d.get("title"):
+            out.append(d)
+    return out
+
+
+def pick_format(recent):
+    """최근 6편에 덜 쓴 형식을 고른다 (바로 앞 글과 같은 형식은 피함). 예전 글은 모두 순서형으로 본다."""
+    used = [p.get("format", "steps") for p in recent[-6:]]
+    last = used[-1] if used else ""
+    keys = list(FORMATS)
+    order = sorted(keys, key=lambda k: (used.count(k), (keys.index(k) + NOW.day) % len(keys)))
+    return next(k for k in order if k != last)
+
+
+def title_problems(title, recent, fmt):
+    errs = []
+    if re.search(r"\d+\s*단계", title) and (fmt != "steps" or sum(bool(re.search(r"\d+\s*단계", p["title"])) for p in recent[-4:]) >= 1):
+        errs.append("제목에 'N단계'를 쓰지 않는다 (최근 글이 다 'N단계'라 같은 틀로 보임)")
+    first = title.split()[0] if title.split() else ""
+    if first and sum(p["title"].split()[0] == first for p in recent[-4:] if p["title"].split()) >= 1:
+        errs.append(f"제목 첫 낱말 '{first}' 가 최근 글과 같음 — 핵심 검색어(물건·장소·문제)로 시작하게 바꾸기")
+    if re.search(r"(겨울철|초겨울)", title) and sum(bool(re.search(r"(겨울철|초겨울)", p["title"])) for p in recent[-4:]) >= 2:
+        errs.append("최근 제목에 '겨울철/초겨울'이 많음 — 이번 제목에는 빼기")
+    return errs
+
+
+def body_problems(d):
+    """사람이 보면 바로 티 나는 실수들."""
+    errs = []
+    blob = d.get("html", "") + " " + json.dumps(d.get("faq", []), ensure_ascii=False) + " " + d.get("title", "")
+    if "**" in blob:
+        errs.append("마크다운 ** 를 썼음 — 강조는 <strong> 태그로만")
+    if re.search(r"<\s*div", d.get("html", ""), re.I):
+        errs.append("<div> 를 썼음 — 목록은 <ul><li>, 문단은 <p>")
+    for m in re.finditer(r"<(ul|ol)>(.*?)</\1>", d.get("html", ""), re.S):
+        if "<li>" not in m.group(2):
+            errs.append("<ul>/<ol> 안에 <li> 가 없음")
+            break
+    words = sorted({w for w in re.findall(r"(?<![A-Za-z&#])[a-z]{3,}(?![A-Za-z;])", plain(blob))})
+    if words:
+        errs.append(f"한국어 본문에 영어 단어가 섞임: {', '.join(words[:6])} — 우리말로")
+    if re.search(r"다음\s*\d*\s*편", plain(d.get("html", ""))):
+        errs.append("본문에 '다음 편' 예고를 쓰지 않는다 (시리즈 링크는 봇이 붙임)")
+    if d.get("topic") not in TOPICS:
+        errs.append(f"topic 은 다음 중 하나: {', '.join(TOPICS)}")
+    return errs
+
+
+def keywords(text):
+    return {w for w in re.findall(r"[가-힣]{2,}", text) if w not in GENERIC}
+
+
+def review(models, d):
+    """두 번째 눈: 숫자가 서로 안 맞거나, 틀리거나 위험한 내용을 찾는다 (무료 Lite 모델)."""
+    prompt = header("살림 블로그 글 검수자") + f"""아래 글을 꼼꼼히 읽고 '고쳐야 할 문제'만 찾는다. 문체·취향 지적은 하지 않는다.
+찾을 것:
+1) 같은 기준(거리·시간·온도·비율·횟수)이 본문·표·FAQ 에서 서로 다른 숫자로 적힌 곳
+2) 사실과 다르거나 근거 없이 단정한 내용, 안전에 위험한 조언(세제 섞기, 전기·가스 등)
+3) 같은 문장·내용을 표현만 바꿔 되풀이한 곳
+4) 문장이 끊기거나 어색하게 붙은 곳
+답 형식: {{"problems": ["문제와 고칠 방향", ...]}} (문제 없으면 빈 목록)
+
+[글]
+제목: {d.get('title')}
+본문: {plain(d.get('html', ''))}
+FAQ: {json.dumps(d.get('faq', []), ensure_ascii=False)}
+"""
+    try:
+        r = parse_json(generate(models, prompt, temperature=0.2))
+        return [str(x) for x in (r.get("problems") or [])][:5]
+    except Exception as e:  # noqa: BLE001 — 검수가 실패해도 글쓰기는 막지 않는다
+        print("검수 건너뜀:", e)
+        return []
+
+
 def salim_blog(models):
     guide = (ROOT / "WRITING_GUIDE.md").read_text(encoding="utf-8")
     series = load(ROOT / "data/series.json", {"series": []})
     posted = [p.get("title") for p in (load(ROOT / "data/posted.json", {}) or {}).get("posted", [])]
-    titles = titles_from(posted, "posts/*.json", n=60)
+    titles = titles_from(posted, "posts/*.json", n=80)
+    recent = recent_posts()
     cur = next((s for s in series["series"] if not s.get("done") and s.get("next", 1) <= len(s.get("plan", []))), None)
+    fmt = pick_format(recent)
+    recent_topics = []
+    for s in reversed(series["series"]):
+        t = s.get("topic") or next((n for n, ws in _ch.PROFILES["salim"]["topics"]
+                                    if any(w in s["name"] + " ".join(s["plan"]) for w in ws)), "")
+        if t and t not in recent_topics:
+            recent_topics.append(t)
+    recent_topics = recent_topics[:2]
     if cur:
         task = (f"진행 중인 시리즈 「{cur['name']}」의 {cur['next']}편을 쓴다.\n"
                 f"시리즈 계획: {json.dumps(cur['plan'], ensure_ascii=False)}\n"
                 f"이번 편: {cur['plan'][cur['next'] - 1]}\n"
                 f'JSON 의 series 는 "{cur["name"]}", series_no 는 {cur["next"]}.')
     else:
-        task = ("진행 중인 시리즈가 없다. 계절(지금 날짜)에 맞는 새 시리즈를 3~5편으로 계획하고 1편을 쓴다.\n"
-                'JSON 에 "new_series": {"name": "...", "plan": ["1. ...", "2. ..."]} 를 함께 넣고, series_no 는 1.')
-    ex = latest_example("posts/*.json")
+        task = ("진행 중인 시리즈가 없다. 계절(지금 날짜)에 맞는 새 시리즈를 3~4편으로 계획하고 1편을 쓴다.\n"
+                f"새 시리즈의 topic 은 최근 시리즈와 다른 카테고리로 고른다 (최근: {', '.join(recent_topics) or '없음'}).\n"
+                "시리즈 이름과 계획에 'N단계' 같은 숫자 틀을 넣지 않는다. 각 편은 서로 다른 질문에 답해야 하고, "
+                "아래 '이미 쓴 제목'과 같은 물건·장소·문제를 다시 다루지 않는다.\n"
+                'JSON 에 "new_series": {"name": "...", "topic": "카테고리", "plan": ["1. ...", "2. ..."]} 를 함께 넣고, series_no 는 1.')
+    name, how = FORMATS[fmt]
     prompt = header("살림·인테리어 블로그 「핑포의 작은집 연구소」의 글 작가") + f"""[할 일]
 {task}
 
-[이미 쓴 제목 — 겹치지 않게]
+[이번 글 형식: {name}]
+{how}
+JSON 의 format 칸에는 "{fmt}" 를 넣는다. 최근 글들과 제목 모양·소제목 모양이 겹치지 않게 쓴다.
+
+[이미 쓴 제목 — 같은 주제를 다시 쓰지 않는다]
 {chr(10).join('- ' + t for t in titles)}
 
 {NO_SEARCH}
 - notice 칸: 출처 기관 이름 없이 "제품 표시와 설명서를 꼭 함께 확인해 주세요" 류의 안내 한두 문장.
 - category 는 "없음".
+- topic 칸: 다음 중 하나 — {', '.join(TOPICS)}
+- html 은 HTML 태그만 쓴다. 마크다운(**, ##, -) 금지, <div> 금지, 목록은 반드시 <ul><li>…</li></ul>.
+- 한국어로만 쓴다 (LED·TV 같은 대문자 약어만 허용).
+- 본문 끝에 '다음 편' 예고를 쓰지 않는다. 마무리는 오늘 해 볼 한 가지 + 댓글 질문.
+- 읽는 사람의 집 상황(원룸·베란다 유무·창 방향·오래된 집 등)에 따라 달라지는 점을 최소 한 곳 넣는다.
 
-[형식 예시 — 최근 글 (키 이름·구조·html 모양을 이대로, 내용은 완전히 새로)]
-{json.dumps(ex, ensure_ascii=False)}
+[형식 예시 — 키 이름만 참고, 내용·제목 모양은 따라 하지 않는다]
+{json.dumps(EXAMPLE, ensure_ascii=False)}
 
 [규칙]
 {guide}
 """
+    lite = [m for m in models if "lite" in m] or models
 
     def check(d):
         e = check_blog(d, 2000)  # WRITING_GUIDE: 2,000~3,000자
-        if not cur and not (d.get("new_series") or {}).get("plan"):
-            e.append("new_series 칸(name, plan)이 없음")
+        if e:
+            return e
+        e += title_problems(d["title"], recent, fmt) + body_problems(d)
+        if not cur:
+            ns = d.get("new_series") or {}
+            if not ns.get("plan"):
+                e.append("new_series 칸(name, topic, plan)이 없음")
+            elif re.search(r"\d+\s*단계", ns.get("name", "")):
+                e.append("시리즈 이름에 'N단계'를 넣지 않는다")
+        if not e:
+            e = review(lite, d)
         return e
 
-    d = write_loop(models, prompt, check)
+    # 3번 다 못 맞추면: 길이·형식이 괜찮고 영어 섞임만 없으면 올린다 (**·<div> 는 발행 봇이 고침)
+    d = write_loop(models, prompt, check,
+                   soft=lambda d: check_blog(d, 1800) + [x for x in body_problems(d) if "영어" in x])
     d["slug"] = ascii_slug(d["slug"])
     d["coupang_keywords"] = []
     d["category"] = d.get("category") or "없음"
+    d["format"] = fmt
     if cur:
         d["series"], d["series_no"] = cur["name"], cur["next"]
         cur["next"] += 1
@@ -380,7 +526,8 @@ def salim_blog(models):
             cur["done"] = True
     else:
         ns = d.pop("new_series")
-        series["series"].append({"name": ns["name"], "plan": ns["plan"], "next": 2, "done": len(ns["plan"]) < 2})
+        series["series"].append({"name": ns["name"], "topic": ns.get("topic") or d.get("topic"),
+                                 "plan": ns["plan"], "next": 2, "done": len(ns["plan"]) < 2})
         d["series"], d["series_no"] = ns["name"], 1
     d["writer"] = "gemini"
     save(ROOT / f"posts/{NOW:%Y%m%d-%H%M}.json", d)
