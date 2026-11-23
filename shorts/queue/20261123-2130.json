@@ -1,0 +1,46 @@
+{
+ "title": "겨울철 제습기 가습기 같이 켜면 망하는 이유",
+ "hook": "습도 밸런스 4단계",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "겨울철 제습기와 가습기, 동시에 틀고 계신가요?",
+   "bg": "a modern humidifier and a dehumidifier in a small living room, centered"
+  },
+  {
+   "text": "두 기기가 가까우면 서로의 작동을 방해해 에너지가 낭비됩니다",
+   "bg": "a modern humidifier and a dehumidifier in a small living room, centered"
+  },
+  {
+   "text": "첫째, 가습기는 생활 공간에 두고 제습기는 창가나 빨래 근처에 놓으세요",
+   "bg": "a digital hygrometer placed on a wooden table in a room, close up, centered"
+  },
+  {
+   "text": "둘째, 두 기기 사이는 최소 2미터 이상 거리를 유지해 간섭을 막습니다",
+   "bg": "a digital hygrometer placed on a wooden table in a room, close up, centered"
+  },
+  {
+   "text": "셋째, 방 중앙에 온습도계를 두고 시간대별로 교대 가동해 주세요",
+   "bg": "an air circulator fan pointing upward in a cozy living room, centered"
+  },
+  {
+   "text": "넷째, 서큘레이터로 수증기를 멀리 퍼트리고 결로 구역을 건조하세요",
+   "bg": "an air circulator fan pointing upward in a cozy living room, centered"
+  }
+ ],
+ "description": "건조함과 눅눅함이 공존하는 겨울철 좁은 집! 🌿\n제습기와 가습기를 동시에 효율적으로 쓰는 4단계 루틴을 확인하세요.\n여러분은 방마다 습도계를 두고 계시나요?",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집연구소",
+  "#겨울철습도관리",
+  "#제습기가습기",
+  "#실내습도",
+  "#결로예방",
+  "#살림꿀팁",
+  "#원룸인테리어"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/winter-dehumidifier-humidifier-together.html",
+ "comment": "건조함과 눅눅함을 동시에 잡는 똑똑한 습도 밸런스 루틴이에요 ⚖️\n오늘 밤엔 우리 집 습도계 위치를 먼저 점검해 보는 건 어떨까요? 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
