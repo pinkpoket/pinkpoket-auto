@@ -46,7 +46,13 @@ BOX, YEL = tuple(C["hook_bg"]), tuple(C["hook_text"])
 CAP = 110         # 자막 글씨 크기 (시니어용, 74 → 88 → 110, 2026-11-08 핑포 요청)
 CAP_LH = 145
 VOICE_GAIN = 2.3  # 긴 영상 목소리 크게 (쇼츠 1.8)
-BGM_VOL = 0.05
+# 배경음악 (2026-11-24 핑포 결정): 이야기 중에는 음악 없이 목소리만.
+# 맨 처음 LEAD_SECS 동안 잔잔한 음악 → 첫마디가 나오면 1~2초에 걸쳐 사라짐,
+# 마지막 멘트 뒤 END_SECS 동안 다시 깔리다가 마지막 3초에 작아지며 끝 (유튜브 최종 화면 자리).
+BGM_VOL = 0.25    # 목소리 없이 음악만 나올 때 크기 (목소리보다 한참 작게)
+LEAD_SECS = 4.5
+END_SECS = 17.0
+PAD = 0.25        # 문장 사이 쉬는 시간 (음악이 빠져 0.35 → 0.25, 2026-11-24)
 MOVES = ["zoom_in", "pan_right", "zoom_out", "pan_down", "pan_left", "pan_up"]
 PER_IMAGE = 4     # 문장 몇 개마다 사진을 바꿀지
 
@@ -85,7 +91,7 @@ def frame(bg, out, sentence, chapter):
     for y in range(H - 560, H):  # 아래쪽을 부드럽게 어둡게 (자막이 커져 440 → 560)
         d.line([(0, y), (W, y)], fill=(0, 0, 0, int(215 * ((y - (H - 560)) / 560) ** 1.2)))
     f = ms.font(CAP)
-    lines = [" ".join(l) for l in wrap(d, sentence, f, W - 160)][:3]
+    lines = [" ".join(l) for l in wrap(d, sentence, f, W - 160)][:3] if sentence.strip() else []
     y = H - 70 - len(lines) * CAP_LH
     for ln in lines:
         tw = d.textlength(ln, font=f)
@@ -157,7 +163,7 @@ def thumbnail(bg, out, text):
 
 # ---------------------------------------------------------------- 영상
 
-def moving_segment(photo, overlay, audio, out, move, start, total, fade_in=False, pad=0.35):
+def moving_segment(photo, overlay, audio, out, move, start, total, fade_in=False, pad=PAD):
     """사진을 천천히 확대·이동시키며 그 위에 자막 그림을 얹는다.
     같은 사진이 여러 문장에 걸치면 start/total(초)로 움직임을 이어 간다."""
     dur = ms.duration(audio) + pad
@@ -182,7 +188,7 @@ def moving_segment(photo, overlay, audio, out, move, start, total, fade_in=False
     return dur
 
 
-def segment(png, audio, out, fade_in=False, pad=0.35):
+def segment(png, audio, out, fade_in=False, pad=PAD):
     dur = ms.duration(audio) + pad
     vf = "format=yuv420p" + (",fade=t=in:st=0:d=0.5" if fade_in else "")
     ms.run(["ffmpeg", "-y", "-loop", "1", "-framerate", str(FPS), "-i", png, "-i", audio,
@@ -206,12 +212,38 @@ SUB_LINE = "구독과 좋아요 눌러 주시고, 작지만 따뜻한 복 하나
 SUB_TEXT = "💛 구독과 좋아요 눌러 주시고, 작지만 따뜻한 복 하나 받아 가세요 🙏"
 
 
+# 오프닝 (2026-11-24 핑포 결정): 훅 한 문장 → "인생온입니다." → 구독 부탁 한 문장 → 본론.
+# 대본에는 쓰지 않고 봇이 intro 첫 문장 뒤에 끼워 넣는다. ("마음의 불을 켜다"는 말로 하지 않음)
+GREETING = "인생온입니다."
+SUB_OPEN = "오늘 이야기가 도움이 되셨다면 구독 한 번 눌러 주세요."
+
+
+def intro_with_opening(script):
+    intro = [x for x in (script.get("intro") or []) if x.strip()]
+    if any("인생온" in x or "인생ON" in x or "구독" in x for x in intro):
+        return intro
+    return intro[:1] + [GREETING, SUB_OPEN] + intro[1:]
+
+
 def outro_with_sub(script):
     """outro 맨 끝에 구독 부탁 한 문장 (대본에 이미 구독 말이 있으면 그대로)."""
     out = [x for x in (script.get("outro") or []) if x.strip()]
     if not any("구독" in x for x in out):
         out.append(SUB_LINE)
     return out
+
+
+def bgm_filter(voice_end):
+    """[0]=영상 소리, [1]·[2]=같은 음악. 처음 LEAD_SECS + 첫마디 뒤 1.5초에 걸쳐 사라짐,
+    voice_end 부터 END_SECS 동안 다시 (들어올 때 1.5초, 나갈 때 마지막 3초 서서히)."""
+    head = LEAD_SECS + 1.5
+    ms_end = int(voice_end * 1000)
+    return (f"[1:a]atrim=0:{head:.2f},asetpts=PTS-STARTPTS,volume={BGM_VOL},"
+            f"afade=t=in:st=0:d=1,afade=t=out:st={LEAD_SECS - 0.2:.2f}:d=1.7[m1];"
+            f"[2:a]atrim=0:{END_SECS:.2f},asetpts=PTS-STARTPTS,volume={BGM_VOL},"
+            f"afade=t=in:st=0:d=1.5,afade=t=out:st={END_SECS - 3:.2f}:d=3,adelay={ms_end}|{ms_end}[m2];"
+            f"[0:a]volume={VOICE_GAIN}[v];[v][m1][m2]amix=inputs=3:duration=first:normalize=0,"
+            "alimiter=limit=0.95:level=disabled[a]")
 
 
 def build(script, out_path):
@@ -224,7 +256,7 @@ def build(script, out_path):
             if k % PER_IMAGE == 0:
                 photos.append(bg)
             items.append({"chapter": chapter, "text": s.strip(), "photo": len(photos) - 1, "new_photo": k % PER_IMAGE == 0})
-    add_block(script.get("intro", []), "", script.get("intro_bg", "sunrise mountain lake"))
+    add_block(intro_with_opening(script), "", script.get("intro_bg", "sunrise mountain lake"))
     chapters = script["chapters"]
     for c in chapters:
         items.append({"card": c["title"], "photo": len(photos)})
@@ -252,12 +284,26 @@ def build(script, out_path):
     with ThreadPoolExecutor(max_workers=4) as ex:
         audios = list(ex.map(speak, enumerate(items)))
     # 4) 장면 영상 + 챕터 시간표 (사진마다 움직임 하나: 확대·축소·좌우·상하 번갈아)
-    lens = [ms.duration(a) + 0.35 for a in audios]
+    lens = [ms.duration(a) + PAD for a in audios]
     photo_total, photo_start = {}, {}
     for it, ln in zip(items, lens):
         if not it.get("card"):
             photo_total[it["photo"]] = photo_total.get(it["photo"], 0) + ln
+    bgm = sorted(glob.glob(os.path.join(REPO, "brand", "bgm", "*.mp3")))
     segs, t, marks = [], 0.0, []
+    if bgm:  # 맨 처음: 음악만 나오는 짧은 오프닝 (첫 사진 위에 영상 제목)
+        photo_total[0] = photo_total.get(0, 0) + LEAD_SECS
+        quiet = os.path.join(WORK, "quiet.m4a")
+        ms.run(["ffmpeg", "-y", "-f", "lavfi", "-i", "anullsrc=r=44100:cl=stereo", "-t", f"{LEAD_SECS:.2f}",
+                "-c:a", "aac", quiet])
+        png = os.path.join(WORK, "lead.png")
+        frame(raw[0], png, script["title"].split("|")[0].strip(), "")
+        seg = os.path.join(WORK, "s_lead.mp4")
+        t += moving_segment(raw[0], png, quiet, seg, MOVES[0], 0.0, photo_total[0], fade_in=True, pad=0.0)
+        photo_start[0] = t
+        segs.append(seg)
+        if items and not items[0].get("card"):
+            items[0]["new_photo"] = False  # 오프닝에서 이어지는 같은 사진이라 다시 어두워지지 않게
     for i, it in enumerate(items):
         seg = os.path.join(WORK, f"s{i:04d}.mp4")
         bg = raw[min(it["photo"], len(raw) - 1)]
@@ -275,23 +321,30 @@ def build(script, out_path):
                                 fade_in=it.get("new_photo", False))
             photo_start[ph] = start + lens[i]
         segs.append(seg)
+    voice_end = t
+    if bgm:  # 맨 끝: 음악이 다시 깔리는 마무리 화면 (유튜브 최종 화면 자리)
+        png = os.path.join(WORK, "end.jpg")
+        title_card(raw[-1], png, "오늘도 함께해 주셔서 고맙습니다", "구독과 좋아요로 인생온을 응원해 주세요")
+        seg = os.path.join(WORK, "s_end.mp4")
+        t += silent_segment(png, seg, END_SECS)
+        segs.append(seg)
     lst = os.path.join(WORK, "list.txt")
     with open(lst, "w") as f:
         f.writelines(f"file '{s}'\n" for s in segs)
     joined = os.path.join(WORK, "joined.mp4")
     ms.run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined])
-    # 5) 배경음악 작게
-    bgm = sorted(glob.glob(os.path.join(REPO, "brand", "bgm", "*.mp3")))
+    # 5) 목소리 키우기 + 배경음악은 처음과 끝에만
     if bgm:
         song = random.Random(script["title"]).choice(bgm)
-        ms.run(["ffmpeg", "-y", "-i", joined, "-stream_loop", "-1", "-i", song, "-filter_complex",
-                f"[1:a]volume={BGM_VOL},afade=t=out:st={max(0.0, t - 2):.2f}:d=2[b];"
-                f"[0:a]volume={VOICE_GAIN}[v];[v][b]amix=inputs=2:duration=first:normalize=0,"
-                "alimiter=limit=0.95:level=disabled[a]",
+        ms.run(["ffmpeg", "-y", "-i", joined, "-stream_loop", "-1", "-i", song, "-stream_loop", "-1", "-i", song,
+                "-filter_complex", bgm_filter(voice_end),
                 "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
                 "-movflags", "+faststart", out_path])
     else:
-        shutil.copy(joined, out_path)
+        ms.run(["ffmpeg", "-y", "-i", joined, "-filter_complex",
+                f"[0:a]volume={VOICE_GAIN},alimiter=limit=0.95:level=disabled[a]",
+                "-map", "0:v", "-map", "[a]", "-c:v", "copy", "-c:a", "aac", "-b:a", "160k",
+                "-movflags", "+faststart", out_path])
     thumb = os.path.join(WORK, "thumb.jpg")
     import thumbs  # 왼쪽 글씨형(A) 썸네일
     thumbs.make(raw[0], thumb, script.get("thumbnail_text") or script["title"][:16],
