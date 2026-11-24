@@ -1,0 +1,46 @@
+{
+ "title": "가습기 물, 정수기 쓰면 세균 폭발하는 이유",
+ "hook": "가습기 물 고르기",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "가습기에 정수기 물 넣고 계신가요?",
+   "bg": "a modern humidifier on a wooden table in a cozy living room, centered"
+  },
+  {
+   "text": "정수기 물은 염소가 없어 고여 있으면 빨리 상합니다",
+   "bg": "a modern humidifier on a wooden table in a cozy living room, centered"
+  },
+  {
+   "text": "첫째, 소독 성분인 염소가 조금 남은 수돗물이 세균 번식을 늦춰줍니다",
+   "bg": "a transparent water tank of a humidifier filled with clean water, close up, centered"
+  },
+  {
+   "text": "둘째, 남은 물은 버리고 새 물을 채워야 세균 이동을 막습니다",
+   "bg": "a transparent water tank of a humidifier filled with clean water, close up, centered"
+  },
+  {
+   "text": "셋째, 물통은 입구가 위로 향하게 뒤집어 방 안 창가에서 말려주세요",
+   "bg": "a digital hygrometer placed on a wooden table in a room, close up, centered"
+  },
+  {
+   "text": "그럼 오늘 밤엔 물통의 남은 물부터 비워보세요",
+   "bg": "a digital hygrometer placed on a wooden table in a room, close up, centered"
+  }
+ ],
+ "description": "가습기 물통 채울 때 수돗물과 정수기 물, 어떤 걸 넣어야 할까요? 💧\n세균 번식을 막는 올바른 물 선택과 물통 말리는 법을 확인하세요.\n여러분은 가습기에 어떤 물을 쓰고 계시나요?",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집연구소",
+  "#가습기물",
+  "#가습기세척",
+  "#가습기위생",
+  "#겨울철가습기",
+  "#살림꿀팁",
+  "#원룸인테리어"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/humidifier-water-tap-vs-purified.html",
+ "comment": "가습기 물통에 남은 물, 덧붓고 계셨나요? 🌧️\n오늘 밤엔 물통을 깨끗이 헹구고 수돗물로 채워보세요. 작은 습관으로 위생이 훨씬 달라져요 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
