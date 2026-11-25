@@ -1,0 +1,46 @@
+{
+ "title": "냉장실 달걀, 문 칸에 두면 안 되는 이유",
+ "hook": "냉장고 칸별 보관",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "달걀, 무심코 냉장고 문 칸에 쏙 넣으셨나요?",
+   "bg": "a refrigerator door shelf filled with cartons and sauces, close up, centered"
+  },
+  {
+   "text": "문 칸은 온도가 자주 변해 원래 포장째 안쪽에 두는 게 안전합니다",
+   "bg": "a refrigerator door shelf filled with cartons and sauces, close up, centered"
+  },
+  {
+   "text": "첫째, 생고기와 생선은 맨 아래 칸에 밀폐 용기에 담아 두세요",
+   "bg": "raw meat packages neatly sealed in containers inside a refrigerator, close up, centered"
+  },
+  {
+   "text": "위 칸에 두면 핏물이 흘러내릴 수 있으니 반드시 아래가 안전합니다",
+   "bg": "raw meat packages neatly sealed in containers inside a refrigerator, close up, centered"
+  },
+  {
+   "text": "둘째, 남은 반찬은 위나 가운데 칸 앞쪽에 두어 한눈에 찾게 하세요",
+   "bg": "transparent food containers neatly arranged on a refrigerator shelf, close up, centered"
+  },
+  {
+   "text": "그럼 오늘 밤, 냉장고 맨 아래 칸부터 열어보세요",
+   "bg": "transparent food containers neatly arranged on a refrigerator shelf, close up, centered"
+  }
+ ],
+ "description": "장 본 걸 냉장고 어디에 둘지 고민이셨나요? 🧊\n달걀, 생고기, 반찬까지 칸별로 올바른 보관 위치를 확인해 보세요.\n여러분 집 냉장고에서 가장 자리 정하기 어려운 식품은 무엇인가요?",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집연구소",
+  "#냉장고정리",
+  "#달걀보관",
+  "#생고기보관",
+  "#살림꿀팁",
+  "#주방정리",
+  "#살림노하우"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/fridge-shelf-storage-guide-eggs-meat.html",
+ "comment": "냉장실 맨 아래 칸, 지금 바로 열어보세요. 🥬\n올바른 자리 배치 하나로 식재료를 더 오래 신선하게 지켜보세요 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
