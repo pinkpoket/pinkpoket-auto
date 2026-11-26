@@ -1,0 +1,46 @@
+{
+ "title": "냉장고 옆면 뜨겁고 소리 커질 때, 틈새 수납장 점검하는 법",
+ "hook": "냉장고 옆면이 뜨거울 때",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "냉장고 옆면이 뜨겁고 웅하는 소리가 커지셨나요?",
+   "bg": "refrigerator side panel in a narrow kitchen space, close up, centered"
+  },
+  {
+   "text": "첫째, 바깥 벽 안쪽 관에서 열을 내보내는 것은 정상입니다",
+   "bg": "refrigerator side panel in a narrow kitchen space, close up, centered"
+  },
+  {
+   "text": "둘째, 틈새 수납장을 딱 붙이면 열이 갇혀 더 오래 돌아갑니다",
+   "bg": "slim storage cart next to a refrigerator, close up, centered"
+  },
+  {
+   "text": "셋째, 옆과 뒷면은 5센티미터, 윗면은 10센티미터 공간이 필요합니다",
+   "bg": "slim storage cart next to a refrigerator, close up, centered"
+  },
+  {
+   "text": "넷째, 틈새에 멀티탭을 숨기면 열과 먼지로 위험할 수 있습니다",
+   "bg": "power strip and electric cords behind a kitchen appliance, close up, centered"
+  },
+  {
+   "text": "오늘 설명서의 설치 간격을 확인하고 틈새 공간을 비워주세요",
+   "bg": "power strip and electric cords behind a kitchen appliance, close up, centered"
+  }
+ ],
+ "description": "냉장고 옆면이 뜨겁고 소리가 커졌다면 틈새 수납장을 확인해 보세요! 🧊\n제조사 안내를 바탕으로 안전한 간격과 원인을 짚어드려요.\n여러분 집 냉장고 틈새에는 무엇이 들어 있나요?",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집연구소",
+  "#냉장고수납",
+  "#틈새수납",
+  "#가전관리",
+  "#주방정리",
+  "#살림꿀팁",
+  "#냉장고열기"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/fridge-side-top-gap-storage-clearance.html",
+ "comment": "냉장고 틈새에 수납장을 꽉 채우고 계셨나요? 🧊\n오늘 밤엔 줄자 하나 들고 옆과 위 간격부터 재어 보세요.\n작은 여유가 냉장고를 훨씬 안전하게 지켜준답니다 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
