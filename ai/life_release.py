@@ -133,8 +133,49 @@ def stuck_queue(hours=2):
     return out
 
 
+# 올리는 시간 창 (2026-11-26 핑포 결정: 저녁 쇼츠가 새벽 4시·낮 1시에 올라간 일 — GitHub 예약이 최대 10시간 밀림).
+# 예약을 창마다 30분 간격으로 여러 번 걸어 두고, 창 안에서 처음 도착한 실행만 올린다.
+# 창 밖에 늦게 도착한 실행은 올리지 않는다 (새벽·한낮 업로드 막기).
+WINDOWS = {"short": [("morning", 7, 11), ("evening", 18, 22)], "pair": [("morning", 7, 11), ("evening", 18, 22)],
+           "long": [("long", 9, 13)]}
+
+
+def window(mode):
+    for name, lo, hi in WINDOWS.get(mode, []):
+        if lo <= NOW.hour <= hi:
+            return name, lo, hi
+    return None
+
+
+def done_in_window(mode, lo, hi):
+    """오늘 이 창(한국 lo시~hi시 59분)에 이미 올렸거나 만드는 중이면 True."""
+    logf = "life/data/long_log.json" if mode == "long" else "life/data/shorts_log.json"
+    log = gw.load(ROOT / logf, []) or []
+    for e in log[-6:]:
+        try:  # 기록의 at 은 UTC "YYYY-MM-DD HH:MM"
+            k = dt.datetime.strptime(str(e.get("at", ""))[:16], "%Y-%m-%d %H:%M") + dt.timedelta(hours=9)
+        except ValueError:
+            continue
+        if k.date() == NOW.date() and lo <= k.hour <= hi:
+            return True
+    q = LQ if mode == "long" else SQ
+    for f in glob.glob(str(q / "*.json")):
+        m = re.match(r"(\d{8})-(\d{2})", os.path.basename(f))
+        if m and m.group(1) == f"{NOW:%Y%m%d}" and lo <= int(m.group(2)) <= hi:
+            return True
+    return False
+
+
 def main():
-    mode = os.environ.get("MODE", "short")
+    mode = os.environ.get("MODE") or "short"
+    if mode in WINDOWS and os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+        w = window(mode)
+        if not w:
+            print(f"예약이 늦게 도착함 (지금 한국 {NOW:%H:%M}) — 올리는 시간 창 밖이라 이번엔 건너뜀")
+            return
+        if done_in_window(mode, w[1], w[2]):
+            print(f"오늘 {w[0]} 칸은 이미 올렸거나 만드는 중 — 건너뜀")
+            return
     # ⏸ 쉬는 기간 (2026-11-13 핑포 결정: 쇼츠 조회수가 10회 안팎으로 막혀 사흘 쉼). life/PAUSE 첫 줄 날짜(한국) 전까지 아무것도 안 올림
     pf = ROOT / "life/PAUSE"
     if pf.exists():

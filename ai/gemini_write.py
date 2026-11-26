@@ -809,13 +809,13 @@ def life_shorts(models):
 {chr(10).join('- ' + t for t in titles)}
 
 {NO_SEARCH}
-- 명언·철학자·위인·건강 주제는 쓰지 마라. 자식·돈·사람 관계 주제만. scenes text 합 220~250자(약 40초), 장면 8~10개, 장면마다 15~30자. 첫 장면 8~15자 단정형 훅.
+- 명언·철학자·위인·건강 주제는 쓰지 마라. 자식·돈·사람 관계 주제만. scenes text 합 210~230자(봇이 구독 부탁 5초를 더해 약 40~45초), 장면 8~10개, 장면마다 15~30자. 첫 장면 8~15자 단정형 훅.
 - JSON 키: title, hook, scenes([{{"text","bg"}}]), description, tags, comment, coupang_keywords([]).
 
 [규칙]
 {guide}
 """
-    d = write_loop(models, prompt, lambda d: check_scenes(d, 8, 10, 210, 255),
+    d = write_loop(models, prompt, lambda d: check_scenes(d, 8, 10, 205, 235),
                    soft=lambda d: check_scenes(d, 7, 11, 195, 275))
     d["coupang_keywords"] = []
     d["writer"] = "gemini"

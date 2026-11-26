@@ -1160,9 +1160,8 @@ def main():
             entry["voice"] = script.get("voice") or ch.P.get("voice") or "ko-KR-SunHiNeural"
             video = os.path.join(OUT, f"{name}.mp4")
             script["_name"] = name
-            # 구독 부탁 시험 (2026-11-19 핑포 결정): 아침 칸(큐 이름 HHMM 이 12시 전) 쇼츠에만 마지막 장면 한 줄을 더한다
-            mm = re.match(r"\d{8}-(\d{2})\d{2}", name)
-            if ch.P.get("sub_cta") and mm and int(mm.group(1)) < 12 and not script.get("video_file") \
+            # 구독 부탁 (2026-11-19 아침만 시험 → 2026-11-26 핑포 결정: 모든 쇼츠): 마지막 장면 한 줄을 더한다
+            if ch.P.get("sub_cta") and not script.get("video_file") \
                     and script.get("format") != "sayeon":
                 last = script["scenes"][-1]
                 script["scenes"] = script["scenes"] + [{"text": ch.P["sub_cta"], "bg": last.get("bg", "")}]
