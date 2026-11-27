@@ -168,7 +168,7 @@ def done_in_window(mode, lo, hi):
 
 def main():
     mode = os.environ.get("MODE") or "short"
-    if mode in WINDOWS and os.environ.get("GITHUB_EVENT_NAME") == "schedule":
+    if mode in WINDOWS and (os.environ.get("GITHUB_EVENT_NAME") == "schedule" or os.environ.get("AUTO") == "1"):
         w = window(mode)
         if not w:
             print(f"예약이 늦게 도착함 (지금 한국 {NOW:%H:%M}) — 올리는 시간 창 밖이라 이번엔 건너뜀")

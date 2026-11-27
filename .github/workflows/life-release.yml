@@ -15,6 +15,9 @@ on:
       mode:
         description: "short / pair / long / sayeon (사연은 핑포가 미리보기를 보고 허락한 뒤에만 손으로 실행)"
         default: "short"
+      auto:
+        description: "1 이면 시간 창 규칙을 지킴 (life-timer 가 부를 때)"
+        default: "0"
 
 permissions:
   contents: write
@@ -47,6 +50,7 @@ jobs:
         id: r
         env:
           MODE: ${{ steps.m.outputs.mode }}
+          AUTO: ${{ github.event.inputs.auto }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         run: python -u ai/life_release.py

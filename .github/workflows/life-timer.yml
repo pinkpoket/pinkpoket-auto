@@ -1,0 +1,71 @@
+name: life-timer
+
+# 인생ON 올리는 시간 맞추기 (2026-11-27)
+# GitHub 예약(cron)이 9~10시간씩 밀리거나 아예 빠져서(11-25 저녁 쇼츠가 새벽 4시에, 11-27 아침 예약 16번이 하나도 안 돎)
+# 예약 대신 "기다렸다가 부르기"로 바꿈: 이 작업이 다음 올릴 시간까지 잠자다가 life-release 를 부르고,
+# 끝나기 전에 자기 자신을 다시 불러 이어 간다 (공개 저장소라 기다리는 시간은 무료).
+# 수동 실행(workflow_dispatch)은 밀리지 않는다. 사슬이 끊기면 아래 예비 cron 이 (늦더라도) 다시 잇는다.
+#   07:21 쇼츠 · 09:37 긴 영상 · 18:21 쇼츠 (한국)
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "13 */4 * * *"   # 사슬이 끊겼을 때 다시 잇는 예비
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  wait:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+    steps:
+      - name: 다른 타이머가 이미 돌고 있으면 끝냄
+        id: dup
+        run: |
+          sleep 45  # 방금 나를 부른 이전 타이머가 끝날 시간을 준다
+          n=$(gh api "repos/$REPO/actions/workflows/life-timer.yml/runs?status=in_progress&per_page=20" \
+                --jq "[.workflow_runs[] | select(.id != ${{ github.run_id }})] | length")
+          echo "다른 타이머: $n"
+          echo "skip=$([ "$n" -gt 0 ] && echo 1 || echo 0)" >> $GITHUB_OUTPUT
+      - name: 지금 창이 열려 있으면 바로 부름 (이미 올렸으면 life-release 가 건너뜀)
+        if: steps.dup.outputs.skip == '0'
+        run: |
+          h=$(TZ=Asia/Seoul date +%-H)
+          if [ $h -ge 7 ] && [ $h -le 11 ]; then gh workflow run life-release.yml -R $REPO --ref main -f mode=short -f auto=1; sleep 60; fi
+          if [ $h -ge 9 ] && [ $h -le 13 ]; then gh workflow run life-release.yml -R $REPO --ref main -f mode=long -f auto=1; fi
+          if [ $h -ge 18 ] && [ $h -le 22 ]; then gh workflow run life-release.yml -R $REPO --ref main -f mode=short -f auto=1; fi
+          true
+      - name: 다음 시간까지 기다렸다가 부름
+        if: steps.dup.outputs.skip == '0'
+        run: |
+          python3 - <<'PY' > /tmp/plan
+          import datetime as dt
+          KST = dt.timezone(dt.timedelta(hours=9))
+          now = dt.datetime.now(KST)
+          best = None
+          for d in (0, 1):
+              for h, m, mode in ((7, 21, "short"), (9, 37, "long"), (18, 21, "short")):
+                  t = (now + dt.timedelta(days=d)).replace(hour=h, minute=m, second=0, microsecond=0)
+                  if t > now and (best is None or t < best[0]):
+                      best = (t, mode)
+          secs = int((best[0] - now).total_seconds())
+          MAX = 330 * 60
+          if secs <= MAX:
+              print(secs, best[1], best[0].strftime("%m-%d %H:%M"))
+          else:
+              print(MAX, "none", best[0].strftime("%m-%d %H:%M"))
+          PY
+          read secs mode at < /tmp/plan
+          echo "다음: $at ($mode) — ${secs}초 기다림"
+          sleep $secs
+          if [ "$mode" != none ]; then
+            gh workflow run life-release.yml -R $REPO --ref main -f mode=$mode -f auto=1
+            echo "불렀음: $mode"
+          fi
+      - name: 자기 자신을 다시 불러 이어 가기
+        if: always() && steps.dup.outputs.skip == '0'
+        run: gh workflow run life-timer.yml -R $REPO --ref main
