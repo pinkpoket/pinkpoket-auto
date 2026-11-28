@@ -1,0 +1,46 @@
+{
+ "title": "도마에 끓는 물부터 부으면 찌꺼기가 눌어붙어요",
+ "hook": "도마 씻을 때 실수",
+ "voice": "ko-KR-SunHiNeural",
+ "scenes": [
+  {
+   "text": "도마 쓰자마자 끓는 물부터 부으셨나요?",
+   "bg": "wooden cutting board on a kitchen counter, close up, centered"
+  },
+  {
+   "text": "첫째, 고기 단백질은 뜨거운 물에 닿으면 오히려 찌꺼기가 눌어붙습니다",
+   "bg": "wooden cutting board on a kitchen counter, close up, centered"
+  },
+  {
+   "text": "둘째, 찬물이나 미지근한 물로 겉에 붙은 찌꺼기를 먼저 씻어내세요",
+   "bg": "washing a kitchen cutting board with water, close up, centered"
+  },
+  {
+   "text": "셋째, 세제로 닦고 깨끗한 물로 헹군 뒤에 소독을 해야 합니다",
+   "bg": "washing a kitchen cutting board with water, close up, centered"
+  },
+  {
+   "text": "넷째, 젖은 도마는 포개지 말고 세워서 양면에 바람이 닿게 말려주세요",
+   "bg": "kitchen cutting boards dried vertically on a rack, close up, centered"
+  },
+  {
+   "text": "오늘 저녁 설거지 때 도마 뒤편과 칼자국을 확인해 보세요",
+   "bg": "kitchen cutting boards dried vertically on a rack, close up, centered"
+  }
+ ],
+ "description": "도마 세척할 때 끓는 물부터 부었다면 주목해 주세요! 🍳\n안전한 세척 순서와 건조 방법을 짚어드려요.\n여러분은 어떤 도마를 쓰고 계신가요?",
+ "tags": [
+  "#shorts",
+  "#핑포의작은집 연구소",
+  "#도마세척",
+  "#주방위생",
+  "#살림꿀팁",
+  "#도마관리",
+  "#주방정리",
+  "#세균박멸"
+ ],
+ "blog_url": "https://pinkpoket.blogspot.com/2026/11/cutting-board-wood-plastic-cleaning.html",
+ "comment": "설거지 할 때 도마 뒷면까지 꼼꼼히 보셨나요? 🍳\n오늘 밤엔 우리 집 도마를 한 번 뒤집어 보세요.\n작은 습관 하나로 주방 위생이 훨씬 깨끗해진답니다 💛",
+ "coupang_keywords": [],
+ "writer": "gemini"
+}
